@@ -3,7 +3,7 @@
 --  AUTHORS:
 --              TINTORRI    NICOLA      1102860
 --              CARLIN      MAURO       1102351
---              BERTOLINI   LUCA        1099549 
+--              BERTOLINI	LUCA        1099549 
 --              BONOLO      MARCO       1102360
 
 -- FILE DEFINITION: SQL DUMP OF THE DATABASE 'HEARTHSTONE'.
@@ -28,8 +28,8 @@ use hearthstone;
 
 create table if not exists user (
     email varchar(100) unique not null,
-    name varchar(50) not null,
-    surname varchar(50) not null,
+	name varchar(50) not null,
+	surname varchar(50) not null,
     username varchar(50) primary key,
     password varchar(64) not null,
     entry_date datetime not null
@@ -72,9 +72,8 @@ create table if not exists hero_power(
 create table if not exists hero (
 	hero_id int auto_increment primary key,
 	name varchar(50) not null,
-	description varchar(500) default '',
-	h_power int not null,
 	image varchar(100) not null,
+	h_power int not null,
 	foreign key (h_power) references hero_power(hero_power_id)
 )engine=innodb;
 
@@ -136,7 +135,7 @@ create table if not exists guide_vote(
 
 create table if not exists adventure (
 	name varchar(100) primary key,
-	desciption varchar(500) not null,
+	desciption varchar(500) default '',
 	image varchar(100) not null
 )engine=innodb;
 
@@ -151,7 +150,7 @@ create table if not exists rarity(
 	name varchar(50) primary key,
 	r_craft int(5) not null,
 	r_destroy int(5) not null,
-	golden_craft int(5) not null,cd
+	golden_craft int(5) not null,
 	golden_destroy int(5) not null
 )engine=innodb;
 
@@ -162,6 +161,7 @@ create table if not exists card(
 	description varchar(50) not null,
 	rarity varchar(50) not null,
 	c_type varchar(25) not null,
+	c_race varchar(25) default '',
 	wild boolean default false,
 	attack int(3) unsigned not null,
 	health int(3) unsigned not null,
@@ -171,6 +171,7 @@ create table if not exists card(
 	expansion_name varchar(50),
 	hero_id int not null,
 	foreign key (rarity) references rarity(name),
+	foreign key (expansion_name) references expansion(name),
 	foreign key (adventure_wing, adventure_name) references wing(number,adventure_name),
 	foreign key (hero_id) references hero(hero_id)
 )engine=innodb;
@@ -191,5 +192,24 @@ create table if not exists hero_card(
 	foreign key (card_id) references card(card_id)
 )engine=innodb;
 
+/*create table if not exists post_vote (
+    user_id varchar(100) not null,
+    post_id int not null,
+    vote_value int(1) not null,
+    creation_date datetime not null,
+    primary key (user_id, post_id),
+    foreign key (user_id) references users(email),
+    foreign key (post_id) references posts(post_id)
+)engine=innodb;
+
+create table if not exists comment_vote (
+    user_id varchar(100) not null,
+    comment_id int not null,
+    vote_value int(1) not null,
+    creation_date datetime not null,
+    primary key (user_id, comment_id),
+    foreign key (user_id) references users(email),
+    foreign key (comment_id) references comments(comment_id)
+)engine=innodb;*/
 
 
