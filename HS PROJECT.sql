@@ -3,7 +3,7 @@
 --  AUTHORS:
 --              TINTORRI    NICOLA      1102860
 --              CARLIN      MAURO       1102351
---              BERTOLINI	LUCA        1099549 
+--              BERTOLINI   LUCA        1099549 
 --              BONOLO      MARCO       1102360
 
 -- FILE DEFINITION: SQL DUMP OF THE DATABASE 'HEARTHSTONE'.
@@ -28,8 +28,8 @@ use hearthstone;
 
 create table if not exists user (
     email varchar(100) unique not null,
-	name varchar(50) not null,
-	surname varchar(50) not null,
+    name varchar(50) not null,
+    surname varchar(50) not null,
     username varchar(50) primary key,
     password varchar(64) not null,
     entry_date datetime not null
@@ -162,7 +162,6 @@ create table if not exists card(
 	description varchar(50) not null,
 	rarity varchar(50) not null,
 	c_type varchar(25) not null,
-	golden boolean default false,
 	wild boolean default false,
 	attack int(3) unsigned not null,
 	health int(3) unsigned not null,
