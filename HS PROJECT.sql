@@ -192,7 +192,8 @@ create table if not exists hero_card(
 	foreign key (card_id) references card(card_id)
 )engine=innodb;
 
-/*create table if not exists post_vote (
+/*
+create table if not exists post_vote (
     user_id varchar(100) not null,
     post_id int not null,
     vote_value int(1) not null,
@@ -210,6 +211,7 @@ create table if not exists comment_vote (
     primary key (user_id, comment_id),
     foreign key (user_id) references users(email),
     foreign key (comment_id) references comments(comment_id)
-)engine=innodb;*/
+)engine=innodb;
+*/
 
 
