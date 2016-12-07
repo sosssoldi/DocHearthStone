@@ -211,7 +211,7 @@ create table if not exists comment_vote (
     primary key (user_id, comment_id),
     foreign key (user_id) references users(email),
     foreign key (comment_id) references comments(comment_id)
-)engine=innodb;
+)engine=innodb; 
 */
 
 
