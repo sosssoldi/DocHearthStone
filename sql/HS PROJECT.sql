@@ -73,6 +73,7 @@ create table if not exists hero (
 	hero_id int auto_increment primary key,
 	name varchar(50) not null,
 	image varchar(100) not null,
+	type varchar(25) not null,
 	h_power int not null,
 	foreign key (h_power) references hero_power(hero_power_id)
 )engine=innodb;
@@ -169,11 +170,9 @@ create table if not exists card(
 	adventure_wing int unsigned,
 	adventure_name varchar(100),
 	expansion_name varchar(50),
-	hero_id int not null,
 	foreign key (rarity) references rarity(name),
 	foreign key (expansion_name) references expansion(name),
-	foreign key (adventure_wing, adventure_name) references wing(number,adventure_name),
-	foreign key (hero_id) references hero(hero_id)
+	foreign key (adventure_wing, adventure_name) references wing(number,adventure_name)
 )engine=innodb;
 
 create table if not exists card_deck(
@@ -191,27 +190,3 @@ create table if not exists hero_card(
 	foreign key (hero_id) references hero(hero_id),
 	foreign key (card_id) references card(card_id)
 )engine=innodb;
-
-/*
-create table if not exists post_vote (
-    user_id varchar(100) not null,
-    post_id int not null,
-    vote_value int(1) not null,
-    creation_date datetime not null,
-    primary key (user_id, post_id),
-    foreign key (user_id) references users(email),
-    foreign key (post_id) references posts(post_id)
-)engine=innodb;
-
-create table if not exists comment_vote (
-    user_id varchar(100) not null,
-    comment_id int not null,
-    vote_value int(1) not null,
-    creation_date datetime not null,
-    primary key (user_id, comment_id),
-    foreign key (user_id) references users(email),
-    foreign key (comment_id) references comments(comment_id)
-)engine=innodb; 
-*/
-
-
