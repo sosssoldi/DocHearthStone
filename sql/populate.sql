@@ -40,7 +40,6 @@ insert into rarity values ('LEGENDARY', 1600, 400, 3200, 1600);
 insert into expansion values ('TGT','','1000-01-01 00:00:00', 'NULL');
 insert into expansion values ('OG','','1000-01-01 00:00:00', 'NULL');
 insert into expansion values ('EXPERT1','','1000-01-01 00:00:00', 'NULL');
-insert into expansion values ('NAXX','','1000-01-01 00:00:00', 'NULL');
 insert into expansion values ('GVG','','1000-01-01 00:00:00', 'NULL');
 insert into expansion values ('GANGS','','1000-01-01 00:00:00', 'NULL');
 insert into expansion values ('CORE','','1000-01-01 00:00:00', 'NULL');
@@ -52,6 +51,7 @@ insert into expansion values ('KARA','','1000-01-01 00:00:00', 'NULL');
 insert into adventure values ('LOE','','NULL');
 insert into adventure values ('BRM','','NULL');
 insert into adventure values ('KARA','','NULL');
+insert into adventure values ('NAXX','','NULL');
 
 -- POPULATE TABLE:		CARD
 insert into card values ('AT_039','Bestia Selvaggia','AT_039.png','<b>Ispirazione:</b> +2 Attacco al tuo eroe per questo turno.','RARE','MINION','BEAST','FALSE',5,4,4,NULL,NULL,'TGT');
@@ -98,7 +98,7 @@ insert into card values ('LOE_022','Scimmia Feroce','LOE_022.png','<b>Provocazio
 insert into card values ('GVG_074','Mistica di Kezan','GVG_074.png','<b>Grido di Battaglia:</b> prendi il controllo di un <b>Segreto</b> casuale dell\'avversario.','RARE','MINION',NULL,'TRUE',4,3,4,NULL,NULL,'GVG');
 insert into card values ('EX1_410','Colpo di Scudo','EX1_410.png','Infligge 1 danno a un servitore per ogni punto Armatura del tuo eroe.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_136','Redenzione','EX1_136.png','<b>Segreto:</b> quando un tuo servitore muore','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_092','Arciladro Rafaam','LOE_092.png','<b>Grido di Battaglia: Rinvieni</b> un potente manufatto.','LEGENDARY','MINION',NULL,'FALSE',7,8,9,'replaceable','LOE','LOE');
+insert into card values ('LOE_092','Arciladro Rafaam','LOE_092.png','<b>Grido di Battaglia: Rinvieni</b> un potente manufatto.','LEGENDARY','MINION',NULL,'FALSE',7,8,9,4,'LOE','LOE');
 insert into card values ('EX1_366','Spada della Giustizia','EX1_366.png','Dopo che viene evocato un servitore sotto il tuo controllo','EPIC','WEAPON',NULL,'FALSE',1,NULL,3,NULL,NULL,'EXPERT1');
 insert into card values ('CFM_759','Sceriffo di Meccania','CFM_759.png','<b>Rantolo di Morte:</b> se ha almeno 2 Attacco','EPIC','MINION',NULL,'FALSE',1,2,1,NULL,NULL,'GANGS');
 insert into card values ('GVG_106','Riciclobot','GVG_106.png','Ottiene +2/+2 quando un tuo Robot muore.','EPIC','MINION','MECHANICAL','TRUE',1,5,5,NULL,NULL,'GVG');
@@ -134,7 +134,7 @@ insert into card values ('DS1_184','Tracciamento','DS1_184.png','Guarda le prime
 insert into card values ('EX1_244','Vigore Totemico','EX1_244.png','+2 Salute ai tuoi Totem.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,0,NULL,NULL,'CORE');
 insert into card values ('CS2_233','Vortice di Lame','CS2_233.png','Distrugge la tua Arma e infligge danni pari al suo attacco ai servitori nemici.','RARE','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'EXPERT1');
 insert into card values ('GVG_104','Hobgoblin','GVG_104.png','Quando giochi un servitore con 1 Attacco','EPIC','MINION',NULL,'TRUE',2,3,3,NULL,NULL,'GVG');
-insert into card values ('BRM_024','Distruttore Draconide','BRM_024.png','<b>Grido di Battaglia:</b> ottiene +3/+3 se l\'eroe avversario ha Salute pari a 15 o inferiore.','COMMON','MINION','DRAGON','FALSE',6,6,6,'replaceable','BRM','BRM');
+insert into card values ('BRM_024','Distruttore Draconide','BRM_024.png','<b>Grido di Battaglia:</b> ottiene +3/+3 se l\'eroe avversario ha Salute pari a 15 o inferiore.','COMMON','MINION','DRAGON','FALSE',6,6,6,5,'BRM','BRM');
 insert into card values ('FP1_030','Loatheb','FP1_030.png','<b>Grido di Battaglia:</b> nel turno successivo','LEGENDARY','MINION',NULL,'TRUE',5,5,5,NULL,NULL,'NAXX');
 insert into card values ('LOE_053','Djinn degli Zefiri','LOE_053.png','Dopo che hai lanciato una Magia su un altro tuo servitore','EPIC','MINION',NULL,'FALSE',4,6,5,'replaceable','LOE','LOE');
 insert into card values ('GVG_035','Malorne','GVG_035.png','<b>Rantolo di Morte:</b> torna nel tuo mazzo.','LEGENDARY','MINION','BEAST','TRUE',9,7,7,NULL,NULL,'GVG');
@@ -280,7 +280,7 @@ insert into card values ('CFM_754','Armiere Torvo','CFM_754.png','Alla fine del 
 insert into card values ('KAR_712','Illusionista Violacea','KAR_712.png','Il tuo eroe Ã¨ <b>Immune</b> nel tuo turno.','COMMON','MINION',NULL,'FALSE',4,3,3,'replaceable','KARA','KARA');
 insert into card values ('AT_102','Jormungar Catturato','AT_102.png',NULL,'COMMON','MINION','BEAST','FALSE',5,9,7,NULL,NULL,'TGT');
 insert into card values ('GVG_049','Gahz\'rilla','GVG_049.png','Quando subisce danni','LEGENDARY','MINION','BEAST','TRUE',6,9,7,NULL,NULL,'GVG');
-insert into card values ('LOE_113','Alta Marea','LOE_113.png','+2/+2 ai tuoi servitori. Costa (1) in meno per ogni tuo Murloc.','RARE','SPELL',NULL,'FALSE',NULL,NULL,7,'replaceable','LOE','LOE');
+insert into card values ('LOE_113','Alta Marea','LOE_113.png','+2/+2 ai tuoi servitori. Costa (1) in meno per ogni tuo Murloc.','RARE','SPELL',NULL,'FALSE',NULL,NULL,7,3,'LOE','LOE');
 insert into card values ('KAR_037','Rapace Guardiano','KAR_037.png','<b>Grido di Battaglia:</b> ottiene +1/+1 e <b>Provocazione</b> se controlli un <b>Segreto</b>.','RARE','MINION',NULL,'FALSE',3,6,5,'replaceable','KARA','KARA');
 insert into card values ('OG_087','Servo di Yogg-Saron','OG_087.png','<b>Grido di Battaglia:</b> lancia una Magia casuale da 5 o meno Mana su bersagli casuali.','RARE','MINION',NULL,'FALSE',5,4,5,NULL,NULL,'OG');
 insert into card values ('GVG_059','Meccanomazza','GVG_059.png','<b>Grido di Battaglia:</b> fornisce <b>Scudo Divino</b> e <b>Provocazione</b> a un tuo servitore casuale.','EPIC','WEAPON',NULL,'TRUE',2,NULL,3,NULL,NULL,'GVG');
@@ -350,7 +350,7 @@ insert into card values ('EX1_606','Scudo Saldo','EX1_606.png','Fornisce 5 Armat
 insert into card values ('GVG_102','Gnomo Aggiustatutto','GVG_102.png','<b>Grido di Battaglia:</b> ottiene +1/+1 e mette nella tua mano un <b>Gadget</b> se controlli un Robot.','COMMON','MINION',NULL,'TRUE',3,3,3,NULL,NULL,'GVG');
 insert into card values ('OG_303','Strega del Culto','OG_303.png','<b>+1 Danni Magici</b>. Dopo che hai lanciato una Magia','RARE','MINION',NULL,'FALSE',3,2,2,NULL,NULL,'OG');
 insert into card values ('EX1_522','Assassino Paziente','EX1_522.png','<b>FurtivitÃ </b>. Distrugge qualsiasi servitore danneggiato da questo servitore.','EPIC','MINION',NULL,'FALSE',1,1,2,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_105','Cappello da Viaggio','LOE_105.png','+1/+1 e \<b>Rantolo di Morte:</b> mette un Cappello da Viaggio nella tua mano\ a un servitore.','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,'replaceable','LOE','LOE');
+insert into card values ('LOE_105','Cappello da Viaggio','LOE_105.png','+1/+1 e \<b>Rantolo di Morte:</b> mette un Cappello da Viaggio nella tua mano\ a un servitore.','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,2,'LOE','LOE');
 insert into card values ('AT_035','Attacco Sotterraneo','AT_035.png','Mette tre Imboscate nel mazzo dell\'avversario. Quando una viene pescata','EPIC','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'TGT');
 insert into card values ('NEW1_027','Bucaniere Acquanera','NEW1_027.png','Gli altri tuoi Pirati hanno +1/+1.','EPIC','MINION','PIRATE','FALSE',3,3,3,NULL,NULL,'EXPERT1');
 insert into card values ('AT_042','Druida della Fauce','AT_042.png','<b>Scegli:</b> si trasforma e ottiene <b>Carica</b> <b>o</b> +1/+1 e <b>FurtivitÃ </b>.','COMMON','MINION',NULL,'FALSE',2,1,2,NULL,NULL,'TGT');
@@ -372,7 +372,7 @@ insert into card values ('OG_145','Psicobot','OG_145.png','<b>Provocazione</b>. 
 insert into card values ('GVG_094','Alfred','GVG_094.png','Alla fine del turno di ogni giocatore','RARE','MINION}','MECHANICAL','TRUE',1,4,4,NULL,NULL,'GVG');
 insert into card values ('OG_174','Errante Senzavolto','OG_174.png','<b>Provocazione</b>. <b>Grido di Battaglia:</b> copia Attacco e Salute di un tuo servitore.','EPIC','MINION',NULL,'FALSE',1,1,4,NULL,NULL,'OG');
 insert into card values ('CFM_753','Ricettatore Famigerato','CFM_753.png','<b>Grido di Battaglia:</b> +1/+1 ai servitori nella tua mano.','COMMON','MINION',NULL,'FALSE',1,1,2,NULL,NULL,'GANGS');
-insert into card values ('BRM_015','Rivincita','BRM_015.png','Infligge $1 |4(danno','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,'replaceable','BRM','BRM');
+insert into card values ('BRM_015','Rivincita','BRM_015.png','Infligge $1 |4(danno','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,4,'BRM','BRM');
 insert into card values ('OG_173','Sangue dell\'Antico','OG_173.png','Alla fine del tuo turno','EPIC','MINION',NULL,'FALSE',9,9,9,NULL,NULL,'OG');
 insert into card values ('KAR_004','Trucco Felino','KAR_004.png','<b>Segreto:</b> dopo che l\'avversario ha lanciato una Magia','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,'replaceable','KARA','KARA');
 insert into card values ('NEW1_007','Pioggia di Stelle','NEW1_007.png','<b>Scegli:</b> infligge $5 danni a un servitore <b>o</b> $2 danni ai servitori nemici.','RARE','SPELL',NULL,'FALSE',NULL,NULL,5,NULL,NULL,'EXPERT1');
@@ -407,7 +407,7 @@ insert into card values ('EX1_561','Alexstrasza','EX1_561.png','<b>Grido di Batt
 insert into card values ('AT_030','Valoroso dei Reietti','AT_030.png','<b>Combo:</b> infligge 1 danno.','COMMON','MINION',NULL,'FALSE',3,2,2,NULL,NULL,'TGT');
 insert into card values ('KAR_006','Cacciatrice Mascherata','KAR_006.png','I tuoi <b>Segreti</b> costano (0).','COMMON','MINION',NULL,'FALSE',3,4,3,'replaceable','KARA','KARA');
 insert into card values ('CFM_120','Signora delle Pozioni','CFM_120.png','<b>Rantolo di Morte:</b> rigenera 4 Salute a entrambi gli eroi.','COMMON','MINION',NULL,'FALSE',2,2,1,NULL,NULL,'GANGS');
-insert into card values ('BRM_033','Tecnica Ala Nera','BRM_033.png','<b>Grido di Battaglia:</b> ottiene +1/+1 se hai un Drago in mano. ','COMMON','MINION',NULL,'FALSE',2,4,3,'replaceable','BRM','BRM');
+insert into card values ('BRM_033','Tecnica Ala Nera','BRM_033.png','<b>Grido di Battaglia:</b> ottiene +1/+1 se hai un Drago in mano. ','COMMON','MINION',NULL,'FALSE',2,4,3,2,'BRM','BRM');
 insert into card values ('CS2_022','Metamorfosi','CS2_022.png','Trasforma un servitore in una Pecora 1/1.','FREE','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'CORE');
 insert into card values ('OG_220','Malkorok','OG_220.png','<b>Grido di Battaglia:</b> equipaggia un\'Arma casuale.','LEGENDARY','MINION',NULL,'FALSE',6,5,7,NULL,NULL,'OG');
 insert into card values ('AT_013','Parola del Potere: Gloria','AT_013.png','Seleziona un servitore. Quando attacca','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'TGT');
@@ -476,7 +476,7 @@ insert into card values ('EX1_317','Percepisci Demoni','EX1_317.png','Pesca due 
 insert into card values ('CS2_179','Guardiano di Sen\'jin','CS2_179.png','<b>Provocazione</b>','FREE','MINION',NULL,'FALSE',3,5,4,NULL,NULL,'CORE');
 insert into card values ('FP1_026','Aggressore di Anub\'ar','FP1_026.png','<b>Rantolo di Morte:</b> fa tornare un tuo servitore casuale nella tua mano.','COMMON','MINION',NULL,'TRUE',5,5,4,NULL,NULL,'NAXX');
 insert into card values ('NEW1_023','Drago Fatato','NEW1_023.png','Non puÃ² essere il bersaglio di Magie o Poteri Eroe.','COMMON','MINION','DRAGON','FALSE',3,2,2,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_018','Trogg delle Gallerie','LOE_018.png','Quando attivi <b>Sovraccarico</b>','COMMON','MINION',NULL,'FALSE',1,3,1,'replaceable','LOE','LOE');
+insert into card values ('LOE_018','Trogg delle Gallerie','LOE_018.png','Quando attivi <b>Sovraccarico</b>','COMMON','MINION',NULL,'FALSE',1,3,1,2,'LOE','LOE');
 insert into card values ('KAR_094','Forchetta Mortale','KAR_094.png','<b>Rantolo di Morte:</b> mette nella tua mano un\'Arma 3/2.','COMMON','MINION',NULL,'FALSE',3,2,3,'replaceable','KARA','KARA');
 insert into card values ('GVG_061','Adunata Militare','GVG_061.png','Evoca tre Reclute Mano d\'Argento 1/1. Equipaggia un\'Arma 1/4.','RARE','SPELL',NULL,'TRUE',NULL,NULL,3,NULL,NULL,'GVG');
 insert into card values ('OG_151','Tentacolo di N\'zoth','OG_151.png','<b>Rantolo di Morte:</b> infligge 1 danno a TUTTI i servitori.','COMMON','MINION',NULL,'FALSE',1,1,1,NULL,NULL,'OG');
@@ -495,7 +495,7 @@ insert into card values ('NEW1_030','Alamorte','NEW1_030.png','<b>Grido di Batta
 insert into card values ('CFM_662','Pozione di Dragonfuoco','CFM_662.png','Infligge $5 danni a TUTTI i servitori non Draghi.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,6,NULL,NULL,'GANGS');
 insert into card values ('NEW1_011','Ã‰lite Kor\'kron','NEW1_011.png','<b>Carica</b>','COMMON','MINION',NULL,'FALSE',4,3,4,NULL,NULL,'CORE');
 insert into card values ('OG_042','Y\'shaarj','OG_042.png','Alla fine del tuo turno','LEGENDARY','MINION',NULL,'FALSE',10,10,10,NULL,NULL,'OG');
-insert into card values ('BRM_030','Nefarian','BRM_030.png','<b>Grido di Battaglia:</b> mette nella tua mano 2 Magie casuali della classe dell\'avversario.','LEGENDARY','MINION}','DRAGON','FALSE',8,8,9,'replaceable','BRM','BRM');
+insert into card values ('BRM_030','Nefarian','BRM_030.png','<b>Grido di Battaglia:</b> mette nella tua mano 2 Magie casuali della classe dell\'avversario.','LEGENDARY','MINION}','DRAGON','FALSE',8,8,9,5,'BRM','BRM');
 insert into card values ('EX1_319','Imp delle Fiamme','EX1_319.png','<b>Grido di Battaglia:</b> infligge 3 danni al tuo eroe.','COMMON','MINION','DEMON','FALSE',3,2,1,NULL,NULL,'EXPERT1');
 insert into card values ('CFM_308','Kun il Re Dimenticato','CFM_308.png','<b>Scegli:</b> fornisce 10 Armatura <b>o</b> ricarica i tuoi Cristalli di Mana.','LEGENDARY','MINION',NULL,'FALSE',7,7,10,NULL,NULL,'GANGS');
 insert into card values ('GVG_046','Re delle Bestie','GVG_046.png','<b>Provocazione</b>. <b>Grido di Battaglia:</b> ottiene +1 Attacco per ogni altra tua Bestia.','RARE','MINION','BEAST','TRUE',2,6,5,NULL,NULL,'GVG');
@@ -536,7 +536,7 @@ insert into card values ('OG_081','Frantumazione','OG_081.png','Distrugge un ser
 insert into card values ('CFM_717','Artigli di Giada','CFM_717.png','<b>Grido di Battaglia:</b> evoca un <b>Golem di Giada</b> {0}. <b>Sovraccarico:</b> (1)','RARE','WEAPON',NULL,'FALSE',2,NULL,2,NULL,NULL,'GANGS');
 insert into card values ('AT_038','Recluta di Darnassus','AT_038.png','<b>Grido di Battaglia:</b> fornisce 1 Cristallo di Mana vuoto. <b>Rantolo di Morte:</b> distrugge un tuo Cristallo di Mana.','RARE','MINION',NULL,'FALSE',2,3,2,NULL,NULL,'TGT');
 insert into card values ('CFM_619','Alchimista della Kabala','CFM_619.png','<b>Grido di Battaglia:</b> mette nella tua mano una Pozione casuale.','COMMON','MINION',NULL,'FALSE',3,3,4,NULL,NULL,'GANGS');
-insert into card values ('BRM_029','Rend Manonera','BRM_029.png','<b>Grido di Battaglia:</b> distrugge un servitore <b>Leggendario</b> se hai un Drago in mano.','LEGENDARY','MINION',NULL,'FALSE',8,4,7,'replaceable','BRM','BRM');
+insert into card values ('BRM_029','Rend Manonera','BRM_029.png','<b>Grido di Battaglia:</b> distrugge un servitore <b>Leggendario</b> se hai un Drago in mano.','LEGENDARY','MINION',NULL,'FALSE',8,4,7,3,'BRM','BRM');
 insert into card values ('GVG_008','Bomba Fotonica','GVG_008.png','Infligge danni a TUTTI i servitori pari al loro attacco.','EPIC','SPELL',NULL,'TRUE',NULL,NULL,6,NULL,NULL,'GVG');
 insert into card values ('CFM_672','Dama Goya','CFM_672.png','<b>Grido di Battaglia:</b> seleziona un tuo servitore. Lo scambia con un servitore casuale nel tuo mazzo.','LEGENDARY','MINION',NULL,'FALSE',4,3,6,NULL,NULL,'GANGS');
 insert into card values ('OG_179','Pipistrello del Fuoco','OG_179.png','<b>Rantolo di Morte:</b> infligge 1 danno a un nemico casuale.','COMMON','MINION','BEAST','FALSE',2,1,1,NULL,NULL,'OG');
@@ -572,7 +572,7 @@ insert into card values ('OG_310','Custode di Borgoscuro','OG_310.png','Quando v
 insert into card values ('CFM_816','Leproratto Sensei','CFM_816.png','<b>Grido di Battaglia:</b> +2/+2 a una tua Bestia.','RARE','MINION',NULL,'FALSE',4,5,5,NULL,NULL,'GANGS');
 insert into card values ('CS2_064','Infernale del Terrore','CS2_064.png','<b>Grido di Battaglia:</b> infligge 1 danno a TUTTI gli altri personaggi.','COMMON','MINION','DEMON','FALSE',6,6,6,NULL,NULL,'CORE');
 insert into card values ('GVG_121','Gigante Meccanico','GVG_121.png','Costa (1) in meno per ogni carta nella mano dell\'avversario.','EPIC','MINION','MECHANICAL','TRUE',8,8,12,NULL,NULL,'GVG');
-insert into card values ('BRM_016','Lanciatore d\'Asce','BRM_016.png','Quando subisce danni','COMMON','MINION',NULL,'FALSE',2,5,4,'replaceable','BRM','BRM');
+insert into card values ('BRM_016','Lanciatore d\'Asce','BRM_016.png','Quando subisce danni','COMMON','MINION',NULL,'FALSE',2,5,4,2,'BRM','BRM');
 insert into card values ('CFM_313','Ricerca Ancestrale','CFM_313.png','<b>Rinvieni</b> una carta con <b>Sovraccarico</b>. <b>Sovraccarico:</b> (1)','EPIC','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'GANGS');
 insert into card values ('GVG_063','Bolvar Domadraghi','GVG_063.png','FinchÃ© resta nella tua mano','LEGENDARY','MINION',NULL,'TRUE',1,7,5,NULL,NULL,'GVG');
 insert into card values ('AT_026','Guardia dell\'Ira','AT_026.png','Quando subisce danni','COMMON','MINION','DEMON','FALSE',4,3,2,NULL,NULL,'TGT');
@@ -631,7 +631,7 @@ insert into card values ('GVG_051','Robot da Guerra','GVG_051.png','<b>Rabbia:</
 insert into card values ('EX1_274','Arcanista Etereo','EX1_274.png','Ottiene +2/+2 se controlli un <b>Segreto</b> alla fine del tuo turno.','RARE','MINION',NULL,'FALSE',3,3,4,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_238','Dardo Fulminante','EX1_238.png','Infligge $3 danni. <b>Sovraccarico:</b> (1)','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'EXPERT1');
 insert into card values ('AT_009','Rhonin','AT_009.png','<b>Rantolo di Morte:</b> mette nella tua mano tre Missili Arcani.','LEGENDARY','MINION',NULL,'FALSE',7,7,8,NULL,NULL,'TGT');
-insert into card values ('LOE_077','Brann Barbabronzea','LOE_077.png','Le tue carte attivano due volte il proprio <b>Grido di Battaglia</b>.','LEGENDARY','MINION',NULL,'FALSE',2,4,3,'replaceable','LOE','LOE');
+insert into card values ('LOE_077','Brann Barbabronzea','LOE_077.png','Le tue carte attivano due volte il proprio <b>Grido di Battaglia</b>.','LEGENDARY','MINION',NULL,'FALSE',2,4,3,2,'LOE','LOE');
 insert into card values ('KAR_077','Portale: Lunargenta','KAR_077.png','+2/+2 a un servitore. Evoca un servitore casuale da 2 Mana.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,4,'replaceable','KARA','KARA');
 insert into card values ('CFM_321','Delatore Famigerato','CFM_321.png','<b>Grido di Battaglia: Rinvieni</b> una carta del Cacciatore','RARE','MINION',NULL,'FALSE',1,1,2,NULL,NULL,'GANGS');
 insert into card values ('EX1_557','Nat Pagle','EX1_557.png','All\'inizio del tuo turno','LEGENDARY','MINION',NULL,'FALSE',0,4,2,NULL,NULL,'EXPERT1');
@@ -720,7 +720,7 @@ insert into card values ('CS2_038','Spirito Ancestrale','CS2_038.png','Fornisce 
 insert into card values ('AT_050','Martello Folgorante','AT_050.png','<b>Rantolo di Morte:</b> il tuo Potere Eroe diventa \Infligge 2 danni\.','EPIC','WEAPON',NULL,'FALSE',2,NULL,4,NULL,NULL,'TGT');
 insert into card values ('CFM_603','Pozione della Follia','CFM_603.png','Prendi il controllo di un servitore nemico con Attacco pari a 2 o inferiore fino alla fine del turno.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'GANGS');
 insert into card values ('LOE_111','Male Dissepolto','LOE_111.png','Infligge $3 danni a TUTTI i servitori. Metti questa carta nel mazzo dell\'avversario.','RARE','SPELL}',NULL,'FALSE',NULL,NULL,5,'replaceable','LOE','LOE');
-insert into card values ('LOE_038','Strega di Mare Naga','LOE_038.png','Le tue carte costano (5).','EPIC','MINION',NULL,'FALSE',5,5,5,'replaceable','LOE','LOE');
+insert into card values ('LOE_038','Strega di Mare Naga','LOE_038.png','Le tue carte costano (5).','EPIC','MINION',NULL,'FALSE',5,5,5,3,'LOE','LOE');
 insert into card values ('AT_118','Gran Crociata','AT_118.png','<b>Grido di Battaglia:</b> mette nella tua mano una carta casuale del Paladino.','EPIC','MINION',NULL,'FALSE',5,5,6,NULL,NULL,'TGT');
 insert into card values ('LOE_073','Gigantosauro Fossile','LOE_073.png','<b>Grido di Battaglia:</b> ottiene <b>Provocazione</b> se controlli una Bestia.','COMMON','MINION',NULL,'FALSE',8,8,8,'replaceable','LOE','LOE');
 insert into card values ('OG_282','Assassino di C\'thun','OG_282.png','<b>Grido di Battaglia:</b> distrugge un servitore e aggiunge il suo Attacco e la sua Salute al tuo C\'thun <i>dovunque sia</i>.','EPIC','MINION',NULL,'FALSE',4,4,9,NULL,NULL,'OG');
@@ -731,12 +731,12 @@ insert into card values ('OG_051','Antico Proibito','OG_051.png','<b>Grido di Ba
 insert into card values ('CFM_334','Cassa Contrabbandata','CFM_334.png','+2/+2 a una Bestia casuale nella tua mano.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'GANGS');
 insert into card values ('OG_309','Principessa Huhuran','OG_309.png','<b>Grido di Battaglia:</b> attiva il <b>Rantolo di Morte</b> di un tuo servitore.','LEGENDARY','MINION','BEAST','FALSE',6,5,5,NULL,NULL,'OG');
 insert into card values ('FP1_014','Stalagg','FP1_014.png','<b>Rantolo di Morte:</b> se anche Feugen Ã¨ morto in questa partita','LEGENDARY','MINION',NULL,'TRUE',7,4,5,NULL,NULL,'NAXX');
-insert into card values ('BRM_019','Cliente Torvo','BRM_019.png','Quando subisce danni e sopravvive','RARE','MINION',NULL,'FALSE',3,3,5,'replaceable','BRM','BRM');
+insert into card values ('BRM_019','Cliente Torvo','BRM_019.png','Quando subisce danni e sopravvive','RARE','MINION',NULL,'FALSE',3,3,5,1,'BRM','BRM');
 insert into card values ('EX1_002','Cavaliere Nero','EX1_002.png','<b>Grido di Battaglia:</b> distrugge un servitore nemico con <b>Provocazione</b>.','LEGENDARY','MINION',NULL,'FALSE',4,5,6,NULL,NULL,'EXPERT1');
 insert into card values ('CFM_067','Guaritore Hozen','CFM_067.png','<b>Grido di Battaglia:</b> rigenera la Salute di un servitore al massimo.','COMMON','MINION',NULL,'FALSE',2,6,4,NULL,NULL,'GANGS');
 insert into card values ('CFM_687','Tatuatrice Solia','CFM_687.png','<b>Grido di Battaglia:</b> se il tuo mazzo ha attualmente una sola copia per carta','LEGENDARY','MINION',NULL,'FALSE',5,5,7,NULL,NULL,'GANGS');
 insert into card values ('GVG_070','Lupo di Mare','GVG_070.png',NULL,'COMMON','MINION','PIRATE','TRUE',7,4,5,NULL,NULL,'GVG');
-insert into card values ('LOE_046','Rospo Gigante','LOE_046.png','<b>Rantolo di Morte:</b> infligge 1 danno a un nemico casuale.','COMMON','MINION','BEAST','FALSE',3,2,2,'replaceable','LOE','LOE');
+insert into card values ('LOE_046','Rospo Gigante','LOE_046.png','<b>Rantolo di Morte:</b> infligge 1 danno a un nemico casuale.','COMMON','MINION','BEAST','FALSE',3,2,2,3,'LOE','LOE');
 insert into card values ('EX1_046','Nano Ferroscuro','EX1_046.png','<b>Grido di Battaglia:</b> +2 Attacco a un servitore per questo turno.','COMMON','MINION',NULL,'FALSE',4,4,4,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_164','Nutrizione','EX1_164.png','<b>Scegli:</b> fornisce 2 Cristalli di Mana <b>o</b> pesca 3 carte.','RARE','SPELL',NULL,'FALSE',NULL,NULL,5,NULL,NULL,'EXPERT1');
 insert into card values ('CFM_699','Diavolo di Mare','CFM_699.png','<b>Grido di Battaglia:</b> il prossimo Murloc che giochi in questo turno costa Salute invece di Mana.','RARE','MINION','MURLOC','FALSE',4,2,4,NULL,NULL,'GANGS');
@@ -766,7 +766,7 @@ insert into card values ('AT_083','Cavaliere di Dragofalco','AT_083.png','<b>Isp
 insert into card values ('EX1_341','Pozzo di Luce','EX1_341.png','All\'inizio del tuo turno','RARE','MINION',NULL,'FALSE',0,5,2,NULL,NULL,'EXPERT1');
 insert into card values ('AT_085','Ancella del Lago','AT_085.png','Il tuo Potere Eroe costa (1).','COMMON','MINION',NULL,'FALSE',2,6,4,NULL,NULL,'TGT');
 insert into card values ('CS2_196','Cacciatrice Lamaspina','CS2_196.png','<b>Grido di Battaglia:</b> evoca un Cinghiale 1/1.','COMMON','MINION',NULL,'FALSE',2,3,3,NULL,NULL,'CORE');
-insert into card values ('LOE_021','Trappola di Dardi','LOE_021.png','<b>Segreto:</b> dopo che l\'avversario usa il suo Potere Eroe','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,'replaceable','LOE','LOE');
+insert into card values ('LOE_021','Trappola di Dardi','LOE_021.png','<b>Segreto:</b> dopo che l\'avversario usa il suo Potere Eroe','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,2,'LOE','LOE');
 insert into card values ('CS2_039','Furia del Vento','CS2_039.png','Fornisce <b>Furia del Vento</b> a un servitore.','FREE','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'CORE');
 insert into card values ('CFM_637','Sghigno il Pirata','CFM_637.png','<b>Carica</b>. Dopo che giochi un Pirata','LEGENDARY','MINION','PIRATE','FALSE',1,1,1,NULL,NULL,'GANGS');
 insert into card values ('OG_207','Evocatore Senzavolto','OG_207.png','<b>Grido di Battaglia:</b> evoca un servitore casuale da 3 Mana.','COMMON','MINION',NULL,'FALSE',5,5,6,NULL,NULL,'OG');
@@ -799,7 +799,7 @@ insert into card values ('GVG_098','Fante di Gnomeregan','GVG_098.png','<b>Caric
 insert into card values ('CFM_811','Visioni Lunari','CFM_811.png','Pesca 2 carte. I servitori pescati costano (2) in meno.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,5,NULL,NULL,'GANGS');
 insert into card values ('FP1_018','Duplicazione','FP1_018.png','<b>Segreto:</b> quando un tuo servitore muore','COMMON','SPELL',NULL,'TRUE',NULL,NULL,3,NULL,NULL,'NAXX');
 insert into card values ('EX1_166','Custode del Bosco','EX1_166.png','<b>Scegli:</b> infligge 2 danni <b>o</b> <b>Silenzia</b> un servitore.','RARE','MINION',NULL,'FALSE',2,2,4,NULL,NULL,'EXPERT1');
-insert into card values ('BRM_008','Ferroscuro Furtivo','BRM_008.png','<b>Grido di Battaglia:</b> infligge 2 danni ai servitori nemici non danneggiati.','RARE','MINION',NULL,'FALSE',4,3,5,'replaceable','BRM','BRM');
+insert into card values ('BRM_008','Ferroscuro Furtivo','BRM_008.png','<b>Grido di Battaglia:</b> infligge 2 danni ai servitori nemici non danneggiati.','RARE','MINION',NULL,'FALSE',4,3,5,4,'BRM','BRM');
 insert into card values ('CFM_853','Trafficante Famigerata','CFM_853.png','<b>Grido di Battaglia:</b> +1/+1 a un servitore casuale nella tua mano.','COMMON','MINION',NULL,'FALSE',2,4,3,NULL,NULL,'GANGS');
 insert into card values ('CS2_227','Mercenario Goblin','CS2_227.png','I tuoi servitori costano (3) in piÃ¹.','COMMON','MINION',NULL,'FALSE',7,6,5,NULL,NULL,'EXPERT1');
 insert into card values ('NEW1_012','Dragone di Mana','NEW1_012.png','Ottiene +1 Attacco quando lanci una Magia.','COMMON','MINION',NULL,'FALSE',1,3,1,NULL,NULL,'EXPERT1');
@@ -815,7 +815,7 @@ insert into card values ('EX1_570','Morso','EX1_570.png','+4 Attacco al tuo eroe
 insert into card values ('EX1_134','Agente dell\'IR:7','EX1_134.png','<b>Combo:</b> infligge 2 danni.','RARE','MINION',NULL,'FALSE',3,3,3,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_029','Gnomo Contaminato','EX1_029.png','<b>Rantolo di Morte:</b> infligge 2 danni all\'eroe nemico.','COMMON','MINION',NULL,'FALSE',1,1,1,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_158','Anima della Foresta','EX1_158.png','Fornisce \<b>Rantolo di Morte:</b> evoca un Treant 2/2\ ai tuoi servitori.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'EXPERT1');
-insert into card values ('BRM_006','Capobanda Imp','BRM_006.png','Quando subisce danni','COMMON','MINION','DEMON','FALSE',2,4,3,'replaceable','BRM','BRM');
+insert into card values ('BRM_006','Capobanda Imp','BRM_006.png','Quando subisce danni','COMMON','MINION','DEMON','FALSE',2,4,3,2,'BRM','BRM');
 insert into card values ('AT_095','Cavaliere Silente','AT_095.png','<b>FurtivitÃ </b>. <b>Scudo Divino</b>.','COMMON','MINION',NULL,'FALSE',2,2,3,NULL,NULL,'TGT');
 insert into card values ('CS2_053','Sguardo Lontano','CS2_053.png','Pesca una carta. La carta pescata costa (3) in meno.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_045','Guardiano Antico','EX1_045.png','Non puÃ² attaccare.','RARE','MINION',NULL,'FALSE',4,5,2,NULL,NULL,'EXPERT1');
@@ -874,7 +874,7 @@ insert into card values ('CS2_221','Fabbro Astioso','CS2_221.png','<b>Rabbia:</b
 insert into card values ('CFM_905','Nuove Reclute','CFM_905.png','Pesca tre servitori casuali da 1 Mana dal tuo mazzo.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'GANGS');
 insert into card values ('GVG_023','Robobarbiere Goblin','GVG_023.png','<b>Grido di Battaglia:</b> +1 Attacco alla tua Arma.','COMMON','MINION','MECHANICAL','TRUE',3,2,2,NULL,NULL,'GVG');
 insert into card values ('EX1_246','Maleficio','EX1_246.png','Trasforma un servitore in una Rana 0/1 con <b>Provocazione</b>.','FREE','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'CORE');
-insert into card values ('LOE_002','Torcia Abbandonata','LOE_002.png','Infligge $3 danni. Mette nel tuo mazzo una Torcia Divampante che infligge 6 danni.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,3,'replaceable','LOE','LOE');
+insert into card values ('LOE_002','Torcia Abbandonata','LOE_002.png','Infligge $3 danni. Mette nel tuo mazzo una Torcia Divampante che infligge 6 danni.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,3,2,'LOE','LOE');
 insert into card values ('OG_086','Fiamma Proibita','OG_086.png','Consuma tutto il tuo Mana e infligge danni a un servitore pari al Mana cosÃ¬ speso.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,0,NULL,NULL,'OG');
 insert into card values ('AT_023','Distruttore del Vuoto','AT_023.png','<b>Ispirazione:</b> distrugge un servitore casuale di ogni giocatore.','RARE','MINION','DEMON','FALSE',5,4,6,NULL,NULL,'TGT');
 insert into card values ('NEW1_021','Vate della Rovina','NEW1_021.png','All\'inizio del tuo turno','EPIC','MINION',NULL,'FALSE',0,7,2,NULL,NULL,'EXPERT1');
@@ -904,7 +904,7 @@ insert into card values ('NEW1_014','Maestra di Inganni','NEW1_014.png','<b>Grid
 insert into card values ('EX1_129','Ventaglio di Lame','EX1_129.png','Infligge $1 |4(danno','COMMON','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'CORE');
 insert into card values ('EX1_012','Thalnos','EX1_012.png','<b>+1 Danni Magici</b>. <b>Rantolo di Morte:</b> pesca una carta.','LEGENDARY','MINION',NULL,'FALSE',1,1,2,NULL,NULL,'EXPERT1');
 insert into card values ('GVG_091','Nullificatore X-21','GVG_091.png','<b>Provocazione</b>. Non puÃ² essere il bersaglio di Magie o Poteri Eroe.','RARE','MINION','MECHANICAL','TRUE',2,5,4,NULL,NULL,'GVG');
-insert into card values ('BRM_002','Destafiamme','BRM_002.png','Dopo che hai lanciato una Magia','RARE','MINION',NULL,'FALSE',2,4,3,'replaceable','BRM','BRM');
+insert into card values ('BRM_002','Destafiamme','BRM_002.png','Dopo che hai lanciato una Magia','RARE','MINION',NULL,'FALSE',2,4,3,4,'BRM','BRM');
 insert into card values ('GVG_038','Crepitio','GVG_038.png','Infligge da $3 a $6 danni. <b>Sovraccarico:</b> (1)','COMMON','SPELL',NULL,'TRUE',NULL,NULL,2,NULL,NULL,'GVG');
 insert into card values ('EX1_594','Vaporizzazione','EX1_594.png','<b>Segreto:</b> quando un servitore attacca il tuo eroe','RARE','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'EXPERT1');
 insert into card values ('AT_112','Maestro Giostrante','AT_112.png','<b>Grido di Battaglia:</b> ottiene <b>Provocazione</b> e <b>Scudo Divino</b> se','RARE','MINION',NULL,'FALSE',5,6,6,NULL,NULL,'TGT');
@@ -960,7 +960,7 @@ insert into card values ('GVG_054','Maglio degli Ogre','GVG_054.png','Probabilit
 insert into card values ('GVG_076','Pecora Esplosiva','GVG_076.png','<b>Rantolo di Morte:</b> infligge 2 danni a TUTTI i servitori.','COMMON','MINION','MECHANICAL','TRUE',1,1,2,NULL,NULL,'GVG');
 insert into card values ('OG_149','Ghoul Famelico','OG_149.png','<b>Grido di Battaglia:</b> infligge 1 danno a TUTTI gli altri servitori.','COMMON','MINION',NULL,'FALSE',3,3,3,NULL,NULL,'OG');
 insert into card values ('EX1_620','Gigante di Magma','EX1_620.png','Costa (1) in meno per ogni danno subito dal tuo eroe.','EPIC','MINION',NULL,'FALSE',8,8,25,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_011','Reno Jackson','LOE_011.png','<b>Grido di Battaglia:</b> se il tuo mazzo ha attualmente una sola copia per carta','LEGENDARY','MINION',NULL,'FALSE',4,6,6,'replaceable','LOE','LOE');
+insert into card values ('LOE_011','Reno Jackson','LOE_011.png','<b>Grido di Battaglia:</b> se il tuo mazzo ha attualmente una sola copia per carta','LEGENDARY','MINION',NULL,'FALSE',4,6,6,1,'LOE','LOE');
 insert into card values ('GVG_058','Minibot Scudato','GVG_058.png','<b>Scudo Divino</b>','COMMON','MINION','MECHANICAL','TRUE',2,2,2,NULL,NULL,'GVG');
 insert into card values ('OG_161','Veggente Corrotto','OG_161.png','<b>Grido di Battaglia:</b> infligge 2 danni a TUTTI i servitori non Murloc.','RARE','MINION','MURLOC','FALSE',2,3,6,NULL,NULL,'OG');
 insert into card values ('NEW1_024','Capitano Pelleverde','NEW1_024.png','<b>Grido di Battaglia:</b> +1/+1 alla tua Arma.','LEGENDARY','MINION','PIRATE','FALSE',5,4,5,NULL,NULL,'EXPERT1');
@@ -1021,12 +1021,12 @@ insert into card values ('EX1_608','Novizia Occultista','EX1_608.png','Le tue Ma
 insert into card values ('CFM_020','Raza l\'Incatenato','CFM_020.png','<b>Grido di Battaglia:</b> se il tuo mazzo ha attualmente una sola copia per carta','LEGENDARY','MINION',NULL,'FALSE',5,5,5,NULL,NULL,'GANGS');
 insert into card values ('EX1_571','Forza della Natura','EX1_571.png','Evoca tre Treant 2/2.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,5,NULL,NULL,'EXPERT1');
 insert into card values ('AT_086','Sabotatore','AT_086.png','<b>Grido di Battaglia:</b> nel turno successivo','RARE','MINION',NULL,'FALSE',4,3,3,NULL,NULL,'TGT');
-insert into card values ('BRM_007','Alleati Segreti','BRM_007.png','Seleziona un servitore. Ne mette tre copie nel tuo mazzo.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,'replaceable','BRM','BRM');
+insert into card values ('BRM_007','Alleati Segreti','BRM_007.png','Seleziona un servitore. Ne mette tre copie nel tuo mazzo.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,1,'BRM','BRM');
 insert into card values ('CFM_631','Tirapugni d\'Ottone','CFM_631.png','Dopo che il tuo eroe attacca','EPIC','WEAPON',NULL,'FALSE',2,NULL,4,NULL,NULL,'GANGS');
 insert into card values ('FP1_016','Anima Lamentosa','FP1_016.png','<b>Grido di Battaglia: Silenzia</b> gli altri tuoi servitori.','RARE','MINION',NULL,'TRUE',3,5,4,NULL,NULL,'NAXX');
 insert into card values ('CS2_075','Assalto Funesto','CS2_075.png','Infligge $3 danni all\'eroe nemico.','FREE','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'CORE');
 insert into card values ('OG_080','Xaril','OG_080.png','<b>Grido di Battaglia</b> e <b>Rantolo di Morte:</b> mette nella tua mano una Tossina casuale.','LEGENDARY','MINION',NULL,'FALSE',3,2,4,NULL,NULL,'OG');
-insert into card values ('LOE_119','Armatura Fantasma','LOE_119.png','Il tuo eroe puÃ² subire al massimo 1 danno alla volta.','RARE','MINION',NULL,'FALSE',4,4,4,'replaceable','LOE','LOE');
+insert into card values ('LOE_119','Armatura Fantasma','LOE_119.png','Il tuo eroe puÃ² subire al massimo 1 danno alla volta.','RARE','MINION',NULL,'FALSE',4,4,4,2,'LOE','LOE');
 insert into card values ('GVG_082','Gnomo Meccanico','GVG_082.png','<b>Rantolo di Morte:</b> mette nella tua mano un <b>Gadget</b>.','COMMON','MINION','MECHANICAL','TRUE',2,1,1,NULL,NULL,'GVG');
 insert into card values ('GVG_064','Pestapaludi','GVG_064.png',NULL,'COMMON','MINION','MURLOC','TRUE',3,2,2,NULL,NULL,'GVG');
 insert into card values ('CS2_026','Esplosione Gelida','CS2_026.png','<b>Congela</b> i servitori nemici.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'CORE');
@@ -1042,7 +1042,7 @@ insert into card values ('OG_176','Assalto dell\'Ombra','OG_176.png','Infligge $
 insert into card values ('NEW1_010','Al\'Akir','NEW1_010.png','<b>Furia del Vento</b>. <b>Carica</b>. <b>Scudo Divino</b>. <b>Provocazione</b>','LEGENDARY','MINION',NULL,'FALSE',3,5,8,NULL,NULL,'EXPERT1');
 insert into card values ('OG_195','Fuochi Fatui degli Antichi','OG_195.png','<b>Scegli:</b> evoca sette Fuochi Fatui <b>o</b> +2/+2 ai tuoi servitori.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,7,NULL,NULL,'OG');
 insert into card values ('GVG_095','Geniere Goblin','GVG_095.png','Ha +4 Attacco finchÃ© l\'avversario ha 6 o piÃ¹ carte in mano.','RARE','MINION',NULL,'TRUE',2,4,3,NULL,NULL,'GVG');
-insert into card values ('LOE_006','Curatore del Museo','LOE_006.png','<b>Grido di Battaglia: Rinvieni</b> una carta con <b>Rantolo di Morte</b>.','COMMON','MINION',NULL,'FALSE',1,2,2,'replaceable','LOE','LOE');
+insert into card values ('LOE_006','Curatore del Museo','LOE_006.png','<b>Grido di Battaglia: Rinvieni</b> una carta con <b>Rantolo di Morte</b>.','COMMON','MINION',NULL,'FALSE',1,2,2,4,'LOE','LOE');
 insert into card values ('EX1_617','Tiro Mortale','EX1_617.png','Distrugge un servitore nemico casuale.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'EXPERT1');
 insert into card values ('OG_083','Piromante del Crepuscolo','OG_083.png','<b>Grido di Battaglia:</b> infligge 1 danno ai servitori nemici.','COMMON','MINION',NULL,'FALSE',2,2,3,NULL,NULL,'OG');
 insert into card values ('EX1_614','Illidan Grantempesta','EX1_614.png','Quando giochi una carta','LEGENDARY','MINION','DEMON','FALSE',7,5,6,NULL,NULL,'EXPERT1');
@@ -1087,7 +1087,7 @@ insert into card values ('CFM_335','Kodo Spietato','CFM_335.png','<b>Grido di Ba
 insert into card values ('KAR_041','Mostro del Fossato','KAR_041.png','<b>Grido di Battaglia:</b> distrugge un servitore. <b>Rantolo di Morte:</b> rievoca quel servitore.','RARE','MINION',NULL,'FALSE',3,3,6,'replaceable','KARA','KARA');
 insert into card values ('GVG_089','Illuminatrice','GVG_089.png','Se controlli un <b>Segreto</b> alla fine del tuo turno','RARE','MINION',NULL,'TRUE',2,4,3,NULL,NULL,'GVG');
 insert into card values ('EX1_093','Difensore di Argus','EX1_093.png','<b>Grido di Battaglia:</b> +1/+1 e <b>Provocazione</b> ai servitori adiacenti.','RARE','MINION',NULL,'FALSE',2,3,4,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_003','Evocatore Etereo','LOE_003.png','<b>Grido di Battaglia: Rinvieni</b> una Magia.','COMMON','MINION',NULL,'FALSE',6,3,5,'replaceable','LOE','LOE');
+insert into card values ('LOE_003','Evocatore Etereo','LOE_003.png','<b>Grido di Battaglia: Rinvieni</b> una Magia.','COMMON','MINION',NULL,'FALSE',6,3,5,2,'LOE','LOE');
 insert into card values ('AT_018','Espiatrice Paletress','AT_018.png','<b>Ispirazione:</b> evoca un servitore <b>Leggendario</b> casuale.','LEGENDARY','MINION',NULL,'FALSE',5,4,7,NULL,NULL,'TGT');
 insert into card values ('LOE_016','Elementale Instabile','LOE_016.png','Dopo che giochi un servitore con <b>Grido di Battaglia</b>','COMMON','MINION',NULL,'FALSE',2,6,4,'replaceable','LOE','LOE');
 insert into card values ('FP1_007','Uovo di Nerubiano','FP1_007.png','<b>Rantolo di Morte:</b> evoca un Nerubiano 4/4.','RARE','MINION',NULL,'TRUE',0,2,2,NULL,NULL,'NAXX');
@@ -1190,14 +1190,14 @@ insert into card values ('CS2_233','Vortice di Lame','CS2_233.png','Distrugge la
 insert into card values ('GVG_104','Hobgoblin','GVG_104.png','Quando giochi un servitore con 1 Attacco','EPIC','MINION',NULL,'TRUE',2,3,3,NULL,NULL,'GVG');
 insert into card values ('BRM_024','Distruttore Draconide','BRM_024.png','<b>Grido di Battaglia:</b> ottiene +3/+3 se l\'eroe avversario ha Salute pari a 15 o inferiore.','COMMON','MINION','DRAGON','FALSE',6,6,6,'replaceable','BRM','BRM');
 insert into card values ('FP1_030','Loatheb','FP1_030.png','<b>Grido di Battaglia:</b> nel turno successivo','LEGENDARY','MINION',NULL,'TRUE',5,5,5,NULL,NULL,'NAXX');
-insert into card values ('LOE_053','Djinn degli Zefiri','LOE_053.png','Dopo che hai lanciato una Magia su un altro tuo servitore','EPIC','MINION',NULL,'FALSE',4,6,5,'replaceable','LOE','LOE');
+insert into card values ('LOE_053','Djinn degli Zefiri','LOE_053.png','Dopo che hai lanciato una Magia su un altro tuo servitore','EPIC','MINION',NULL,'FALSE',4,6,5,1,'LOE','LOE');
 insert into card values ('GVG_035','Malorne','GVG_035.png','<b>Rantolo di Morte:</b> torna nel tuo mazzo.','LEGENDARY','MINION','BEAST','TRUE',9,7,7,NULL,NULL,'GVG');
 insert into card values ('EX1_332','Silenzio','EX1_332.png','<b>Silenzia</b> un servitore.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,0,NULL,NULL,'EXPERT1');
 insert into card values ('OG_121','Cho\'gall','OG_121.png','<b>Grido di Battaglia:</b> la prossima Magia che lanci in questo turno costa Salute invece di Mana.','LEGENDARY','MINION',NULL,'FALSE',7,7,7,NULL,NULL,'OG');
-insert into card values ('BRM_027','Executus','BRM_027.png','<b>Rantolo di Morte:</b> sostituisce il tuo eroe con Ragnaros il Signore del Fuoco.','LEGENDARY','MINION',NULL,'FALSE',9,7,9,'replaceable','BRM','BRM');
+insert into card values ('BRM_027','Executus','BRM_027.png','<b>Rantolo di Morte:</b> sostituisce il tuo eroe con Ragnaros il Signore del Fuoco.','LEGENDARY','MINION',NULL,'FALSE',9,7,9,2,'BRM','BRM');
 insert into card values ('CS2_232','Treant Legnoferreo','CS2_232.png','<b>Provocazione</b>','COMMON','MINION',NULL,'FALSE',8,8,8,NULL,NULL,'CORE');
 insert into card values ('EX1_619','Eguaglianza','EX1_619.png','Imposta la Salute di TUTTI i servitori a 1.','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_023','Losco Venditore','LOE_023.png','<b>Grido di Battaglia: Rinvieni</b> una carta da 1 Mana.','COMMON','MINION',NULL,'FALSE',2,2,2,'replaceable','LOE','LOE');
+insert into card values ('LOE_023','Losco Venditore','LOE_023.png','<b>Grido di Battaglia: Rinvieni</b> una carta da 1 Mana.','COMMON','MINION',NULL,'FALSE',2,2,2,4,'LOE','LOE');
 insert into card values ('KAR_029','Uovo Runico','KAR_029.png','<b>Rantolo di Morte:</b> pesca una carta.','COMMON','MINION',NULL,'FALSE',0,2,1,'replaceable','KARA','KARA');
 insert into card values ('OG_337','Orrore Ciclopico','OG_337.png','<b>Provocazione</b>. <b>Grido di Battaglia:</b> ottiene +1 Salute per ogni servitore nemico sul campo.','EPIC','MINION',NULL,'FALSE',3,3,4,NULL,NULL,'OG');
 insert into card values ('OG_142','Orrore Onirico','OG_142.png',NULL,'COMMON','MINION',NULL,'FALSE',6,10,8,NULL,NULL,'OG');
@@ -1298,7 +1298,7 @@ insert into card values ('EX1_259','Tempesta di Fulmini','EX1_259.png','Infligge
 insert into card values ('CS2_008','Fuoco Lunare','CS2_008.png','Infligge $1 |4(danno','COMMON','SPELL',NULL,'FALSE',NULL,NULL,0,NULL,NULL,'CORE');
 insert into card values ('EX1_006','Allarm-Bot','EX1_006.png','All\'inizio del tuo turno','RARE','MINION','MECHANICAL','FALSE',0,3,3,NULL,NULL,'EXPERT1');
 insert into card values ('OG_255','Invocatore della Rovina','OG_255.png','<b>Grido di Battaglia:</b> +2/+2 al tuo C\'thun <i>dovunque sia</i>. Se C\'thun Ã¨ morto','RARE','MINION',NULL,'FALSE',7,9,8,NULL,NULL,'OG');
-insert into card values ('LOE_017','Guardiana di Uldaman','LOE_017.png','<b>Grido di Battaglia:</b> imposta l\'Attacco e la Salute di un servitore a 3.','COMMON','MINION',NULL,'FALSE',3,4,4,'replaceable','LOE','LOE');
+insert into card values ('LOE_017','Guardiana di Uldaman','LOE_017.png','<b>Grido di Battaglia:</b> imposta l\'Attacco e la Salute di un servitore a 3.','COMMON','MINION',NULL,'FALSE',3,4,4,1,'LOE','LOE');
 insert into card values ('EX1_097','Abominio','EX1_097.png','<b>Provocazione</b>. <b>Rantolo di Morte:</b> infligge 2 danni a TUTTI i personaggi.','RARE','MINION',NULL,'FALSE',4,4,5,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_603','Comandante Crudele','EX1_603.png','<b>Grido di Battaglia:</b> infligge 1 danno a un servitore ma gli fornisce +2 Attacco.','COMMON','MINION',NULL,'FALSE',2,2,2,NULL,NULL,'EXPERT1');
 insert into card values ('GVG_110','Dott. Boom','GVG_110.png','<b>Grido di Battaglia:</b> evoca due Robobombe 1/1. <i>ATTENZIONE: le Robobombe possono esplodere.</i>','LEGENDARY','MINION',NULL,'TRUE',7,7,7,NULL,NULL,'GVG');
@@ -1371,7 +1371,7 @@ insert into card values ('CS2_097','Spadone di Verargento','CS2_097.png','Quando
 insert into card values ('GVG_113','Mietinemici 4000','GVG_113.png','Infligge danni anche ai servitori adiacenti a quello attaccato.','LEGENDARY','MINION','MECHANICAL','TRUE',6,9,8,NULL,NULL,'GVG');
 insert into card values ('CFM_666','Maestro di Grug Fu','CFM_666.png','<b>Furia del Vento</b>','COMMON','MINION',NULL,'FALSE',3,5,5,NULL,NULL,'GANGS');
 insert into card values ('NEW1_016','Pappagallo del Pirata','NEW1_016.png','<b>Grido di Battaglia:</b> pesca un Pirata casuale dal tuo mazzo.','EPIC','MINION','BEAST','FALSE',1,1,2,NULL,NULL,'REWARD');
-insert into card values ('LOE_076','Ser Pinnus Mrrgglton','LOE_076.png','<b>Grido di Battaglia: Rinvieni</b> un nuovo Potere Eroe di base.','LEGENDARY','MINION','MURLOC','FALSE',1,3,1,'replaceable','LOE','LOE');
+insert into card values ('LOE_076','Ser Pinnus Mrrgglton','LOE_076.png','<b>Grido di Battaglia: Rinvieni</b> un nuovo Potere Eroe di base.','LEGENDARY','MINION','MURLOC','FALSE',1,3,1,3,'LOE','LOE');
 insert into card values ('CS2_108','Esecuzione','CS2_108.png','Distrugge un servitore nemico danneggiato.','FREE','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'CORE');
 insert into card values ('EX1_573','Cenarius','EX1_573.png','<b>Scegli:</b> +2/+2 agli altri tuoi servitori <b>o</b> evoca due Treant 2/2 con <b>Provocazione</b>.','LEGENDARY','MINION',NULL,'FALSE',5,8,9,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_616','Presenza di Mana','EX1_616.png','TUTTI i servitori costano (1) in piÃ¹.','RARE','MINION',NULL,'FALSE',2,2,2,NULL,NULL,'EXPERT1');
@@ -1379,14 +1379,14 @@ insert into card values ('AT_027','Wilfred Frizzabum','AT_027.png','Le carte pes
 insert into card values ('AT_043','Comunione Astrale','AT_043.png','Fornisce 10 Cristalli di Mana. Scarta le carte nella tua mano.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'TGT');
 insert into card values ('EX1_371','Imposizione: Protezione','EX1_371.png','Fornisce <b>Scudo Divino</b> a un servitore.','FREE','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'CORE');
 insert into card values ('EX1_563','Malygos','EX1_563.png','<b>+5 Danni Magici</b>','LEGENDARY','MINION','DRAGON','FALSE',4,12,9,NULL,NULL,'EXPERT1');
-insert into card values ('BRM_026','Drago Affamato','BRM_026.png','<b>Grido di Battaglia:</b> evoca un servitore casuale da 1 Mana sotto il controllo dell\'avversario.','COMMON','MINION','DRAGON','FALSE',5,6,4,'replaceable','BRM','BRM');
+insert into card values ('BRM_026','Drago Affamato','BRM_026.png','<b>Grido di Battaglia:</b> evoca un servitore casuale da 1 Mana sotto il controllo dell\'avversario.','COMMON','MINION','DRAGON','FALSE',5,6,4,4,'BRM','BRM');
 insert into card values ('CS2_234','Parola d\'Ombra: Dolore','CS2_234.png','Distrugge un servitore con Attacco pari a 3 o inferiore.','FREE','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'CORE');
 insert into card values ('CS2_124','Cavalcalupi','CS2_124.png','<b>Carica</b>','FREE','MINION',NULL,'FALSE',3,1,3,NULL,NULL,'CORE');
 insert into card values ('CS2_092','Benedizione dei Re','CS2_092.png','+4/+4 a un servitore.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'CORE');
 insert into card values ('GVG_016','Vilrazziatore','GVG_016.png','Quando l\'avversario gioca una carta','EPIC','MINION','MECHANICAL','TRUE',8,8,5,NULL,NULL,'GVG');
 insert into card values ('CFM_688','Verrociclista Borchiato','CFM_688.png','<b>Grido di Battaglia:</b> ottiene <b>Carica</b> se un servitore nemico ha <b>Provocazione</b>.','RARE','MINION',NULL,'FALSE',5,5,5,NULL,NULL,'GANGS');
 insert into card values ('GVG_047','Sabotaggio','GVG_047.png','Distrugge un servitore nemico casuale. <b>Combo:</b> inoltre','EPIC','SPELL',NULL,'TRUE',NULL,NULL,4,NULL,NULL,'GVG');
-insert into card values ('BRM_014','Furioso del Nucleo','BRM_014.png','<b>Grido di Battaglia:</b> ottiene +3/+3 se la tua mano Ã¨ vuota.','RARE','MINION','BEAST','FALSE',4,4,4,'replaceable','BRM','BRM');
+insert into card values ('BRM_014','Furioso del Nucleo','BRM_014.png','<b>Grido di Battaglia:</b> ottiene +3/+3 se la tua mano Ã¨ vuota.','RARE','MINION','BEAST','FALSE',4,4,4,3,'BRM','BRM');
 insert into card values ('CFM_713','Bocciolo di Giada','CFM_713.png','Evoca un <b>Golem di Giada</b> {0}. Fornisce 1 Cristallo di Mana vuoto.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'GANGS');
 insert into card values ('AT_045','Aviana','AT_045.png','I tuoi servitori costano (1).','LEGENDARY','MINION',NULL,'FALSE',5,5,9,NULL,NULL,'TGT');
 insert into card values ('OG_153','Orrore del Pantano','OG_153.png','<b>Provocazione</b>','COMMON','MINION',NULL,'FALSE',6,8,7,NULL,NULL,'OG');
@@ -1417,7 +1417,7 @@ insert into card values ('EX1_160','Potere della Natura','EX1_160.png','<b>Scegl
 insert into card values ('AT_019','Maldestriero','AT_019.png','<b>Rantolo di Morte:</b> evoca un Maldestriero.','EPIC','MINION','DEMON','FALSE',1,1,4,NULL,NULL,'TGT');
 insert into card values ('GVG_039','Totem della Salute','GVG_039.png','Alla fine del tuo turno','RARE','MINION','TOTEM','TRUE',0,3,2,NULL,NULL,'GVG');
 insert into card values ('NEW1_008','Antico del Sapere','NEW1_008.png','<b>Scegli:</b> pesca una carta <b>o</b> rigenera 5 Salute.','EPIC','MINION',NULL,'FALSE',5,5,7,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_051','Lunagufo Silvano','LOE_051.png','<b>+2 Danni Magici</b> a ogni giocatore.','RARE','MINION','BEAST','FALSE',4,4,4,'replaceable','LOE','LOE');
+insert into card values ('LOE_051','Lunagufo Silvano','LOE_051.png','<b>+2 Danni Magici</b> a ogni giocatore.','RARE','MINION','BEAST','FALSE',4,4,4,3,'LOE','LOE');
 insert into card values ('GVG_028','Principe Gallywix','GVG_028.png','Quando l\'avversario lancia una Magia','LEGENDARY','MINION',NULL,'TRUE',5,8,6,NULL,NULL,'GVG');
 insert into card values ('OG_027','Evoluzione','OG_027.png','Trasforma i tuoi servitori in servitori casuali che costano (1) in piÃ¹.','RARE','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'OG');
 insert into card values ('KAR_073','Portale: Maelstrom','KAR_073.png','Infligge $1 |4(danno','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,'replaceable','KARA','KARA');
@@ -1561,7 +1561,7 @@ insert into card values ('KAR_028','Flagello dello Stolto','KAR_028.png','Permet
 insert into card values ('CFM_852','Agenti del Loto','CFM_852.png','<b>Grido di Battaglia: Rinvieni</b> una carta del Druido','RARE','MINION',NULL,'FALSE',5,3,5,NULL,NULL,'GANGS');
 insert into card values ('CS2_088','Guardiano dei Re','CS2_088.png','<b>Grido di Battaglia:</b> rigenera 6 Salute al tuo eroe.','COMMON','MINION',NULL,'FALSE',5,6,7,NULL,NULL,'CORE');
 insert into card values ('CFM_608','Pozione Spezzacristalli','CFM_608.png','Distrugge un servitore e un tuo Cristallo di Mana.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'GANGS');
-insert into card values ('LOE_039','Gorillabot A-3','LOE_039.png','<b>Grido di Battaglia:</b> se controlli un altro Robot','COMMON','MINION','MECHANICAL','FALSE',3,4,4,'replaceable','LOE','LOE');
+insert into card values ('LOE_039','Gorillabot A-3','LOE_039.png','<b>Grido di Battaglia:</b> se controlli un altro Robot','COMMON','MINION','MECHANICAL','FALSE',3,4,4,3,'LOE','LOE');
 insert into card values ('EX1_303','Ombrofuoco','EX1_303.png','Distrugge un tuo servitore e infligge danni pari al suo Attacco ai servitori nemici.','RARE','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'EXPERT1');
 insert into card values ('OG_311','Luce nell\'OscuritÃ ','OG_311.png','<b>Rinvieni</b> un servitore. Gli fornisce +1/+1.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'OG');
 insert into card values ('GVG_021','Mal\'Ganis','GVG_021.png','Gli altri tuoi Demoni hanno +2/+2. Il tuo eroe Ã¨ <b>Immune</b>.','LEGENDARY','MINION','DEMON','TRUE',9,7,9,NULL,NULL,'GVG');
@@ -1582,7 +1582,7 @@ insert into card values ('CS2_023','Intelletto Arcano','CS2_023.png','Pesca 2 ca
 insert into card values ('AT_003','Eroina Caduta','AT_003.png','Il tuo Potere Eroe infligge 1 danno aggiuntivo.','RARE','MINION',NULL,'FALSE',3,2,2,NULL,NULL,'TGT');
 insert into card values ('AT_119','Incursore Kvaldir','AT_119.png','<b>Ispirazione:</b> ottiene +2/+2.','COMMON','MINION',NULL,'FALSE',4,4,5,NULL,NULL,'TGT');
 insert into card values ('EX1_621','Circolo di Guarigione','EX1_621.png','Rigenera #4 Salute a TUTTI i servitori.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,0,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_047','Ragno delle Tombe','LOE_047.png','<b>Grido di Battaglia: Rinvieni</b> una Bestia.','COMMON','MINION','BEAST','FALSE',3,3,4,'replaceable','LOE','LOE');
+insert into card values ('LOE_047','Ragno delle Tombe','LOE_047.png','<b>Grido di Battaglia: Rinvieni</b> una Bestia.','COMMON','MINION','BEAST','FALSE',3,3,4,2,'LOE','LOE');
 insert into card values ('NEW1_041','Kodo Impetuoso','NEW1_041.png','<b>Grido di Battaglia:</b> distrugge un servitore nemico casuale con Attacco pari a 2 o inferiore.','RARE','MINION','BEAST','FALSE',3,5,5,NULL,NULL,'EXPERT1');
 insert into card values ('CS2_141','Fuciliere Nano','CS2_141.png','<b>Grido di Battaglia:</b> infligge 1 danno.','COMMON','MINION',NULL,'FALSE',2,2,3,NULL,NULL,'CORE');
 insert into card values ('CFM_094','Pozione di Vilfuoco','CFM_094.png','Infligge $5 danni a TUTTI i personaggi.','RARE','SPELL',NULL,'FALSE',NULL,NULL,6,NULL,NULL,'GANGS');
@@ -1601,7 +1601,7 @@ insert into card values ('EX1_284','Draco di Zaffiro','EX1_284.png','<b>+1 Danni
 insert into card values ('CFM_336','Sparalampi Instabile','CFM_336.png','<b>Rantolo di Morte:</b> +2/+2 a un servitore casuale nella tua mano.','COMMON','MINION',NULL,'FALSE',3,3,3,NULL,NULL,'GANGS');
 insert into card values ('AT_087','Cavaliere d\'Argento','AT_087.png','<b>Carica</b>.\n<b>Scudo Divino</b>.','COMMON','MINION',NULL,'FALSE',2,1,3,NULL,NULL,'TGT');
 insert into card values ('EX1_010','Infiltrato Worgen','EX1_010.png','<b>FurtivitÃ </b>','COMMON','MINION',NULL,'FALSE',2,1,1,NULL,NULL,'EXPERT1');
-insert into card values ('LOEA10_3','Murlocchino','LOEA10_3.png',NULL,'COMMON','MINION','MURLOC','FALSE',1,1,0,'replaceable','LOE','LOE');
+insert into card values ('LOEA10_3','Murlocchino','LOEA10_3.png',NULL,'COMMON','MINION','MURLOC','FALSE',1,1,0,3,'LOE','LOE');
 insert into card values ('CFM_668','Senzavolto Multiforma','CFM_668.png','<b>Grido di Battaglia:</b> evoca due copie di se stesso.','RARE','MINION',NULL,'FALSE',2,2,5,NULL,NULL,'GANGS');
 insert into card values ('CFM_650','Furfante Scagliasalda','CFM_650.png','<b>Grido di Battaglia:</b> +1/+1 a un Murloc casuale nella tua mano.','COMMON','MINION','MURLOC','FALSE',2,1,1,NULL,NULL,'GANGS');
 insert into card values ('OG_006','Inquisitore Pinnavile','OG_006.png','<b>Grido di Battaglia:</b> il tuo Potere Eroe diventa \Evoca un Murloc 1/1\.','EPIC','MINION','MURLOC','FALSE',1,3,1,NULL,NULL,'OG');
@@ -1631,7 +1631,7 @@ insert into card values ('CFM_313','Ricerca Ancestrale','CFM_313.png','<b>Rinvie
 insert into card values ('GVG_063','Bolvar Domadraghi','GVG_063.png','FinchÃ© resta nella tua mano','LEGENDARY','MINION',NULL,'TRUE',1,7,5,NULL,NULL,'GVG');
 insert into card values ('AT_026','Guardia dell\'Ira','AT_026.png','Quando subisce danni','COMMON','MINION','DEMON','FALSE',4,3,2,NULL,NULL,'TGT');
 insert into card values ('OG_141','Behemoth Senzavolto','OG_141.png',NULL,'COMMON','MINION',NULL,'FALSE',10,10,10,NULL,NULL,'OG');
-insert into card values ('LOE_029','Scarabeo Ingioiellato','LOE_029.png','<b>Grido di Battaglia: Rinvieni</b> una carta da 3 Mana.','COMMON','MINION','BEAST','FALSE',1,1,2,'replaceable','LOE','LOE');
+insert into card values ('LOE_029','Scarabeo Ingioiellato','LOE_029.png','<b>Grido di Battaglia: Rinvieni</b> una carta da 3 Mana.','COMMON','MINION','BEAST','FALSE',1,1,2,1,'LOE','LOE');
 insert into card values ('DS1_233','Detonazione Mentale','DS1_233.png','Infligge $5 danni all\'eroe nemico.','FREE','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'CORE');
 insert into card values ('OG_102','Oratore Oscuro','OG_102.png','<b>Grido di Battaglia:</b> scambia le statistiche con quelle di un tuo servitore.','EPIC','MINION',NULL,'FALSE',3,6,5,NULL,NULL,'OG');
 insert into card values ('CFM_617','Sognatrice Celestiale','CFM_617.png','<b>Grido di Battaglia:</b> ottiene +2/+2 se controlli un servitore con Attacco pari a 5 o superiore.','RARE','MINION',NULL,'FALSE',3,3,3,NULL,NULL,'GANGS');
@@ -1746,8 +1746,8 @@ insert into card values ('CS2_004','Parola del Potere: Scudo','CS2_004.png','+2 
 insert into card values ('GVG_109','Minimago','GVG_109.png','<b>FurtivitÃ </b>. <b>+1 Danni Magici</b>.','EPIC','MINION',NULL,'TRUE',4,1,4,NULL,NULL,'GVG');
 insert into card values ('GVG_118','Troggzor Terrestrator','GVG_118.png','Quando l\'avversario lancia una Magia','LEGENDARY','MINION',NULL,'TRUE',6,6,7,NULL,NULL,'GVG');
 insert into card values ('CFM_649','Corriere della Kabala','CFM_649.png','<b>Grido di Battaglia: Rinvieni</b> una carta del Mago','RARE','MINION',NULL,'FALSE',2,2,3,NULL,NULL,'GANGS');
-insert into card values ('BRM_012','Distruttore del Fuoco','BRM_012.png','<b>Grido di Battaglia:</b> ottiene da 1 a 4 Attacco. <b>Sovraccarico:</b> (1)','COMMON','MINION',NULL,'FALSE',3,6,4,'replaceable','BRM','BRM');
-insert into card values ('BRM_011','Folgore di Lava','BRM_011.png','Infligge $2 danni. Sblocca i Cristalli di Mana in <b>Sovraccarico</b>.','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,'replaceable','BRM','BRM');
+insert into card values ('BRM_012','Distruttore del Fuoco','BRM_012.png','<b>Grido di Battaglia:</b> ottiene da 1 a 4 Attacco. <b>Sovraccarico:</b> (1)','COMMON','MINION',NULL,'FALSE',3,6,4,4,'BRM','BRM');
+insert into card values ('BRM_011','Folgore di Lava','BRM_011.png','Infligge $2 danni. Sblocca i Cristalli di Mana in <b>Sovraccarico</b>.','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,2,'BRM','BRM');
 insert into card values ('OG_291','Maga d\'Ombra','OG_291.png','<b>Grido di Battaglia:</b> seleziona un tuo servitore. Ne mette una copia 1/1 nella tua mano che costa (1).','EPIC','MINION',NULL,'FALSE',4,4,5,NULL,NULL,'OG');
 insert into card values ('CFM_648','Pesce \Grosso\','CFM_648.png','<b>Grido di Battaglia:</b> evoca un Ogre 6/6.','COMMON','MINION',NULL,'FALSE',1,1,6,NULL,NULL,'GANGS');
 insert into card values ('CFM_636','Furia d\'Ombra','CFM_636.png','<b>FurtivitÃ </b>','COMMON','MINION',NULL,'FALSE',5,1,3,NULL,NULL,'GANGS');
@@ -1760,7 +1760,7 @@ insert into card values ('OG_340','Soggoth','OG_340.png','<b>Provocazione</b>. N
 insert into card values ('EX1_626','Dissoluzione di Massa','EX1_626.png','<b>Silenzia</b> i servitori nemici. Pesca una carta.','RARE','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'EXPERT1');
 insert into card values ('CFM_685','Don Han\'cho','CFM_685.png','<b>Grido di Battaglia:</b> +5/+5 a un servitore casuale nella tua mano.','LEGENDARY','MINION',NULL,'FALSE',5,6,7,NULL,NULL,'GANGS');
 insert into card values ('CS2_062','Fuoco Infernale','CS2_062.png','Infligge $3 danni a TUTTI i personaggi.','FREE','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'CORE');
-insert into card values ('LOE_061','Sentinella Anubisath','LOE_061.png','<b>Rantolo di Morte:</b> +3/+3 a un tuo servitore casuale.','COMMON','MINION',NULL,'FALSE',4,4,5,'replaceable','LOE','LOE');
+insert into card values ('LOE_061','Sentinella Anubisath','LOE_061.png','<b>Rantolo di Morte:</b> +3/+3 a un tuo servitore casuale.','COMMON','MINION',NULL,'FALSE',4,4,5,1,'LOE','LOE');
 insert into card values ('GVG_100','Osservatore','GVG_100.png','Ottiene +2/+2 quando il tuo eroe subisce danni nel tuo turno.','COMMON','MINION','DEMON','TRUE',4,4,5,NULL,NULL,'GVG');
 insert into card values ('OG_209','Hallazeal l\'Asceso','OG_209.png','Quando le tue Magie infliggono danni','LEGENDARY','MINION',NULL,'FALSE',4,6,5,NULL,NULL,'OG');
 insert into card values ('CS2_003','Visione Mentale','CS2_003.png','Mette nella tua mano una copia di una carta casuale dalla mano dell\'avversario.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'CORE');
@@ -1804,7 +1804,7 @@ insert into card values ('GVG_083','Riparabot Migliorato','GVG_083.png','<b>Grid
 insert into card values ('CFM_312','Mogu di Giada','CFM_312.png','<b>Grido di Battaglia:</b> evoca un <b>Golem di Giada</b> {0} e gli fornisce <b>Provocazione</b>.','COMMON','MINION',NULL,'FALSE',5,5,7,NULL,NULL,'GANGS');
 insert into card values ('EX1_250','Elementale della Terra','EX1_250.png','<b>Provocazione</b>. <b>Sovraccarico:</b> (3)','EPIC','MINION',NULL,'FALSE',7,8,5,NULL,NULL,'EXPERT1');
 insert into card values ('GVG_018','Signora del Dolore','GVG_018.png','Quando infligge danni','RARE','MINION','DEMON','TRUE',1,4,2,NULL,NULL,'GVG');
-insert into card values ('BRM_009','Treant Vulcanico','BRM_009.png','<b>Provocazione</b>. Costa (1) in meno per ogni servitore morto in questo turno.','RARE','MINION',NULL,'FALSE',7,8,9,'replaceable','BRM','BRM');
+insert into card values ('BRM_009','Treant Vulcanico','BRM_009.png','<b>Provocazione</b>. Costa (1) in meno per ogni servitore morto in questo turno.','RARE','MINION',NULL,'FALSE',7,8,9,3,'BRM','BRM');
 insert into card values ('OG_216','Lupo Infestato','OG_216.png','<b>Rantolo di Morte:</b> evoca due Ragni 1/1.','RARE','MINION','BEAST','FALSE',3,3,4,NULL,NULL,'OG');
 insert into card values ('AT_052','Golem Totemico','AT_052.png','<b>Sovraccarico:</b> (1)','COMMON','MINION','TOTEM','FALSE',3,4,2,NULL,NULL,'TGT');
 insert into card values ('EX1_622','Parola d\'Ombra: Morte','EX1_622.png','Distrugge un servitore con Attacco pari a 5 o superiore.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'CORE');
@@ -1836,7 +1836,7 @@ insert into card values ('GVG_053','Signora dello Scudo','GVG_053.png','<b>Grido
 insert into card values ('AT_106','Campione della Luce','AT_106.png','<b>Grido di Battaglia:</b> <b>Silenzia</b> un Demone.','RARE','MINION',NULL,'FALSE',4,3,3,NULL,NULL,'TGT');
 insert into card values ('GVG_040','Murloc Cavalcaspiriti','GVG_040.png','Quando un altro tuo Murloc muore','EPIC','MINION','MURLOC','TRUE',2,5,4,NULL,NULL,'GVG');
 insert into card values ('KAR_097','Medivh il Guardiano','KAR_097.png','<b>Grido di Battaglia:</b> equipaggia Atiesh','LEGENDARY','MINION',NULL,'FALSE',7,7,8,'replaceable','KARA','KARA');
-insert into card values ('LOE_107','Statua Misteriosa','LOE_107.png','Non puÃ² attaccare se ci sono altri servitori sul campo.','RARE','MINION',NULL,'FALSE',7,7,4,'replaceable','LOE','LOE');
+insert into card values ('LOE_107','Statua Misteriosa','LOE_107.png','Non puÃ² attaccare se ci sono altri servitori sul campo.','RARE','MINION',NULL,'FALSE',7,7,4,4,'LOE','LOE');
 insert into card values ('CS2_024','Dardo di Gelo','CS2_024.png','Infligge $3 danni e <b>Congela</b>.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'CORE');
 insert into card values ('CS2_161','Sicario di Corvolesto','CS2_161.png','<b>FurtivitÃ </b>','RARE','MINION',NULL,'FALSE',7,5,7,NULL,NULL,'EXPERT1');
 insert into card values ('OG_138','Profeta Nerubiano','OG_138.png','All\'inizio del tuo turno','COMMON','MINION',NULL,'FALSE',4,4,6,NULL,NULL,'OG');
@@ -1963,7 +1963,7 @@ insert into card values ('GVG_038','Crepitio','GVG_038.png','Infligge da $3 a $6
 insert into card values ('EX1_594','Vaporizzazione','EX1_594.png','<b>Segreto:</b> quando un servitore attacca il tuo eroe','RARE','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'EXPERT1');
 insert into card values ('AT_112','Maestro Giostrante','AT_112.png','<b>Grido di Battaglia:</b> ottiene <b>Provocazione</b> e <b>Scudo Divino</b> se','RARE','MINION',NULL,'FALSE',5,6,6,NULL,NULL,'TGT');
 insert into card values ('EX1_283','Elementale del Gelo','EX1_283.png','<b>Grido di Battaglia:</b> <b>Congela</b> un personaggio.','COMMON','MINION',NULL,'FALSE',5,5,6,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_027','Sacra Prova','LOE_027.png','<b>Segreto:</b> se l\'avversario ha almeno tre servitori','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,'replaceable','LOE','LOE');
+insert into card values ('LOE_027','Sacra Prova','LOE_027.png','<b>Segreto:</b> se l\'avversario ha almeno tre servitori','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,1,'LOE','LOE');
 insert into card values ('CS2_005','Sfregio','CS2_005.png','+2 Attacco al tuo eroe per questo turno e 2 Armatura.','FREE','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'CORE');
 insert into card values ('OG_218','Combattente Tauren','OG_218.png','<b>Provocazione</b>. <b>Rabbia:</b> +3 Attacco.','COMMON','MINION',NULL,'FALSE',2,6,4,NULL,NULL,'OG');
 insert into card values ('GVG_120','Hemet Nesingwary','GVG_120.png','<b>Grido di Battaglia:</b> distrugge una Bestia.','LEGENDARY','MINION',NULL,'TRUE',6,3,5,NULL,NULL,'GVG');
@@ -1978,7 +1978,7 @@ insert into card values ('OG_048','Marchio di Y\'shaarj','OG_048.png','+2/+2 a u
 insert into card values ('CS2_087','Benedizione: Vigore','CS2_087.png','+3 Attacco a un servitore.','FREE','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'CORE');
 insert into card values ('OG_113','Ministro di Borgoscuro','OG_113.png','Ottiene +1 Attacco dopo che viene evocato un servitore sotto il tuo controllo.','COMMON','MINION',NULL,'FALSE',1,5,3,NULL,NULL,'OG');
 insert into card values ('CS2_162','Campione dell\'Arena','CS2_162.png','<b>Provocazione</b>','COMMON','MINION',NULL,'FALSE',6,5,6,NULL,NULL,'CORE');
-insert into card values ('LOE_007','Maledizione di Rafaam','LOE_007.png','Mette nella mano dell\'avversario una Maledizione. FinchÃ© resta nella sua mano','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,'replaceable','LOE','LOE');
+insert into card values ('LOE_007','Maledizione di Rafaam','LOE_007.png','Mette nella mano dell\'avversario una Maledizione. FinchÃ© resta nella sua mano','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,4,'LOE','LOE');
 insert into card values ('EX1_411','Urloatroce','EX1_411.png','Attaccare un servitore costa 1 punto Attacco invece che 1 IntegritÃ .','EPIC','WEAPON',NULL,'FALSE',7,NULL,7,NULL,NULL,'EXPERT1');
 insert into card values ('CS2_155','Arcimago','CS2_155.png','<b>+1 Danni Magici</b>','COMMON','MINION',NULL,'FALSE',4,7,6,NULL,NULL,'CORE');
 insert into card values ('AT_098','Mangiamagie','AT_098.png','<b>Grido di Battaglia:</b> sostituisci il tuo Potere Eroe con quello dell\'avversario.','EPIC','MINION',NULL,'FALSE',6,5,6,NULL,NULL,'TGT');
@@ -2004,7 +2004,7 @@ insert into card values ('EX1_534','Altocrine delle Savane','EX1_534.png','<b>Ra
 insert into card values ('AT_002','Effige','AT_002.png','<b>Segreto:</b> quando un tuo servitore muore','RARE','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'TGT');
 insert into card values ('EX1_066','Melma delle Paludi','EX1_066.png','<b>Grido di Battaglia:</b> distrugge l\'Arma dell\'avversario.','COMMON','MINION',NULL,'FALSE',3,2,2,NULL,NULL,'CORE');
 insert into card values ('CFM_854','Antico dei Boccioli','CFM_854.png','<b>Provocazione</b>','COMMON','MINION',NULL,'FALSE',3,8,6,NULL,NULL,'GANGS');
-insert into card values ('LOE_009','Protettore d\'Ossidiana','LOE_009.png','Alla fine del tuo turno','COMMON','MINION',NULL,'FALSE',7,7,7,'replaceable','LOE','LOE');
+insert into card values ('LOE_009','Protettore d\'Ossidiana','LOE_009.png','Alla fine del tuo turno','COMMON','MINION',NULL,'FALSE',7,7,7,4,'LOE','LOE');
 insert into card values ('AT_008','Draco di Ibernia','AT_008.png','Puoi usare il tuo Potere Eroe quante volte desideri.','EPIC','MINION','DRAGON','FALSE',6,6,6,NULL,NULL,'TGT');
 insert into card values ('EX1_007','Accolito del Dolore','EX1_007.png','Quando subisce danni','COMMON','MINION',NULL,'FALSE',1,3,3,NULL,NULL,'EXPERT1');
 insert into card values ('LOE_010','Serpente della Fossa','LOE_010.png','Distrugge qualsiasi servitore danneggiato da questo servitore.','COMMON','MINION','BEAST','FALSE',2,1,1,'replaceable','LOE','LOE');
@@ -2084,7 +2084,7 @@ insert into card values ('LOE_119','Armatura Fantasma','LOE_119.png','Il tuo ero
 insert into card values ('GVG_082','Gnomo Meccanico','GVG_082.png','<b>Rantolo di Morte:</b> mette nella tua mano un <b>Gadget</b>.','COMMON','MINION','MECHANICAL','TRUE',2,1,1,NULL,NULL,'GVG');
 insert into card values ('GVG_064','Pestapaludi','GVG_064.png',NULL,'COMMON','MINION','MURLOC','TRUE',3,2,2,NULL,NULL,'GVG');
 insert into card values ('CS2_026','Esplosione Gelida','CS2_026.png','<b>Congela</b> i servitori nemici.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'CORE');
-insert into card values ('BRM_017','Resurrezione','BRM_017.png','Evoca un tuo servitore casuale morto in questa partita.','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,'replaceable','BRM','BRM');
+insert into card values ('BRM_017','Resurrezione','BRM_017.png','Evoca un tuo servitore casuale morto in questa partita.','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,1,'BRM','BRM');
 insert into card values ('OG_158','Iniziato Zelante','OG_158.png','<b>Rantolo di Morte:</b> +1/+1 a un tuo servitore casuale.','COMMON','MINION',NULL,'FALSE',1,1,1,NULL,NULL,'OG');
 insert into card values ('CS2_169','Dragofalco Giovane','CS2_169.png','<b>Furia del Vento</b>','COMMON','MINION','BEAST','FALSE',1,1,1,NULL,NULL,'EXPERT1');
 insert into card values ('GVG_073','Tiro del Cobra','GVG_073.png','Infligge $3 danni a un servitore e all\'eroe nemico.','COMMON','SPELL',NULL,'TRUE',NULL,NULL,5,NULL,NULL,'GVG');
@@ -2105,13 +2105,13 @@ insert into card values ('EX1_587','Oratore del Vento','EX1_587.png','<b>Grido d
 insert into card values ('CFM_658','Buttafuori Minaccioso','CFM_658.png','Ottiene +1 Attacco quando un tuo servitore muore.','RARE','MINION',NULL,'FALSE',4,4,4,NULL,NULL,'GANGS');
 insert into card values ('OG_134','Yogg-Saron','OG_134.png','<b>Grido di Battaglia:</b> per ogni Magia che hai lanciato in questa partita','LEGENDARY','MINION',NULL,'FALSE',7,5,10,NULL,NULL,'OG');
 insert into card values ('CFM_062','Protettore Famigerato','CFM_062.png','<b>Provocazione</b>. <b>Grido di Battaglia:</b> fornisce <b>Scudo Divino</b> ai servitori adiacenti.','RARE','MINION',NULL,'FALSE',6,6,7,NULL,NULL,'GANGS');
-insert into card values ('LOE_089','Pigmei Barcollanti','LOE_089.png','<b>Rantolo di Morte:</b> evoca tre Pigmei 2/2.','RARE','MINION',NULL,'FALSE',2,6,6,'replaceable','LOE','LOE');
+insert into card values ('LOE_089','Pigmei Barcollanti','LOE_089.png','<b>Rantolo di Morte:</b> evoca tre Pigmei 2/2.','RARE','MINION',NULL,'FALSE',2,6,6,4,'LOE','LOE');
 insert into card values ('NEW1_026','Insegnante Violacea','NEW1_026.png','Quando lanci una Magia','RARE','MINION',NULL,'FALSE',3,5,4,NULL,NULL,'EXPERT1');
 insert into card values ('LOE_079','Elise Cercastelle','LOE_079.png','<b>Grido di Battaglia:</b> mette la Mappa per la Scimmia Dorata nel tuo mazzo.','LEGENDARY','MINION',NULL,'FALSE',3,5,4,'replaceable','LOE','LOE');
 insert into card values ('KAR_069','Pirata Festaiolo','KAR_069.png','<b>Grido di Battaglia:</b> mette nella tua mano una carta casuale della classe dell\'avversario.','COMMON','MINION','PIRATE','FALSE',1,1,1,'replaceable','KARA','KARA');
 insert into card values ('GVG_048','Belva Zannaferrea','GVG_048.png','<b>Grido di Battaglia:</b> +2 Attacco agli altri tuoi Robot.','RARE','MINION','MECHANICAL','TRUE',3,3,3,NULL,NULL,'GVG');
 insert into card values ('FP1_020','Ritorsione','FP1_020.png','<b>Segreto:</b> quando un tuo servitore muore','COMMON','SPELL',NULL,'TRUE',NULL,NULL,1,NULL,NULL,'NAXX');
-insert into card values ('LOE_020','Dromedario Errante','LOE_020.png','<b>Grido di Battaglia:</b> mette sul campo un servitore casuale da 1 Mana dal mazzo di ogni giocatore.','COMMON','MINION','BEAST','FALSE',2,4,3,'replaceable','LOE','LOE');
+insert into card values ('LOE_020','Dromedario Errante','LOE_020.png','<b>Grido di Battaglia:</b> mette sul campo un servitore casuale da 1 Mana dal mazzo di ogni giocatore.','COMMON','MINION','BEAST','FALSE',2,4,3,4,'LOE','LOE');
 insert into card values ('AT_036','Anub\'arak','AT_036.png','<b>Rantolo di Morte:</b> torna nella tua mano ed evoca un Nerubiano 4/4.','LEGENDARY','MINION',NULL,'FALSE',8,4,9,NULL,NULL,'TGT');
 insert into card values ('GVG_068','Trogg Faucisalde','GVG_068.png','Ottiene +2 Attacco quando l\'avversario lancia una Magia.','COMMON','MINION',NULL,'TRUE',3,5,4,NULL,NULL,'GVG');
 insert into card values ('EX1_278','Stilettata','EX1_278.png','Infligge $1 |4(danno','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'CORE');
@@ -2154,11 +2154,11 @@ insert into card values ('OG_308','Verme della Sabbia','OG_308.png','Quando atta
 insert into card values ('CS2_117','Veggente della Terra','CS2_117.png','<b>Grido di Battaglia:</b> rigenera 3 Salute.','COMMON','MINION',NULL,'FALSE',3,3,3,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_100','Ramingo Cho','EX1_100.png','Quando un giocatore lancia una Magia','LEGENDARY','MINION',NULL,'FALSE',0,4,2,NULL,NULL,'EXPERT1');
 insert into card values ('AT_091','Medico del Torneo','AT_091.png','<b>Ispirazione:</b> rigenera 2 Salute al tuo eroe.','COMMON','MINION',NULL,'FALSE',1,8,4,NULL,NULL,'TGT');
-insert into card values ('BRM_028','Thaurissan','BRM_028.png','Alla fine del tuo turno','LEGENDARY','MINION',NULL,'FALSE',5,5,6,'replaceable','BRM','BRM');
+insert into card values ('BRM_028','Thaurissan','BRM_028.png','Alla fine del tuo turno','LEGENDARY','MINION',NULL,'FALSE',5,5,6,1,'BRM','BRM');
 insert into card values ('CFM_800','Kodo da Fuga','CFM_800.png','<b>Segreto:</b> quando un tuo servitore muore','RARE','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'GANGS');
 insert into card values ('OG_295','Speziale del Culto','OG_295.png','<b>Grido di Battaglia:</b> rigenera 2 Salute al tuo eroe per ogni servitore nemico sul campo.','COMMON','MINION',NULL,'FALSE',4,4,5,NULL,NULL,'OG');
 insert into card values ('CS2_131','Cavaliere di Roccavento','CS2_131.png','<b>Carica</b>','COMMON','MINION',NULL,'FALSE',2,5,4,NULL,NULL,'CORE');
-insert into card values ('BRM_031','Cromaggus','BRM_031.png','Quando peschi una carta','LEGENDARY','MINION','DRAGON','FALSE',6,8,8,'replaceable','BRM','BRM');
+insert into card values ('BRM_031','Cromaggus','BRM_031.png','Quando peschi una carta','LEGENDARY','MINION','DRAGON','FALSE',6,8,8,4,'BRM','BRM');
 insert into card values ('CS2_200','Ogre Rocciadura','CS2_200.png',NULL,'FREE','MINION',NULL,'FALSE',6,7,6,NULL,NULL,'CORE');
 insert into card values ('EX1_544','Bengala','EX1_544.png','TUTTI i servitori perdono <b>FurtivitÃ </b>. Distrugge i <b>Segreti</b> nemici. Pesca una carta.','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'EXPERT1');
 insert into card values ('AT_133','Giostrante di Meccania','AT_133.png','<b>Grido di Battaglia:</b> ottiene +1/+1 se','COMMON','MINION',NULL,'FALSE',1,2,1,NULL,NULL,'TGT');
@@ -2177,7 +2177,7 @@ insert into card values ('CS2_213','Cavalcarazzi Folle','CS2_213.png','<b>Carica
 insert into card values ('CFM_697','Illusionista del Loto','CFM_697.png','Dopo che ha attaccato un eroe','EPIC','MINION',NULL,'FALSE',3,5,4,NULL,NULL,'GANGS');
 insert into card values ('KAR_070','Venditrice Eterea','KAR_070.png','<b>Grido di Battaglia:</b> riduce di (2) il costo delle carte di classe non del Ladro nella tua mano.','RARE','MINION',NULL,'FALSE',5,6,5,'replaceable','KARA','KARA');
 insert into card values ('CS2_222','Campione di Roccavento','CS2_222.png','Gli altri tuoi servitori hanno +1/+1.','COMMON','MINION',NULL,'FALSE',6,6,7,NULL,NULL,'CORE');
-insert into card values ('LOE_019','Raptor Riesumato','LOE_019.png','<b>Grido di Battaglia:</b> seleziona un tuo servitore. Il Raptor Riesumato copia il suo <b>Rantolo di Morte</b>.','RARE','MINION',NULL,'FALSE',3,4,3,'replaceable','LOE','LOE');
+insert into card values ('LOE_019','Raptor Riesumato','LOE_019.png','<b>Grido di Battaglia:</b> seleziona un tuo servitore. Il Raptor Riesumato copia il suo <b>Rantolo di Morte</b>.','RARE','MINION',NULL,'FALSE',3,4,3,2,'LOE','LOE');
 insert into card values ('OG_156','Cacciamaree Pinnatorva','OG_156.png','<b>Grido di Battaglia:</b> evoca una Fanghiglia 1/1 con <b>Provocazione</b>.','COMMON','MINION','MURLOC','FALSE',2,1,2,NULL,NULL,'OG');
 insert into card values ('EX1_137','Colpo alla Testa','EX1_137.png','Infligge $2 danni all\'eroe nemico. <b>Combo:</b> torna nella tua mano alla fine del turno.','RARE','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'EXPERT1');
 insert into card values ('AT_070','Gran Capitano Kragg','AT_070.png','<b>Carrrica</b>. Costa (1) in meno per ogni tuo Pirata.','LEGENDARY','MINION','PIRATE','FALSE',4,6,7,NULL,NULL,'TGT');
@@ -2202,7 +2202,7 @@ insert into card values ('AT_103','Kraken del Nord','AT_103.png','<b>Grido di Ba
 insert into card values ('AT_025','Patto Oscuro','AT_025.png','Distrugge due servitori nemici casuali. Scarta 2 carte casuali.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,6,NULL,NULL,'TGT');
 insert into card values ('EX1_398','Fabbro d\'Arathi','EX1_398.png','<b>Grido di Battaglia:</b> equipaggia un\'Arma 2/2.','COMMON','MINION',NULL,'FALSE',3,3,4,NULL,NULL,'EXPERT1');
 insert into card values ('OG_322','Pirata Acquanera','OG_322.png','Le tue Armi costano (2) in meno.','RARE','MINION','PIRATE','FALSE',2,5,4,NULL,NULL,'OG');
-insert into card values ('LOE_022','Scimmia Feroce','LOE_022.png','<b>Provocazione</b>','COMMON','MINION','BEAST','FALSE',3,4,3,'replaceable','LOE','LOE');
+insert into card values ('LOE_022','Scimmia Feroce','LOE_022.png','<b>Provocazione</b>','COMMON','MINION','BEAST','FALSE',3,4,3,2,'LOE','LOE');
 insert into card values ('GVG_074','Mistica di Kezan','GVG_074.png','<b>Grido di Battaglia:</b> prendi il controllo di un <b>Segreto</b> casuale dell\'avversario.','RARE','MINION',NULL,'TRUE',4,3,4,NULL,NULL,'GVG');
 insert into card values ('EX1_410','Colpo di Scudo','EX1_410.png','Infligge 1 danno a un servitore per ogni punto Armatura del tuo eroe.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_136','Redenzione','EX1_136.png','<b>Segreto:</b> quando un tuo servitore muore','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'EXPERT1');
@@ -2235,7 +2235,7 @@ insert into card values ('OG_033','Tentacoli Eterni','OG_033.png','<b>Rantolo di
 insert into card values ('FP1_023','Cultista Oscuro','FP1_023.png','<b>Rantolo di Morte:</b> +3 Salute a un tuo servitore casuale.','COMMON','MINION',NULL,'TRUE',3,4,3,NULL,NULL,'NAXX');
 insert into card values ('CFM_781','Shaku il Collezionista','CFM_781.png','<b>FurtivitÃ </b>. Quando attacca','LEGENDARY','MINION',NULL,'FALSE',2,3,3,NULL,NULL,'GANGS');
 insert into card values ('OG_286','Anziano del Crepuscolo','OG_286.png','Alla fine del tuo turno','COMMON','MINION',NULL,'FALSE',3,4,3,NULL,NULL,'OG');
-insert into card values ('LOE_104','Tumulazione','LOE_104.png','Sposta un servitore nemico nel tuo mazzo.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,6,'replaceable','LOE','LOE');
+insert into card values ('LOE_104','Tumulazione','LOE_104.png','Sposta un servitore nemico nel tuo mazzo.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,6,3,'LOE','LOE');
 insert into card values ('CFM_630','Moneta Contraffatta','CFM_630.png','Fornisce 1 Cristallo di Mana solo per questo turno.','RARE','SPELL',NULL,'FALSE',NULL,NULL,0,NULL,NULL,'GANGS');
 insert into card values ('NEW1_022','Corsaro del Terrore','NEW1_022.png','<b>Provocazione</b>. Costa (1) in meno per ogni punto Attacco della tua Arma.','COMMON','MINION','PIRATE','FALSE',3,3,4,NULL,NULL,'EXPERT1');
 insert into card values ('DS1_184','Tracciamento','DS1_184.png','Guarda le prime 3 carte del tuo mazzo. Pescane una e scarta le altre.','FREE','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'CORE');
@@ -2263,7 +2263,7 @@ insert into card values ('EX1_302','Spira Letale','EX1_302.png','Infligge $1 |4(
 insert into card values ('AT_012','Figlio delle Ombre','AT_012.png','<b>Ispirazione:</b> infligge 4 danni a entrambi gli eroi.','RARE','MINION',NULL,'FALSE',5,4,4,NULL,NULL,'TGT');
 insert into card values ('OG_034','Brulicatore Silitide','OG_034.png','PuÃ² attaccare solo se il tuo eroe ha attaccato in questo turno.','RARE','MINION','BEAST','FALSE',3,5,3,NULL,NULL,'OG');
 insert into card values ('CS2_025','Esplosione Arcana','CS2_025.png','Infligge $1 |4(danno','FREE','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'CORE');
-insert into card values ('LOE_026','Alba dei Murloc Viventi','LOE_026.png','Evoca sette Murloc morti in questa partita.','RARE','SPELL',NULL,'FALSE',NULL,NULL,10,'replaceable','LOE','LOE');
+insert into card values ('LOE_026','Alba dei Murloc Viventi','LOE_026.png','Evoca sette Murloc morti in questa partita.','RARE','SPELL',NULL,'FALSE',NULL,NULL,10,3,'LOE','LOE');
 insert into card values ('CS2_151','Cavaliere Mano d\'Argento','CS2_151.png','<b>Grido di Battaglia:</b> evoca uno Scudiero 2/2.','COMMON','MINION',NULL,'FALSE',4,4,5,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_509','Murloc Invocamaree','EX1_509.png','Ottiene +1 Attacco quando viene evocato un Murloc sotto il tuo controllo.','RARE','MINION','MURLOC','FALSE',1,2,1,NULL,NULL,'EXPERT1');
 insert into card values ('OG_100','Parola d\'Ombra: Orrore','OG_100.png','Distrugge TUTTI i servitori con Attacco pari a 2 o inferiore.','RARE','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'OG');
@@ -2283,7 +2283,7 @@ insert into card values ('EX1_011','Taumaturgo VudÃ¹','EX1_011.png','<b>Grido 
 insert into card values ('CFM_670','Sindaco Granstrippo','CFM_670.png','TUTTI i bersagli vengono scelti casualmente.','LEGENDARY','MINION',NULL,'FALSE',5,4,9,NULL,NULL,'GANGS');
 insert into card values ('NEW1_037','Fabbro di Spade','NEW1_037.png','Alla fine del tuo turno','RARE','MINION',NULL,'FALSE',1,3,2,NULL,NULL,'EXPERT1');
 insert into card values ('AT_062','Sacca di Ragni','AT_062.png','Evoca tre Tessitela 1/1.','RARE','SPELL',NULL,'FALSE',NULL,NULL,6,NULL,NULL,'TGT');
-insert into card values ('LOE_116','Cacciatrice di Reliquie','LOE_116.png','<b>Grido di Battaglia:</b> ottiene +4/+4 se controlli altri sei servitori.','RARE','MINION',NULL,'FALSE',1,1,1,'replaceable','LOE','LOE');
+insert into card values ('LOE_116','Cacciatrice di Reliquie','LOE_116.png','<b>Grido di Battaglia:</b> ottiene +4/+4 se controlli altri sei servitori.','RARE','MINION',NULL,'FALSE',1,1,1,2,'LOE','LOE');
 insert into card values ('GVG_077','Golem dell\'Anima','GVG_077.png','Alla fine di ogni turno','EPIC','MINION','MECHANICAL','TRUE',9,9,6,NULL,NULL,'GVG');
 insert into card values ('CS2_074','Veleno Mortale','CS2_074.png','+2 Attacco alla tua Arma.','FREE','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'CORE');
 insert into card values ('KAR_021','Taumaturga Malvagia','KAR_021.png','Quando lanci una Magia','COMMON','MINION',NULL,'FALSE',3,4,4,'replaceable','KARA','KARA');
@@ -2292,7 +2292,7 @@ insert into card values ('KAR_010','Templare di Noctumor','KAR_010.png','<b>Grid
 insert into card values ('EX1_017','Pantera della Giungla','EX1_017.png','<b>FurtivitÃ </b>','COMMON','MINION','BEAST','FALSE',4,2,3,NULL,NULL,'EXPERT1');
 insert into card values ('CFM_065','Pozione Vulcanica','CFM_065.png','Infligge $2 danni a TUTTI i servitori.','RARE','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'GANGS');
 insert into card values ('EX1_062','Vecchio Occhiobuio','EX1_062.png','<b>Carica</b>. Ha +1 Attacco per ogni altro Murloc sul campo.','LEGENDARY','MINION','MURLOC','FALSE',2,4,4,NULL,NULL,'REWARD');
-insert into card values ('BRM_018','Consorte del Drago','BRM_018.png','<b>Grido di Battaglia:</b> il prossimo Drago che giochi costa (2) in meno.','RARE','MINION','DRAGON','FALSE',5,5,5,'replaceable','BRM','BRM');
+insert into card values ('BRM_018','Consorte del Drago','BRM_018.png','<b>Grido di Battaglia:</b> il prossimo Drago che giochi costa (2) in meno.','RARE','MINION','DRAGON','FALSE',5,5,5,3,'BRM','BRM');
 insert into card values ('CS2_168','Murloc Incursore','CS2_168.png',NULL,'FREE','MINION','MURLOC','FALSE',2,1,1,NULL,NULL,'CORE');
 insert into card values ('EX1_593','Lamascura','EX1_593.png','<b>Grido di Battaglia:</b> infligge 3 danni all\'eroe nemico.','FREE','MINION',NULL,'FALSE',4,4,5,NULL,NULL,'CORE');
 insert into card values ('EX1_019','Chierica Sole Infranto','EX1_019.png','<b>Grido di Battaglia:</b> +1/+1 a un tuo servitore.','COMMON','MINION',NULL,'FALSE',3,2,3,NULL,NULL,'CORE');
@@ -2446,7 +2446,7 @@ insert into card values ('AT_045','Aviana','AT_045.png','I tuoi servitori costan
 insert into card values ('OG_153','Orrore del Pantano','OG_153.png','<b>Provocazione</b>','COMMON','MINION',NULL,'FALSE',6,8,7,NULL,NULL,'OG');
 insert into card values ('CS2_112','Mietimorte d\'Arcanite','CS2_112.png',NULL,'COMMON','WEAPON',NULL,'FALSE',5,NULL,5,NULL,NULL,'CORE');
 insert into card values ('GVG_112','Mogor l\'Ogre','GVG_112.png','TUTTI i servitori hanno una probabilitÃ  del 50% di attaccare il nemico sbagliato.','LEGENDARY','MINION',NULL,'TRUE',7,6,6,NULL,NULL,'GVG');
-insert into card values ('BRM_013','Tiro Rapido','BRM_013.png','Infligge $3 danni. Se la tua mano Ã¨ vuota','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,'replaceable','BRM','BRM');
+insert into card values ('BRM_013','Tiro Rapido','BRM_013.png','Infligge $3 danni. Se la tua mano Ã¨ vuota','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,1,'BRM','BRM');
 insert into card values ('AT_079','Sfidante Misterioso','AT_079.png','<b>Grido di Battaglia:</b> mette in gioco un <b>Segreto</b> di ogni tipo dal tuo mazzo.','EPIC','MINION',NULL,'FALSE',6,6,6,NULL,NULL,'TGT');
 insert into card values ('EX1_379','Penitenza','EX1_379.png','<b>Segreto:</b> dopo che l\'avversario gioca un servitore','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'EXPERT1');
 insert into card values ('CS2_237','Condor Affamato','CS2_237.png','Quando viene evocata una Bestia sotto il tuo controllo','COMMON','MINION','BEAST','FALSE',3,2,5,NULL,NULL,'CORE');
@@ -2592,7 +2592,7 @@ insert into card values ('EX1_308','Fuoco dell\'Anima','EX1_308.png','Infligge $
 insert into card values ('CFM_696','Involuzione','CFM_696.png','Trasforma i servitori nemici in servitori casuali che costano (1) in meno.','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'GANGS');
 insert into card values ('EX1_301','Vilguardia','EX1_301.png','<b>Provocazione</b>. <b>Grido di Battaglia:</b> distrugge un tuo Cristallo di Mana.','RARE','MINION','DEMON','FALSE',3,5,3,NULL,NULL,'EXPERT1');
 insert into card values ('OG_109','Studiosa di Borgoscuro','OG_109.png','<b>Grido di Battaglia:</b> scarta una carta casuale. <b>Rantolo di Morte:</b> pesca una carta.','RARE','MINION',NULL,'FALSE',3,2,2,NULL,NULL,'OG');
-insert into card values ('LOE_086','Pietra d\'Evocazione','LOE_086.png','Quando lanci una Magia','RARE','MINION',NULL,'FALSE',0,6,5,'replaceable','LOE','LOE');
+insert into card values ('LOE_086','Pietra d\'Evocazione','LOE_086.png','Quando lanci una Magia','RARE','MINION',NULL,'FALSE',0,6,5,1,'LOE','LOE');
 insert into card values ('GVG_019','Cuore Demoniaco','GVG_019.png','Infligge $5 danni a un servitore. Se Ã¨ un tuo Demone','EPIC','SPELL',NULL,'TRUE',NULL,NULL,5,NULL,NULL,'GVG');
 insert into card values ('FP1_013','Kel\'Thuzad','FP1_013.png','Alla fine di ogni turno','LEGENDARY','MINION',NULL,'TRUE',6,8,8,NULL,NULL,'NAXX');
 insert into card values ('AT_100','Decana Mano d\'Argento','AT_100.png','<b>Ispirazione:</b> evoca una Recluta Mano d\'Argento 1/1.','COMMON','MINION',NULL,'FALSE',3,3,3,NULL,NULL,'TGT');
@@ -2697,7 +2697,7 @@ insert into card values ('CFM_652','Picchiatore Inetto','CFM_652.png','<b>Provoc
 insert into card values ('CFM_328','Promotrice di Scontri','CFM_328.png','<b>Grido di Battaglia:</b> se controlli un servitore con Salute pari a 6 o superiore','EPIC','MINION',NULL,'FALSE',4,4,6,NULL,NULL,'GANGS');
 insert into card values ('EX1_405','Portascudi','EX1_405.png','<b>Provocazione</b>','COMMON','MINION',NULL,'FALSE',0,4,1,NULL,NULL,'EXPERT1');
 insert into card values ('CS2_142','Coboldo Geomante','CS2_142.png','<b>+1 Danni Magici</b>','COMMON','MINION',NULL,'FALSE',2,2,2,NULL,NULL,'CORE');
-insert into card values ('BRM_025','Draco Vulcanico','BRM_025.png','Costa (1) in meno per ogni servitore morto in questo turno.','COMMON','MINION','DRAGON','FALSE',6,4,6,'replaceable','BRM','BRM');
+insert into card values ('BRM_025','Draco Vulcanico','BRM_025.png','Costa (1) in meno per ogni servitore morto in questo turno.','COMMON','MINION','DRAGON','FALSE',6,4,6,5,'BRM','BRM');
 insert into card values ('GVG_093','Manichino a Molla','GVG_093.png','<b>Provocazione</b>','RARE','MINION','MECHANICAL','TRUE',0,2,0,NULL,NULL,'GVG');
 insert into card values ('OG_116','Follia Incontrollata','OG_116.png','Infligge $9 danni suddivisi casualmente tra TUTTI i personaggi.','RARE','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'OG');
 insert into card values ('GVG_003','Portale Instabile','GVG_003.png','Mette nella tua mano un servitore casuale. Costa (3) in meno.','RARE','SPELL',NULL,'TRUE',NULL,NULL,2,NULL,NULL,'GVG');
@@ -2705,7 +2705,7 @@ insert into card values ('KAR_036','Anomalia Arcana','KAR_036.png','Ottiene +1 S
 insert into card values ('EX1_044','Avventuriero Risoluto','EX1_044.png','Ottiene +1/+1 quando giochi una carta.','RARE','MINION',NULL,'FALSE',2,2,3,NULL,NULL,'EXPERT1');
 insert into card values ('KAR_026','Proteggete il Re!','KAR_026.png','Evoca un Pedone 1/1 con <b>Provocazione</b> per ogni servitore nemico sul campo.','RARE','SPELL',NULL,'FALSE',NULL,NULL,3,'replaceable','KARA','KARA');
 insert into card values ('GVG_114','Segatronchi di Sneed','GVG_114.png','<b>Rantolo di Morte:</b> evoca un servitore <b>Leggendario</b> casuale.','LEGENDARY','MINION','MECHANICAL','TRUE',5,7,8,NULL,NULL,'GVG');
-insert into card values ('LOE_012','Predatore di Tombe','LOE_012.png','<b>Rantolo di Morte:</b> mette nella tua mano una Moneta.','COMMON','MINION',NULL,'FALSE',5,4,4,'replaceable','LOE','LOE');
+insert into card values ('LOE_012','Predatore di Tombe','LOE_012.png','<b>Rantolo di Morte:</b> mette nella tua mano una Moneta.','COMMON','MINION',NULL,'FALSE',5,4,4,3,'LOE','LOE');
 insert into card values ('KAR_091','Portale: Forgiardente','KAR_091.png','Fornisce 4 Armatura. Evoca un servitore casuale da 4 Mana.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,5,'replaceable','KARA','KARA');
 insert into card values ('AT_047','Intagliatrice di Totem','AT_047.png','<b>Grido di Battaglia:</b> ottiene +1/+1 per ogni tuo Totem.','RARE','MINION',NULL,'FALSE',4,4,4,NULL,NULL,'TGT');
 insert into card values ('EX1_612','Maga del Kirin Tor','EX1_612.png','<b>Grido di Battaglia:</b> il prossimo <b>Segreto</b> che giochi in questo turno costa (0).','RARE','MINION',NULL,'FALSE',4,3,3,NULL,NULL,'EXPERT1');
@@ -2716,7 +2716,7 @@ insert into card values ('FP1_029','Spade Danzanti','FP1_029.png','<b>Rantolo di
 insert into card values ('CFM_305','Contrabbando d\'Armi','CFM_305.png','+1/+1 ai servitori nella tua mano.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'GANGS');
 insert into card values ('EX1_016','Sylvanas Ventolesto','EX1_016.png','<b>Rantolo di Morte:</b> prendi il controllo di un servitore nemico casuale.','LEGENDARY','MINION',NULL,'FALSE',5,5,6,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_110','Cairne','EX1_110.png','<b>Rantolo di Morte:</b> evoca Baine 4/5.','LEGENDARY','MINION',NULL,'FALSE',4,5,6,NULL,NULL,'EXPERT1');
-insert into card values ('BRM_003','Soffio del Drago','BRM_003.png','Infligge $4 danni. Costa (1) in meno per ogni servitore morto in questo turno.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,5,'replaceable','BRM','BRM');
+insert into card values ('BRM_003','Soffio del Drago','BRM_003.png','Infligge $4 danni. Costa (1) in meno per ogni servitore morto in questo turno.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,5,1,'BRM','BRM');
 insert into card values ('KAR_057','Cavallo d\'Avorio','KAR_057.png','<b>Grido di Battaglia: Rinvieni</b> una Magia. Rigenera Salute al tuo eroe pari al suo costo.','RARE','MINION',NULL,'FALSE',4,4,6,'replaceable','KARA','KARA');
 insert into card values ('GVG_116','Mekgeniere Termospin','GVG_116.png','Quando un servitore nemico muore','LEGENDARY','MINION','MECHANICAL','TRUE',9,7,9,NULL,NULL,'GVG');
 insert into card values ('NEW1_005','Sequestratore','NEW1_005.png','<b>Combo:</b> fa tornare un servitore nella mano di chi lo controlla.','EPIC','MINION',NULL,'FALSE',5,3,6,NULL,NULL,'EXPERT1');
@@ -2765,7 +2765,7 @@ insert into card values ('AT_094','Mangiafuoco Draenei','AT_094.png','<b>Grido d
 insert into card values ('GVG_041','Sussurri Fatui','GVG_041.png','<b>Scegli:</b> evoca cinque Fuochi Fatui <b>o</b> +5/+5 e <b>Provocazione</b> a un servitore.','EPIC','SPELL',NULL,'TRUE',NULL,NULL,6,NULL,NULL,'GVG');
 insert into card values ('EX1_080','Custode dei Segreti','EX1_080.png','Ottiene +1/+1 quando viene giocato un <b>Segreto</b>.','RARE','MINION',NULL,'FALSE',1,2,1,NULL,NULL,'EXPERT1');
 insert into card values ('AT_021','Cavaliere del Male','AT_021.png','Ottiene +1/+1 quando scarti una carta.','RARE','MINION','DEMON','FALSE',3,2,2,NULL,NULL,'TGT');
-insert into card values ('BRM_005','Ira Demoniaca','BRM_005.png','Infligge $2 danni a TUTTI i servitori non Demoni.','RARE','SPELL',NULL,'FALSE',NULL,NULL,3,'replaceable','BRM','BRM');
+insert into card values ('BRM_005','Ira Demoniaca','BRM_005.png','Infligge $2 danni a TUTTI i servitori non Demoni.','RARE','SPELL',NULL,'FALSE',NULL,NULL,3,4,'BRM','BRM');
 insert into card values ('GVG_067','Trogg Scheggiadura','GVG_067.png','Ottiene +1 Attacco quando l\'avversario lancia una Magia.','COMMON','MINION',NULL,'TRUE',2,3,2,NULL,NULL,'GVG');
 insert into card values ('CFM_021','Pozione Congelante','CFM_021.png','<b>Congela</b> un nemico.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,0,NULL,NULL,'GANGS');
 insert into card values ('CFM_900','Speziale Demoniaco','CFM_900.png','Quando viene evocato un servitore sotto il tuo controllo','EPIC','MINION','DEMON','FALSE',5,5,3,NULL,NULL,'GANGS');
@@ -2794,7 +2794,7 @@ insert into card values ('EX1_091','Cabalista dell\'Ombra','EX1_091.png','<b>Gri
 insert into card values ('EX1_584','Mago Anziano','EX1_584.png','<b>Grido di Battaglia: +1 Danni Magici</b> ai servitori adiacenti.','RARE','MINION',NULL,'FALSE',2,5,4,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_611','Trappola Congelante','EX1_611.png','<b>Segreto:</b> quando un servitore nemico attacca','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'EXPERT1');
 insert into card values ('GVG_072','Sanitarizzatore','GVG_072.png','Quando viene curato un personaggio','RARE','MINION','MECHANICAL','TRUE',2,3,2,NULL,NULL,'GVG');
-insert into card values ('BRM_001','Veglia Solenne','BRM_001.png','Pesca 2 carte. Costa (1) in meno per ogni servitore morto in questo turno.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,5,'replaceable','BRM','BRM');
+insert into card values ('BRM_001','Veglia Solenne','BRM_001.png','Pesca 2 carte. Costa (1) in meno per ogni servitore morto in questo turno.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,5,5,'BRM','BRM');
 insert into card values ('EX1_008','Guardiana d\'Argento','EX1_008.png','<b>Scudo Divino</b>','COMMON','MINION',NULL,'FALSE',1,1,1,NULL,NULL,'EXPERT1');
 insert into card values ('CS2_004','Parola del Potere: Scudo','CS2_004.png','+2 Salute a un servitore. Pesca una carta.','FREE','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'CORE');
 insert into card values ('GVG_109','Minimago','GVG_109.png','<b>FurtivitÃ </b>. <b>+1 Danni Magici</b>.','EPIC','MINION',NULL,'TRUE',4,1,4,NULL,NULL,'GVG');
@@ -2827,10 +2827,10 @@ insert into card values ('EX1_145','Preparazione','EX1_145.png','La prossima Mag
 insert into card values ('CS2_038','Spirito Ancestrale','CS2_038.png','Fornisce \<b>Rantolo di Morte:</b> rievoca questo servitore\ a un servitore.','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'EXPERT1');
 insert into card values ('AT_050','Martello Folgorante','AT_050.png','<b>Rantolo di Morte:</b> il tuo Potere Eroe diventa \Infligge 2 danni\.','EPIC','WEAPON',NULL,'FALSE',2,NULL,4,NULL,NULL,'TGT');
 insert into card values ('CFM_603','Pozione della Follia','CFM_603.png','Prendi il controllo di un servitore nemico con Attacco pari a 2 o inferiore fino alla fine del turno.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'GANGS');
-insert into card values ('LOE_111','Male Dissepolto','LOE_111.png','Infligge $3 danni a TUTTI i servitori. Metti questa carta nel mazzo dell\'avversario.','RARE','SPELL}',NULL,'FALSE',NULL,NULL,5,'replaceable','LOE','LOE');
+insert into card values ('LOE_111','Male Dissepolto','LOE_111.png','Infligge $3 danni a TUTTI i servitori. Metti questa carta nel mazzo dell\'avversario.','RARE','SPELL}',NULL,'FALSE',NULL,NULL,5,2,'LOE','LOE');
 insert into card values ('LOE_038','Strega di Mare Naga','LOE_038.png','Le tue carte costano (5).','EPIC','MINION',NULL,'FALSE',5,5,5,'replaceable','LOE','LOE');
 insert into card values ('AT_118','Gran Crociata','AT_118.png','<b>Grido di Battaglia:</b> mette nella tua mano una carta casuale del Paladino.','EPIC','MINION',NULL,'FALSE',5,5,6,NULL,NULL,'TGT');
-insert into card values ('LOE_073','Gigantosauro Fossile','LOE_073.png','<b>Grido di Battaglia:</b> ottiene <b>Provocazione</b> se controlli una Bestia.','COMMON','MINION',NULL,'FALSE',8,8,8,'replaceable','LOE','LOE');
+insert into card values ('LOE_073','Gigantosauro Fossile','LOE_073.png','<b>Grido di Battaglia:</b> ottiene <b>Provocazione</b> se controlli una Bestia.','COMMON','MINION',NULL,'FALSE',8,8,8,4,'LOE','LOE');
 insert into card values ('OG_282','Assassino di C\'thun','OG_282.png','<b>Grido di Battaglia:</b> distrugge un servitore e aggiunge il suo Attacco e la sua Salute al tuo C\'thun <i>dovunque sia</i>.','EPIC','MINION',NULL,'FALSE',4,4,9,NULL,NULL,'OG');
 insert into card values ('EX1_032','Campionessa del Sole','EX1_032.png','<b>Provocazione</b>. <b>Scudo Divino</b>.','RARE','MINION',NULL,'FALSE',4,5,6,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_396','Custode Mogu\'shan','EX1_396.png','<b>Provocazione</b>','COMMON','MINION',NULL,'FALSE',1,7,4,NULL,NULL,'EXPERT1');
@@ -2869,7 +2869,7 @@ insert into card values ('NEW1_020','Piromante Selvaggio','NEW1_020.png','Dopo c
 insert into card values ('EX1_383','Tirion Fordring','EX1_383.png','<b>Scudo Divino</b>. <b>Provocazione</b>. <b>Rantolo di Morte:</b> equipaggia una Brandicenere 5/3.','LEGENDARY','MINION',NULL,'FALSE',6,6,8,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_294','EntitÃ  Speculare','EX1_294.png','<b>Segreto:</b> dopo che l\'avversario gioca un servitore','COMMON','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_609','Colpo da Cecchino','EX1_609.png','<b>Segreto:</b> dopo che l\'avversario gioca un servitore','COMMON','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_110','Ombra Antica','LOE_110.png','<b>Grido di Battaglia:</b> mette un\'Antica Maledizione nel tuo mazzo. Quando viene pescata','RARE','MINION',NULL,'FALSE',7,4,4,'replaceable','LOE','LOE');
+insert into card values ('LOE_110','Ombra Antica','LOE_110.png','<b>Grido di Battaglia:</b> mette un\'Antica Maledizione nel tuo mazzo. Quando viene pescata','RARE','MINION',NULL,'FALSE',7,4,4,1,'LOE','LOE');
 insert into card values ('AT_083','Cavaliere di Dragofalco','AT_083.png','<b>Ispirazione:</b> ottiene <b>Furia del Vento</b> per questo turno.','COMMON','MINION',NULL,'FALSE',3,3,3,NULL,NULL,'TGT');
 insert into card values ('EX1_341','Pozzo di Luce','EX1_341.png','All\'inizio del tuo turno','RARE','MINION',NULL,'FALSE',0,5,2,NULL,NULL,'EXPERT1');
 insert into card values ('AT_085','Ancella del Lago','AT_085.png','Il tuo Potere Eroe costa (1).','COMMON','MINION',NULL,'FALSE',2,6,4,NULL,NULL,'TGT');
@@ -2918,7 +2918,7 @@ insert into card values ('CS2_063','Corruzione','CS2_063.png','Seleziona un serv
 insert into card values ('FP1_011','Tessitela','FP1_011.png','<b>Rantolo di Morte:</b> mette nella tua mano una Bestia casuale.','COMMON','MINION','BEAST','TRUE',1,1,1,NULL,NULL,'NAXX');
 insert into card values ('CFM_716','Dormire con i Pesci','CFM_716.png','Infligge $3 danni a TUTTI i servitori danneggiati.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'GANGS');
 insert into card values ('EX1_112','Gelbin Meccatork','EX1_112.png','<b>Grido di Battaglia:</b> evoca una MERAVIGLIOSA invenzione.','LEGENDARY','MINION',NULL,'FALSE',6,6,6,NULL,NULL,'PROMO');
-insert into card values ('BRM_022','Uovo di Drago','BRM_022.png','Quando subisce danni','RARE','MINION',NULL,'FALSE',0,2,1,'replaceable','BRM','BRM');
+insert into card values ('BRM_022','Uovo di Drago','BRM_022.png','Quando subisce danni','RARE','MINION',NULL,'FALSE',0,2,1,3,'BRM','BRM');
 insert into card values ('EX1_570','Morso','EX1_570.png','+4 Attacco al tuo eroe per questo turno e 4 Armatura.','RARE','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_134','Agente dell\'IR:7','EX1_134.png','<b>Combo:</b> infligge 2 danni.','RARE','MINION',NULL,'FALSE',3,3,3,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_029','Gnomo Contaminato','EX1_029.png','<b>Rantolo di Morte:</b> infligge 2 danni all\'eroe nemico.','COMMON','MINION',NULL,'FALSE',1,1,1,NULL,NULL,'EXPERT1');
@@ -2944,7 +2944,7 @@ insert into card values ('OG_198','Cura Proibita','OG_198.png','Consuma tutto il
 insert into card values ('FP1_001','Masticatore Zombi','FP1_001.png','<b>Rantolo di Morte:</b> rigenera 5 Salute all\'eroe nemico.','COMMON','MINION',NULL,'TRUE',2,3,1,NULL,NULL,'NAXX');
 insert into card values ('OG_290','Messaggera Antica','OG_290.png','All\'inizio del tuo turno','EPIC','MINION',NULL,'FALSE',4,6,6,NULL,NULL,'OG');
 insert into card values ('EX1_009','Gallina Arrabbiata','EX1_009.png','<b>Rabbia:</b> +5 Attacco.','RARE','MINION','BEAST','FALSE',1,1,1,NULL,NULL,'EXPERT1');
-insert into card values ('BRM_034','Corruttore Ala Nera','BRM_034.png','<b>Grido di Battaglia:</b> infligge 3 danni se hai un Drago in mano.','COMMON','MINION',NULL,'FALSE',5,4,5,'replaceable','BRM','BRM');
+insert into card values ('BRM_034','Corruttore Ala Nera','BRM_034.png','<b>Grido di Battaglia:</b> infligge 3 danni se hai un Drago in mano.','COMMON','MINION',NULL,'FALSE',5,4,5,5,'BRM','BRM');
 insert into card values ('EX1_400','Turbine','EX1_400.png','Infligge $1 |4(danno','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'CORE');
 insert into card values ('EX1_407','Rissa','EX1_407.png','Distrugge TUTTI i servitori tranne uno scelto casualmente.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,5,NULL,NULL,'EXPERT1');
 insert into card values ('GVG_101','Epuratore Scarlatto','GVG_101.png','<b>Grido di Battaglia:</b> infligge 2 danni a TUTTI i servitori con <b>Rantolo di Morte</b>.','RARE','MINION',NULL,'TRUE',4,3,3,NULL,NULL,'GVG');
@@ -2954,7 +2954,7 @@ insert into card values ('GVG_060','Quartiermastro','GVG_060.png','<b>Grido di B
 insert into card values ('KAR_089','Imp di Malchezaar','KAR_089.png','Quando scarti una carta','COMMON','MINION','DEMON','FALSE',1,3,1,'replaceable','KARA','KARA');
 insert into card values ('EX1_556','Golem Mietitore','EX1_556.png','<b>Rantolo di Morte:</b> evoca un Golem Danneggiato 2/1.','COMMON','MINION','MECHANICAL','FALSE',2,3,3,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_578','Ferocia','EX1_578.png','Infligge danni pari all\'Attacco del tuo eroe a un servitore.','RARE','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_050','Raptor Cavalcabile','LOE_050.png','<b>Rantolo di Morte:</b> evoca un servitore casuale da 1 Mana.','COMMON','MINION','BEAST','FALSE',3,2,3,'replaceable','LOE','LOE');
+insert into card values ('LOE_050','Raptor Cavalcabile','LOE_050.png','<b>Rantolo di Morte:</b> evoca un servitore casuale da 1 Mana.','COMMON','MINION','BEAST','FALSE',3,2,3,1,'LOE','LOE');
 insert into card values ('CFM_807','Banditore Beardo','CFM_807.png','Dopo che lanci una Magia','LEGENDARY','MINION',NULL,'FALSE',3,4,3,NULL,NULL,'GANGS');
 insert into card values ('GVG_066','Sciamano Mazzaduna','GVG_066.png','<b>Furia del Vento</b>. ProbabilitÃ  del 50% di attaccare il nemico sbagliato. <b>Sovraccarico:</b> (1)','RARE','MINION',NULL,'TRUE',5,4,4,NULL,NULL,'GVG');
 insert into card values ('AT_067','Magnatauro Alfa','AT_067.png','Infligge danni anche ai servitori adiacenti a quello attaccato.','EPIC','MINION',NULL,'FALSE',5,3,4,NULL,NULL,'TGT');
@@ -2968,10 +2968,10 @@ insert into card values ('GVG_030','Orsetto Anodizzato','GVG_030.png','<b>Provoc
 insert into card values ('CFM_611','Pozione Furiarossa','CFM_611.png','+3 Attacco a un servitore. Se Ã¨ un Demone','RARE','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'GANGS');
 insert into card values ('OG_328','Maestro dell\'Evoluzione','OG_328.png','<b>Grido di Battaglia:</b> trasforma un tuo servitore in un servitore casuale che costa (1) in piÃ¹.','RARE','MINION',NULL,'FALSE',4,5,4,NULL,NULL,'OG');
 insert into card values ('EX1_382','Pacificatore Aldor','EX1_382.png','<b>Grido di Battaglia:</b> imposta l\'Attacco di un servitore nemico a 1.','RARE','MINION',NULL,'FALSE',3,3,3,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_115','Idolo del Corvo','LOE_115.png','<b>Scegli: Rinvieni</b> un servitore <b>o Rinvieni</b> una Magia.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,'replaceable','LOE','LOE');
+insert into card values ('LOE_115','Idolo del Corvo','LOE_115.png','<b>Scegli: Rinvieni</b> un servitore <b>o Rinvieni</b> una Magia.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,4,'LOE','LOE');
 insert into card values ('CFM_310','Pioggia di Murloc','CFM_310.png','Evoca quattro Murloc 1/1.','COMMON','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'GANGS');
 insert into card values ('AT_077','Lancia d\'Argento','AT_077.png','<b>Grido di Battaglia:</b> ottiene +1 IntegritÃ  se','RARE','WEAPON',NULL,'FALSE',2,NULL,2,NULL,NULL,'TGT');
-insert into card values ('BRM_010','Druida delle Fiamme','BRM_010.png','<b>Scegli:</b> si trasforma in un servitore 5/2 <b>o</b> in un servitore 2/5.','COMMON','MINION',NULL,'FALSE',2,2,3,'replaceable','BRM','BRM');
+insert into card values ('BRM_010','Druida delle Fiamme','BRM_010.png','<b>Scegli:</b> si trasforma in un servitore 5/2 <b>o</b> in un servitore 2/5.','COMMON','MINION',NULL,'FALSE',2,2,3,2,'BRM','BRM');
 insert into card values ('GVG_103','Micro-Macchina','GVG_103.png','All\'inizio di ogni turno','COMMON','MINION','MECHANICAL','TRUE',1,2,2,NULL,NULL,'GVG');
 insert into card values ('EX1_562','Onyxia','EX1_562.png','<b>Grido di Battaglia:</b> evoca Draghetti 1/1 fino a riempire il tuo lato del campo.','LEGENDARY','MINION','DRAGON','FALSE',8,8,9,NULL,NULL,'EXPERT1');
 insert into card values ('CFM_620','Pozione di Metamorfosi','CFM_620.png','<b>Segreto:</b> dopo che l\'avversario gioca un servitore','RARE','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'GANGS');
@@ -2990,7 +2990,7 @@ insert into card values ('CFM_064','Barone Grasso','CFM_064.png','FinchÃ© rest
 insert into card values ('CFM_694','Sensei dell\'Ombra','CFM_694.png','<b>Grido di Battaglia:</b> +2/+2 a un servitore <b>Furtivo</b>.','RARE','MINION',NULL,'FALSE',4,4,4,NULL,NULL,'GANGS');
 insert into card values ('OG_200','Vate della Rovina Fedele','OG_200.png','All\'inizio del tuo turno','EPIC','MINION',NULL,'FALSE',0,7,5,NULL,NULL,'OG');
 insert into card values ('CFM_616','Potere Rubato','CFM_616.png','Fornisce 1 Cristallo di Mana vuoto per ogni tuo servitore.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'GANGS');
-insert into card values ('BRM_004','Draghetto Oscuro','BRM_004.png','<b>Grido di Battaglia:</b> ottiene +2 Salute se hai un Drago in mano.','COMMON','MINION','DRAGON','FALSE',2,1,1,'replaceable','BRM','BRM');
+insert into card values ('BRM_004','Draghetto Oscuro','BRM_004.png','<b>Grido di Battaglia:</b> ottiene +2 Salute se hai un Drago in mano.','COMMON','MINION','DRAGON','FALSE',2,1,1,3,'BRM','BRM');
 insert into card values ('AT_081','Eadric il Puro','AT_081.png','<b>Grido di Battaglia:</b> imposta l\'Attacco dei servitori nemici a 1.','LEGENDARY','MINION',NULL,'FALSE',3,7,7,NULL,NULL,'TGT');
 insert into card values ('GVG_009','Ombromante Torva','GVG_009.png','<b>Grido di Battaglia:</b> infligge 3 danni a entrambi gli eroi.','EPIC','MINION',NULL,'TRUE',2,1,1,NULL,NULL,'GVG');
 insert into card values ('AT_076','Cavaliere Murloc','AT_076.png','<b>Ispirazione:</b> evoca un Murloc casuale.','COMMON','MINION','MURLOC','FALSE',3,4,4,NULL,NULL,'TGT');
@@ -3061,7 +3061,7 @@ insert into card values ('CFM_854','Antico dei Boccioli','CFM_854.png','<b>Provo
 insert into card values ('LOE_009','Protettore d\'Ossidiana','LOE_009.png','Alla fine del tuo turno','COMMON','MINION',NULL,'FALSE',7,7,7,'replaceable','LOE','LOE');
 insert into card values ('AT_008','Draco di Ibernia','AT_008.png','Puoi usare il tuo Potere Eroe quante volte desideri.','EPIC','MINION','DRAGON','FALSE',6,6,6,NULL,NULL,'TGT');
 insert into card values ('EX1_007','Accolito del Dolore','EX1_007.png','Quando subisce danni','COMMON','MINION',NULL,'FALSE',1,3,3,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_010','Serpente della Fossa','LOE_010.png','Distrugge qualsiasi servitore danneggiato da questo servitore.','COMMON','MINION','BEAST','FALSE',2,1,1,'replaceable','LOE','LOE');
+insert into card values ('LOE_010','Serpente della Fossa','LOE_010.png','Distrugge qualsiasi servitore danneggiato da questo servitore.','COMMON','MINION','BEAST','FALSE',2,1,1,3,'LOE','LOE');
 insert into card values ('OG_280','C\'thun','OG_280.png','<b>Grido di Battaglia:</b> infligge danni pari al proprio Attacco suddivisi casualmente tra i nemici.','LEGENDARY','MINION',NULL,'FALSE',6,6,10,NULL,NULL,'OG');
 insert into card values ('CFM_061','Oratore dell\'Acqua Jinyu','CFM_061.png','<b>Grido di Battaglia:</b> rigenera 6 Salute. <b>Sovraccarico:</b> (1)','RARE','MINION',NULL,'FALSE',3,6,4,NULL,NULL,'GANGS');
 insert into card values ('GVG_054','Maglio degli Ogre','GVG_054.png','ProbabilitÃ  del 50% di attaccare il nemico sbagliato.','COMMON','WEAPON',NULL,'TRUE',4,NULL,3,NULL,NULL,'GVG');
@@ -3161,7 +3161,7 @@ insert into card values ('OG_134','Yogg-Saron','OG_134.png','<b>Grido di Battagl
 insert into card values ('CFM_062','Protettore Famigerato','CFM_062.png','<b>Provocazione</b>. <b>Grido di Battaglia:</b> fornisce <b>Scudo Divino</b> ai servitori adiacenti.','RARE','MINION',NULL,'FALSE',6,6,7,NULL,NULL,'GANGS');
 insert into card values ('LOE_089','Pigmei Barcollanti','LOE_089.png','<b>Rantolo di Morte:</b> evoca tre Pigmei 2/2.','RARE','MINION',NULL,'FALSE',2,6,6,'replaceable','LOE','LOE');
 insert into card values ('NEW1_026','Insegnante Violacea','NEW1_026.png','Quando lanci una Magia','RARE','MINION',NULL,'FALSE',3,5,4,NULL,NULL,'EXPERT1');
-insert into card values ('LOE_079','Elise Cercastelle','LOE_079.png','<b>Grido di Battaglia:</b> mette la Mappa per la Scimmia Dorata nel tuo mazzo.','LEGENDARY','MINION',NULL,'FALSE',3,5,4,'replaceable','LOE','LOE');
+insert into card values ('LOE_079','Elise Cercastelle','LOE_079.png','<b>Grido di Battaglia:</b> mette la Mappa per la Scimmia Dorata nel tuo mazzo.','LEGENDARY','MINION',NULL,'FALSE',3,5,4,4,'LOE','LOE');
 insert into card values ('KAR_069','Pirata Festaiolo','KAR_069.png','<b>Grido di Battaglia:</b> mette nella tua mano una carta casuale della classe dell\'avversario.','COMMON','MINION','PIRATE','FALSE',1,1,1,'replaceable','KARA','KARA');
 insert into card values ('GVG_048','Belva Zannaferrea','GVG_048.png','<b>Grido di Battaglia:</b> +2 Attacco agli altri tuoi Robot.','RARE','MINION','MECHANICAL','TRUE',3,3,3,NULL,NULL,'GVG');
 insert into card values ('FP1_020','Ritorsione','FP1_020.png','<b>Segreto:</b> quando un tuo servitore muore','COMMON','SPELL',NULL,'TRUE',NULL,NULL,1,NULL,NULL,'NAXX');
@@ -3176,7 +3176,7 @@ insert into card values ('NEW1_003','Patto Sacrificale','NEW1_003.png','Distrugg
 insert into card values ('AT_022','Pugno di Jaraxxus','AT_022.png','Quando giochi o scarti questa carta','RARE','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'TGT');
 insert into card values ('KAR_092','Valletto di Medivh','KAR_092.png','<b>Grido di Battaglia:</b> infligge 3 danni se controlli un <b>Segreto</b>.','COMMON','MINION',NULL,'FALSE',2,3,2,'replaceable','KARA','KARA');
 insert into card values ('CS2_189','Arciera Elfica','CS2_189.png','<b>Grido di Battaglia:</b> infligge 1 danno.','COMMON','MINION',NULL,'FALSE',1,1,1,NULL,NULL,'CORE');
-insert into card values ('LOE_118','Lama Maledetta','LOE_118.png','Raddoppia tutti i danni subiti dal tuo eroe.','RARE','WEAPON',NULL,'FALSE',2,NULL,1,'replaceable','LOE','LOE');
+insert into card values ('LOE_118','Lama Maledetta','LOE_118.png','Raddoppia tutti i danni subiti dal tuo eroe.','RARE','WEAPON',NULL,'FALSE',2,NULL,1,4,'LOE','LOE');
 insert into card values ('EX1_130','Nobile Sacrificio','EX1_130.png','<b>Segreto:</b> quando un nemico attacca','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'EXPERT1');
 insert into card values ('CFM_667','Artificiera Goffa','CFM_667.png','<b>Grido di Battaglia:</b> infligge 5 danni a un servitore nemico. <b>Rantolo di Morte:</b> infligge 5 danni al tuo eroe.','RARE','MINION',NULL,'FALSE',2,2,5,NULL,NULL,'GANGS');
 insert into card values ('OG_026','Sentinella Eterna','OG_026.png','<b>Grido di Battaglia:</b> sblocca i Cristalli di Mana in <b>Sovraccarico</b>.','EPIC','MINION',NULL,'FALSE',3,2,2,NULL,NULL,'OG');
@@ -3197,7 +3197,7 @@ insert into card values ('GVG_089','Illuminatrice','GVG_089.png','Se controlli u
 insert into card values ('EX1_093','Difensore di Argus','EX1_093.png','<b>Grido di Battaglia:</b> +1/+1 e <b>Provocazione</b> ai servitori adiacenti.','RARE','MINION',NULL,'FALSE',2,3,4,NULL,NULL,'EXPERT1');
 insert into card values ('LOE_003','Evocatore Etereo','LOE_003.png','<b>Grido di Battaglia: Rinvieni</b> una Magia.','COMMON','MINION',NULL,'FALSE',6,3,5,'replaceable','LOE','LOE');
 insert into card values ('AT_018','Espiatrice Paletress','AT_018.png','<b>Ispirazione:</b> evoca un servitore <b>Leggendario</b> casuale.','LEGENDARY','MINION',NULL,'FALSE',5,4,7,NULL,NULL,'TGT');
-insert into card values ('LOE_016','Elementale Instabile','LOE_016.png','Dopo che giochi un servitore con <b>Grido di Battaglia</b>','COMMON','MINION',NULL,'FALSE',2,6,4,'replaceable','LOE','LOE');
+insert into card values ('LOE_016','Elementale Instabile','LOE_016.png','Dopo che giochi un servitore con <b>Grido di Battaglia</b>','COMMON','MINION',NULL,'FALSE',2,6,4,1,'LOE','LOE');
 insert into card values ('FP1_007','Uovo di Nerubiano','FP1_007.png','<b>Rantolo di Morte:</b> evoca un Nerubiano 4/4.','RARE','MINION',NULL,'TRUE',0,2,2,NULL,NULL,'NAXX');
 insert into card values ('AT_096','Cavaliere a Molla','AT_096.png','<b>Grido di Battaglia:</b> +1/+1 a un tuo Robot.','COMMON','MINION','MECHANICAL','FALSE',5,5,5,NULL,NULL,'TGT');
 insert into card values ('AT_072','Varian Wrynn','AT_072.png','<b>Grido di Battaglia:</b> pesca 3 carte e mette sul campo ogni servitore pescato.','LEGENDARY','MINION',NULL,'FALSE',7,7,10,NULL,NULL,'TGT');
@@ -16748,3 +16748,24 @@ insert into hero_card values ('HERO_07','AT_133');
 insert into hero_card values ('HERO_09','AT_133');
 insert into hero_card values ('HERO_06','AT_133');
 insert into hero_card values ('HERO_02','AT_133');
+
+/* INSERIMENTO ALI AVVENTURA*/
+insert into wing values (1,'LOE');
+insert into wing values (2,'LOE');
+insert into wing values (3,'LOE');
+insert into wing values (4,'LOE');
+insert into wing values (1,'KARA');
+insert into wing values (2,'KARA');
+insert into wing values (3,'KARA');
+insert into wing values (4,'KARA');
+insert into wing values (5,'KARA');
+insert into wing values (1,'NAXX');
+insert into wing values (2,'NAXX');
+insert into wing values (3,'NAXX');
+insert into wing values (4,'NAXX');
+insert into wing values (5,'NAXX');
+insert into wing values (1,'BRM');
+insert into wing values (2,'BRM');
+insert into wing values (3,'BRM');
+insert into wing values (4,'BRM');
+insert into wing values (5,'BRM');
