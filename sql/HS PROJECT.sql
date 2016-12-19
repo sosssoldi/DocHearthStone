@@ -3,7 +3,7 @@
 --  AUTHORS:
 --              TINTORRI    NICOLA      1102860
 --              CARLIN      MAURO       1102351
---              BERTOLINI	LUCA        1099549 
+--              BERTOLINI	LUCA        1099549
 --              BONOLO      MARCO       1102360
 
 -- FILE DEFINITION: SQL DUMP OF THE DATABASE 'HEARTHSTONE'.
@@ -63,18 +63,18 @@ create table if not exists comment (
 )engine=innodb;
 
 create table if not exists hero_power(
-	hero_power_id int auto_increment primary key,
+	hero_power_id varchar(15) primary key,
 	name varchar(50) not null,
 	description varchar(100) not null,
 	image varchar(100) not null
 )engine=innodb;
 
 create table if not exists hero (
-	hero_id int auto_increment primary key,
+	hero_id varchar(15) primary key,
 	name varchar(50) not null,
 	image varchar(100) not null,
 	type varchar(25) not null,
-	h_power int not null,
+	h_power varchar(15) not null,
 	foreign key (h_power) references hero_power(hero_power_id)
 )engine=innodb;
 
@@ -83,7 +83,7 @@ create table if not exists deck (
 	name varchar(100) not null,
 	description varchar(250) default '',
 	likes int default 0,
-	hero_id int not null,
+	hero_id varchar(15) not null,
 	user_name varchar(50) not null,
 	foreign key (hero_id) references hero(hero_id),
 	foreign key (user_name) references user(username)
@@ -118,8 +118,8 @@ create table if not exists guide (
 	guide_id int auto_increment primary key,
 	title varchar(50) not null,
 	content varchar(5000) not null,
-	valutation int(3) default 0, 
-	hero_id int not null,
+	valutation int(3) default 0,
+	hero_id varchar(15) not null,
 	user_name varchar(50) not null,
 	foreign key (hero_id) references hero(hero_id),
 	foreign key (user_name) references user(username)
@@ -156,7 +156,7 @@ create table if not exists rarity(
 )engine=innodb;
 
 create table if not exists card(
-	card_id int auto_increment primary key,
+	card_id varchar(20) primary key,
 	name varchar(50) not null,
 	image varchar(100) not null,
 	description varchar(50) not null,
@@ -177,15 +177,15 @@ create table if not exists card(
 
 create table if not exists card_deck(
 	deck_id int not null,
-	card_id int not null,
+	card_id varchar(20) not null,
 	primary key(deck_id,card_id),
 	foreign key (deck_id) references deck(deck_id),
 	foreign key (card_id) references card(card_id)
 )engine=innodb;
 
 create table if not exists hero_card(
-	hero_id int not null,
-	card_id int not null,
+	hero_id varchar(15) not null,
+	card_id varchar(20) not null,
 	primary key(hero_id,card_id),
 	foreign key (hero_id) references hero(hero_id),
 	foreign key (card_id) references card(card_id)
