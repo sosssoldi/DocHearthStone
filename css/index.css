@@ -15,7 +15,7 @@ body{
 	background-attachment:fixed;
 	background-repeat:no-repeat;
 	background-color:brown;
-	
+
 }
 
 .hide{
@@ -44,7 +44,7 @@ nav ul{
 }
 
 nav li{
-	
+
 	float:left;
 }
 
@@ -56,14 +56,14 @@ li a{
 	text-align: center;
 	padding:20px 30px;
 	margin:0;
-	
+
 }
 
 li a:hover{
 	background-color:black;
 }
 
-#here{
+/*#here{
 	border:1px solid black;
 	text-decoration:none;
 	display:inline;
@@ -71,7 +71,7 @@ li a:hover{
 	text-align: center;
 	padding:20px 30px;
 	margin:0;
-}
+}*/
 
 #log{
 	float:right;
@@ -79,4 +79,3 @@ li a:hover{
 
 nav a{color:white;}
 nav a:visited{color:white;}
-
