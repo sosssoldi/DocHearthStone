@@ -1,0 +1,15 @@
+TO DO:
+1- Definire keywords e description di ogni pagina HTML
+    [FATTO]
+2- Finire la popolazione del database
+    [DA FINIRE]
+3- Identificare le sezioni del forum
+    []
+4- Inserire la barra di ricerca in ogni pagina html
+    []
+5- Decidere le dimensione che caratterizzeranno le media queries dei CSS e creare i relativi css
+    []
+6- Decidere i layout (a livello generale) per le pagine per cui non è stato ancora deciso
+    []
+7- Progettare l'architettura della parte di back-end
+    []
