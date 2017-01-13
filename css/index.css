@@ -40,23 +40,11 @@ header h1 {
 	margin-left: 5%;
 }
 
-/*
-header h1 {
-	display: block;
-	width: 30%;
-	color: red;
-	text-align: center;
-	padding-left: 1em;
-	padding-top: 1em;
-	padding-right: 1em;
-	float: left;
-*/
-
 nav {
 	height: 6em;
 	margin-left: 30%;
-	width: 68%;
-/*  padding-top: 1.7em;*/
+	width: 70%;
+  text-align: center;
 }
 
 nav ul {
@@ -66,12 +54,11 @@ nav ul {
 }
 
 nav li {
-	float: left;
+	display: inline-block;
 }
 
 nav li a {
   font-size: 0.8em;
-  display: block;
   color: black;
   text-align: center;
   padding: 3.1em 1.5em;
@@ -81,7 +68,6 @@ nav li a {
 
 .here {
   font-size: 0.8em;
-  display: block;
   color: black;
   text-align: center;
   padding: 3.1em 1.5em;
@@ -89,9 +75,9 @@ nav li a {
 	font-weight: bold;
 }
 
+
 /* Change the link color to #111 (black) on hover */
 nav li a:hover {
-    /*background-color: #fb9313;*/
 		color: #fb9313;
 }
 
@@ -100,7 +86,6 @@ nav li a:hover {
 	background-position: center center;
 	background-repeat: no-repeat;
 	margin: 0 auto;
-	width: 60%;
 	height: auto;
 }
 
