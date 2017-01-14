@@ -52,7 +52,7 @@ nav {
 
 nav ul {
     list-style-type: none;
-	margin: 0 auto;
+		margin: 0 auto;
     overflow: hidden;
 }
 
@@ -79,8 +79,6 @@ nav li a {
 	color: #0091D3;
 }
 
-
-/* Change the link color to #111 (black) on hover */
 nav li a:hover {
 	color: #fb9313;
 }
@@ -133,14 +131,6 @@ nav li a:hover {
 	margin-bottom:1em;
 }
 
-#deck ul{
-	background-color:#F0D3A7;
-	border-radius:0.5em;
-	border: 0.5em double white;
-	text-align: center;
-}
-
-
 #guide {
 	display: inline-block;
 	margin-left: 3%;
@@ -160,11 +150,15 @@ nav li a:hover {
 	margin-bottom:1em;
 }
 
-#guide ul{
-	background-color:#F0D3A7;
-	border-radius:0.5em;
-	border: 0.5em double white;
+.elenco{
+	list-style-type: none;
+	border-top: 0.2em solid orange;
+	border-bottom: 0.2em solid orange;
 	text-align: center;
+}
+
+.elenco li{
+	margin: 1em 0;
 }
 
 .panel{
@@ -177,16 +171,16 @@ nav li a:hover {
 }
 
 #login {
-	margin-left: 3%;
+	margin-left: 68%;
 	margin-bottom: 5%;
-	margin-top: 3%;
+	margin-top: 3.5em;
 	padding: 1%;
 	width: 21%;
 	background-color:#F0D3A7;
 	border-radius:0.5em;
 	border: 0.5em double white;
 	text-align: center;
-	float:left;
+
 }
 
 button{
