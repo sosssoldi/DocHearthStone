@@ -115,6 +115,13 @@ nav li a:hover {
 	border-top-right-radius: 1em;
 }
 
+#content h2 {
+	display: block;
+	text-align: center;
+	font-size: 2em;
+	margin-bottom: 2%;
+}
+
 #content table {
 	margin: 0 auto;
 	text-align: center;
@@ -164,60 +171,100 @@ nav li a:hover {
 }
 
 form {
-	margin-left: 5%;
+	margin: 0 auto;
 	width: 90%;
 	background-color:#F0D3A7;
 	border-radius:0.5em;
 	border: 0.5em double white;
-	text-align: center;
 }
 
-#inputText {
+#nome {
 	float: left;
+	margin-top: 2%;
+	margin-left: 5%;
+	width: 60%; 
+	margin-bottom: 2%;
 }
- 
+
+#nome input {
+	height: 2em;
+	width: 95%;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
+#costo {
+	margin-top: 2%;
+	margin-left: 65%;
+	width: 29%;
+	margin-bottom: 2%;
+}
+
+#costo select {
+	height: 2.3em;
+	width: 95%;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
+#costo select option {
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
 #rarita {
-	border: 0.1em solid black;
-	width: 25%;
 	float: left;
-	margin-left: 26%;
+	margin-left: 5%;
+	width: 29%;
+	margin-bottom: 2%;
 }
 
-#rarita input {
-	display: block;
+#rarita select {
+	height: 2.3em;
+	width: 95%;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
+#rarita select option {
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
+#tipo {
 	float: left;
+	margin-left: 1%;
+	width: 29%;
+	margin-bottom: 3%;
 }
 
-#rarita legend {
-	text-align: left;
-	margin-left: 7%;
-	font-weight: bold;
+#tipo select {
+	height: 2.3em;
+	width: 95%;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
-#rarita label {
-	display: block;
+#tipo select option {
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
 #classe {
-	background-color:#F0D3A7;
-	border-radius:0.5em;
-	border: 0.2em solid white;
-	width: 25%;
-	margin-left: 72%;
+	margin-left: 65%;
+	width: 29%;
+	margin-bottom: 3%;
 }
 
-#classe input {
-	display: block;
-	float: left;
+#classe select {
+	height: 2.3em;
+	width: 95%;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
-#classe label {
-	display: block;
+#classe select option {
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
-#classe legend {
-	text-align: left;
-	margin-left: 7%;
+form input[type="submit"] {
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+	margin-left: 5%;
+	margin-bottom: 2%;
+	width: 15%;
+	height: 3em;
 	font-weight: bold;
 }
 
