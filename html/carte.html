@@ -13,7 +13,7 @@
 			<h1 class="hide" lang="en">DOCHEARTHSTONE</h1>
 			<nav>
 				<ul>
-					<li span="en"><a href="index.html">HOMEPAGE</a></li>
+					<li lang="en"><a href="index.html">HOMEPAGE</a></li>
 					<li><a href="mazzi.html">MAZZI</a></li>
 					<li class="here">CARTE</li>
 					<li><a href="forum.html">FORUM</a></li>
@@ -22,200 +22,233 @@
 				</ul>
 			</nav>
 		</header>
-    	<img id="imgHeader" width="45%" src="../images/carte.png"></img>
+    	<img id="imgHeader" width="45%" src="../images/carte.png" alt="Call of the Wild">
 		<div id="content">
+			<h2>LISTA DELLE CARTE DI HEARTHSTONE</h2>
 			<form method="get">
-				<input id="inputText" type="text" name="nomeCarta" />
-				<fieldset id="rarita">
-					<legend>Rarità</legend>
-					<input id="Normale" type="radio" name="rarita" value="Normale" checked><label for="Normale">Normale</label></input>
-					<input id="Rara" type="radio" name="rarita" value="Rara"><label for="Rara">Rara</label></input>
-					<input id="Epica" type="radio" name="rarita" value="Epica"><label for="Epica">Epica</label></input>
-					<input id="Leggendaria" type="radio" name="rarita" value="Leggendaria"><label for="Leggendaria">Leggendaria</label></input>
-				</fieldset>
-				<fieldset id="classe">
-					<legend>Classe</legend>
-					<input id="Mago" type="radio" name="classe" value="Mago" checked /><label for="Mago">Mago</label>
-					<input id="Cacciatore" type="radio" name="classe" value="Cacciatore" /><label for="Cacciatore">Cacciatore</label>
-					<input id="Druido" type="radio" name="classe" value="Druido" /><label for="Druido">Druido</label>
-					<input id="Ladro" type="radio" name="classe" value="Ladro" /><label for="Ladro">Ladro</label>
-					<input id="Paladino" type="radio" name="classe" value="Paladino" /><label for="Paladino">Paladino</label>
-					<input id="Stregone" type="radio" name="classe" value="Stregone" /><label for="Stregone">Stregone</label>
-					<input id="Prete" type="radio" name="classe" value="Prete" /><label for="Prete">Prete</label>
-					<input id="Guerriero" type="radio" name="classe" value="Guerriero" /><label for="Guerriero">Guerriero</label>
-					<input id="Sciamano" type="radio" name="classe" value="Sciamano" /><label for="Sciamano">Sciamano</label>
-				</fieldset>
-				<input type="submit" name="bottone" />
+				<div id="nome">
+					<h3>NOME</h3>
+					<input type="text" name="nome" />
+				</div>
+				<div id="costo">
+					<h3>COSTO</h3>
+					<select name="costo">
+						<option>0</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7+</option>
+					</select>
+				</div>
+				<div id="rarita">
+					<h3>RARITÀ</h3>
+					<select name="rarita">
+						<option>Comune</option>
+						<option>Rara</option>
+						<option>Epica</option>
+						<option>Leggendaria</option>
+					</select>
+				</div>
+				<div id="tipo">
+					<h3>TIPO</h3>
+					<select name="tipo">
+						<option>Servitore</option>
+						<option>Magia</option>
+						<option>Arma</option>
+					</select>
+				</div>
+				<div id="classe">
+					<h3>CLASSE</h3>
+					<select name="classe">
+						<option>Mago</option>
+						<option>Sacerdote</option>
+						<option>Cacciatore</option>
+						<option>Guerriero</option>
+						<option>Druido</option>
+						<option>Paladino</option>
+						<option>Stregone</option>
+						<option>Sciamano</option>
+						<option>Ladro</option>
+					</select>
+				</div>
+				<input type="submit" value="FILTRA" />
 			</form>
 			<table>
 				<thead>
-					<td>Nome</td>
-					<td>Tipo</td>
-					<td>Classe</td>
-					<td>Costo</td>
-					<td>Attacco</td>
-					<td>Vita</td>
+					<tr>
+						<th>Nome</th>
+						<th>Tipo</th>
+						<th>Classe</th>
+						<th>Costo</th>
+						<th>Attacco</th>
+						<th>Vita</th>
+					</tr>
 				</thead>
-				<tr>
-					<td class="leggendaria">Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td class="epica">Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td class="rara">Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td class="rara">Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest, Mage, Warlock</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td class="epica">Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td class="rara">Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Hunter</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Druid</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td></td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td class="rara">Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
-				<tr>
-					<td>Northshire Cleric</td>
-					<td>Minion</td>
-					<td>Priest</td>
-					<td class="costo">1</td>
-					<td class="attacco">1</td>
-					<td class="vita">3</td>
-				</tr>
+				<tbody>
+					<tr>
+						<td class="leggendaria">Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td class="epica">Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td class="rara">Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td class="rara">Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest, Mage, Warlock</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td class="epica">Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td class="rara">Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Hunter</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Druid</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td></td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td class="rara">Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+					<tr>
+						<td>Northshire Cleric</td>
+						<td>Minion</td>
+						<td>Priest</td>
+						<td class="costo">1</td>
+						<td class="attacco">1</td>
+						<td class="vita">3</td>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 		<footer>
