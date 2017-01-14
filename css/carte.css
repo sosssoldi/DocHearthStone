@@ -32,7 +32,7 @@ header {
 header h1 {
 	width: 20%;
 	height: 2em;
-	background-image: url("../images/logo.png");
+	background-image: url("../images/logonuovo.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -121,6 +121,7 @@ nav li a:hover {
 	font-size: 1.2em;
 	border-collapse: collapse;
 	width: 90%;
+	margin-top: 2%;
 }
 
 #content table td {
@@ -159,6 +160,64 @@ nav li a:hover {
 
 .epica {
 	color: #9900ff;
+	font-weight: bold;
+}
+
+form {
+	margin-left: 5%;
+	width: 90%;
+	background-color:#F0D3A7;
+	border-radius:0.5em;
+	border: 0.5em double white;
+	text-align: center;
+}
+
+#inputText {
+	float: left;
+}
+ 
+#rarita {
+	border: 0.1em solid black;
+	width: 25%;
+	float: left;
+	margin-left: 26%;
+}
+
+#rarita input {
+	display: block;
+	float: left;
+}
+
+#rarita legend {
+	text-align: left;
+	margin-left: 7%;
+	font-weight: bold;
+}
+
+#rarita label {
+	display: block;
+}
+
+#classe {
+	background-color:#F0D3A7;
+	border-radius:0.5em;
+	border: 0.2em solid white;
+	width: 25%;
+	margin-left: 72%;
+}
+
+#classe input {
+	display: block;
+	float: left;
+}
+
+#classe label {
+	display: block;
+}
+
+#classe legend {
+	text-align: left;
+	margin-left: 7%;
 	font-weight: bold;
 }
 
