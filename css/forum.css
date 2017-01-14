@@ -8,7 +8,7 @@ html {
 }
 
 body {
-	background-image: linear-gradient(to left,  #E65D17 50%, #4CD2CB  50%);
+	background-image: linear-gradient(to left,  #292c3e 50%, #2c2d36  50%)
 }
 
 .hide {
@@ -32,7 +32,7 @@ header {
 header h1 {
 	width: 20%;
 	height: 2em;
-	background-image: url("../images/logonuovo.png");
+	background-image: url("../images/logo.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
