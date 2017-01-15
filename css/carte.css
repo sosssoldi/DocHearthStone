@@ -132,8 +132,12 @@ nav li a:hover {
 }
 
 #content table td {
-	border: 0.1em solid black;
-	padding: 0.2em;
+	border: 0.1em solid gray;
+	padding: 0.6em;
+}
+
+#content table td a {
+	text-decoration: none;
 }
 
 #content table thead {
@@ -155,19 +159,20 @@ nav li a:hover {
 	font-weight: bold;
 }
 
+.comune {
+	color: black;
+}
+
 .leggendaria {
-	color: orange;
-	font-weight: bold;
+	color: darkorange;
 }
 
 .rara {
-	color: #0066ff;
-	font-weight: bold;
+	color: blue;
 }
 
 .epica {
 	color: #9900ff;
-	font-weight: bold;
 }
 
 form {
