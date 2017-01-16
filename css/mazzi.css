@@ -80,7 +80,6 @@ nav li a {
 
 /* Change the link color to #111 (black) on hover */
 nav li a:hover {
-    /*background-color: #fb9313;*/
 	color: #fb9313;
 }
 
@@ -113,86 +112,122 @@ nav li a:hover {
 	border-top-right-radius: 1em;
 }
 
-#deck {
-	margin-left: 6%;
-	margin-bottom: 5%;
-	padding: 2%;
-	width: 21%;
-	border-width: 0.1em;
-	border-style: solid;
+#content h2 {
+	display: block;
+	text-align: center;
+	font-size: 2em;
+	margin-bottom: 2%;
+	color:#273f83;
+}
+
+#content h3{
+	color: white;
+}
+#content table {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 1.2em;
+	border-collapse: collapse;
+	width: 90%;
+	margin-top: 2%;
+}
+
+#content table td {
+	border: 0.1em solid gray;
+	padding: 0.6em;
+}
+
+#content table td a {
+	text-decoration: none;
+}
+
+#content table thead {
+	font-weight: bold;
+}
+
+.costo {
+	color: blue;
+	font-weight: bold;
+}
+
+form {
+	margin: 0 auto;
+	width: 90%;
+	background-color:#273f83;
+	border-radius:0.5em;
+	border: 0.5em double white;
+}
+
+#nome {
 	float: left;
-	overflow: hidden;
+	margin-top: 2%;
+	margin-left: 5%;
+	width: 45%;
+	margin-bottom: 2%;
 }
 
-#deck table {
+#nome input {
+	height: 2em;
 	width: 100%;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
-#deck caption {
-	color: red;
-	padding-bottom: 5%;
-	font-weight: bold;
+
+#classe {
+	margin-left:60%;
+	width: 30%;
+	margin-bottom: 3%;
+	margin-top: 2%;
 }
 
-#deck table a {
-	color: black;
+#classe select {
+	height: 2.3em;
+	width: 95%;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
-#guide {
-	margin-left: 6%;
-	margin-bottom: 5%;
-	padding: 2%;
-	width: 21%;
-	border-width: 0.1em;
-	border-style: solid;
+#classe select option {
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
+#c{
+	text-align: left;
+	margin-left: 5%;
+}
+#costo{
+	width: 44%;
+	background-color:white;
+	border-radius:0.5em;
+	border: 0.5em double #273f83;
+	margin-left: 4.7%;
+	margin-bottom: 2%;
+}
+.minmax{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: 1.2em;
+	margin-right: 1em;
+}
+.minmax h4{
 	float: left;
-	overflow: hidden;
+	width:50%;
+  display:block;
+	font-size: 1em;
 }
 
-#guide table {
-	width: 100%;
+.minmax input {
+	width: 45%;
+	height: 1.2em;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
-#guide caption {
-	color: red;
-	padding-bottom: 5%;
+form input[type="submit"] {
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+	margin-left: 5%;
+	margin-bottom: 2%;
+	width: 15%;
+	height: 3em;
 	font-weight: bold;
-}
-
-#guide table a {
-	color: black;
-}
-
-#forum {
-	margin-left: 69%;
-	margin-bottom: 5%;
-	padding: 2%;
-	width: 21%;
-	border-width: 0.1em;
-	border-style: solid;
-	overflow: hidden;
-}
-
-#forum table {
-	width: 100%;
-}
-
-#forum caption {
-	color: red;
-	padding-bottom: 5%;
-	font-weight: bold;
-}
-
-#forum table a {
-	color: black;
-}
-
-#tips {
-	border: 0.1em solid black;
-	width: 84%;
-	margin-left: 6%;
-	padding: 2%;
-	clear: both;
 }
 
 footer {
