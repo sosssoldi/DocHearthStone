@@ -187,7 +187,7 @@ form {
 	float: left;
 	margin-top: 2%;
 	margin-left: 5%;
-	width: 60%; 
+	width: 60%;
 	margin-bottom: 2%;
 }
 
@@ -219,6 +219,7 @@ form {
 	margin-left: 5%;
 	width: 29%;
 	margin-bottom: 2%;
+	clear: both;
 }
 
 #rarita select {
@@ -271,6 +272,8 @@ form input[type="submit"] {
 	width: 15%;
 	height: 3em;
 	font-weight: bold;
+	margin-right: 80%;
+
 }
 
 footer {
