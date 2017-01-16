@@ -1,0 +1,20 @@
+-- POPULATE TABLE:		WING
+insert into wing values (1,'LOE');
+insert into wing values (2,'LOE');
+insert into wing values (3,'LOE');
+insert into wing values (4,'LOE');
+insert into wing values (1,'KARA');
+insert into wing values (2,'KARA');
+insert into wing values (3,'KARA');
+insert into wing values (4,'KARA');
+insert into wing values (5,'KARA');
+insert into wing values (1,'NAXX');
+insert into wing values (2,'NAXX');
+insert into wing values (3,'NAXX');
+insert into wing values (4,'NAXX');
+insert into wing values (5,'NAXX');
+insert into wing values (1,'BRM');
+insert into wing values (2,'BRM');
+insert into wing values (3,'BRM');
+insert into wing values (4,'BRM');
+insert into wing values (5,'BRM');
