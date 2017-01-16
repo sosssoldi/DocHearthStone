@@ -195,12 +195,14 @@ form {
 	margin-left: 5%;
 }
 #costo{
+	float: left;
 	width: 44%;
 	background-color:white;
 	border-radius:0.5em;
 	border: 0.5em double #273f83;
 	margin-left: 4.7%;
 	margin-bottom: 2%;
+	margin-right: 0;
 }
 .minmax{
 	margin-top: 0.5em;
@@ -223,7 +225,7 @@ form {
 
 form input[type="submit"] {
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
-	margin-left: 5%;
+	margin-left: 15%;
 	margin-bottom: 2%;
 	width: 15%;
 	height: 3em;
@@ -234,4 +236,57 @@ footer {
 	width: 75%;
 	margin: 0 auto;
 	background-color: white;
+}
+
+.negativo{
+	color: red;
+}
+
+.positivo{
+	color: green;
+}
+
+.mago{
+	color:#17d1f0;
+	font-weight: bold;
+}
+
+.paladino{
+	color:#f0d449;
+	font-weight: bold;
+}
+
+.cacciatore{
+	color:green;
+	font-weight: bold;
+}
+
+.ladro{
+	color:#8d191a;
+	font-weight: bold;
+}
+
+.sacerdote{
+	color:#a73dbb;
+	font-weight: bold;
+}
+
+.sciamano{
+	color:#67b999;
+	font-weight: bold;
+}
+
+.guerriero{
+	color:#ff7c0d;
+	font-weight: bold;
+}
+
+.druido{
+	color:#d397c7;
+	font-weight: bold;
+}
+
+.stregone{
+	color:#40245d;
+	font-weight: bold;
 }
