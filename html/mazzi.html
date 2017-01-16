@@ -24,6 +24,116 @@
 	 </header>
 	 <img id="imgHeader" width="45%" src="../images/mazzi.png"></img>
 		<div id="content">
+			<h2>LISTA DEI MAZZI</h2>
+			<form method="get">
+				<div id="nome">
+					<h3>NOME</h3>
+					<input type="text" name="nome" />
+				</div>
+				<div id="classe">
+					<h3>CLASSE</h3>
+					<select name="classe">
+						<option></option>
+						<option>Mago</option>
+						<option>Sacerdote</option>
+						<option>Cacciatore</option>
+						<option>Guerriero</option>
+						<option>Druido</option>
+						<option>Paladino</option>
+						<option>Stregone</option>
+						<option>Sciamano</option>
+						<option>Ladro</option>
+					</select>
+				</div>
+				<h3 id="c">COSTO</h3>
+				<div id="costo">
+					<div class="minmax">
+						<h4>Maggiore di:</h4>
+						<input type="number" name="costomaggiore" min="0" max="100000" name="costo"/>
+					</div>
+					<div class="minmax">
+						<h4>Minore di:</h4>
+						<input type="number" name="costominore" min="0" max="100000" name="costo"/>
+					</div>
+				</div>
+				<input type="submit" value="FILTRA" />
+			</form>
+			<table>
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Classe</th>
+						<th>Costo</th>
+						<th>Rating</th>
+						<th>Data creazione</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Stilla</td>
+						<td class="sacerdote">Sacerdote</td>
+						<td class="costo">100k</td>
+						<td>+mille</td>
+						<td>12/12/16</td>
+					</tr>
+					<tr>
+						<td>Stilla</td>
+						<td class="mago">Mago</td>
+						<td class="costo">100k</td>
+						<td>+mille</td>
+						<td>12/12/16</td>
+					</tr>
+					<tr>
+						<td>Stilla</td>
+						<td class="cacciatore">Cacciatore</td>
+						<td class="costo">100k</td>
+						<td>+mille</td>
+						<td>12/12/16</td>
+					</tr>
+					<tr>
+						<td>Stilla</td>
+						<td class="stregone">Stregone</td>
+						<td class="costo">100k</td>
+						<td>+mille</td>
+						<td>12/12/16</td>
+					</tr>
+					<tr>
+						<td>Stilla</td>
+						<td class="ladro">Ladro</td>
+						<td class="costo">100k</td>
+						<td>+mille</td>
+						<td>12/12/16</td>
+					</tr>
+					<tr>
+						<td>Stilla</td>
+						<td class="sciamano">Sciamano</td>
+						<td class="costo">100k</td>
+						<td>+mille</td>
+						<td>12/12/16</td>
+					</tr>
+					<tr>
+						<td>Stilla</td>
+						<td class="guerriero">Guerriero</td>
+						<td class="costo">100k</td>
+						<td>+mille</td>
+						<td>12/12/16</td>
+					</tr>
+					<tr>
+						<td>Stilla</td>
+						<td class="druido">Druido</td>
+						<td class="costo">100k</td>
+						<td>+mille</td>
+						<td>12/12/16</td>
+					</tr>
+					<tr>
+						<td>Stilla</td>
+						<td class="paladino">Paladino</td>
+						<td class="costo">100k</td>
+						<td>+mille</td>
+						<td>12/12/16</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<footer>
 		</footer>
