@@ -130,6 +130,7 @@ nav li a:hover {
 
 #deckContent table{
 	width: 100%;
+	height: 40em;
 
 }
 
@@ -174,6 +175,16 @@ nav li a:hover {
 	border-right: 0.2em solid #e4caa2;
 	border-left: 0.2em solid #e4caa2;
 }
+
+.ratepos{
+	width: 4em;
+	border:0.1em solid green;
+}
+.rateneg{
+	width: 4em;
+	border:0.1em solid red;
+}
+
 
 
 #guide {
@@ -235,12 +246,19 @@ button{
 
 }
 
-#tip {
-	display: inline-block;
-	border: 0.1em solid black;
-	width: 25%;
+#tip{
+	clear: both;
+}
+
+#contenutoTip {
+	display: block;
+	border-top: 0.2em solid orange;
+	border-bottom: 0.2em solid orange;
+	width: 60%;
 	padding: 2%;
-	margin-left: 65%;
+	margin:auto;
+	text-align: center;
+	word-wrap: break-word;
 }
 #tip h2{
 	display: block;
