@@ -114,90 +114,48 @@ nav li a:hover {
 	border-top-right-radius: 1em;
 }
 
-#deck {
-	margin-left: 6%;
+#pagina{
+	text-align: center;
+	margin-bottom: 3%;
+}
+
+.titolo{
+	text-align:center;
+}
+
+.tabella{
+	width: 90%;
+	margin:0 auto;
+	border-collapse: collapse;
+	border-top: 0.25em solid #292c3e;
+	border-bottom: 0.25em solid #292c3e;
+
+}
+#general{
 	margin-bottom: 5%;
-	padding: 2%;
-	width: 21%;
-	border-width: 0.1em;
-	border-style: solid;
-	float: left;
-	overflow: hidden;
 }
 
-#deck table {
-	width: 100%;
+.forum{
+	padding:0.4em;
+	width:70%;
+	border-bottom: 0.15em solid #292c3e;
+}
+.lastpost{
+	width: 20%;
+	text-align: center;
+	border-bottom: 0.15em solid #292c3e;
+	border-right: 0.15em solid #292c3e;
+	border-left: 0.15em solid #292c3e;
+}
+.numpost{
+	text-align: center;
+	border-bottom: 0.15em solid #292c3e;
+	border-left: 0.15em solid #292c3e;
+
 }
 
-#deck caption {
-	color: red;
-	padding-bottom: 5%;
-	font-weight: bold;
-}
-
-#deck table a {
-	color: black;
-}
-
-#guide {
-	margin-left: 6%;
-	margin-bottom: 5%;
-	padding: 2%;
-	width: 21%;
-	border-width: 0.1em;
-	border-style: solid;
-	float: left;
-	overflow: hidden;
-}
-
-#guide table {
-	width: 100%;
-}
-
-#guide caption {
-	color: red;
-	padding-bottom: 5%;
-	font-weight: bold;
-}
-
-#guide table a {
-	color: black;
-}
-
-#forum {
-	margin-left: 69%;
-	margin-bottom: 5%;
-	padding: 2%;
-	width: 21%;
-	border-width: 0.1em;
-	border-style: solid;
-	overflow: hidden;
-}
-
-#forum table {
-	width: 100%;
-}
-
-#forum caption {
-	color: red;
-	padding-bottom: 5%;
-	font-weight: bold;
-}
-
-#forum table a {
-	color: black;
-}
-
-#tips {
-	border: 0.1em solid black;
-	width: 84%;
-	margin-left: 6%;
-	padding: 2%;
-	clear: both;
-}
-
-footer {
-	width: 75%;
-	margin: 0 auto;
-	background-color: white;
+#class{
+	width: 90%;
+	margin:0 auto;
+	border-collapse: collapse;
 }
