@@ -1,6 +1,6 @@
 <?php
 	$filenames = array('card1.json', 'card2.json', 'card3.json', 'card4.json', 'card5.json', 'card6.json');
-	$file2 = fopen("cardparsed.txt", "a");
+	$file2 = fopen("prova.txt", "a");
 	$cont = 0;
 	while($cont < count($filenames))
 	{
