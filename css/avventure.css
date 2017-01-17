@@ -208,6 +208,56 @@ nav li a:hover {
 	clear: both;
 }
 
+#content h2 {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 1.8em;
+}
+
+#content div img:hover {
+	transform: scale(1.1);
+}
+
+#KaraText, #LoeText, #BrmText, #NaxxText{
+	display: block;
+}
+
+#Kara {
+	margin: 1.5em auto;
+	width: 70%;
+	border: 0.15em solid black;
+	border-radius: 1em;
+	background-color: #f5b1fa;
+	text-align: center;
+}
+
+#Loe {
+	margin: 1.5em auto;
+	width: 70%;
+	border: 0.15em solid black;
+	border-radius: 1em;
+	background-color: #2cad49;
+	text-align: center;
+}
+
+#Brm {
+	margin: 1.5em auto;
+	width: 70%;
+	border: 0.15em solid black;
+	border-radius: 1em;
+	background-color: #712105;
+	text-align: center;
+}
+
+#Naxx {
+	margin: 1.5em auto;
+	width: 70%;
+	border: 0.15em solid black;
+	border-radius: 1em;
+	background-color: #6f259a;
+	text-align: center;
+}
+
 footer {
 	width: 75%;
 	margin: 0 auto;
