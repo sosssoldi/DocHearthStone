@@ -7,8 +7,30 @@
 		<meta name="description" content="La descrizione delle carte e degli eroi che si troveranno acquistando ciascuna avventura." />
 		<meta name="keyword" content="DocHearthStone, avventura, la maledizione di Naxxramas, naxxramas, Massiccio Roccianera, roccianera, Lega degli Esploratori, Esploratori, Una notte a Karazhan, Karazhan" />
     <link rel="stylesheet" href="../css/avventure.css" type="text/css" />
+		<script>
+			function init() {
+				displayText('KaraText');
+				displayText('LoeText');
+				displayText('BrmText');
+				displayText('NaxxText');
+			}
+			function displayText(id) {
+				var colors = {Kara:"#f5b1fa", Loe:"#2cad49", Brm:"#712105", Naxx:"#6f259a"};
+				var p = document.getElementById(id);
+				var divID = id.replace("Text","");
+				console.log(divID);
+				var div = document.getElementById(divID);
+				if(p.style.display == 'none') {
+					p.style.display = 'block';
+					div.style.background = 'white';
+				} else {
+					p.style.display = 'none';
+					div.style.background = colors[divID];
+				}
+			}
+		</script>
 	</head>
-	<body>
+	<body onload="init();">
 		<header>
 			<h1 class="hide" lang="en">DOCHEARTHSTONE</h1>
 	   	<nav>
@@ -24,6 +46,23 @@
 		</header>
 		    <img id="imgHeader" width="55%" src="../images/avventure.png"></img>
 		<div id="content">
+			<h2>Scegli un'avventura e scopri qualcosa di nuovo</h2>
+			<div id="Kara" onclick="displayText('KaraText')">
+				<img src="../images/kara.png" width="40%"></img>
+				<p id="KaraText">ekvnekrjvnkejrnvkjernvkjernvkejrvnkjewnvkje</p>
+			</div>
+			<div id="Loe" onclick="displayText('LoeText')">
+				<img src="../images/loe.png" width="40%"></img>
+				<p id="LoeText">ekvnekrjvnkejrnvkjernvkjernvkejrvnkjewnvkje</p>
+			</div>
+			<div id="Brm" onclick="displayText('BrmText')">
+				<img src="../images/brm.png" width="40%"></img>
+				<p id="BrmText">ekvnekrjvnkejrnvkjernvkjernvkejrvnkjewnvkje</p>
+			</div>
+			<div id="Naxx" onclick="displayText('NaxxText')">
+				<img src="../images/naxx.png" width="40%"></img>
+				<p id="NaxxText">ekvnekrjvnkejrnvkjernvkjernvkejrvnkjewnvkje</p>
+			</div>
 		</div>
 		<footer>
 		</footer>
