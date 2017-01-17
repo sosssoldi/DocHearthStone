@@ -1,0 +1,190 @@
+* {
+	margin: 0em;
+	padding: 0em;
+}
+
+html {
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
+body {
+	background-color: #000;
+}
+
+.hide {
+	text-indent:100%;
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+header {
+	width: 75%;
+	height: 6em;
+	margin: 0 auto;
+	background-color: white;
+	border-color: #fb9313;
+	border-style: solid;
+	border-width: 0em 0.1em 0.3em 0.1em;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+}
+
+header h1 {
+	width: 20%;
+	height: 2em;
+	background-image: url("../images/logo.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	padding: 0.5em 0em 0.5em 0em;
+	float:left;
+	margin-left: 5%;
+}
+
+nav {
+	height: 6em;
+	margin-left: 30%;
+	width: 70%;
+	text-align: center;
+	overflow: hidden;
+}
+
+nav ul {
+  list-style-type: none;
+	margin: 0 auto;
+  overflow: hidden;
+	padding-top: 2.3em;
+	padding-bottom: 2.3em;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav li a {
+	font-size: 0.8em;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 3.1em 1.5em;
+}
+
+
+/* Change the link color to #111 (black) on hover */
+nav li a:hover {
+	color: #fb9313;
+}
+
+#imgHeader {
+	display: block;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	height: auto;
+}
+
+
+#content {
+	width: 75%;
+	margin: 0 auto;
+	border-style: solid;
+	border-width: 0.3em 0.1em 0em 0.1em;
+	border-color: #fb9313;
+	background-color: white;
+	padding-top: 2%;
+	padding-bottom: 30%;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
+#sopra{
+  background-color:white;
+	border-radius:0.5em;
+	border: 0.5em double #F0D3A7;
+  width:90%;
+  margin: auto;
+  overflow: auto;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+}
+
+#img{
+
+  display: block;
+  margin-left: 3%;
+  float: left;
+  width: 20%;
+}
+
+#imgClasse {
+  width:80%;
+  margin-left:10%;
+}
+
+#valutazione{
+
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+#rating .like{
+  display: block;
+  margin: auto;
+  margin-top: 3%;
+  border: none;
+}
+
+#descrizione {
+  width: 60%;
+  margin-left: 25%;
+  word-wrap: break-word;
+}
+
+#descrizione h2{
+  font-weight: bold;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+#descrizione h4{
+  padding-top: 0.5em;
+  font-weight: normal;
+}
+#descrizione h4 span{
+  font-weight: bold;
+  color: blue;
+
+}
+
+#carte {
+  margin: auto;
+  margin-top: 2em;
+  width: 90%;
+}
+
+#carte h1{
+  text-align: center;
+  color: blue;
+  font-weight: bolder;
+}
+#content table {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 1.2em;
+	border-collapse: collapse;
+	width: 90%;
+	margin-top: 2%;
+}
+
+#content table td {
+	border: 0.1em solid gray;
+	padding: 0.6em;
+}
+
+#content table td a {
+	text-decoration: none;
+}
+
+#content table thead {
+	font-weight: bold;
+}
