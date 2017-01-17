@@ -8,7 +8,8 @@ html {
 }
 
 body {
-	background-image: linear-gradient(to left,#DD4D0E 50%, #45C1BC  50%);
+	/*background-image: linear-gradient(to left,#DD4D0E 50%, #45C1BC  50%);*/
+	background-color: rgb(25, 19, 17);
 }
 
 .hide {
@@ -86,7 +87,8 @@ nav li a:hover {
 
 #imgHeader {
 	display: block;
-	background-image: linear-gradient(to left,#DD4D0E 50%, #45C1BC  50%);
+	/*background-image: linear-gradient(to left,#DD4D0E 50%, #45C1BC  50%);*/
+	background-color: rgb(25, 19, 17);
 	background-position: center center;
 	background-repeat: no-repeat;
 	margin: 0 auto;
@@ -124,24 +126,73 @@ nav li a:hover {
 
 #content table {
 	margin: 0 auto;
-	text-align: center;
-	font-size: 1.2em;
+	margin-top: 4%;
+	font-size: 1.1em;
 	border-collapse: collapse;
 	width: 90%;
-	margin-top: 2%;
+}
+
+#content th {
+	padding-bottom: 1%;
+	text-align: left;
+	padding-top: 0.3em;
+	padding-left: 0.8em;
+	padding-right: 0.6em;
+	padding-bottom: 0.5em;
+	border: 0.1em solid gray;
+	background-color: #F0D3A7;
+	color: black;
+	font-size: 1.1em;
 }
 
 #content table td {
 	border: 0.1em solid gray;
-	padding: 0.6em;
+	padding-top: 0.5em;
+	padding-left: 0.8em;
+	padding-bottom: 0.5em;
 }
 
-#content table td a {
-	text-decoration: none;
+#content table td img {
+    display: block;
+    position: absolute;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.descrizione {
+	display: block;
+	margin-top: 2%;
+	font-size: 0.8em;
+	color: black;
+	padding-bottom: 2%;
+	font-weight: none;
+	font-weight: normal;
+	cursor: default;
 }
 
 #content table thead {
 	font-weight: bold;
+}
+
+.alternativa {
+	background-color: #F2F2F2;
+}
+
+.nomeCarta {
+	width: 32%;
+}
+
+.valore {
+	width: 8%;
+}
+
+.classeCarta {
+	width: 32%;
+}
+
+.tipoCarta {
+	width: 12%;
 }
 
 .costo {
@@ -160,26 +211,34 @@ nav li a:hover {
 }
 
 .comune {
-	color: black;
+	color: #2ecc71;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 .leggendaria {
-	color: darkorange;
+	color: #ff8000;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 .rara {
-	color: blue;
+	color: #0070dd;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 .epica {
-	color: #9900ff;
+	color: #a335ee;
+	font-weight: bold;
+	cursor: pointer;
 }
 
-form {
+#search {
 	margin: 0 auto;
 	width: 90%;
-	background-color:#F0D3A7;
-	border-radius:0.5em;
+	background-color: #F0D3A7;
+	border-radius: 0.5em;
 	border: 0.5em double white;
 }
 
@@ -187,21 +246,22 @@ form {
 	float: left;
 	margin-top: 2%;
 	margin-left: 5%;
-	width: 60%;
+	width: 30%; 
 	margin-bottom: 2%;
 }
 
 #nome input {
 	height: 2em;
-	width: 95%;
+	width: 94%;
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
 #costo {
 	margin-top: 2%;
-	margin-left: 65%;
-	width: 29%;
+	margin-left: 1%;
+	width: 30%;
 	margin-bottom: 2%;
+	float: left;
 }
 
 #costo select {
@@ -214,12 +274,29 @@ form {
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
+#espansione {
+	margin-top: 2%;
+	margin-left: 67%;
+	width: 30%;
+	margin-bottom: 2%;
+}
+
+#espansione select {
+	height: 2.3em;
+	width: 95%;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
+#espansione select option {
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
 #rarita {
+	clear: both;
 	float: left;
 	margin-left: 5%;
-	width: 29%;
+	width: 30%;
 	margin-bottom: 2%;
-	clear: both;
 }
 
 #rarita select {
@@ -235,7 +312,7 @@ form {
 #tipo {
 	float: left;
 	margin-left: 1%;
-	width: 29%;
+	width: 30%;
 	margin-bottom: 3%;
 }
 
@@ -250,8 +327,8 @@ form {
 }
 
 #classe {
-	margin-left: 65%;
-	width: 29%;
+	margin-left: 67%;
+	width: 30%;
 	margin-bottom: 3%;
 }
 
@@ -265,15 +342,36 @@ form {
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
-form input[type="submit"] {
+#search input[type="submit"] {
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 	margin-left: 5%;
-	margin-bottom: 2%;
+	margin-bottom: 3%;
 	width: 15%;
 	height: 3em;
 	font-weight: bold;
-	margin-right: 80%;
+}
 
+#split {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 2%;
+	text-align: center;
+}
+
+#split input[type="submit"] {
+	width: 3.5%;
+	height: 2.5em;
+	/*background-color: #ffcccc;*/
+	background-color: #F0D3A7;
+	border: 0.3em double white;
+	color: black;
+	font-weight: bold;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
+#split input[type="submit"]:hover {
+	background-color: #800000;
+	color: white;
 }
 
 footer {
