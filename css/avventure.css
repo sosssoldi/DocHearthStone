@@ -219,7 +219,24 @@ nav li a:hover {
 }
 
 #KaraText, #LoeText, #BrmText, #NaxxText{
+	padding: 0.8em;
+}
+
+.block {
 	display: block;
+}
+
+#content div a {
+	text-decoration: none;
+}
+
+#content div a p {
+	margin: 0.8em auto;
+	padding: 0.5em;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	color: black;
+	font-weight: bold;
 }
 
 #Kara {
