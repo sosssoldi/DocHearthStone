@@ -92,7 +92,7 @@ nav li a:hover {
 	border-color: #fb9313;
 	background-color: white;
 	padding-top: 2%;
-	padding-bottom: 30%;
+	padding-bottom: 6em;
 	border-top-left-radius: 1em;
 	border-top-right-radius: 1em;
 }
@@ -100,20 +100,21 @@ nav li a:hover {
 #sopra{
   background-color:white;
 	border-radius:0.5em;
-	border: 0.5em double #F0D3A7;
-  width:90%;
-  margin: auto;
+	border: 0.2em solid #273f83;
+  width:47%;
+  margin-left: 3%;
   overflow: auto;
   padding-bottom: 0.5em;
   padding-top: 0.5em;
+	float: left;
+
 }
 
 #img{
-
-  display: block;
-  margin-left: 3%;
+  margin: 2em 0 2em 3%;
   float: left;
   width: 20%;
+	  height: 100%;
 }
 
 #imgClasse {
@@ -122,28 +123,33 @@ nav li a:hover {
 }
 
 #valutazione{
-
   text-align: center;
   font-size: 1.5em;
   font-weight: bolder;
 }
+
+
 #rating .like{
   display: block;
   margin: auto;
-  margin-top: 3%;
+  padding-top: 0.2em;
   border: none;
+	background-color: white;
 }
 
 #descrizione {
-  width: 60%;
-  margin-left: 25%;
+  width: 70%;
+  height: 100%;
   word-wrap: break-word;
+	text-align: center;
+	margin:2em 0 2em 25%;
+
 }
 
-#descrizione h2{
+#descrizione h3{
   font-weight: bold;
-  padding-bottom: 1em;
-  padding-top: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 1em;
 }
 
 #descrizione h4{
@@ -152,39 +158,141 @@ nav li a:hover {
 }
 #descrizione h4 span{
   font-weight: bold;
-  color: blue;
+  color:#273f83;
 
 }
 
 #carte {
-  margin: auto;
-  margin-top: 2em;
-  width: 90%;
+  margin-left: 52%;
+  width: 45%;
 }
 
-#carte h1{
-  text-align: center;
-  color: blue;
-  font-weight: bolder;
-}
-#content table {
+#carte table {
 	margin: 0 auto;
 	text-align: center;
-	font-size: 1.2em;
 	border-collapse: collapse;
 	width: 90%;
-	margin-top: 2%;
 }
 
-#content table td {
+#carte table td {
 	border: 0.1em solid gray;
-	padding: 0.6em;
+	padding: 0.4em;
+	font-size: 0.8em;
 }
 
-#content table td a {
+#carte table td a {
 	text-decoration: none;
 }
 
-#content table thead {
+#carte table thead{
+	font-weight: bold;
+	font-size: 1em;
+	border: 0.1em solid gray;
+}
+
+.leggendaria {
+	color: #ff8000;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.rara {
+	color: #0070dd;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.epica {
+	color: #a335ee;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#spiegazione {
+
+	float: left;
+	width: 45%;
+	margin-left: 5%;
+	word-wrap: break-word;
+	margin-top: 2em;
+}
+
+#spiegazione h3{
+	text-align: left;
+	display: block;
+	color:#273f83;
+}
+
+#spiegazione h4{
+	font-weight: normal;
+}
+
+#commenti {
+	margin: 6em auto 2em auto;
+	width: 90%;
+	word-wrap: break-word;
+	padding-bottom: 5%;
+}
+
+#commenti h2{
+	text-align: center;
+	color: black;
+}
+
+#commenti table{
+	border:none;
+	margin: 2em auto 0 auto;
+	border-spacing: 0;
+}
+
+#commenti th{
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	font-size: 1.2em;
+	font-weight: bold;
+	background-color: #efe7d2;
+}
+
+#commenti td{
+	padding: 0.5em 0 0.5em 1em;
+	border-top: 1px solid black;
+}
+#commenti tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#commenti #utente{
+	width: 20%;
+}
+
+#commenti #commento {
+	width: 80%;
+}
+
+form{
+	margin-top: 2em;
+}
+#commenti label{
+	margin-left: 5%;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding-bottom: 0.2em;
+}
+
+textarea {
+	margin: 0 auto;
+	min-width: 90%;
+	max-width: 90%;
+	display: block;
+	min-height:6em;
+	max-height: 6em;
+}
+
+form input[type="submit"] {
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+	margin-top: 2em;
+	margin-left: 40%;
+	width: 20%;
+	height: 3em;
 	font-weight: bold;
 }
