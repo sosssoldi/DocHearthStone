@@ -114,60 +114,15 @@ nav li a:hover {
 	border-top-right-radius: 1em;
 }
 
-#pagina{
-	text-align: center;
-	margin-bottom: 3%;
+.post, .dataora, .user, .text{
+	border: 1px solid black;
+	padding: 0.3em;
 }
 
-.titolo{
-	text-align:center;
-	margin-bottom: 2%;
+.post{
 }
 
-.tabella{
-	width: 90%;
-	margin:0 auto;
-	border-collapse: collapse;
-	border: 0.25em solid #292c3e;
-	background-color: rgba(0, 0, 255, 0.11);
-
-}
-#general{
-	margin-bottom: 5%;
-
-}
-
-.dark{
-	background-color: #292c3e;
-	color:white;
-}
-
-.forum{
-	padding:0.4em;
-	width:70%;
-	border-bottom: 0.10em solid #292c3e;
-}
-.lastpost{
-	width: 18%;
-	text-align: center;
-	border-bottom: 0.10em solid #292c3e;
-	border-right: 0.10em solid #292c3e;
-	border-left: 0.10em solid #292c3e;
-}
-.numpost{
-	text-align: center;
-	border-bottom: 0.10em solid #292c3e;
-	border-left: 0.10em solid #292c3e;
-
-}
-
-td a{
-	 text-decoration: none;
-}
-
-
-#class{
-	width: 90%;
-	margin:0 auto;
-	border-collapse: collapse;
+.user{
+	height:5em;
+	float:left;
 }
