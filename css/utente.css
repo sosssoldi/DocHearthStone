@@ -1,0 +1,211 @@
+* {
+	margin: 0em;
+	padding: 0em;
+}
+
+html {
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
+body {
+	background-color: #000;
+}
+
+.hide {
+	text-indent:100%;
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+header {
+	width: 75%;
+	height: 6em;
+	margin: 0 auto;
+	background-color: white;
+	border-color: #fb9313;
+	border-style: solid;
+	border-width: 0em 0.1em 0.3em 0.1em;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+}
+
+header h1 {
+	width: 20%;
+	height: 2em;
+	background-image: url("../images/logo.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	padding: 0.5em 0em 0.5em 0em;
+	float:left;
+	margin-left: 5%;
+}
+
+nav {
+	height: 6em;
+	margin-left: 30%;
+	width: 70%;
+	text-align: center;
+	overflow: hidden;
+}
+
+nav ul {
+  list-style-type: none;
+	margin: 0 auto;
+  overflow: hidden;
+	padding-top: 2.3em;
+	padding-bottom: 2.3em;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav li a {
+	font-size: 0.8em;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 3.1em 1.5em;
+}
+
+
+/* Change the link color to #111 (black) on hover */
+nav li a:hover {
+	color: #fb9313;
+}
+
+#imgHeader {
+	display: block;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	height: auto;
+}
+
+
+#content {
+	width: 75%;
+	margin: 0 auto;
+	border-style: solid;
+	border-width: 0.3em 0.1em 0em 0.1em;
+	border-color: #fb9313;
+	background-color: white;
+	padding-top: 2%;
+	padding-bottom: 30%;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
+#infoTitle{
+  margin-left: 10%;
+  margin-top: 1em;
+  padding-bottom: 0.5em;
+  padding-right: 3em;
+  padding-top: 0.5em;
+  background-color: #fb9313;
+  text-align: right;
+}
+
+#info {
+  border: 2px solid #fb9313;
+  margin-left: 10%;
+  overflow: auto;
+}
+
+#info img{
+  float:left;
+  margin:1em 0 1em 5%;
+}
+
+#info h4{
+  margin-left: 30%;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding-top: 1em;
+}
+
+#info h4 span{
+  color:#fb9313;
+
+}
+
+#mydeckTitle{
+  margin-left: 1%;
+  margin-right: 10%;
+  margin-top: 2em;
+  padding-bottom: 0.5em;
+  padding-left: 3em;
+  padding-top: 0.5em;
+  background-color: #273f83;
+  color: white;
+}
+
+#mydeck{
+  margin-right: 10%;
+  margin-left: 1%;
+  overflow: auto;
+}
+
+#mydeck table {
+	text-align: center;
+	border-collapse: collapse;
+  width:100%;
+  margin-bottom: 1em;
+}
+
+#mydeck table td {
+	border: 0.1em solid #273f83;
+	padding: 0.4em;
+	font-size: 1em;
+}
+
+#mydeck table td a {
+	text-decoration: none;
+}
+
+#mydeck table th{
+	font-weight: bold;
+	font-size: 1.2em;
+	border: 0.1em solid #273f83;
+  padding: 0.2em 0 0.2em 0;
+}
+
+#myguideTitle{
+  margin-left: 10%;
+  margin-top: 2em;
+  padding-bottom: 0.5em;
+  padding-right: 3em;
+  padding-top: 0.5em;
+  background-color: #3cc667;
+  color: white;
+  text-align: right;
+}
+
+#myguide{
+  margin-left: 10%;
+  overflow: auto;
+}
+
+#myguide table {
+	text-align: center;
+	border-collapse: collapse;
+  width:100%;
+}
+
+#myguide table td {
+	border: 0.1em solid #3cc667;
+	padding: 0.4em;
+	font-size: 1em;
+}
+
+#myguide table td a {
+	text-decoration: none;
+}
+
+#myguide table th{
+	font-weight: bold;
+	font-size: 1.2em;
+	border: 0.1em solid #3cc667;
+  padding: 0.2em 0 0.2em 0;
+}

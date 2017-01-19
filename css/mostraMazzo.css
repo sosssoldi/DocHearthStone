@@ -92,7 +92,7 @@ nav li a:hover {
 	border-color: #fb9313;
 	background-color: white;
 	padding-top: 2%;
-	padding-bottom: 6em;
+	padding-bottom: 10%;
 	border-top-left-radius: 1em;
 	border-top-right-radius: 1em;
 }
@@ -139,11 +139,9 @@ nav li a:hover {
 
 #descrizione {
   width: 70%;
-  height: 100%;
   word-wrap: break-word;
 	text-align: center;
 	margin:2em 0 2em 25%;
-
 }
 
 #descrizione h3{
