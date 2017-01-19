@@ -112,86 +112,121 @@ nav li a:hover {
 	border-top-right-radius: 1em;
 }
 
-#deck {
-	margin-left: 6%;
-	margin-bottom: 5%;
-	padding: 2%;
-	width: 21%;
-	border-width: 0.1em;
-	border-style: solid;
+
+#content h2 {
+	display: block;
+	text-align: center;
+	font-size: 2em;
+}
+
+#generale {
+	display: block;
+	margin-left: 5%;
 	float: left;
-	overflow: hidden;
+	width: 40%;
+	margin-top: 4%;
+	margin-bottom: 2%;
+	text-align: center;
 }
 
-#deck table {
-	width: 100%;
+#mago {
+	display: block;
+	margin-left: 55%;
+	width: 40%;
+	margin-top: 4%;
+	margin-bottom: 2%;
+	text-align: center;
 }
 
-#deck caption {
-	color: red;
-	padding-bottom: 5%;
-	font-weight: bold;
-}
-
-#deck table a {
-	color: black;
-}
-
-#guide {
-	margin-left: 6%;
-	margin-bottom: 5%;
-	padding: 2%;
-	width: 21%;
-	border-width: 0.1em;
-	border-style: solid;
-	float: left;
-	overflow: hidden;
-}
-
-#guide table {
-	width: 100%;
-}
-
-#guide caption {
-	color: red;
-	padding-bottom: 5%;
-	font-weight: bold;
-}
-
-#guide table a {
-	color: black;
-}
-
-#forum {
-	margin-left: 69%;
-	margin-bottom: 5%;
-	padding: 2%;
-	width: 21%;
-	border-width: 0.1em;
-	border-style: solid;
-	overflow: hidden;
-}
-
-#forum table {
-	width: 100%;
-}
-
-#forum caption {
-	color: red;
-	padding-bottom: 5%;
-	font-weight: bold;
-}
-
-#forum table a {
-	color: black;
-}
-
-#tips {
-	border: 0.1em solid black;
-	width: 84%;
-	margin-left: 6%;
-	padding: 2%;
+#cacciatore {
+	display: block;
+	margin-left: 5%;
 	clear: both;
+	float: left;
+	width: 40%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+#guerriero {
+	display: block;
+	margin-left: 55%;
+	width: 40%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+#paladino {
+	display: block;
+	margin-left: 5%;
+	float: left;
+	clear: both;
+	width: 40%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+#ladro {
+	display: block;
+	margin-left: 55%;
+	width: 40%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+#druido {
+	display: block;
+	margin-left: 5%;
+	float: left;
+	clear: both;
+	width: 40%;
+	text-align: center;
+}
+
+#sciamano {
+	display: block;
+	margin-left: 55%;
+	width: 40%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+#sacerdote {
+	display: block;
+	margin-left: 5%;
+	float: left;
+	width: 40%;
+	margin-bottom: 2%;
+	clear: both;
+	text-align: center;
+}
+
+#stregone {
+	display: block;
+	margin-left: 55%;
+	width: 40%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.titolo {
+	display: block;
+	text-align: center;
+	font-size: 1em;
+}
+
+.immagine {
+	width: 80%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	border-radius: 0.5em;
+	border: 0.1em solid black;
+	height: 11em;
 }
 
 footer {
