@@ -119,10 +119,23 @@ nav li a:hover {
 	padding: 0.3em;
 }
 
+.dataora{
+	text-align: center;
+}
+
 .post{
+	width: 90%;
+	margin-bottom: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	border: 0.15em solid #292c3e;
+	background-color: rgba(0, 0, 255, 0.11);
 }
 
 .user{
-	height:5em;
+	text-align: center;
+	margin-right: 1em;
+	margin-bottom: 1em;
 	float:left;
 }
