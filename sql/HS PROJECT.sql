@@ -32,12 +32,15 @@ create table if not exists user (
 	surname varchar(50) not null,
     username varchar(50) primary key,
     password varchar(64) not null,
-    entry_date datetime not null
+    entry_date datetime not null,
+	count_post integer(5) default(0),
+	photo_id varchar(50) default(da mettere path immagine base)
 )engine=innodb;
 
 create table if not exists section (
     section_id int auto_increment primary key,
-    name varchar(100) not null
+    name varchar(100) not null,
+	num_thread integer(5)  default(0)
 )engine=innodb;
 
 create table if not exists topic (
@@ -46,7 +49,7 @@ create table if not exists topic (
     content varchar(1000),
     creation_date datetime not null,
     user_name varchar(50) not null,
-	/*comments_number*/
+	num_comments integer(5) default(0),
     section_id int not null,
     foreign key (user_name) references user(username),
     foreign key (section_id) references section(section_id)

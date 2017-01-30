@@ -114,81 +114,75 @@ nav li a:hover {
 	border-top-right-radius: 1em;
 }
 
-#titolo{
+#pagina{
 	text-align: center;
-	margin-bottom: 1em;
+	margin-bottom: 3%;
 }
 
-.post{
+.titolo{
+	text-align:center;
+	margin-bottom: 2%;
+}
+
+.tabella{
 	width: 90%;
-	margin-bottom: 2em;
-	margin-left: auto;
-	margin-right: auto;
-	border: 0.15em solid #292c3e;
+	margin:0 auto;
+	border-collapse: collapse;
+	border: 0.25em solid #292c3e;
 	background-color: rgba(0, 0, 255, 0.11);
-	overflow: hidden;
-	border-radius: 0.5em;
+
+}
+#general{
+	margin-bottom: 5%;
+
 }
 
-.dataora{
+.dark{
+	background-color: #292c3e;
+	color:white;
+}
+
+.forum{
+	padding:0.4em;
+	width:70%;
+	border-bottom: 0.10em solid #292c3e;
+}
+.lastpost{
+	width: 18%;
 	text-align: center;
-	padding:1%;
-	font-size: 1.3em;
-	font-weight: bold;
-	border-bottom: 0.05em solid #292c3e;
+	border-bottom: 0.10em solid #292c3e;
+	border-right: 0.10em solid #292c3e;
+	border-left: 0.10em solid #292c3e;
 }
-
-.userptext{
-	display: flex;
-}
-
-.user{
+.numpost{
 	text-align: center;
-	word-wrap: break-word;
-	width:25%;
-	float:left;
-	font-weight: bold;
+	border-bottom: 0.10em solid #292c3e;
+	border-left: 0.10em solid #292c3e;
+
 }
 
-.fotoProfilo{
-	border: 0.1em solid #292c3e;
-	margin-top: 0.5em;
+td a{
+	 text-decoration: none;
 }
 
-.user p{
-	padding-bottom: 0.5em;
-}
 
-.text{
-	width: 74%;
-	float:left;
-	padding: 2%;
-	font-size: 1.1em;
-}
-
-.text::after{
-	clear:both;
-}
-
-.addCommento{
-	width: 40%;
-	border: 1px solid black;
-	margin: 0 auto;
-	overflow: hidden;
+#class{
+	width: 90%;
+	margin:0 auto;
+	border-collapse: collapse;
 }
 
 form{
 	margin-top: 2em;
 }
 label{
-	margin-left: 5%;
 	font-size: 1.2em;
 	font-weight: bold;
 	padding-bottom: 0.2em;
 }
 
 textarea {
-	margin: 0 auto;
+
 	min-width: 90%;
 	max-width: 90%;
 	display: block;
@@ -203,4 +197,32 @@ form input[type="submit"] {
 	width: 20%;
 	height: 3em;
 	font-weight: bold;
+}
+
+#labelAdd{
+	display: block;
+	text-align: center;
+	margin-bottom: 1em;
+	font-size: 2em;
+}
+
+#labelTit{
+		font-size: 1.4em;
+		display: block;
+}
+
+#titolo{
+	min-height: 2em;
+	width:30%;
+	margin-bottom: 3em;
+
+}
+
+#labelText{
+	font-size: 1.4em;
+}
+
+.lab{
+	width: 90%;
+	margin: 0 auto;
 }
