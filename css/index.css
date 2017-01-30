@@ -176,12 +176,14 @@ nav li a:hover {
 	border-left: 0.2em solid #e4caa2;
 }
 
+.rate{
+		width: 4em;
+}
+
 .ratepos{
-	width: 4em;
 	border:0.1em solid green;
 }
 .rateneg{
-	width: 4em;
 	border:0.1em solid red;
 }
 
