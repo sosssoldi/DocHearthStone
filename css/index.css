@@ -11,92 +11,11 @@ body {
 	background-color: #F0D3A7;
 }
 
-.hide {
-	text-indent:100%;
-	white-space:nowrap;
-	overflow:hidden;
-}
-
-
-header {
-	width: 75%;
-	height: 6em;
-	margin: 0 auto;
-	background-color: white;
-	border-color: #fb9313;
-	border-style: solid;
-	border-width: 0em 0.1em 0.3em 0.1em;
-	border-bottom-left-radius: 1em;
-	border-bottom-right-radius: 1em;
-}
-
-header h1 {
-	width: 20%;
-	height: 2em;
-	background-image: url("../images/logo.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: center center;
-	padding: 0.5em 0em 0.5em 0em;
-	float:left;
-	margin-left: 5%;
-}
-
-nav {
-	height: 6em;
-	margin-left: 30%;
-	width: 70%;
-	text-align: center;
-	overflow: hidden;
-}
-
-nav ul {
-    list-style-type: none;
-		margin: 0 auto;
-    overflow: hidden;
-}
-
-nav li {
-	display: inline-block;
-}
-
-nav li a {
-	font-size: 0.8em;
-	color: black;
-	text-align: center;
-	padding: 3.1em 1.5em;
-	text-decoration: none;
-	font-weight: bold;
-}
-
-.here {
-	font-size: 0.8em;
-	color: black;
-	text-align: center;
-	padding: 3.1em 1.5em;
-	text-decoration: none;
-	font-weight: bold;
-	color: #0091D3;
-}
-
-nav li a:hover {
-	color: #fb9313;
-}
-
 #imgHeader {
 	display: block;
 	background-repeat: no-repeat;
 	margin: 0 auto;
 	height: auto;
-}
-
-
-#breadcrumb {
-	width: 75%;
-	margin: 0 auto;
-	border-style: solid;
-	border-width: 0em 0.1em 0.1em 0.1em;
-	background-color: white;
 }
 
 #content {
@@ -105,9 +24,9 @@ nav li a:hover {
 	border-style: solid;
 	border-width: 0.3em 0.1em 0em 0.1em;
 	border-color: #fb9313;
-	background-color: white;
+	background-color: #fff;
 	padding-top: 2%;
-	padding-bottom: 30%;
+	padding-bottom: 15%;
 	border-top-left-radius: 1em;
 	border-top-right-radius: 1em;
 }
@@ -120,107 +39,56 @@ nav li a:hover {
 	float: left;
 }
 
-#deck h2{
-	display: block;
-	width:100%;
+#deck h2 {
 	text-align: center;
 	margin-bottom:1em;
 }
 
-
-#deckContent table{
-	width: 100%;
-	height: 40em;
-
+#deckContent th {
+	background-color: orange;
+	font-size: 1.1em;
+	border-bottom:0.1em solid black;
 }
 
-#deckContent  td{
+#deckContent  td {
 	text-align: center;
+	word-wrap: break-word;
 }
 
-#rots{
+#rots {
 	border-top-left-radius: 0.5em;
 	padding: 1em;
-  border-bottom:0.1em solid black;
 }
 
-#intc{
-	border-bottom:0.1em  solid black;
-}
-
-#rotd{
+#rotd {
 	border-top-right-radius: 0.5em;
-	border-bottom:0.1em  solid black;
+	width: 15%;
 }
 
-.classe{
-	width:15%;
-	background-size: contain;
-}
-
-#intestazione{
-	background-color: orange;
-
-
-}
-
-.light{
+#deckContent tr:nth-child(even) {
 	background-color: #e4caa2;
 	border-right: 0.2em solid #e0b472;
 	border-left: 0.2em solid #e0b472;
 }
 
-.dark{
+#deckContent tr:nth-child(odd) {
 	background-color: #e0b472;
 	border-right: 0.2em solid #e4caa2;
 	border-left: 0.2em solid #e4caa2;
 }
 
-.rate{
-		width: 4em;
+.classe {
+	width:15%;
+	background-size: contain;
 }
 
-.ratepos{
+.ratepos {
+	width: 4em;
 	border:0.1em solid green;
 }
-.rateneg{
+.rateneg {
+	width: 4em;
 	border:0.1em solid red;
-}
-
-
-
-#guide {
-	display: inline-block;
-	margin-left: 10%;
-	margin-bottom: 5%;
-	width: 25%;
-}
-
-#guide h2{
-	display: block;
-	width:100%;
-	text-align: center;
-	margin-bottom:1em;
-}
-
-.elenco{
-	list-style-type: none;
-	border-top: 0.2em solid orange;
-	border-bottom: 0.2em solid orange;
-	text-align: center;
-}
-
-.elenco li{
-	margin: 1em 0;
-}
-
-.panel{
-	background-color:#F0D3A7;
-	border: 0.1em solid white;
-	margin:0.5em;
-	float:left;
-	width:45%;
-	margin:0.3em;
 }
 
 #login {
@@ -228,15 +96,14 @@ nav li a:hover {
 	margin-bottom: 5%;
 	margin-top: 3.5em;
 	padding: 1%;
-	width: 21%;
+	width: 21.5%;
 	background-color:#F0D3A7;
 	border-radius:0.5em;
-	border: 0.5em double white;
+	border: 0.5em double #fff;
 	text-align: center;
-
 }
 
-button{
+button {
 	background-color: #fff;
 	margin: 1em 0em;
 	padding: 0.7em;
@@ -245,15 +112,31 @@ button{
 	width: 70%;
 	font-weight: bold;
 	font-size: 0.85em;
-
 }
 
-#tip{
-	clear: both;
+#guide {
+	margin-left: 68%;
+	margin-bottom: 5%;
+	width: 25%;
+}
+
+#guide h2 {
+	text-align: center;
+	margin-bottom:1em;
+}
+
+.elenco {
+	list-style-type: none;
+	border-top: 0.2em solid orange;
+	border-bottom: 0.2em solid orange;
+	text-align: center;
+}
+
+.elenco li {
+	margin: 1em 0;
 }
 
 #contenutoTip {
-	display: block;
 	border-top: 0.2em solid orange;
 	border-bottom: 0.2em solid orange;
 	width: 60%;
@@ -262,15 +145,8 @@ button{
 	text-align: center;
 	word-wrap: break-word;
 }
-#tip h2{
-	display: block;
-	width:100%;
-	text-align: center;
-	margin-bottom:1em;
-}
 
-footer {
-	width: 75%;
-	margin: 0 auto;
-	background-color: white;
+#tip h2 {
+	text-align: center;
+	margin-bottom: 1em;
 }

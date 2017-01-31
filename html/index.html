@@ -5,103 +5,45 @@
 		<title>DocHearthStone</title>
 		<meta name="title" content="Homepage - DocHearthStone" />
 		<meta name="description" content="Il portale italiano di Heartdstone per restare sempre aggiornati su Mazzi, Carte e Guide." />
-		<meta name="keyword" content="Heartdstone, DocHeartdStone, Carte, Mazzi, Avventure, Forum, Guide, Blizzard, Battlenet" />
+		<meta name="keyword" content="HearthStone, DocHearthStone, Carte, Mazzi, Avventure, Forum, Guide, Blizzard, Battlenet" />
 		<link rel="stylesheet" href="../css/index.css" type="text/css" />
 	</head>
 	<body>
-		<header>
-				<h1 class="hide" lang="en">DOC HEARtdSTONE</h1>
-				<nav>
-					<ul>
-						<li class="here" lang="en">HOMEPAGE</li>
-						<li><a href="mazzi.html">MAZZI</a></li>
-						<li><a href="carte.html">CARTE</a></li>
-						<li><a href="forum.html">FORUM</a></li>
-						<li><a href="guide.html">GUIDE</a></li>
-						<li><a href="avventure.html">AVVENTURE</a></li>
-						<!--<li><a href="login.html">LOGIN</a></li>-->
-					</ul>
-				</nav>
-			</header>
-			<img id="imgHeader" width="50%" src="../images/homepage.jpg"></img>
+		:header:
+		<img id="imgHeader" width="50%" src="../images/homepage.jpg"></img>
 		<div id="content">
 			<div id="deck">
 				<h2>I Migliori Deck</h2>
 				<div id="deckContent">
-						<table>
-							<tr id="intestazione">
-								<td id="rots" class="classe">Classe</td>
-								<td id="intc" class="titolo">Nome</td>
-								<td id="rotd">Rate</td>
-							</tr>
-							<tr class="dark">
-								<td class="classe"><img  width="50%" src="../images/icon/mage.png"></td>
-								<td class="titolo">2</td>
-								<td class=" rate">3</td>
-							</tr>
-							<tr class="light">
-								<td class="classe"><img  width="50%" src="../images/icon/mage.png"></td>
-								<td class="titolo">2</td>
-								<td class=" rate">+3</td>
-							</tr>
-							<tr class="dark">
-								<td class="classe"><img width="50%" src="../images/icon/mage.png"></td>
-								<td class="titolo">2</td>
-								<td class=" rate">3</td>
-							</tr>
-							<tr class="light">
-								<td class="classe"><img width="50%" src="../images/icon/mage.png"></td>
-								<td class="titolo">2</td>
-								<td class=" rate">3</td>
-							</tr>
-							<tr class="dark">
-								<td class="classe"><img width="50%" src="../images/icon/mage.png"></td>
-								<td class="titolo">2</td>
-								<td class=" rate">3</td>
-							</tr>
-							<tr class="light">
-								<td class="classe"><img width="50%" width="20%" src="../images/icon/mage.png"></td>
-								<td class="titolo">2</td>
-								<td class=" rate">3</td>
-							</tr>
-							<tr class="dark">
-								<td class="classe"><img width="50%" width="20%" src="../images/icon/mage.png"></td>
-								<td class="titolo">2</td>
-								<td class=" rate">3</td>
-							</tr>
-							<tr class="light">
-								<td class="classe"><img width="50%" src="../images/icon/mage.png"></td>
-								<td class="titolo">2</td>
-								<td class=" rate">3</td>
-							</tr>
-							<tr class="dark">
-								<td class="classe"><img width="50%" src="../images/icon/mage.png"></td>
-								<td class="titolo">2</td>
-								<td class=" rate"></td>
-							</tr>
-						</table>
+					<table>
+						<thead>
+							<th id="rots" class="classe">Classe</th>
+							<th id="intc" class="titolo">Nome</th>
+							<th id="rotd">Voto</th>
+						</thead>
+						<tbody>
+							:tabelladeck:
+						</tbody>
+
+					</table>
 				</div>
-		</div>
-		<div id="login">
-			<p>Entra anche tu a far parte di Doc Heartdstone!</p>
-			<button class="accesso"><a href="registrazione.html">Registrati</a></button>
-			<p>Sei gi&agrave; dei nostri?</p>
-			<button class="accesso"><a href="login.html">Accedi</a></button>
-		</div>
-		<div id="guide">
-			<h2>Le Migliori Guide</h2>
-					<ul class="elenco">
-						<li><p>La guida di Mauro a flamare</p></li>
-						<li>2</li>
-						<li>3</li>
-						<li>4</li>
-						<li>5</li>
-					</ul>
-		</div>
-		<div id="tip">
-			<h2 id="titoloTip"> Angolo Tip </h2>
-				<div id="contenutoTip">dfsdfsdfsdfsdfsdfdsdffdsfdfdsfdsfsdfsdsdffdsfsdfdsfdsfdsfdsfdsfdsfdfdfdsfdsfsdfdsfdsfdsfdsfdfdsdfsdfsdfsdfsdfssdf</div>
-		</div>
+			</div>
+			<div id="login">
+				<p>Entra anche tu a far parte di Doc HearthStone!</p>
+				<a href="registrazione.php"><button>Registrati</button></a>
+				<p>Sei gi&agrave; dei nostri?</p>
+				<a href="login.php"><button>Accedi</button></a>
+			</div>
+			<div id="guide">
+				<h2>Le Migliori Guide</h2>
+				<ul class="elenco">
+					:tabellaguide:
+				</ul>
+			</div>
+			<div id="tip">
+				<h2> Angolo Tip </h2>
+					<div id="contenutoTip"><p>:tip:</p></div>
+			</div>
 		</div>
 		<footer>
 		</footer>
