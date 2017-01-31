@@ -32,7 +32,13 @@ class Homepage implements Page {
 
         echo $head;
     }
-    public function content(){}
+    public function content() {
+        $content=file_get_contents("html/index.html");
+
+        // replace per tabella deck e guide
+
+        echo $content;
+    }
     public function footer(){}
     public function top10Deck() {
         $query  = 'SELECT deck_id, hero_power.image, name, likes FROM deck, hero, hero_power ';

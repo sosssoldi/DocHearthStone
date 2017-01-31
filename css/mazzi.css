@@ -1,90 +1,9 @@
-* {
-	margin: 0em;
-	padding: 0em;
-}
-
-html {
-	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
-}
-
 body {
 	background-color: #000;
 }
 
-.hide {
-	text-indent:100%;
-	white-space:nowrap;
-	overflow:hidden;
-}
-
-header {
-	width: 75%;
-	height: 6em;
-	margin: 0 auto;
-	background-color: white;
-	border-color: #fb9313;
-	border-style: solid;
-	border-width: 0em 0.1em 0.3em 0.1em;
-	border-bottom-left-radius: 1em;
-	border-bottom-right-radius: 1em;
-}
-
-header h1 {
-	width: 20%;
-	height: 2em;
-	background-image: url("../images/logo.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: center center;
-	padding: 0.5em 0em 0.5em 0em;
-	float:left;
-	margin-left: 5%;
-}
-
-nav {
-	height: 6em;
-	margin-left: 30%;
-	width: 70%;
-	text-align: center;
-	overflow: hidden;
-}
-
-nav ul {
-  list-style-type: none;
-	margin: 0 auto;
-  overflow: hidden;
-	padding-top: 2.3em;
-	padding-bottom: 2.3em;
-}
-
-nav li {
-	display: inline-block;
-}
-
-nav li a {
-	font-size: 0.8em;
-	color: black;
-	text-align: center;
-	text-decoration: none;
-	font-weight: bold;
-	padding: 3.1em 1.5em;
-}
-
-.here {
-	font-size: 0.8em;
-	color: black;
-	text-align: center;
-	text-decoration: none;
-	font-weight: bold;
-	color: #0091D3;
-	padding-left: 1.5em;
-	padding-right: 1.5em;
-}
-
-
-/* Change the link color to #111 (black) on hover */
-nav li a:hover {
-	color: #fb9313;
+#breadcrumb {
+	display: none;
 }
 
 #imgHeader {
@@ -94,14 +13,13 @@ nav li a:hover {
 	height: auto;
 }
 
-
 #content {
 	width: 75%;
 	margin: 0 auto;
 	border-style: solid;
 	border-width: 0.3em 0.1em 0em 0.1em;
 	border-color: #fb9313;
-	background-color: white;
+	background-color: #fff;
 	padding-top: 2%;
 	padding-bottom: 30%;
 	border-top-left-radius: 1em;
@@ -109,47 +27,13 @@ nav li a:hover {
 }
 
 #content h2 {
-	display: block;
 	text-align: center;
 	font-size: 2em;
 	margin-bottom: 2%;
-
 }
 
-#content a{
-	color:black;
-}
 #content h3{
 	color: white;
-}
-#content table {
-	margin: 0 auto;
-	text-align: center;
-	font-size: 1.2em;
-	border-collapse: collapse;
-	width: 90%;
-	margin-top: 2%;
-}
-
-#content table td {
-	border: 0.1em solid gray;
-	padding: 0.6em;
-}
-
-#content table td a {
-	text-decoration: none;
-}
-
-#content table th {
-	font-weight: bold;
-	background-color: #273f83;
-	color: white;
-	padding: 0.5em 0 .5em 0;
-}
-
-.costo {
-	color: blue;
-	font-weight: bold;
 }
 
 form {
@@ -176,7 +60,6 @@ form {
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
-
 #classe {
 	margin-left:60%;
 	width: 30%;
@@ -194,11 +77,12 @@ form {
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
-#c{
+#c {
 	text-align: left;
 	margin-left: 5%;
 }
-#costo{
+
+#costo {
 	width: 44%;
 	background-color:white;
 	border-radius:0.5em;
@@ -207,16 +91,17 @@ form {
 	margin-bottom: 2%;
 	float: left;
 }
-.minmax{
+
+.minmax {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	margin-left: 1.2em;
 	margin-right: 1em;
 }
-.minmax h4{
+
+.minmax h4 {
 	float: left;
 	width:50%;
-  display:block;
 	font-size: 1em;
 }
 
@@ -236,61 +121,88 @@ form input[type="submit"] {
 	font-weight: bold;
 }
 
-footer {
-	width: 75%;
+#content table {
 	margin: 0 auto;
-	background-color: white;
+	text-align: center;
+	font-size: 1.2em;
+	border-collapse: collapse;
+	width: 90%;
+	margin-top: 2%;
 }
 
-.negativo{
+#content table th {
+	font-weight: bold;
+	background-color: #273f83;
+	color: white;
+	padding: 0.5em 0em;
+	width: 20%;
+}
+
+#content table td {
+	border: 0.1em solid gray;
+	padding: 0.6em;
+	word-wrap: break-word;
+}
+
+#content table td a {
+	text-decoration: none;
+	color:black;
+}
+
+.costo {
+	color: blue;
+	font-weight: bold;
+}
+
+.negativo {
 	color: red;
 }
 
-.positivo{
+.positivo {
 	color: green;
 }
 
-.mago{
+.mago {
 	color:#17d1f0;
 	font-weight: bold;
 }
 
-.paladino{
+.paladino {
 	color:#f0d449;
 	font-weight: bold;
 }
 
-.cacciatore{
+.cacciatore {
 	color:green;
 	font-weight: bold;
 }
 
-.ladro{
+.ladro {
 	color:#8d191a;
 	font-weight: bold;
 }
 
-.sacerdote{
+.sacerdote {
 	color:#a73dbb;
 	font-weight: bold;
 }
 
-.sciamano{
+.sciamano {
 	color:#67b999;
 	font-weight: bold;
 }
 
-.guerriero{
+.guerriero {
 	color:#ff7c0d;
 	font-weight: bold;
 }
 
-.druido{
+.druido {
 	color:#6e3b06;
 	font-weight: bold;
 }
 
-.stregone{
+.stregone {
 	color:#40245d;
 	font-weight: bold;
 }
