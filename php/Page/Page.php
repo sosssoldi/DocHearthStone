@@ -1,5 +1,5 @@
 <?php
-namespace Classes\Page;
+namespace php\Page;
 
 interface Page {
 	public function header();

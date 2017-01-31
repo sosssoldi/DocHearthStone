@@ -1,5 +1,5 @@
 <?php
-namespace Classes;
+namespace php\Page;
 
 include_once "Page/Page.php";
 
