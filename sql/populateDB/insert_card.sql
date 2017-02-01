@@ -22,7 +22,7 @@ insert into card values ('EX1_124','Sventramento','EX1_124.png','Infligge 2 dann
 insert into card values ('AT_028','Cavaliere Shandaren','AT_028.png','Combo: ottiene +3 Attacco.','Comune','Servitore',NULL,'FALSE',3,7,5,NULL,NULL,'TGT');
 insert into card values ('DS1_183','Tiro Multiplo','DS1_183.png','Infligge 3 danni a due servitori nemici casuali.','Base','Magia',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'CORE');
 insert into card values ('OG_123','Mutaforma Zerus','OG_123.png','Finchà© resta nella tua mano','Leggendaria','Servitore',NULL,'FALSE',1,1,1,NULL,NULL,'OG');
-insert into card values ('KAR_025','Abra Cadabra!','KAR_025.png','Evoca una Candela 1/1','Comune','Magia',NULL,'FALSE',NULL,NULL,5,3,'KARA','KARA');
+insert into card values ('KAR_025','Abra Cadabra!','KAR_025.png','Evoca una Candela 1/1, una Scopa 2/2 e una Teiera 3/3.','Comune','Magia',NULL,'FALSE',NULL,NULL,5,3,'KARA','KARA');
 insert into card values ('EX1_339','Furto del Pensiero','EX1_339.png','Copia 2 carte casuali dal mazzo dell\'avversario e le mette nella tua mano.','Comune','Magia',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'EXPERT1');
 insert into card values ('DS1_178','Rinoceronte Furioso','DS1_178.png','Le tue Bestie hanno Carica.','Comune','Servitore','BEAST','FALSE',2,5,5,NULL,NULL,'CORE');
 insert into card values ('CFM_659','Gnoma Emancipata','CFM_659.png','Grido di Battaglia: rigenera 2 Salute.','Comune','Servitore',NULL,'FALSE',2,2,2,NULL,NULL,'GANGS');
@@ -48,7 +48,7 @@ insert into card values ('EX1_366','Spada della Giustizia','EX1_366.png','Dopo c
 insert into card values ('CFM_759','Sceriffo di Meccania','CFM_759.png','Rantolo di Morte: se ha almeno 2 Attacco','Epica','Servitore',NULL,'FALSE',1,2,1,NULL,NULL,'GANGS');
 insert into card values ('GVG_106','Riciclobot','GVG_106.png','Ottiene +2/+2 quando un tuo Robot muore.','Epica','Servitore','MECHANICAL','TRUE',1,5,5,NULL,NULL,'GVG');
 insert into card values ('CFM_671','Criomante','CFM_671.png','Grido di Battaglia: ottiene +2/+2 se un nemico è Congelato.','Comune','Servitore',NULL,'FALSE',5,5,5,NULL,NULL,'GANGS');
-insert into card values ('OG_104','Abbraccio dell\'Ombra','OG_104.png','Per questo turno, le tue carte e i tuoi poteri che rigenerano Salute infliggono danni','Epica','Magia',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'OG');
+insert into card values ('OG_104','Abbraccio dell\'Ombra.','OG_104.png','Per questo turno, le tue carte e i tuoi poteri che rigenerano Salute infliggono danni','Epica','Magia',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'OG');
 insert into card values ('CFM_066','Lacchè della Kabala','CFM_066.png','Grido di Battaglia: il prossimo Segreto che giochi in questo turno costa (0).','Comune','Servitore',NULL,'FALSE',2,1,1,NULL,NULL,'GANGS');
 insert into card values ('EX1_414','Grommash Malogrido','EX1_414.png','Carica. Rabbia: +6 Attacco.','Leggendaria','Servitore',NULL,'FALSE',4,9,8,NULL,NULL,'EXPERT1');
 insert into card values ('CS2_235','Chierica della Contea','CS2_235.png','Quando un servitore viene curato','Base','Servitore',NULL,'FALSE',1,3,1,NULL,NULL,'CORE');
@@ -71,7 +71,7 @@ insert into card values ('GVG_105','Supergolem Pilotato','GVG_105.png','Rantolo 
 insert into card values ('OG_033','Tentacoli Eterni','OG_033.png','Rantolo di Morte: torna nella tua mano.','Epica','Arma',NULL,'FALSE',2,2,5,NULL,NULL,'OG');
 insert into card values ('FP1_023','Cultista Oscuro','FP1_023.png','Rantolo di Morte: +3 Salute a un tuo servitore casuale.','Comune','Servitore',NULL,'TRUE',3,4,3,5,'NAXX','NAXX');
 insert into card values ('CFM_781','Shaku il Collezionista','CFM_781.png','Furtività . Quando attacca','Leggendaria','Servitore',NULL,'FALSE',2,3,3,NULL,NULL,'GANGS');
-insert into card values ('OG_286','Anziano del Crepuscolo','OG_286.png','Alla fine del tuo turno','Comune','Servitore',NULL,'FALSE',3,4,3,NULL,NULL,'OG');
+insert into card values ('OG_286','Anziano del Crepuscolo','OG_286.png','Alla fine del tuo turno, +1/+1 al tuo C','Comune','Servitore',NULL,'FALSE',3,4,3,NULL,NULL,'OG');
 insert into card values ('LOE_104','Tumulazione','LOE_104.png','Sposta un servitore nemico nel tuo mazzo.','Comune','Magia',NULL,'FALSE',NULL,NULL,6,3,'LOE','LOE');
 insert into card values ('CFM_630','Moneta Contraffatta','CFM_630.png','Fornisce 1 Cristallo di Mana solo per questo turno.','Rara','Magia',NULL,'FALSE',NULL,NULL,0,NULL,NULL,'GANGS');
 insert into card values ('NEW1_022','Corsaro del Terrore','NEW1_022.png','Provocazione. Costa (1) in meno per ogni punto Attacco della tua Arma.','Comune','Servitore','PIRATE','FALSE',3,3,4,NULL,NULL,'EXPERT1');
@@ -175,7 +175,7 @@ insert into card values ('CS2_172','Raptor Codarossa','CS2_172.png',NULL,'Base',
 insert into card values ('GVG_052','Schiacciamento','GVG_052.png','Distrugge un servitore. Se controlli un servitore danneggiato','Epica','Magia',NULL,'TRUE',NULL,NULL,7,NULL,NULL,'GVG');
 insert into card values ('EX1_575','Totem del Mana','EX1_575.png','Alla fine del tuo turno','Rara','Servitore','TOTEM','FALSE',0,3,3,NULL,NULL,'EXPERT1');
 insert into card values ('CS2_007','Tocco Curativo','CS2_007.png','Rigenera 8 Salute.','Base','Magia',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'CORE');
-insert into card values ('EX1_320','Anatema della Rovina','EX1_320.png','Infligge 2 danni. Se il bersaglio muore','Epica','Magia',NULL,'FALSE',NULL,NULL,5,NULL,NULL,'EXPERT1');
+insert into card values ('EX1_320','Anatema della Rovina','EX1_320.png','Infligge 2 danni. Se il bersaglio muore, evoca un demone casuale.','Epica','Magia',NULL,'FALSE',NULL,NULL,5,NULL,NULL,'EXPERT1');
 insert into card values ('OG_283','Prescelta di C\'thun','OG_283.png','Scudo Divino. Grido di Battaglia: +2/+2 al tuo C\'thun <i>dovunque sia</i>.','Comune','Servitore',NULL,'FALSE',4,2,4,NULL,NULL,'OG');
 insert into card values ('EX1_057','Mastro Birraio','EX1_057.png','Grido di Battaglia: fa tornare un tuo servitore nella tua mano.','Comune','Servitore',NULL,'FALSE',5,4,4,NULL,NULL,'EXPERT1');
 insert into card values ('CS1_112','Esplosione Sacra','CS1_112.png','Infligge 2 danni ai nemici. Rigenera 2 Salute ai tuoi personaggi.','Comune','Magia',NULL,'FALSE',NULL,NULL,5,NULL,NULL,'CORE');
@@ -187,7 +187,7 @@ insert into card values ('AT_055','Cura Rapida','AT_055.png','Rigenera 5 Salute.
 insert into card values ('AT_075','Addestratore di Cavalli','AT_075.png','Le tue Reclute Mano d\'Argento hanno +1 Attacco.','Comune','Servitore',NULL,'FALSE',2,4,3,NULL,NULL,'TGT');
 insert into card values ('EX1_259','Tempesta di Fulmini','EX1_259.png','Infligge da 2 a 3 danni ai servitori nemici. Sovraccarico: (2)','Rara','Magia',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'EXPERT1');
 insert into card values ('CS2_008','Fuoco Lunare','CS2_008.png','Infligge 1 |4(danno','Comune','Magia',NULL,'FALSE',NULL,NULL,0,NULL,NULL,'CORE');
-insert into card values ('EX1_006','Allarm-Bot','EX1_006.png','All\'inizio del tuo turno','Rara','Servitore','MECHANICAL','FALSE',0,3,3,NULL,NULL,'EXPERT1');
+insert into card values ('EX1_006','Allarm-Bot','EX1_006.png','All\'inizio del tuo turno, scambia questo servitore con un altro a caso nella tua mano.','Rara','Servitore','MECHANICAL','FALSE',0,3,3,NULL,NULL,'EXPERT1');
 insert into card values ('OG_255','Invocatore della Rovina','OG_255.png','Grido di Battaglia: +2/+2 al tuo C\'thun <i>dovunque sia</i>. Se C\'thun è morto','Rara','Servitore',NULL,'FALSE',7,9,8,NULL,NULL,'OG');
 insert into card values ('LOE_017','Guardiana di Uldaman','LOE_017.png','Grido di Battaglia: imposta l\'Attacco e la Salute di un servitore a 3.','Comune','Servitore',NULL,'FALSE',3,4,4,2,'LOE','LOE');
 insert into card values ('EX1_097','Abominio','EX1_097.png','Provocazione. Rantolo di Morte: infligge 2 danni a TUTTI i personaggi.','Rara','Servitore',NULL,'FALSE',4,4,5,NULL,NULL,'EXPERT1');
@@ -314,7 +314,7 @@ insert into card values ('OG_027','Evoluzione','OG_027.png','Trasforma i tuoi se
 insert into card values ('KAR_073','Portale: Maelstrom','KAR_073.png','Infligge 1 |4(danno','Rara','Magia',NULL,'FALSE',NULL,NULL,2,2,'KARA','KARA');
 insert into card values ('AT_078','Ingresso al Colosseo','AT_078.png','Distrugge TUTTI i servitori tranne quello con l\'Attacco più alto di ogni giocatore.','Epica','Magia',NULL,'FALSE',NULL,NULL,6,NULL,NULL,'TGT');
 insert into card values ('OG_145','Psicobot','OG_145.png','Provocazione. Scudo Divino.','Comune','Servitore','MECHANICAL','FALSE',3,4,5,NULL,NULL,'OG');
-insert into card values ('GVG_094','Alfred','GVG_094.png','Alla fine del turno di ogni giocatore','Rara','Servitore','MECHANICAL','TRUE',1,4,4,NULL,NULL,'GVG');
+insert into card values ('GVG_094','Alfred','GVG_094.png','Alla fine del turno di ogni giocatore, quest pesca fino a quando non ha 3 carte.','Rara','Servitore','MECHANICAL','TRUE',1,4,4,NULL,NULL,'GVG');
 insert into card values ('OG_174','Errante Senzavolto','OG_174.png','Provocazione. Grido di Battaglia: copia Attacco e Salute di un tuo servitore.','Epica','Servitore',NULL,'FALSE',1,1,4,NULL,NULL,'OG');
 insert into card values ('CFM_753','Ricettatore Famigerato','CFM_753.png','Grido di Battaglia: +1/+1 ai servitori nella tua mano.','Comune','Servitore',NULL,'FALSE',1,1,2,NULL,NULL,'GANGS');
 insert into card values ('BRM_015','Rivincita','BRM_015.png','Infligge 1 |4(danno','Rara','Magia',NULL,'FALSE',NULL,NULL,2,4,'BRM','BRM');
@@ -367,7 +367,7 @@ insert into card values ('CFM_344','Pinja la Stella Volante','CFM_344.png','Furt
 insert into card values ('AT_117','Gran Cerimoniera','AT_117.png','Grido di Battaglia: ottiene +2/+2 se controlli un servitore con Danni Magici.','Epica','Servitore',NULL,'FALSE',4,2,3,NULL,NULL,'TGT');
 insert into card values ('NEW1_038','Gruul','NEW1_038.png','Alla fine di ogni turno','Leggendaria','Servitore',NULL,'FALSE',7,7,8,NULL,NULL,'EXPERT1');
 insert into card values ('CFM_646','Contaminato dei Vicoli','CFM_646.png','Rantolo di Morte: infligge 2 danni all\'eroe nemico.','Comune','Servitore',NULL,'FALSE',3,1,3,NULL,NULL,'GANGS');
-insert into card values ('OG_061','A Caccia','OG_061.png','Infligge 1 danno. Evoca un Mastino 1/1','Comune','Magia',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'OG');
+insert into card values ('OG_061','A Caccia','OG_061.png','Infligge 1 danno. Evoca un Mastino 1/1.','Comune','Magia',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'OG');
 insert into card values ('EX1_247','Ascia dei Forgiatuono','EX1_247.png','Sovraccarico: (1)','Comune','Arma',NULL,'FALSE',2,3,2,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_313','Signore delle Fosse','EX1_313.png','Grido di Battaglia: infligge 5 danni al tuo eroe.','Epica','Servitore','DEMON','FALSE',5,6,4,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_165','Druido dell\'Unghia','EX1_165.png','Scegli: ottiene Carica o +2 Salute e Provocazione.','Comune','Servitore',NULL,'FALSE',4,4,5,NULL,NULL,'EXPERT1');
@@ -922,7 +922,7 @@ insert into card values ('KAR_061','Curatore','KAR_061.png','Provocazione. Grido
 insert into card values ('CFM_605','Agente Draconide','CFM_605.png','Grido di Battaglia: Rinvieni una carta dal mazzo dell\'avversario se hai un Drago in mano.','Rara','Servitore','DRAGON','FALSE',5,6,5,NULL,NULL,'GANGS');
 insert into card values ('GVG_079','Supercarro MAX','GVG_079.png','Scudo Divino','Comune','Servitore','MECHANICAL','TRUE',7,7,8,NULL,NULL,'GVG');
 insert into card values ('EX1_025','Costruttrice di Draghi','EX1_025.png','Grido di Battaglia: evoca un Minidrago Meccanico 2/1.','Comune','Servitore',NULL,'FALSE',2,4,4,NULL,NULL,'CORE');
-insert into card values ('OG_334','Accolita Incappucciata','OG_334.png','Quando un personaggio viene curato, +1/+1 al tuo C\'thun dovunque sia','Comune','Servitore',NULL,'FALSE',3,6,4,NULL,NULL,'OG');
+insert into card values ('OG_334','Accolita Incappucciata','OG_334.png','Quando un personaggio viene curato, +1/+1 al tuo C\'thun dovunque sia.','Comune','Servitore',NULL,'FALSE',3,6,4,NULL,NULL,'OG');
 insert into card values ('EX1_402','Fabbro d\'Armature','EX1_402.png','Quando un tuo servitore subisce danni','Rara','Servitore',NULL,'FALSE',1,4,2,NULL,NULL,'EXPERT1');
 insert into card values ('KAR_005','Tenera Nonnina','KAR_005.png','Rantolo di Morte: evoca un Lupo Cattivo 3/2.','Comune','Servitore','BEAST','FALSE',1,1,2,3,'KARA','KARA');
 insert into card values ('AT_007','Sparamagie','AT_007.png','Grido di Battaglia: mette nella mano di ogni giocatore una Magia casuale.','Comune','Servitore',NULL,'FALSE',3,4,3,NULL,NULL,'TGT');
