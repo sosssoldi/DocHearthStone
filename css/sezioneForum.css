@@ -17,88 +17,12 @@ body {
 	overflow:hidden;
 }
 
-header {
-	width: 75%;
-	height: 6em;
-	margin: 0 auto;
-	background-color: white;
-	border-color: #fb9313;
-	border-style: solid;
-	border-width: 0em 0.1em 0.3em 0.1em;
-	border-bottom-left-radius: 1em;
-	border-bottom-right-radius: 1em;
-}
-
-header h1 {
-	width: 20%;
-	height: 2em;
-	background-image: url("../images/logo.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: center center;
-	padding: 0.5em 0em 0.5em 0em;
-	float:left;
-	margin-left: 5%;
-}
-
-nav {
-	height: 6em;
-	margin-left: 30%;
-	width: 70%;
-	text-align: center;
-	overflow: hidden;
-}
-
-nav ul {
-    list-style-type: none;
-	margin: 0 auto;
-    overflow: hidden;
-}
-
-nav li {
-	display: inline-block;
-}
-
-nav li a {
-	font-size: 0.8em;
-	color: black;
-	text-align: center;
-	padding: 3.1em 1.5em;
-	text-decoration: none;
-	font-weight: bold;
-}
-
-.here {
-	font-size: 0.8em;
-	color: black;
-	text-align: center;
-	padding: 3.1em 1.5em;
-	text-decoration: none;
-	font-weight: bold;
-	color: #0091D3;
-}
-
-
-/* Change the link color to #111 (black) on hover */
-nav li a:hover {
-	color: #fb9313;
-}
-
 #imgHeader {
 	display: block;
 	background-position: center center;
 	background-repeat: no-repeat;
 	margin: 0 auto;
 	height: auto;
-}
-
-
-#breadcrumb {
-	width: 75%;
-	margin: 0 auto;
-	border-style: solid;
-	border-width: 0em 0.1em 0.1em 0.1em;
-	background-color: white;
 }
 
 #content {
@@ -114,75 +38,67 @@ nav li a:hover {
 	border-top-right-radius: 1em;
 }
 
-#pagina{
-	text-align: center;
-	margin-bottom: 3%;
+#breadcrumb {
+	display: none;
 }
 
-.titolo{
+.titolo {
 	text-align:center;
 	margin-bottom: 2%;
 }
 
-.tabella{
+.tabella {
 	width: 90%;
 	margin:0 auto;
 	border-collapse: collapse;
 	border: 0.25em solid #292c3e;
 	background-color: rgba(0, 0, 255, 0.11);
-
 }
-#general{
+
+#general {
 	margin-bottom: 5%;
-
 }
 
-.dark{
+.dark {
 	background-color: #292c3e;
 	color:white;
 }
 
-.forum{
+.forum {
 	padding:0.4em;
 	width:70%;
 	border-bottom: 0.10em solid #292c3e;
 }
-.lastpost{
+
+.lastpost {
 	width: 18%;
 	text-align: center;
 	border-bottom: 0.10em solid #292c3e;
 	border-right: 0.10em solid #292c3e;
 	border-left: 0.10em solid #292c3e;
 }
-.numpost{
+
+.numpost {
 	text-align: center;
 	border-bottom: 0.10em solid #292c3e;
 	border-left: 0.10em solid #292c3e;
-
 }
 
-td a{
+td a {
 	 text-decoration: none;
 }
 
-
-#class{
-	width: 90%;
-	margin:0 auto;
-	border-collapse: collapse;
-}
-
-form{
+form {
 	margin-top: 2em;
 }
-label{
+
+label {
 	font-size: 1.2em;
 	font-weight: bold;
 	padding-bottom: 0.2em;
 }
 
 textarea {
-
 	min-width: 90%;
 	max-width: 90%;
 	display: block;
@@ -199,30 +115,29 @@ form input[type="submit"] {
 	font-weight: bold;
 }
 
-#labelAdd{
+#labelAdd {
 	display: block;
 	text-align: center;
 	margin-bottom: 1em;
 	font-size: 2em;
 }
 
-#labelTit{
-		font-size: 1.4em;
-		display: block;
+#labelTit {
+	font-size: 1.4em;
+	display: block;
 }
 
-#titolo{
+#titolo {
 	min-height: 2em;
 	width:30%;
 	margin-bottom: 3em;
-
 }
 
-#labelText{
+#labelText {
 	font-size: 1.4em;
 }
 
-.lab{
+.lab {
 	width: 90%;
 	margin: 0 auto;
 }
