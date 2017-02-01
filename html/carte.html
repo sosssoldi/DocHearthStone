@@ -2,10 +2,10 @@
 	Ti trovi in: Carte
 </div>
 
-<img id="imgHeader" src="images/carte.jpg" alt="">
+<img id="imgHeader" src="images/carte.jpg" alt="sfondo">
 
 <div id="content">
-	<h2>LISTA DELLE CARTE DI HEARTHSTONE</h2>
+	<h2>Lista delle carte di HearthStone</h2>
 	<form id="search" method="get" action="carte.php">
 		<div id="nome">
 			<h3>NOME</h3>
@@ -29,6 +29,14 @@
 			<h3>AVVENTURA/ESPANSIONE</h3>
 			<select name="avventura">
 				<option></option>
+				<option>Naxxramas</option>
+				<option>Massiccio Roccianera</option>
+				<option>Lega degli Esploratori</option>
+				<option>Karazhan</option>
+				<option>Goblin vs Golem</option>
+				<option>Sussurro degli Dei Antichi</option>
+				<option>I bassifondi di Meccania</option>
+				<option>Il Gran Torneo</option>
 			</select>
 		</div>
 		<div id="rarita">
@@ -67,15 +75,15 @@
 		</div>
 		<input type="submit" value="FILTRA" />
 	</form>
-	<table>
+	<table id="tableCarte">
 		<thead>
 			<tr>
-				<th>Nome</th>
-				<th>Tipo</th>
-				<th>Classe</th>
-				<th>Costo</th>
-				<th>Attacco</th>
-				<th>Vita</th>
+				<th class="nomeCarta">Nome</th>
+				<th class="tipoCarta">Tipo</th>
+				<th class="classeCarta">Classe</th>
+				<th class="valoreCarta">Costo</th>
+				<th class="valoreCarta">Attacco</th>
+				<th class="valoreCarta">Vita</th>
 			</tr>
 		</thead>
 		<tbody>
