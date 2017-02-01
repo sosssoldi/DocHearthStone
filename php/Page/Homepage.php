@@ -37,6 +37,8 @@ class Homepage implements Page {
         $content=file_get_contents("html/index.html");
 
         $content = str_replace(":tabelladeck:", $this->top10Deck(), $content);
+        $content = str_replace(":tip:", $this->randomTip(), $content);
+        $content = str_replace(":tabellaguide:", $this->top5Guides(), $content);
 
         echo $content;
     }
@@ -55,21 +57,23 @@ class Homepage implements Page {
         return $output;
     }
     public function top5Guides() {
-        $query = 'SELECT guide_id, title FROM guide ORDER BY valutation LIMIT 5';
-        $rs = executeQuery($query);
+        $query = 'SELECT guide_id, title FROM guide ORDER BY valutation desc LIMIT 5';
+        $rs = $this->executeQuery($query);
+        $output = "";
+        foreach ($rs as $row) {
+            $output .= "<li>{$row['title']}</li>";
+        }
+        return $output;
     }
     public function randomTip() {
-        $bind = array(':tip_id' => rand(1, 50));
-        $query = 'SELECT content FROM tips WHERE tip_id = :tip_id';
-        $rs = executeQuery($query, $param, $value);
+        $tid = rand(1,11);
+        $query = "SELECT content FROM tip WHERE tip_id = {$tid}";
+        $rs = $this->executeQuery($query);
+        return $rs[0]["content"];
     }
-    public function executeQuery($q, $bind = array()) {
-        foreach ($bind as $k => $v) {
-            $this->db->bind($k, $v);
-        }
+    public function executeQuery($q) {
         $this->db->query($q);
         return $this->db->resultset();
     }
-
 }
 ?>
