@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>Registrazione - DocHearthStone</title>
+		<meta name="title" content="Registrati - Doc HearthStone" />
+		<meta name="description" content="Registrati su Doc HearthStone" />
+		<meta name="keyword" content="DocHearthStone, HearthStone" />
+    <link rel="stylesheet" href="../css/login.css" type="text/css" />
+	<script type="text/javascript" src="../script/checkInput.js">
+
+	</script>
+    <body>
+		:header:
+		<div id="breadcrumb">Ti trovi in: Registrati</div>
+    	<div id="content">
+	        <div>
+	        	<h1>Registrati</h1>
+	        	<div class="log">
+	          		<form name="reg" action="index.php" method="post" onsubmit="return check()">
+						<label class="field">Nome<span class="req">*</span></label>
+	              		<input type="text"  autocomplete="off" name="nome"/>
+						<label class="field">Cognome<span class="req">*</span></label>
+	              		<input type="text"  autocomplete="off" name="cognome"/>
+	              		<label class="field">Username<span class="req">*</span></label>
+	              		<input type="text"  autocomplete="off" name="user"/>
+	            		<label class="field">Email<span class="req">*</span></label>
+	            		<input type="email" autocomplete="off" name="email"/>
+						<label class="field">Password<span class="req">*</span></label>
+	            		<input type="password" autocomplete="off" name="password"/>
+						<label class="field">Ripeti la password<span class="req">*</span></label>
+						<input type="password" autocomplete="off" name="password2"/>
+	          			<button type="submit" class="button button-block"/>Registrati</button>
+	          		</form>
+	        	</div>
+        	</div>
+	      </div>
+		  <footer>
+		  </footer>
+	</body>
+</html>

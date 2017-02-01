@@ -23,15 +23,12 @@ body {
 	background-repeat: no-repeat;
 	margin: 0 auto;
 	height: auto;
+	width:45%;
 }
 
 
 #breadcrumb {
-	width: 75%;
-	margin: 0 auto;
-	border-style: solid;
-	border-width: 0em 0.1em 0.1em 0.1em;
-	background-color: white;
+	display: none;
 }
 
 #content {
@@ -47,12 +44,12 @@ body {
 	border-top-right-radius: 1em;
 }
 
-#titolo{
+#titolo {
 	text-align: center;
 	margin-bottom: 1em;
 }
 
-.post{
+.post {
 	width: 90%;
 	margin-bottom: 2em;
 	margin-left: auto;
@@ -63,7 +60,7 @@ body {
 	border-radius: 0.5em;
 }
 
-.dataora{
+.dataora {
 	text-align: center;
 	padding:1%;
 	font-size: 1.3em;
@@ -71,11 +68,11 @@ body {
 	border-bottom: 0.05em solid #292c3e;
 }
 
-.userptext{
+.userptext {
 	display: flex;
 }
 
-.user{
+.user {
 	text-align: center;
 	word-wrap: break-word;
 	width:25%;
@@ -83,37 +80,38 @@ body {
 	font-weight: bold;
 }
 
-.fotoProfilo{
+.fotoProfilo {
 	border: 0.1em solid #292c3e;
 	margin-top: 0.5em;
 }
 
-.user p{
+.user p {
 	padding-bottom: 0.5em;
 }
 
-.text{
+.text {
 	width: 74%;
 	float:left;
 	padding: 2%;
 	font-size: 1.1em;
 }
 
-.text::after{
+.text::after {
 	clear:both;
 }
 
-.addCommento{
+.addCommento {
 	width: 40%;
 	border: 1px solid black;
 	margin: 0 auto;
 	overflow: hidden;
 }
 
-form{
+form {
 	margin-top: 2em;
 }
-label{
+
+label {
 	margin-left: 5%;
 	font-size: 1.2em;
 	font-weight: bold;
