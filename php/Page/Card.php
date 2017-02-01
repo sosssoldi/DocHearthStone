@@ -113,7 +113,7 @@ class Card implements Page {
 	}
 	
 	public function footer() {
-		
+		echo file_get_contents("html/footer.html");
 	}
 	
 	private function generaQuery() {
