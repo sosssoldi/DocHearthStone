@@ -128,7 +128,7 @@ insert into card values ('AT_006','Recluta di Dalaran','AT_006.png','<b>Ispirazi
 insert into card values ('KAR_010','Templare di Noctumor','KAR_010.png','<b>Grido di Battaglia:</b> evoca due Draghetti 1/1 se hai un Drago in mano.','COMMON','MINION',NULL,'FALSE',2,3,3,4,'KARA','KARA');
 insert into card values ('EX1_017','Pantera della Giungla','EX1_017.png','<b>FurtivitÃ </b>','COMMON','MINION','BEAST','FALSE',4,2,3,NULL,NULL,'EXPERT1');
 insert into card values ('CFM_065','Pozione Vulcanica','CFM_065.png','Infligge $2 danni a TUTTI i servitori.','RARE','SPELL',NULL,'FALSE',NULL,NULL,3,NULL,NULL,'GANGS');
-insert into card values ('EX1_062','Vecchio Occhiobuio','EX1_062.png','<b>Carica</b>. Ha +1 Attacco per ogni altro Murloc sul campo.','LEGENDARY','MINION','MURLOC','FALSE',2,4,4,NULL,NULL,'REWARD');
+insert into card values ('EX1_062','Vecchio Occhiobuio','EX1_062.png','<b>Carica</b>. Ha +1 Attacco per ogni altro Murloc sul campo.','LEGENDARY','MINION','MURLOC','FALSE',2,4,4,NULL,NULL,'CORE');
 insert into card values ('BRM_018','Consorte del Drago','BRM_018.png','<b>Grido di Battaglia:</b> il prossimo Drago che giochi costa (2) in meno.','RARE','MINION','DRAGON','FALSE',5,5,5,3,'BRM','BRM');
 insert into card values ('CS2_168','Murloc Incursore','CS2_168.png',NULL,'FREE','MINION','MURLOC','FALSE',2,1,1,NULL,NULL,'CORE');
 insert into card values ('EX1_593','Lamascura','EX1_593.png','<b>Grido di Battaglia:</b> infligge 3 danni all\'eroe nemico.','FREE','MINION',NULL,'FALSE',4,4,5,NULL,NULL,'CORE');
@@ -261,7 +261,7 @@ insert into card values ('CS2_103','Carica','CS2_103.png','Fornisce <b>Carica</b
 insert into card values ('CS2_097','Spadone di Verargento','CS2_097.png','Quando il tuo eroe attacca','COMMON','WEAPON',NULL,'FALSE',4,NULL,4,NULL,NULL,'CORE');
 insert into card values ('GVG_113','Mietinemici 4000','GVG_113.png','Infligge danni anche ai servitori adiacenti a quello attaccato.','LEGENDARY','MINION','MECHANICAL','TRUE',6,9,8,NULL,NULL,'GVG');
 insert into card values ('CFM_666','Maestro di Grug Fu','CFM_666.png','<b>Furia del Vento</b>','COMMON','MINION',NULL,'FALSE',3,5,5,NULL,NULL,'GANGS');
-insert into card values ('NEW1_016','Pappagallo del Pirata','NEW1_016.png','<b>Grido di Battaglia:</b> pesca un Pirata casuale dal tuo mazzo.','EPIC','MINION','BEAST','FALSE',1,1,2,NULL,NULL,'REWARD');
+insert into card values ('NEW1_016','Pappagallo del Pirata','NEW1_016.png','<b>Grido di Battaglia:</b> pesca un Pirata casuale dal tuo mazzo.','EPIC','MINION','BEAST','FALSE',1,1,2,NULL,NULL,'CORE');
 insert into card values ('LOE_076','Ser Pinnus Mrrgglton','LOE_076.png','<b>Grido di Battaglia: Rinvieni</b> un nuovo Potere Eroe di base.','LEGENDARY','MINION','MURLOC','FALSE',1,3,1,3,'LOE','LOE');
 insert into card values ('CS2_108','Esecuzione','CS2_108.png','Distrugge un servitore nemico danneggiato.','FREE','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'CORE');
 insert into card values ('EX1_573','Cenarius','EX1_573.png','<b>Scegli:</b> +2/+2 agli altri tuoi servitori <b>o</b> evoca due Treant 2/2 con <b>Provocazione</b>.','LEGENDARY','MINION',NULL,'FALSE',5,8,9,NULL,NULL,'EXPERT1');
@@ -640,7 +640,7 @@ insert into card values ('CFM_649','Corriere della Kabala','CFM_649.png','<b>Gri
 insert into card values ('BRM_012','Distruttore del Fuoco','BRM_012.png','<b>Grido di Battaglia:</b> ottiene da 1 a 4 Attacco. <b>Sovraccarico:</b> (1)','COMMON','MINION',NULL,'FALSE',3,6,4,4,'BRM','BRM');
 insert into card values ('BRM_011','Folgore di Lava','BRM_011.png','Infligge $2 danni. Sblocca i Cristalli di Mana in <b>Sovraccarico</b>.','RARE','SPELL',NULL,'FALSE',NULL,NULL,2,2,'BRM','BRM');
 insert into card values ('OG_291','Maga d\'Ombra','OG_291.png','<b>Grido di Battaglia:</b> seleziona un tuo servitore. Ne mette una copia 1/1 nella tua mano che costa (1).','EPIC','MINION',NULL,'FALSE',4,4,5,NULL,NULL,'OG');
-insert into card values ('CFM_648','Pesce \Grosso\','CFM_648.png','<b>Grido di Battaglia:</b> evoca un Ogre 6/6.','COMMON','MINION',NULL,'FALSE',1,1,6,NULL,NULL,'GANGS');
+insert into card values ('CFM_648','Pesce Grosso','CFM_648.png','<b>Grido di Battaglia:</b> evoca un Ogre 6/6.','COMMON','MINION',NULL,'FALSE',1,1,6,NULL,NULL,'GANGS');
 insert into card values ('CFM_636','Furia d\'Ombra','CFM_636.png','<b>FurtivitÃ </b>','COMMON','MINION',NULL,'FALSE',5,1,3,NULL,NULL,'GANGS');
 insert into card values ('EX1_083','Meccanista Granfavilla','EX1_083.png','<b>Grido di Battaglia:</b> trasforma un altro servitore casuale in un Gigantosauro 5/5 o in uno Scoiattolo 1/1.','LEGENDARY','MINION',NULL,'FALSE',3,3,3,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_507','Condottiero Murloc','EX1_507.png','Gli altri tuoi Murloc hanno +2/+1.','EPIC','MINION','MURLOC','FALSE',3,3,3,NULL,NULL,'EXPERT1');
@@ -721,7 +721,7 @@ insert into card values ('EX1_508','Oracolo Scagliasalda','EX1_508.png','Gli alt
 insert into card values ('AT_131','Eydis Iranera','AT_131.png','Quando Ã¨ il bersaglio di una tua Magia','LEGENDARY','MINION',NULL,'FALSE',3,4,3,NULL,NULL,'TGT');
 insert into card values ('CFM_693','Nocchiere di Meccania','CFM_693.png','<b>Combo:</b> fa tornare un tuo servitore nella tua mano.','RARE','MINION',NULL,'FALSE',2,3,2,NULL,NULL,'GANGS');
 insert into card values ('EX1_279','Pirosfera','EX1_279.png','Infligge $10 danni.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,10,NULL,NULL,'EXPERT1');
-insert into card values ('PRO_001','Elite Tauren Chieftain','PRO_001.png','<b>Grido di Battaglia:</b> fornisce il potere del ROCK a ogni giocatore!','LEGENDARY','MINION',NULL,'FALSE',5,5,5,NULL,NULL,'PROMO');
+insert into card values ('PRO_001','Elite Tauren Chieftain','PRO_001.png','<b>Grido di Battaglia:</b> fornisce il potere del ROCK a ogni giocatore!','LEGENDARY','MINION',NULL,'FALSE',5,5,5,NULL,NULL,'CORE');
 insert into card values ('EX1_310','Demone Guardiano','EX1_310.png','<b>Carica</b>. <b>Grido di Battaglia:</b> scarta 2 carte casuali.','RARE','MINION','DEMON','FALSE',5,7,5,NULL,NULL,'EXPERT1');
 insert into card values ('GVG_053','Signora dello Scudo','GVG_053.png','<b>Grido di Battaglia:</b> fornisce 5 Armatura.','RARE','MINION',NULL,'TRUE',5,5,6,NULL,NULL,'GVG');
 insert into card values ('AT_106','Campione della Luce','AT_106.png','<b>Grido di Battaglia:</b> <b>Silenzia</b> un Demone.','RARE','MINION',NULL,'FALSE',4,3,3,NULL,NULL,'TGT');
@@ -754,7 +754,7 @@ insert into card values ('EX1_105','Gigante di Montagna','EX1_105.png','Costa (1
 insert into card values ('CS2_063','Corruzione','CS2_063.png','Seleziona un servitore nemico. All\'inizio del tuo turno','COMMON','SPELL',NULL,'FALSE',NULL,NULL,1,NULL,NULL,'CORE');
 insert into card values ('FP1_011','Tessitela','FP1_011.png','<b>Rantolo di Morte:</b> mette nella tua mano una Bestia casuale.','COMMON','MINION','BEAST','TRUE',1,1,1,1,'NAXX','NAXX');
 insert into card values ('CFM_716','Dormire con i Pesci','CFM_716.png','Infligge $3 danni a TUTTI i servitori danneggiati.','EPIC','SPELL',NULL,'FALSE',NULL,NULL,2,NULL,NULL,'GANGS');
-insert into card values ('EX1_112','Gelbin Meccatork','EX1_112.png','<b>Grido di Battaglia:</b> evoca una MERAVIGLIOSA invenzione.','LEGENDARY','MINION',NULL,'FALSE',6,6,6,NULL,NULL,'PROMO');
+insert into card values ('EX1_112','Gelbin Meccatork','EX1_112.png','<b>Grido di Battaglia:</b> evoca una MERAVIGLIOSA invenzione.','LEGENDARY','MINION',NULL,'FALSE',6,6,6,NULL,NULL,'CORE');
 insert into card values ('BRM_022','Uovo di Drago','BRM_022.png','Quando subisce danni','RARE','MINION',NULL,'FALSE',0,2,1,3,'BRM','BRM');
 insert into card values ('EX1_570','Morso','EX1_570.png','+4 Attacco al tuo eroe per questo turno e 4 Armatura.','RARE','SPELL',NULL,'FALSE',NULL,NULL,4,NULL,NULL,'EXPERT1');
 insert into card values ('EX1_134','Agente dell\'IR:7','EX1_134.png','<b>Combo:</b> infligge 2 danni.','RARE','MINION',NULL,'FALSE',3,3,3,NULL,NULL,'EXPERT1');
