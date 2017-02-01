@@ -194,3 +194,8 @@ create table if not exists hero_card(
 	foreign key (hero_id) references hero(hero_id),
 	foreign key (card_id) references card(card_id)
 )engine=innodb;
+
+create table if not exists tip(
+    tip_id int auto_increment primary key,
+    content varchar(500) not null
+)engine=innodb;
