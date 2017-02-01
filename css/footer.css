@@ -1,0 +1,24 @@
+footer {
+	width: 75%;
+	margin: 0 auto;
+	padding-top: 5%;
+	padding-bottom: 2%;
+	background-color: white;
+	border-left: 0.1em solid #fb9313;
+	border-right: 0.1em solid #fb9313;
+}
+
+#power {
+	margin-left: 5%;
+	font-size: 1em;
+}
+
+#css {
+	float: right;
+	margin-right: 5%;
+}
+
+#html {
+	float: right;
+	margin-right: 1%;
+}
