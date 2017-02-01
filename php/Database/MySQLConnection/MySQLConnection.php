@@ -1,12 +1,9 @@
 <?php
 namespace php\Database\MySQLConnection;
+include_once "DBConnection.php";
 
 use \PDO;
 use \PDOException;
-
-interface DBConnection {
-	public function connect();
-}
 
 class MySQLConnection implements DBConnection {
 	private $host = "";
@@ -14,6 +11,7 @@ class MySQLConnection implements DBConnection {
 	private $user = "";
 	private $pwd = "";
 	private $options = "";
+	
 	public function __construct($host = "localhost", $dbname = "hearthstone", $user = "root", $pwd = "") {
 		$this->host = $host;
 		$this->dbname = $dbname;
@@ -24,6 +22,7 @@ class MySQLConnection implements DBConnection {
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 		);
 	}
+	
 	public function connect() {
 			try {
 				return new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->user, $this->pwd, $this->options);
