@@ -1,287 +1,85 @@
-<!DOCTYPE html>
-<html lang="it">
-	<head>
-		<meta charset="utf-8" />
-		<title>Carte - DocHearthStone</title>
-		<meta name="title" content="Carte - DocHearthStone" />
-		<meta name="description" content="Tutte le carte di Hearthstone, la loro storia e come ottenerle." />
-		<meta name="keyword" content="Hearthstone, DocHearthStone, carta, comune, rara, epica, leggendaria, dorata, grido di battaglia, rantolo di morte" />
-		<link rel="stylesheet" href="../css/carte.css" type="text/css" />
-		<script src="../script/showImage.js"></script>
-	</head>
-	<body>
-		<header>
-			<h1 class="hide" lang="en">DOCHEARTHSTONE</h1>
-			<nav>
-				<ul>
-					<li lang="en"><a href="index.html">HOMEPAGE</a></li>
-					<li><a href="mazzi.html">MAZZI</a></li>
-					<li class="here">CARTE</li>
-					<li><a href="forum.html">FORUM</a></li>
-					<li><a href="guide.html">GUIDE</a></li>
-					<li><a href="avventure.html">AVVENTURE</a></li>
-				</ul>
-			</nav>
-		</header>
-    	<img id="imgHeader" width="45%" src="../images/carte.jpg" alt="Call of the Wild">
-		<div id="content">
-			<h2>LISTA DELLE CARTE DI HEARTHSTONE</h2>
-			<form id="search" method="get">
-				<div id="nome">
-					<h3>NOME</h3>
-					<input type="text" name="nome" />
-				</div>
-				<div id="costo">
-					<h3>COSTO</h3>
-					<select name="costo">
-						<option></option>
-						<option>0</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7+</option>
-					</select>
-				</div>
-				<div id="espansione">
-					<h3>ESPANSIONE</h3>
-					<select name="costo">
-						<option></option>
-						<option>Naxx</option>
-						<option>LoE</option>
-						<option>Kara</option>
-						<option>BRM</option>
-					</select>
-				</div>
-				<div id="rarita">
-					<h3>RARITÀ</h3>
-					<select name="rarita">
-						<option></option>
-						<option>Comune</option>
-						<option>Rara</option>
-						<option>Epica</option>
-						<option>Leggendaria</option>
-					</select>
-				</div>
-				<div id="tipo">
-					<h3>TIPO</h3>
-					<select name="tipo">
-						<option></option>
-						<option>Servitore</option>
-						<option>Magia</option>
-						<option>Arma</option>
-					</select>
-				</div>
-				<div id="classe">
-					<h3>CLASSE</h3>
-					<select name="classe">
-						<option></option>
-						<option>Mago</option>
-						<option>Sacerdote</option>
-						<option>Cacciatore</option>
-						<option>Guerriero</option>
-						<option>Druido</option>
-						<option>Paladino</option>
-						<option>Stregone</option>
-						<option>Sciamano</option>
-						<option>Ladro</option>
-					</select>
-				</div>
-				<input type="submit" value="FILTRA" />
-			</form>
-			<table id="table1">
-				<thead>
-					<tr>
-						<th class="nomeCarta">Nome</th>
-						<th class="tipoCarta">Tipo</th>
-						<th class="classeCarta">Classe</th>
-						<th class="valore">Costo</th>
-						<th class="valore">Attacco</th>
-						<th class="valore">Vita</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="leggendaria" onclick="showImage(this)" onmouseleave="hideImage(this)"><span>north</span><span class = "descrizione">Descrizione della carta sjnasi ucbsaiy ucbsayucbuy buyasyu</span></td>
-						<td>Servitore</td>
-						<td>Cacciatore</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr class="alternativa">
-						<td><a class="comune"><span>Harambe</span></a></td>
-						<td>Servitore</td>
-						<td>Guerriero</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr>
-						<td><a class="comune">A Light in the Darkness</a></td>
-						<td>Arma</td>
-						<td>Paladino</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr class="alternativa">
-						<td><a class="epica">Northshire Cleric</a></td>
-						<td>Servitore</td>
-						<td>Cacciatore</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr>
-						<td><a class="rara">Harambe</a></td>
-						<td>Servitore</td>
-						<td>Mago</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr class="alternativa">
-						<td><a class="rara">A Light in the Darkness</a></td>
-						<td>Magia</td>
-						<td>Cacciatore</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr>
-						<td><a class="comune">Northshire Cleric</a></td>
-						<td>Magia</td>
-						<td>Mago</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr class="alternativa">
-						<td><a class="leggendaria">A Light in the Darkness</a></td>
-						<td>Arma</td>
-						<td>Guerriero</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr>
-						<td><a class="comune">Harambe</a></td>
-						<td>Servitore</td>
-						<td>Druido</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr class="alternativa">
-						<td><a class="comune">A Light in the Darkness</a></td>
-						<td>Servitore</td>
-						<td>Ladro</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr>
-						<td><a class="epica">Northshire Cleric</a></td>
-						<td>Servitore</td>
-						<td>Cacciatore</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr class="alternativa">
-						<td><a class="rara">Harambe</a></td>
-						<td>Arma</td>
-						<td>Cacciatore</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr>
-						<td><a class="rara">A Light in the Darkness</a></td>
-						<td>Arma</td>
-						<td>Cacciatore, Guerriero, Paladino</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr class="alternativa">
-						<td><a class="comune">Northshire Cleric</a></td>
-						<td>Magia</td>
-						<td>Druido</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr>
-						<td><a class="leggendaria">A Light in the Darkness</a></td>
-						<td>Servitore</td>
-						<td>Paladino</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr class="alternativa">
-						<td><a class="comune">Harambe</a></td>
-						<td>Servitore</td>
-						<td>Ladro</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr>
-						<td><a class="comune">A Light in the Darkness</a></td>
-						<td>Servitore</td>
-						<td>Sciamano</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr class="alternativa">
-						<td><a class="epica">Northshire Cleric</a></td>
-						<td>Servitore</td>
-						<td>Cacciatore</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr>
-						<td><a class="rara">Harambe</a></td>
-						<td>Servitore</td>
-						<td>Cacciatore</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr class="alternativa">
-						<td><a class="rara">A Light in the Darkness</a></td>
-						<td>Servitore</td>
-						<td>Druido</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-					<tr>
-						<td><a class="comune">Northshire Cleric</a></td>
-						<td>Arma</td>
-						<td>Sacerdote, Mago, Stregone</td>
-						<td class="costo">1</td>
-						<td class="attacco">1</td>
-						<td class="vita">3</td>
-					</tr>
-				</tbody>
-			</table>
-			<form id="split" method="get" action="carte.html">
-				<input type="submit" name="pagina" onclick="split()" onclick="split()" value="1" />
-				<input type="submit" name="pagina" onclick="split()" value="2" />
-				<input type="submit" name="pagina" onclick="split()" value="3" />
-				<input type="submit" name="pagina" onclick="split()" value="4" />
-				<input type="submit" name="pagina" onclick="split()" value="5" />
-			</form>
+<div id="breadcrumb">
+	Ti trovi in: Carte
+</div>
+
+<img id="imgHeader" src="images/carte.jpg" alt="">
+
+<div id="content">
+	<h2>LISTA DELLE CARTE DI HEARTHSTONE</h2>
+	<form id="search" method="get" action="carte.php">
+		<div id="nome">
+			<h3>NOME</h3>
+			:nomeCarta:
 		</div>
-		<footer>
-		</footer>
-	</body>
-</html>
+		<div id="costo">
+			<h3>COSTO</h3>
+			<select name="costo">
+				<option></option>
+				<option>0</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7+</option>
+			</select>
+		</div>
+		<div id="espansione">
+			<h3>AVVENTURA/ESPANSIONE</h3>
+			<select name="avventura">
+				<option></option>
+			</select>
+		</div>
+		<div id="rarita">
+			<h3>RARITÀ</h3>
+			<select name="rarita">
+				<option></option>
+				<option>Comune</option>
+				<option>Rara</option>
+				<option>Epica</option>
+				<option>Leggendaria</option>
+			</select>
+		</div>
+		<div id="tipo">
+			<h3>TIPO</h3>
+			<select name="tipo">
+				<option></option>
+				<option>Servitore</option>
+				<option>Magia</option>
+				<option>Arma</option>
+			</select>
+		</div>
+		<div id="classe">
+			<h3>CLASSE</h3>
+			<select name="classe">
+				<option></option>
+				<option>Mago</option>
+				<option>Sacerdote</option>
+				<option>Cacciatore</option>
+				<option>Guerriero</option>
+				<option>Druido</option>
+				<option>Paladino</option>
+				<option>Stregone</option>
+				<option>Sciamano</option>
+				<option>Ladro</option>
+			</select>
+		</div>
+		<input type="submit" value="FILTRA" />
+	</form>
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Tipo</th>
+				<th>Classe</th>
+				<th>Costo</th>
+				<th>Attacco</th>
+				<th>Vita</th>
+			</tr>
+		</thead>
+		<tbody>
+			:corpoTabella:
+		</tbody>
+	</table>
+</div>
