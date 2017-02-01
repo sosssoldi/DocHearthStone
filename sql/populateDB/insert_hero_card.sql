@@ -1,5 +1,5 @@
 -- POPULATE TABLE:		HERO_CARD
-insert into hero_card values ('HERO_06','AT_039');
+/*insert into hero_card values ('HERO_06','AT_039');
 insert into hero_card values ('HERO_06','OG_313');
 insert into hero_card values ('HERO_03','NEW1_018');
 insert into hero_card values ('HERO_08','NEW1_018');
@@ -2771,7 +2771,7 @@ insert into hero_card values ('HERO_03','OG_340');
 insert into hero_card values ('HERO_08','OG_340');
 insert into hero_card values ('HERO_01','OG_340');
 insert into hero_card values ('HERO_05','OG_340');
-insert into hero_card values ('HERO_04','OG_340');
+insert into hero_card values ('HERO_04','OG_340');*/
 insert into hero_card values ('HERO_07','OG_340');
 insert into hero_card values ('HERO_09','OG_340');
 insert into hero_card values ('HERO_06','OG_340');

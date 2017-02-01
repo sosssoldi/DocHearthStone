@@ -1,4 +1,4 @@
-﻿-- POPULATE TABLE:		CARD
+﻿
 insert into card values ('AT_039','Bestia Selvaggia','AT_039.png','Ispirazione: +2 Attacco al tuo eroe per questo turno.','Rara','Servitore','BEAST','FALSE',5,4,4,NULL,NULL,'TGT');
 insert into card values ('OG_313','Grizzly Corrotto','OG_313.png','Dopo che viene evocato un servitore sotto il tuo controllo','Rara','Servitore','BEAST','FALSE',2,2,3,NULL,NULL,'OG');
 insert into card values ('NEW1_018','Incursore Velerosse','NEW1_018.png','Grido di Battaglia: ottiene un incremento all\'Attacco pari all\'Attacco della tua Arma.','Comune','Servitore','PIRATE','FALSE',2,3,2,NULL,NULL,'EXPERT1');

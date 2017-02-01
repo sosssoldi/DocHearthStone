@@ -69,7 +69,7 @@
                 '<input type="number" min="0" max="100000" name="costoMin" />', $contenuto);
             }
 
-            $contenuto=str_replace(':tabellaMazzi:',$this->mostraDeck(),$contenuto);
+            $contenuto=str_replace(':tabellamazzi:',$this->mostraDeck(),$contenuto);
 
             echo $contenuto;
         }
@@ -78,30 +78,61 @@
 
         }
 
-        public function mostraDeck() {
-            $query='SELECT D.deck_id, D.name, H.name, sum(R.r_craft) as Costo, D.likes, D.creation_date';
-            $query.='FROM card as C join card_deck as CD on (C.card_id=CD.card_id) join deck as D on (CD.deck_id=D.deck_id)
-                    join hero as H on (D.hero_id=H.hero_id) join rarity as R on (R.name=C.rarity)';
+        public function costoDeck($deck) {
+            $query='SELECT sum(R.r_craft) as costo';
+            $query.=' FROM rarity R join card C on (R.name=C.rarity) join card_deck CD on (C.card_id=CD.card_id) join deck D on (D.deck_id=CD.deck_id)
+                    WHERE D.deck_id='.$deck;
 
-            if(isset($_GET['nome']))
-            $query.="WHERE D.name LIKE '%".$_GET['nome']."%' AND  H.name LIKE '%".$_GET['classe']."%' ";
-            $query.='GROUP BY D.deck_id';
+            $this->db->query($query);
+            $rs=$this->db->resultset($query);
+
+            return $rs;
+        }
+
+        public function mostraDeck() {
+            $query='SELECT D.deck_id as Id, D.name as NomeDeck, H.name as Nome, D.likes as Likes, D.creation_date as Data ';
+            $query.='FROM deck D join hero H on (D.hero_id=H.hero_id) ';
+
+            if(isset($_GET['nome']) && $_GET['nome']!="" && isset($_GET['classe']) && $_GET['classe'])
+                $query.="WHERE D.name LIKE '%".$_GET['nome']."%'  AND H.name LIKE '%".$_GET['classe']."%' ";
+            else
+                if(isset($_GET['nome']) && $_GET['nome']!="")
+                    $query.="WHERE D.name LIKE '%".$_GET['nome']."%' ";
+                else
+                    if(isset($_GET['classe']) && $_GET['classe']!="")
+                        $query.="WHERE H.name LIKE '%".$_GET['classe']."%' ";
+
+            $query.='LIMIT 40';
+            echo $query;
+
+            if(isset($_GET['costoMin']))
+                $costomin=$_GET['costoMin'];
+            else
+                $costomin=100000;
+
+            if(isset($_GET['costoMax']))
+                $costomax=$_GET['costoMax'];
+            else
+                $costomax=0;
+
             $this->db->query($query);
             $rs=$this->db->resultset($query);
 
             $final="";
             foreach ($rs as $row) {
-                if ($row['Costo']<$_GET['CostoMin'] && $row['Costo']>$_GET['CostoMax'])
-                {
+               $costoDeck=$this->costoDeck($row['Id']);
+
+                /*if ($costoDeck<$costomin && $costoDeck>$costomax)*/
+
                     $final.=
-                    "<tr>
-                        <td>{$row['D.deck_id']}</td>
-                        <td class=\"{$row['H.name']}\">{$row['H.name']}</td>
-                        <td>{$row['Costo']}</td>
-                        <td>{$row['D.likes']}</td>
-                        <td>{$row['D.creation_date']}</td>
-                    </tr>";
-                }
+                    '<tr>
+                        <td>'.$row['NomeDeck'].'</td>
+                        <td class=" '.$row['Nome'].'">'.$row['Nome'].'</td>
+                        <td>'.$costoDeck['costo'].'</td>
+                        <td>'.$row['Likes'].'</td>
+                        <td>'.$row['Data'].'</td>
+                    </tr>';
+
             }
             return $final;
         }
