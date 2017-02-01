@@ -162,13 +162,13 @@ create table if not exists card(
 	card_id varchar(20) primary key,
 	name varchar(50) not null,
 	image varchar(100) not null,
-	description varchar(50) not null,
+	description varchar(50),
 	rarity varchar(50) not null,
 	c_type varchar(25) not null,
 	c_race varchar(25) default '',
 	wild boolean default false,
-	attack int(3) unsigned not null,
-	health int(3) unsigned not null,
+	attack int(3) unsigned,
+	health int(3) unsigned,
 	mana int(3) unsigned not null,
 	adventure_wing int unsigned,
 	adventure_name varchar(100),
@@ -179,9 +179,9 @@ create table if not exists card(
 )engine=innodb;
 
 create table if not exists card_deck(
+    card_deck_id int auto_increment primary key,
 	deck_id int not null,
 	card_id varchar(20) not null,
-	primary key(deck_id,card_id),
 	foreign key (deck_id) references deck(deck_id),
 	foreign key (card_id) references card(card_id)
 )engine=innodb;

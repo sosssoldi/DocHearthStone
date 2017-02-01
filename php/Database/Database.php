@@ -4,9 +4,11 @@ namespace php\Database;
 
 include_once "MySQLConnection/MySQLConnection.php";
 
+use \PDO;
+
 class Database {
 	private $dbc = null;
-	private $stmt = null;
+	private $stmt = '';
 
 	public function __construct($conn = null) {
 		if($conn === null)
