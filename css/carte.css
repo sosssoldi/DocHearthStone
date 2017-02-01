@@ -1,5 +1,5 @@
-body{
-	background-color: #100F0D;
+body {
+	background-color: #151412;
 }
 
 #imgHeader {
@@ -109,4 +109,99 @@ body{
 	width: 30%;
 	margin-left: 67%;
 	margin-bottom: 4%;
+}
+
+#tableCarte {
+	width: 90%;
+	margin: 3% auto;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+#tableCarte th {
+	padding-top: 0.3em;
+	padding-left: 0.8em;
+	padding-right: 0.6em;
+	padding-bottom: 0.5em;
+	border: 0.1em solid black;
+	background-color: #f0d3a7;
+	color: black;
+	font-size: 1em;
+	text-transform: uppercase;
+	
+}
+
+#tableCarte td {
+	border: 0.1em solid black;
+	padding-top: 0.5em;
+	padding-left: 0.8em;
+	padding-right: 0.3em;
+	padding-bottom: 0.5em;
+}
+
+.nomeCarta {
+	width: 34%;
+}
+
+.tipoCarta {
+	width: 11%;
+}
+
+.classeCarta {
+	width: 31%;
+}
+
+.valoreCarta {
+	width: 8%;
+}
+
+.Comune {
+	color: #2ecc71;
+	font-weight: bold;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 1%;
+}
+
+.Rara {
+	color: #0070dd;
+	font-weight: bold;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 1%;
+}
+
+.Epica {
+	color: #a335ee;
+	font-weight: bold;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 1%;
+}
+
+.Leggendaria {
+	color: #ff8000;
+	font-weight: bold;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 1%;
+}
+
+.mana {
+	color: blue;
+	font-weight: bold;
+}
+
+.attacco {
+	color: #ff9900;
+	font-weight: bold;
+}
+
+.vita {
+	color: red;
+	font-weight: bold;
+}
+
+.descrizione {
+	font-size: 1em;
 }
