@@ -12,6 +12,7 @@
 	</head>
     <body>
         <?php
+			session_start();
             include_once 'autoloader.php';
             use \php\Page\Homepage;
 
