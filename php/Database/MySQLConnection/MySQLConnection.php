@@ -1,5 +1,5 @@
 <?php
-namespace Classes\Database\MySQLConnection;
+namespace php\Database\MySQLConnection;
 
 use \PDO;
 use \PDOException;
@@ -14,11 +14,11 @@ class MySQLConnection implements DBConnection {
 	private $user = "";
 	private $pwd = "";
 	private $options = "";
-	public function __construct($host = "localhost", $dbname = "hearthstone", $user = "root", $pwd = "root") {
+	public function __construct($host = "localhost", $dbname = "hearthstone", $user = "root", $pwd = "") {
 		$this->host = $host;
 		$this->dbname = $dbname;
-		$this->$user = $user;
-		$this->$pwd = $pwd;
+		$this->user = $user;
+		$this->pwd = $pwd;
 		$this->options = array(
 			PDO::ATTR_PERSISTENT => true,
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
@@ -79,7 +79,4 @@ class MySQLConnection implements DBConnection {
 			$this->options = $options;
 	}
 }
-
-$c = new MySQLConnection("a");
-$c->connect();
 ?>
