@@ -18,8 +18,8 @@
             }
 
             //here
-            $head = str_replace('<li lang="en"><a href="index.php">HOMEPAGE</a></li>',
-            '<li lang="en" class="here">HOMEPAGE</li>', $head);
+            $head = str_replace('<li><a href="mazzi.php">MAZZI</a></li>',
+            '<li class="here">MAZZI</li>', $head);
 
             echo $head;
         }
@@ -31,7 +31,7 @@
             echo $content;
         }
     	public function footer() {
-            
+
         }
 
     }

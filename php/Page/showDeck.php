@@ -3,7 +3,7 @@
 
     include_once "Page.php";
 
-    class Adventure implements Page {
+    class showDeck implements Page {
         public function header() {
             $head = file_get_contents("html/header.html");
 
@@ -18,20 +18,22 @@
             }
 
             //here
-            $head = str_replace('<li><a href="avventure.php">AVVENTURE</a></li>',
-            '<li class="here">AVVENTURE</li>', $head);
+            /*$head = str_replace('<li lang="en"><a href="index.php">HOMEPAGE</a></li>',
+            '<li lang="en" class="here">HOMEPAGE</li>', $head);*/
 
             echo $head;
         }
-        public function content() {
-            $content=file_get_contents("html/avventure.html");
+    	public function content() {
+            $content=file_get_contents("html/mostraMazzo.html");
 
-            //$content=str_replace(":tabellamazzi",funzione per trovare mazzi,$content);
+            //bisogna fare: immagine_classe, valutazione mazzo, nome costo creazione e voti mazzo,
+            //la descrizione, tabella x carte e commenti e implementare il pulsante aggiungi commento
 
             echo $content;
         }
-        public function footer() {
+    	public function footer() {
 
         }
+
     }
 ?>

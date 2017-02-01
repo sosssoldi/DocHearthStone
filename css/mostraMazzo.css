@@ -1,79 +1,9 @@
-* {
-	margin: 0em;
-	padding: 0em;
-}
-
-html {
-	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
-}
-
 body {
 	background-color: #000;
 }
 
-.hide {
-	text-indent:100%;
-	white-space:nowrap;
-	overflow:hidden;
-}
-
-header {
-	width: 75%;
-	height: 6em;
-	margin: 0 auto;
-	background-color: white;
-	border-color: #fb9313;
-	border-style: solid;
-	border-width: 0em 0.1em 0.3em 0.1em;
-	border-bottom-left-radius: 1em;
-	border-bottom-right-radius: 1em;
-}
-
-header h1 {
-	width: 20%;
-	height: 2em;
-	background-image: url("../images/logo.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: center center;
-	padding: 0.5em 0em 0.5em 0em;
-	float:left;
-	margin-left: 5%;
-}
-
-nav {
-	height: 6em;
-	margin-left: 30%;
-	width: 70%;
-	text-align: center;
-	overflow: hidden;
-}
-
-nav ul {
-  list-style-type: none;
-	margin: 0 auto;
-  overflow: hidden;
-	padding-top: 2.3em;
-	padding-bottom: 2.3em;
-}
-
-nav li {
-	display: inline-block;
-}
-
-nav li a {
-	font-size: 0.8em;
-	color: black;
-	text-align: center;
-	text-decoration: none;
-	font-weight: bold;
-	padding: 3.1em 1.5em;
-}
-
-
-/* Change the link color to #111 (black) on hover */
-nav li a:hover {
-	color: #fb9313;
+#breadcrumb {
+	display: none;
 }
 
 #imgHeader {
@@ -97,67 +27,68 @@ nav li a:hover {
 	border-top-right-radius: 1em;
 }
 
-#sopra{
-  background-color:white;
-	border-radius:0.5em;
-	border: 0.2em solid #273f83;
-  width:47%;
-  margin-left: 3%;
-  overflow: auto;
-  padding-bottom: 0.5em;
-  padding-top: 0.5em;
-	float: left;
+#mazzo {
+	overflow: auto;
+}
 
+#sopra {
+  	background-color: #fff;
+	border-radius: 0.5em;
+	border: 0.2em solid #273f83;
+  	width: 47%;
+  	margin-left: 3%;
+  	overflow: auto;
+  	padding-bottom: 0.5em;
+  	padding-top: 0.5em;
+	float: left;
 }
 
 #img{
-  margin: 2em 0 2em 3%;
-  float: left;
-  width: 20%;
-	  height: 100%;
+  	margin: 2em 0 2em 3%;
+  	float: left;
+  	width: 20%;
 }
 
 #imgClasse {
-  width:80%;
-  margin-left:10%;
+  	width: 80%;
+  	margin-left: 10%;
 }
 
-#valutazione{
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: bolder;
+#valutazione {
+  	text-align: center;
+  	font-size: 1.5em;
+  	font-weight: bolder;
 }
-
 
 #rating .like{
-  display: block;
-  margin: auto;
-  padding-top: 0.2em;
-  border: none;
+  	display: block;
+  	margin: auto;
+  	padding: 1em 0em;
+  	border: none;
 	background-color: white;
 }
 
 #descrizione {
-  width: 70%;
-  word-wrap: break-word;
+  	width: 70%;
+  	word-wrap: break-word;
 	text-align: center;
 	margin:2em 0 2em 25%;
 }
 
-#descrizione h3{
-  font-weight: bold;
+#descrizione h3 {
+  	font-weight: bold;
 	padding-top: 0.5em;
 	padding-bottom: 1em;
 }
 
-#descrizione h4{
-  padding-top: 0.5em;
-  font-weight: normal;
+#descrizione h4 {
+  	padding-top: 0.5em;
+  	font-weight: normal;
 }
-#descrizione h4 span{
+
+#descrizione h4 span {
   font-weight: bold;
   color:#273f83;
-
 }
 
 #carte {
@@ -172,6 +103,12 @@ nav li a:hover {
 	width: 90%;
 }
 
+#carte table thead {
+	font-weight: bold;
+	font-size: 1em;
+	border: 0.1em solid gray;
+}
+
 #carte table td {
 	border: 0.1em solid gray;
 	padding: 0.4em;
@@ -180,12 +117,6 @@ nav li a:hover {
 
 #carte table td a {
 	text-decoration: none;
-}
-
-#carte table thead{
-	font-weight: bold;
-	font-size: 1em;
-	border: 0.1em solid gray;
 }
 
 .leggendaria {
@@ -207,7 +138,6 @@ nav li a:hover {
 }
 
 #spiegazione {
-
 	float: left;
 	width: 45%;
 	margin-left: 5%;
@@ -215,35 +145,34 @@ nav li a:hover {
 	margin-top: 2em;
 }
 
-#spiegazione h3{
+#spiegazione h3 {
 	text-align: left;
-	display: block;
 	color:#273f83;
 }
 
-#spiegazione h4{
+#spiegazione h4 {
 	font-weight: normal;
 }
 
 #commenti {
-	margin: 6em auto 2em auto;
+	margin: 4em auto 2em auto;
 	width: 90%;
-	word-wrap: break-word;
 	padding-bottom: 5%;
 }
 
-#commenti h2{
+#commenti h2 {
 	text-align: center;
 	color: black;
 }
 
-#commenti table{
+#commenti table {
 	border:none;
 	margin: 2em auto 0 auto;
 	border-spacing: 0;
+	width:100%;
 }
 
-#commenti th{
+#commenti th {
 	padding-bottom: 0.5em;
 	padding-top: 0.5em;
 	font-size: 1.2em;
@@ -251,10 +180,12 @@ nav li a:hover {
 	background-color: #efe7d2;
 }
 
-#commenti td{
+#commenti td {
+	word-wrap: break-word;
 	padding: 0.5em 0 0.5em 1em;
 	border-top: 1px solid black;
 }
+
 #commenti tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
@@ -267,9 +198,10 @@ nav li a:hover {
 	width: 80%;
 }
 
-form{
+form {
 	margin-top: 2em;
 }
+
 #commenti label{
 	margin-left: 5%;
 	font-size: 1.2em;
