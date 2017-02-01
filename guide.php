@@ -8,7 +8,7 @@
 		<meta name="keyword" content="Hearthstone, DocHearthStone, guide, eroi, potere eroe, trucchi, consigli" />
 		<link rel="stylesheet" href="css/guide.css" type="text/css" />
         <link rel="stylesheet" href="css/header.css" type="text/css"/>
-		<link rel="stylesheet" href="css/carte.css" type="text/css"/>
+		<link rel="stylesheet" href="css/generale.css" type="text/css"/>
 	</head>
 	<body>
         <?php

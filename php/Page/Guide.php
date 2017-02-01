@@ -18,7 +18,7 @@
             }
 
             //here
-            $head = str_replace('<li><a href="mazzi.php">GUIDE</a></li>',
+            $head = str_replace('<li><a href="guide.php">GUIDE</a></li>',
             '<li class="here">GUIDE</li>', $head);
 
             echo $head;

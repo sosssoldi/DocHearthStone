@@ -31,11 +31,10 @@ body {
 }
 
 .sinistra {
-	display: block;
+
 	margin-left: 5%;
 	float: left;
 	width: 40%;
-	margin-top: 4%;
 	margin-bottom: 2%;
 	text-align: center;
 	clear: both;
@@ -56,7 +55,6 @@ a {
 }
 
 .titolo {
-	display: block;
 	text-align: center;
 	font-size: 1em;
 }
