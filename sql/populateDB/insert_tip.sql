@@ -1,0 +1,11 @@
+insert into tip values (1,"La mia magia ti far&agrave; a pezzi - Jaina Marefiero");
+insert into tip values (2,"Leeeeeeroyyyyyyyyyy Jenkinsssssssssss - Leroy Jenkins");
+insert into tip values (3,"Sapevi che puoi sfidare i tuoi amici nella rissa?");
+insert into tip values (4,"Sapevi che in ogni busta trovi almeno una carta rara?");
+insert into tip values (5,"Sapevi che per ottenere le polveri devi disincantare le carte?");
+insert into tip values (6,"Sapevi che con l\'espansione Mean Street of Gadgetzan hanno introdotto le carte multi-classe?");
+insert into tip values (7,"Sapevi che se raggiungi il livello 20 in una stagione ottieni un retro delle carte?");
+insert into tip values (8,"Cerca di acquistare pi&ugrave; avventure che puoi perch&egrave; sono fondamentali");
+insert into tip values (9,"Sapevi che disincantare una carta dorata ti fa ottenere molte pi&ugrave; polveri?");
+insert into tip values (10,"Sapevi che la rissa esce ogni settimana alla stessa ora?");
+insert into tip values (11,"Sapevi che se vinci la rissa ottieni una busta classica?");
