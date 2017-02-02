@@ -85,10 +85,31 @@
 
             $content=str_replace(':tabellacarte:',$this->getCarte($_GET['mazzo']),$content);
 
+            if (isset($_SESSION['username']))
+                $content=str_replace(':formCommenti:',
+                            '<form method="post" action="mostraMazzo.php?mazzo=:idmazzo:">
+        			                <label for="area">Inserisci un commento</label>
+        			                <textarea id="area" name="commento"></textarea>
+        			                <input type="submit" value="COMMENTA" />
+        		            </form>'
+                            ,$content);
+            else
+                $content=str_replace(':formCommenti:','',$content);
+
+            $content=str_replace(':idmazzo:',$_GET['mazzo'],$content);
+
+            if (isset($_POST['commento']) && $_POST['commento']!="")
+            {
+                $query='INSERT INTO suggest VALUES ("","'.$_POST['commento'].'","'.$_SESSION['username'].'",'.$_GET['mazzo'].')';
+                $this->db->query($query);
+                $this->db->execute($query);
+            }
+
             $content=str_replace(':tabellacommenti:',$this->Commenti($_GET['mazzo']),$content);
 
             echo $content;
         }
+
     	public function footer() {
             echo file_get_contents("html/footer.html");
         }
@@ -109,7 +130,7 @@
             $query='SELECT C.name as Nome, C.c_type as Tipo, C.rarity as R, count(*) as Q
                     FROM card C join card_deck CD on (C.card_id=CD.card_id)
                     WHERE CD.deck_id='.$mazzo.' GROUP BY C.name, C.c_type, C.rarity';
-            echo $query;
+
             $this->db->query($query);
             $rs=$this->db->resultset($query);
 
@@ -174,15 +195,17 @@
                 if($voto!=$rs[0]['Voto'])
                 {
                     $query='UPDATE deck_like
-                            SET deck_like.vote='.$voto.
-                            'WHERE DL.user_name="'.$_SESSION['username'].'" AND DL.deck_id='.$mazzo;
+                            SET deck_like.vote='.$voto.'
+                            WHERE deck_like.user_name="'.$_SESSION['username'].'" AND deck_like.deck_id='.$mazzo;
+                    $this->db->query($query);
+                    $this->db->execute($query);
                 }
             }
             else
             {
                 $query='INSERT INTO deck_like VALUES ("'.$_SESSION['username'].'",'.$voto.','.$mazzo.')';
                 $this->db->query($query);
-                $rs=$this->db->resultset($query);
+                $this->db->execute($query);
             }
         }
 
