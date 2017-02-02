@@ -6,6 +6,8 @@ body {
 	display: block;
 	background-repeat: no-repeat;
 	margin: 0 auto;
+	width:45%;
+	height: auto;
 }
 
 #breadcrumb {

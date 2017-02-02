@@ -5,9 +5,9 @@ body {
 #imgHeader {
 	display: block;
 	width: 40%;
-	height: auto;
 	margin: 0 auto;
 	background-repeat: no-repeat;
+	height: auto;
 }
 
 #breadcrumb {
