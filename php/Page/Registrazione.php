@@ -16,6 +16,7 @@ class Registrazione implements Page {
 	status = 2 -> errore: le password non coincidono
 	status = 3 -> tentativo di registrazione
 	status = 4 -> errore: username già in uso
+	status = 5 -> errore: email già in uso
 	*/
 	
 	public function __construct() {
@@ -65,6 +66,9 @@ class Registrazione implements Page {
 			case 4:
 				$content = $this->aggiornaFormErrUsername($content);
 				break;
+			case 5:
+				$content = $this->aggiornaFormErrEmail($content);
+				break;
 		}
 		
 		echo $content;
@@ -103,8 +107,16 @@ class Registrazione implements Page {
 			$_SESSION['photo_id'] = 'images/utente.jpg';
 			header("Location: index.php");
 		}
-		else
-			$this->status = 4;
+		else {
+			//controllo se è già in uso la mail o l'username
+			$query = 'SELECT username FROM user WHERE username = "'.$_POST['user'].'"';
+			$this->db->query($query);
+			$rs = $this->db->resultset();
+			if($this->db->rowCount() == 1)
+				$this->status = 4;
+			else
+				$this->status = 5;
+		}
 	}
 	
 	private function cambiaLabel($c) {
@@ -121,6 +133,9 @@ class Registrazione implements Page {
 				break;
 			case 4:
 				$c = str_replace(':segnalaErrore:','<p>Username già in uso</p>',$c);
+				break;
+			case 5:
+				$c = str_replace(':segnalaErrore:','<p>Email già in uso</p>',$c);
 				break;
 		
 		}
@@ -140,6 +155,13 @@ class Registrazione implements Page {
 		$c = str_replace('<input type="text" required autocomplete="off" name="nome"/>','<input type="text" required autocomplete="off" name="nome" value="'.$_POST['nome'].'"/>',$c);
 		$c = str_replace('<input type="text" required autocomplete="off" name="cognome"/>','<input type="text" required autocomplete="off" name="cognome" value="'.$_POST['cognome'].'"/>',$c);
 		$c = str_replace('<input type="email" required autocomplete="off" name="email"/>','<input type="email" required autocomplete="off" name="email" value="'.$_POST['email'].'"/>',$c);
+		return $c;
+	}
+	
+	private function aggiornaFormErrEmail($c) {
+		$c = str_replace('<input type="text" required autocomplete="off" name="nome"/>','<input type="text" required autocomplete="off" name="nome" value="'.$_POST['nome'].'"/>',$c);
+		$c = str_replace('<input type="text" required autocomplete="off" name="cognome"/>','<input type="text" required autocomplete="off" name="cognome" value="'.$_POST['cognome'].'"/>',$c);
+		$c = str_replace('<input type="text" required autocomplete="off" name="user"/>','<input type="text" required autocomplete="off" name="user" value="'.$_POST['user'].'"/>',$c);
 		return $c;
 	}
 }
