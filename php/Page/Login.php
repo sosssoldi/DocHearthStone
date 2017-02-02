@@ -27,6 +27,7 @@
             if ($this->status == 4) $this->provoLogin();
 
             $head = file_get_contents("html/header.html");
+			$head = str_replace(':utente:', '', $head);
 
             //controllo utente loggato
             if(isset($_SESSION["username"])) {
@@ -51,7 +52,7 @@
             echo $content;
         }
         public function footer() {
-
+			echo file_get_contents("html/footer.html");
         }
 
         private function controlloLogin() {
