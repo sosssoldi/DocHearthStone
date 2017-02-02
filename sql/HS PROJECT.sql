@@ -199,3 +199,41 @@ create table if not exists tip(
     tip_id int auto_increment primary key,
     content varchar(500) not null
 )engine=innodb;
+
+-- TRIGGER
+
+DELIMITER $$
+CREATE TRIGGER aggiungiLike
+AFTER INSERT ON deck_like
+FOR EACH ROW
+BEGIN
+	IF new.vote = 1 THEN
+		UPDATE deck
+		SET likes = likes + 1
+		WHERE deck_id = new.deck_id;
+	END IF;
+	IF new.vote = 0 THEN
+		UPDATE deck
+		SET likes = likes - 1
+        WHERE deck_id = new.deck_id;
+	END IF;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER aggiornaLike
+AFTER UPDATE ON deck_like
+FOR EACH ROW
+BEGIN
+	IF new.vote = 1 AND old.vote = 0 THEN
+		UPDATE deck
+		SET likes = likes + 2
+        WHERE deck_id = old.deck_id;
+	END IF;
+	IF new.vote = 0 AND old.vote = 1 THEN
+		UPDATE deck
+		SET likes = likes - 2
+        WHERE deck_id = old.deck_id;
+	END IF;
+END$$
+DELIMITER ;
