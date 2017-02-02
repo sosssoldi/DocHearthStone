@@ -85,3 +85,7 @@ footer {
 	margin: auto;
 	text-align: center;
 }
+
+#redirect a {
+	color: blue;
+}
