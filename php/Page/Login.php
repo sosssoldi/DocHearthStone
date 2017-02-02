@@ -40,8 +40,8 @@
             }
 
             //here
-            $head = str_replace('<li><a href="guide.php">LOGIN</a></li>',
-            '<li class="here">LOGIN</li>', $head);
+            $head = str_replace('<li lang="en"><a href="login.php">LOGIN</a></li>',
+            '<li class="here" lang="en">LOGIN</li>', $head);
 
             echo $head;
         }
