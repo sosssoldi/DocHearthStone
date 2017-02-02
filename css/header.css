@@ -76,3 +76,14 @@ nav li a:hover {
 	text-align: center;
 	margin-top: 1%;
 }
+
+#boxutente button {
+	background-color: #fff;
+    margin: 1em 0em;
+    padding: 0.7em;
+    border: 0.15em solid #fb9313;
+    border-radius: 0.5em;
+    width: 70%;
+    font-weight: bold;
+    font-size: 0.85em;
+}
