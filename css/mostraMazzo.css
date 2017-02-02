@@ -22,7 +22,7 @@ body {
 	border-color: #fb9313;
 	background-color: white;
 	padding-top: 2%;
-	padding-bottom: 10%;
+	padding-bottom: 3%;
 	border-top-left-radius: 1em;
 	border-top-right-radius: 1em;
 }
@@ -82,7 +82,7 @@ body {
 }
 
 #descrizione h4 {
-  	padding-top: 0.5em;
+  	padding-top: 1em;
   	font-weight: normal;
 }
 
@@ -119,19 +119,19 @@ body {
 	text-decoration: none;
 }
 
-.leggendaria {
+.Leggendaria {
 	color: #ff8000;
 	font-weight: bold;
 	cursor: pointer;
 }
 
-.rara {
+.Rara {
 	color: #0070dd;
 	font-weight: bold;
 	cursor: pointer;
 }
 
-.epica {
+.Epica {
 	color: #a335ee;
 	font-weight: bold;
 	cursor: pointer;
