@@ -1,5 +1,7 @@
 footer {
 	width: 75%;
+	height: auto;
+	overflow: auto;
 	margin: 0 auto;
 	padding-top: 5%;
 	padding-bottom: 2%;
@@ -14,11 +16,15 @@ footer {
 }
 
 #css {
+	display: block;
+	width: 9%;
 	float: right;
 	margin-right: 5%;
 }
 
 #html {
+	display: block;
+	width: 9%;
 	float: right;
 	margin-right: 1%;
 }
