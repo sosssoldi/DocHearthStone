@@ -143,6 +143,15 @@ button {
 	margin: 1em 0;
 }
 
+.elenco li a {
+	text-decoration: none;
+	color: black;
+}
+
+.elenco li a:hover {
+	font-weight: bold;
+}
+
 #contenutoTip {
 	border-top: 0.2em solid orange;
 	border-bottom: 0.2em solid orange;
