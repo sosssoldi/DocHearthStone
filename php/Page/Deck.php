@@ -86,8 +86,9 @@
         }
 
         public function costoDeck($deck) {
-            
-			$query='SELECT sum(R.r_craft) as costo FROM rarity R join card C on (R.name=C.rarity) join card_deck CD on (C.card_id=CD.card_id) join deck D on (D.deck_id=CD.deck_id) WHERE D.deck_id='.$deck;
+
+			$query='SELECT sum(R.r_craft) as costo FROM rarity R join card C on (R.name=C.rarity) join card_deck CD on (C.card_id=CD.card_id)
+                    join deck D on (D.deck_id=CD.deck_id) WHERE D.deck_id='.$deck;
 
             $this->db->query($query);
             $rs=$this->db->resultset($query);
@@ -96,7 +97,7 @@
         }
 
         public function mostraDeck() {
-            
+
 			$query='SELECT D.deck_id as Id, D.name as NomeDeck, H.type as Nome, D.likes as Likes, D.creation_date as Data FROM deck D join hero H on (D.hero_id=H.hero_id) ';
 
             if(isset($_GET['nome']) && $_GET['nome']!="" && isset($_GET['classe']) && $_GET['classe'] != "")
@@ -109,7 +110,7 @@
                         $query.="WHERE H.type LIKE '".$_GET['classe']."' ";
 
             $query.='LIMIT 40';
-			
+
             if(isset($_GET['costoMin']) && $_GET['costoMin'] != "")
                 $costomin=$_GET['costoMin'];
             else
@@ -124,31 +125,31 @@
             $rs=$this->db->resultset($query);
 
             $final="";
-            
+
 			foreach ($rs as $row) {
-               
+
 			   $costoDeck=$this->costoDeck($row['Id']);
-			  
+
                 if ($costoDeck[0]['costo'] < $costomin && $costoDeck[0]['costo'] > $costomax) {
                     $final .= '<tr>';
-                    $final .= '<td>'.$row['NomeDeck'].'</td>';
+                    $final .= '<td><a href="mostraMazzo.php?mazzo='.$row['Id'].'">'.$row['NomeDeck'].'</a></td>';
                     $final .= '<td class="'.$row['Nome'].'">'.$row['Nome'].'</td>';
                     $final .= '<td>'.$costoDeck[0]['costo'].'</td>';
-                        
+
 					if($row['Likes'] > 0)
 						$final .= '<td class="positivo">+'.$row['Likes'].'</td>';
-					
+
 					if($row['Likes'] < 0)
 						$final .= '<td class="negativo">'.$row['Likes'].'</td>';
-                        
+
 					if($row['Likes'] == 0)
 						$final .= '<td>'.$row['Likes'].'</td>';
-					
+
 					$final .= '<td>'.$row['Data'].'</td>';
                     $final .= '</tr>';
 				}
 			}
-			
+
             return $final;
         }
 

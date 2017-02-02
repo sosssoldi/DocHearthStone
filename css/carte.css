@@ -128,7 +128,7 @@ body {
 	color: black;
 	font-size: 1em;
 	text-transform: uppercase;
-
+	text-align: center;
 }
 
 #tableCarte td {
@@ -198,16 +198,22 @@ body {
 .mana {
 	color: blue;
 	font-weight: bold;
+	text-align: center;
+	font-size: 1.2em;
 }
 
 .attacco {
 	color: #ff9900;
 	font-weight: bold;
+	text-align: center;
+	font-size: 1.2em;
 }
 
 .vita {
 	color: red;
 	font-weight: bold;
+	text-align: center;
+	font-size: 1.2em;
 }
 
 .descrizione {
