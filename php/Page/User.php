@@ -47,6 +47,8 @@ class User implements Page {
         $content = str_replace(":user:", $this->getDati("username"), $content);
         $content = str_replace(":mail:", $this->getDati("email"), $content);
         $content = str_replace(":data:",$this->getDati("entry_date"), $content);
+        $content = str_replace(":nom:", $this->getDati("name"), $content);
+        $content = str_replace(":cog:", $this->getDati("surname"), $content);
         $content = str_replace(":mieimazzi:", $this->mazzi(), $content);
         $content = str_replace(":mieguide:", $this->guide(), $content);
 
@@ -55,7 +57,7 @@ class User implements Page {
 
     public function getDati($i) {
 
-        $query = 'SELECT username, email, entry_date FROM user ';
+        $query = 'SELECT username, name, surname, email, entry_date FROM user ';
         $query .= 'WHERE username = "'.$_SESSION["username"].'"';
 
         $this->db->query($query);
@@ -79,7 +81,7 @@ class User implements Page {
         foreach($rs as $row) {
             $riga .= '<tr>';
 			$riga .= '<td><a href="mostraMazzo.php?mazzo='.$row['deck_id'].'">'.$row['d'].'</a></td>';
-            $riga .= '<td><img src="/images/icon/'.$row['image'].'.png"></td>';
+            $riga .= '<td><img class="classe" src="/images/icon/'.$row['image'].'.png"></td>';
 			$riga .= '<td>'.$row['likes'].'</td>';
             $riga .= '</tr>';
         }
@@ -102,7 +104,7 @@ class User implements Page {
         foreach($rs as $row) {
             $riga .= '<tr>';
 			$riga .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
-            $riga .= '<td><img src="/images/icon/'.$row['image'].'.png"></td>';
+            $riga .= '<td><img class="classe" src="/images/icon/'.$row['image'].'.png"></td>';
             $riga .= '<td>'.$row['valutation'].'</td>';
             $riga .= '</tr>';
         }

@@ -25,7 +25,7 @@
             echo $content;
         }
         public function footer() {
-
-        }
+    		echo file_get_contents("html/footer.html");
+    	}
     }
 ?>

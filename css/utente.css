@@ -8,7 +8,7 @@ html {
 }
 
 body {
-	background-color: #000;
+	background-color: #322727;
 }
 
 .hide {
@@ -17,18 +17,13 @@ body {
 	overflow:hidden;
 }
 
-#imgHeader {
-	display: block;
-	background-repeat: no-repeat;
-	margin: 0 auto;
-	height: auto;
-	width: 45%;
+#breadcrumb{
+	display: none;
 }
-
 
 #content {
 	width: 75%;
-	margin: 0 auto;
+	margin: 1em auto 0em auto;
 	border-style: solid;
 	border-width: 0.3em 0.1em 0em 0.1em;
 	border-color: #fb9313;
@@ -48,6 +43,10 @@ body {
   	background-color: #fb9313;
   	text-align: center;
 	border: 2px solid #fb9313;
+}
+
+#fotoprofilo{
+	width: 15%;
 }
 
 #info {
@@ -151,4 +150,16 @@ body {
 	font-size: 1.2em;
 	border: 0.1em solid #3cc667;
     padding: 0.2em 0 0.2em 0;
+}
+
+.nome {
+	width: 60%;
+}
+
+.classe{
+	width: 20%;
+}
+
+.voto{
+	width: 20%;
 }

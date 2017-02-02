@@ -80,3 +80,8 @@ p {
 footer {
 	border-bottom: 0.1em solid #fb9313;
 }
+
+#redirect {
+	margin: auto;
+	text-align: center;
+}
