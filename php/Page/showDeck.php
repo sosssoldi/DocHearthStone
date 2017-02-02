@@ -127,16 +127,42 @@
 
         public function getCarte($mazzo)
         {
-            $query='SELECT C.name as Nome, C.c_type as Tipo, C.rarity as R, count(*) as Q
+            $query='SELECT C.mana as Mana, C.name as Nome, C.expansion_name as Tipo, C.rarity as R, count(*) as Q
                     FROM card C join card_deck CD on (C.card_id=CD.card_id)
-                    WHERE CD.deck_id='.$mazzo.' GROUP BY C.name, C.c_type, C.rarity';
+                    WHERE CD.deck_id='.$mazzo.' GROUP BY C.name, C.c_type, C.rarity ORDER by Mana';
 
             $this->db->query($query);
             $rs=$this->db->resultset($query);
 
             $final="";
             foreach ($rs as $row) {
+
+                switch ($row['Tipo']) {
+                    case 'EXPERT1':
+                        $row['Tipo']='Set Base';
+                        break;
+                    case 'CORE':
+                        $row['Tipo']='Set Base';
+                        break;
+                    case 'BRM':
+                        $row['Tipo']='RN';
+                        break;
+                    case 'OG':
+                        $row['Tipo']='SDA';
+                        break;
+                    case 'TGT':
+                        $row['Tipo']='IGT';
+                        break;
+                    case 'LOE':
+                        $row['Tipo']='LDE';
+                        break;
+                    case 'GVG':
+                        $row['Tipo']='GVG';
+                        break;
+                }
+
                 $final.='<tr>';
+                $final.='<td>'.$row['Mana'].'</td>';
                 $final.='<td class="'.$row['R'].'">'.$row['Nome'].'</td>';
                 $final.='<td>'.$row['Tipo'].'</td>';
                 $final.='<td>'.$row['Q'].'</td>';
