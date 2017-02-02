@@ -8,6 +8,7 @@ body {
 
 #imgHeader {
 	display: block;
+	width: 45%;
 	background-repeat: no-repeat;
 	margin: 0 auto;
 	height: auto;
@@ -103,6 +104,7 @@ form {
 	float: left;
 	width:50%;
 	font-size: 1em;
+	font-weight: normal;
 }
 
 .minmax input {
@@ -124,10 +126,10 @@ form input[type="submit"] {
 #content table {
 	margin: 0 auto;
 	text-align: center;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	border-collapse: collapse;
 	width: 90%;
-	margin-top: 2%;
+	margin-top: 3%;
 }
 
 #content table th {
@@ -136,12 +138,13 @@ form input[type="submit"] {
 	color: white;
 	padding: 0.5em 0em;
 	width: 20%;
+	border: 0.1em solid black;
 }
 
 #content table td {
-	border: 0.1em solid gray;
 	padding: 0.6em;
 	word-wrap: break-word;
+	border: 0.1em solid black;
 }
 
 #content table td a {
@@ -162,47 +165,47 @@ form input[type="submit"] {
 	color: green;
 }
 
-.mago {
+.Mago {
 	color:#17d1f0;
 	font-weight: bold;
 }
 
-.paladino {
+.Paladino {
 	color:#f0d449;
 	font-weight: bold;
 }
 
-.cacciatore {
+.Cacciatore {
 	color:green;
 	font-weight: bold;
 }
 
-.ladro {
+.Ladro {
 	color:#8d191a;
 	font-weight: bold;
 }
 
-.sacerdote {
+.Sacerdote {
 	color:#a73dbb;
 	font-weight: bold;
 }
 
-.sciamano {
+.Sciamano {
 	color:#67b999;
 	font-weight: bold;
 }
 
-.guerriero {
+.Guerriero {
 	color:#ff7c0d;
 	font-weight: bold;
 }
 
-.druido {
+.Druido {
 	color:#6e3b06;
 	font-weight: bold;
 }
 
-.stregone {
+.Stregone {
 	color:#40245d;
 	font-weight: bold;
 }
