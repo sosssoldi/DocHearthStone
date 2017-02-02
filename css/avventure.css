@@ -10,7 +10,8 @@ body {
 	display: block;
 	background-repeat: no-repeat;
 	margin: 0 auto;
-	height: auto;
+    width: 55%;
+    height: auto;
 }
 
 #content {
@@ -29,6 +30,10 @@ body {
 #content h2 {
 	text-align: center;
 	font-size: 1.8em;
+}
+
+#content img{
+    width:40%;
 }
 
 #content div img:hover {

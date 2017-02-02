@@ -22,6 +22,7 @@ body {
 	background-repeat: no-repeat;
 	margin: 0 auto;
 	height: auto;
+	width: 45%;
 }
 
 
@@ -41,36 +42,36 @@ body {
 #infoTitle{
 	width: 90%;
 	margin: 0 auto;
-  margin-top: 1em;
-  padding-bottom: 0.5em;
-  padding-top: 0.5em;
-  background-color: #fb9313;
-  text-align: center;
+  	margin-top: 1em;
+  	padding-bottom: 0.5em;
+  	padding-top: 0.5em;
+  	background-color: #fb9313;
+  	text-align: center;
 	border: 2px solid #fb9313;
 }
 
 #info {
 	width: 90%;
 	margin: 0 auto;
-  border: 2px solid #fb9313;
-  overflow: auto;
+  	border: 2px solid #fb9313;
+  	overflow: auto;
 }
 
 #info img{
-  float:left;
-  margin:1em 0 1em 5%;
+	width: 15%;
+  	float:left;
+  	margin:1em 0 1em 5%;
 }
 
 #info h4{
-  margin-left: 30%;
-  font-weight: bold;
-  font-size: 1.2em;
-  padding-top: 1em;
+  	margin-left: 30%;
+  	font-weight: bold;
+  	font-size: 1.2em;
+  	padding-top: 1em;
 }
 
 #info h4 span{
-  color:#fb9313;
-
+  	color:#fb9313;
 }
 
 #mydeckTitle{
@@ -92,8 +93,8 @@ body {
 
 #mydeck table {
 	text-align: center;
-  width:100%;
-  margin-bottom: 1em;
+  	width:100%;
+  	margin-bottom: 1em;
 }
 
 #mydeck table td {
@@ -110,29 +111,29 @@ body {
 	font-weight: bold;
 	font-size: 1.2em;
 	border: 0.1em solid #273f83;
-  padding: 0.2em 0 0.2em 0;
+  	padding: 0.2em 0 0.2em 0;
 }
 
 #myguideTitle{
 	width: 90%;
 	margin: 0 auto;
-  margin-top: 2em;
-  padding-bottom: 0.5em;
-  padding-top: 0.5em;
-  background-color: #3cc667;
-  color: white;
-  text-align: center;
+  	margin-top: 2em;
+  	padding-bottom: 0.5em;
+  	padding-top: 0.5em;
+  	background-color: #3cc667;
+  	color: white;
+  	text-align: center;
 }
 
 #myguide{
 	width: 90%;
 	margin: 0 auto;
-  overflow: auto;
+  	overflow: auto;
 }
 
 #myguide table {
 	text-align: center;
-  width:100%;
+  	width:100%;
 }
 
 #myguide table td {
