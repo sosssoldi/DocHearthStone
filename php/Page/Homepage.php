@@ -81,7 +81,7 @@ class Homepage implements Page {
         $rs = $this->executeQuery($query);
         $output = "";
         foreach ($rs as $row) {
-            $output .= "<li><a href=\"mostraGuida.php?id={$row['guide_id']}\">{$row['title']}</a></li>";
+            $output .= "<li><a href=\"mostraGuida.php?guida={$row['guide_id']}\">{$row['title']}</a></li>";
         }
         return $output;
     }

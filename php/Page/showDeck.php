@@ -44,21 +44,21 @@
             {
                 $content=str_replace(':bottone+:',
                     '<a href="gestisciVoto.php?mazzo='.$_GET['mazzo'].'&like=1"><button type="submit" class="like">
-                        <img src="../images/+.jpg" width="20%" align=”middle”>
+                        <img src="images/+.jpg" width="20%" align=”middle”>
                     </button></a>',$content);
                 $content=str_replace(':bottone-:',
                     '<a href="gestisciVoto.php?mazzo='.$_GET['mazzo'].'&like=0"><button type="submit" class="like">
-                        <img src="../images/-.png" width="20%" align=”middle”>
+                        <img src="images/-.png" width="20%" align=”middle”>
                     </button></a>',$content);
             }
             else {
                 $content=str_replace(':bottone+:',
                     '<button type="submit" class="like">
-                        <img src="../images/+.jpg" width="20%" align=”middle”>
+                        <img src="images/+.jpg" width="20%" align=”middle”>
                     </button>',$content);
                 $content=str_replace(':bottone-:',
                     '<button type="submit" class="like">
-                        <img src="../images/-.png" width="20%" align=”middle”>
+                        <img src="images/-.png" width="20%" align=”middle”>
                     </button>',$content);
             }
             return $content;
