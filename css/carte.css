@@ -134,21 +134,25 @@ body {
 #tableCarte td {
 	border: 0.1em solid black;
 	padding-top: 0.5em;
-	padding-left: 0.8em;
-	padding-right: 0.3em;
 	padding-bottom: 0.5em;
 }
 
 .nomeCarta {
 	width: 34%;
+	padding-left: 0.8em;
+	padding-right: 0.3em;
 }
 
 .tipoCarta {
 	width: 11%;
+	padding-left: 0.8em;
+	padding-right: 0.3em;
 }
 
 .classeCarta {
 	width: 31%;
+	padding-left: 0.8em;
+	padding-right: 0.3em;
 }
 
 .valoreCarta {
