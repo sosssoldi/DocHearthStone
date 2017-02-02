@@ -5,6 +5,7 @@ namespace php\Database;
 include_once "MySQLConnection/MySQLConnection.php";
 
 use \PDO;
+use \PDOException;
 
 class Database {
 	private $dbc = null;
@@ -25,7 +26,13 @@ class Database {
 	}
 
 	public function execute() {
-		return $this->stmt->execute();
+		try {
+			$rs = $this->stmt->execute();
+			return $rs;
+		}
+		catch(PDOException $ex) {
+			return 0;
+		}
 	}
 
 	public function resultset(){
