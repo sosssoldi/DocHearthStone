@@ -7,6 +7,7 @@ body {
 }
 
 #imgHeader {
+	width: 50%;
 	display: block;
 	background-repeat: no-repeat;
 	margin: 0 auto;
@@ -21,7 +22,7 @@ body {
 	border-color: #fb9313;
 	background-color: #fff;
 	padding-top: 2%;
-	padding-bottom: 15%;
+	padding-bottom: 5%;
 	border-top-left-radius: 1em;
 	border-top-right-radius: 1em;
 }
@@ -36,7 +37,7 @@ body {
 
 #deck h2 {
 	text-align: center;
-	margin-bottom:1em;
+	margin-bottom: 1em;
 }
 
 #deckContent th {
@@ -45,14 +46,25 @@ body {
 	border-bottom:0.1em solid black;
 }
 
-#deckContent  td {
+#deckContent td {
 	text-align: center;
 	word-wrap: break-word;
+	padding: 0.3em;
+}
+
+#deckContent a {
+	color: black;
+	text-decoration: none;
+}
+
+#deckContent a:hover {
+	font-weight: bold;
 }
 
 #rots {
 	border-top-left-radius: 0.5em;
 	padding: 1em;
+	width: 15%;
 }
 
 #rotd {
@@ -73,7 +85,7 @@ body {
 }
 
 .classe {
-	width:15%;
+	width: 60%;
 	background-size: contain;
 }
 
@@ -139,6 +151,10 @@ button {
 	margin:auto;
 	text-align: center;
 	word-wrap: break-word;
+}
+
+#tip {
+	clear: both;
 }
 
 #tip h2 {
