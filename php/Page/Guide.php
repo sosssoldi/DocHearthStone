@@ -93,7 +93,7 @@ class Guide implements Page {
 		
 		foreach($rs as $row) {
 			$risultato .= '<tr>';
-			$risultato .= '<td><a href="mostraGuida.php?mazzo='.$row['guide_id'].'">'.$row['title'].'</a></td>';
+			$risultato .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
 			$risultato .= '<td class="username">'.$row['user_name'].'</td>';
 			$risultato .= '<td class="valutazione">'.$row['valutation'].'</td>';
 			$risultato .= '</tr>';
@@ -102,6 +102,28 @@ class Guide implements Page {
 		$contenuto = str_replace(':bodyTabella:', $risultato, $contenuto);
 		
 		echo $contenuto;
+	}
+	
+	public function contentGuida() {
+		
+		$contenuto = file_get_contents("html/mostraGuida.html");
+		
+		$query = 'SELECT title, content FROM guide WHERE guide_id = '.$_GET['guida'];
+		$this->db->query($query);
+		$rs = $this->db->resultset();
+		
+		if($this->db->rowCount() > 0) {
+			$contenuto = str_replace(':titoloGuida:', $rs[0]['title'], $contenuto);
+			if($rs[0]['content'] != "NULL")
+				$contenuto = str_replace(':contenutoGuida:', $rs[0]['content'], $contenuto);
+			else
+				$contenuto = str_replace(':contenutoGuida:', '', $contenuto);
+		}
+		else
+			header("Location: guide.php");
+		
+		echo $contenuto;
+		
 	}
 }
 ?>
