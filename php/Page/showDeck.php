@@ -145,19 +145,25 @@
                         $row['Tipo']='Set Base';
                         break;
                     case 'BRM':
-                        $row['Tipo']='RN';
+                        $row['Tipo']='MR';
                         break;
                     case 'OG':
-                        $row['Tipo']='SDA';
+                        $row['Tipo']='SdA';
                         break;
                     case 'TGT':
-                        $row['Tipo']='IGT';
+                        $row['Tipo']='iGT';
                         break;
                     case 'LOE':
-                        $row['Tipo']='LDE';
+                        $row['Tipo']='LdE';
                         break;
                     case 'GVG':
-                        $row['Tipo']='GVG';
+                        $row['Tipo']='Gvg';
+                        break;
+                    case 'GANGS':
+                        $row['Tipo']='Gangs';
+                        break;
+                    case 'KARA':
+                        $row['Tipo']='Karazhan';
                         break;
                 }
 
