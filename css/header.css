@@ -54,7 +54,7 @@ nav li a {
 	color: black;
 	text-decoration: none;
 	padding: 3.1em 1.5em;
-	
+
 }
 
 nav li a:hover {
@@ -65,4 +65,14 @@ nav li a:hover {
 	color: #0091D3;
 	padding-left: 1.5em;
 	padding-right: 1.5em;
+}
+
+#boxutente {
+	position: fixed;
+	margin-left: 90%;
+	background-color: #fff;
+	border-radius: 2em 0em 2em 0em;
+	border: 0.2em solid orange;
+	text-align: center;
+	margin-top: 1%;
 }
