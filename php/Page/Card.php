@@ -99,13 +99,13 @@ class Card implements Page {
 		
 		foreach($rs as $row) {
 			$riga .= '<tr>';
-			$riga .= '<td><span class="'.$row['rarity'].'">'.$row['name'].'</span><span class="descrizione">'.$row['description'].'</span></td>';
-			$riga .= '<td>'.$row['c_type'].'</td>';
+			$riga .= '<td class="nomeCarta"><span class="'.$row['rarity'].'">'.$row['name'].'</span><span class="descrizione">'.$row['description'].'</span></td>';
+			$riga .= '<td class="tipoCarta">'.$row['c_type'].'</td>';
 			
 			if($row['numClassi'] == 9)
-				$riga .= '<td>Neutrale</td>';
+				$riga .= '<td class="classeCarta">Neutrale</td>';
 			else
-				$riga .= '<td>'.$this->stampaClassi($row['name']).'</td>';
+				$riga .= '<td class="classeCarta">'.$this->stampaClassi($row['name']).'</td>';
 			
 			$riga .= '<td class="mana">'.$row['mana'].'</td>';
 			$riga .= '<td class="attacco">'.$row['attack'].'</td>';
