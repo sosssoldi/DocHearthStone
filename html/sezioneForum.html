@@ -1,47 +1,30 @@
-<!DOCTYPE html>
-<html lang="it">
-	<head>
-		<meta charset="utf-8" />
-		<title>Forum - DocHearthStone</title>
-		<meta name="title" content="Forum - DocHearthStone" />
-		<meta name="description" content="Forum di discussione su tutto quello che riguarda il mondo di Hearthstone." />
-		<meta name="keyword" content="Hearthstone, DocHearthStone, forum, carte, eroi, standard, selvaggio, rissa, avventure, mazzi" />
-		<link rel="stylesheet" href="css/sezioneForum.css" type="text/css" />
-	</head>
-	<body>
-		:header:
-		<div id="breadcrumb">Ti trovi in: :nomesezione:</div>
-    	<img id="imgHeader" src="images/forum.png" alt="sfondo"></img>
-		<div id="content">
-		    <h1 class="titolo">:nomesezione:</h1>
-		    <table id="general" class="tabella">
-			    <thead>
-			       <tr>
-			        <th class ="forum dark">Forum</th>
-			        <th class ="lastpost dark">Ultimo Commento</th>
-			        <th class ="numpost dark">Commenti</th>
-			       </tr>
-			     </thead>
-			     <tbody>
-			      :contenuto:
-			     </tbody>
-		    </table>
+<div id="breadcrumb">Ti trovi in: Sezione Forum</div>
+<img id="imgHeader" src="images/forum.png" alt="sfondo"></img>
+<div id="content">
+    <h1 class="titolo">:nomesezione:</h1>
+    <table id="general" class="tabella">
+	    <thead>
+	    	<tr>
+	    		<th class ="forum dark">Forum</th>
+	        	<th class ="lastpost dark">Ultimo Commento</th>
+	        	<th class ="numpost dark">Commenti</th>
+	       	</tr>
+	     </thead>
+	     <tbody>
+		      :contenuto:
+	     </tbody>
+    </table>
 
-			<form method="get">
-				<label id="labelAdd">Aggiungi una Discussione</label>
-				<div class="lab">
-					<label id="labelTit" for="titolo">Titolo</label>
-					<input type="text" id="titolo">
-				</div>
-				<div class="lab">
-					<label id="labelText" for="area">Descrizione</label>
-					<textarea id="area"></textarea>
-			  </div>
-				<input type="submit" value="AGGIUNGI" />
-			</form>
-  		</div>
-	  <footer>
-		  :footer:
-	  </footer>
-	</body>
-</html>
+	<form method="get">
+		<label id="labelAdd">Aggiungi una Discussione</label>
+		<div class="lab">
+			<label id="labelTit" for="titolo">Titolo</label>
+			<input type="text" id="titolo">
+		</div>
+		<div class="lab">
+			<label id="labelText" for="area">Descrizione</label>
+			<textarea id="area"></textarea>
+	  </div>
+		<input type="submit" value="AGGIUNGI" />
+	</form>
+</div>
