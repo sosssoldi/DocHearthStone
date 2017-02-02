@@ -69,12 +69,19 @@ nav li a:hover {
 
 #boxutente {
 	position: fixed;
-	margin-left: 90%;
+	margin-left: 89%;
+	width: 9%;
 	background-color: #fff;
 	border-radius: 2em 0em 2em 0em;
 	border: 0.2em solid orange;
 	text-align: center;
 	margin-top: 1%;
+}
+
+#boxutente span {
+	display: block;
+	margin-top: 3%;
+	font-size: 0.7em;
 }
 
 #boxutente button {
