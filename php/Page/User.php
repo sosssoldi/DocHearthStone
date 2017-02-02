@@ -48,7 +48,7 @@ class User implements Page {
         $content = str_replace(":mail:", $this->getDati("email"), $content);
         $content = str_replace(":data:",$this->getDati("entry_date"), $content);
         $content = str_replace(":mieimazzi:", $this->mazzi(), $content);
-        //$content = str_replace(":mieguide:", $this->guide(), $content);
+        $content = str_replace(":mieguide:", $this->guide(), $content);
 
         echo $content;
     }
@@ -61,26 +61,24 @@ class User implements Page {
         $this->db->query($query);
         $rs = $this->db->resultset();
 
-        return $rs [0][$i];
+        return " ".$rs [0][$i];
 
     }
 
     public function mazzi(){
 
-        $query = 'SELECT deck.name, likes, hero.type as image ';
+        $query = 'SELECT deck_id, deck.name as d, likes, hero.type as image ';
         $query .= 'FROM deck join hero on deck.hero_id = hero.hero_id ';
         $query .= 'WHERE user_name ="'.$_SESSION["username"].'"';
 
         $this->db->query($query);
         $rs = $this->db->resultset();
 
-        print_r($rs);
-
         $riga = '';
 
         foreach($rs as $row) {
             $riga .= '<tr>';
-			$riga .= '<td>'.$row['name'].'</td>';
+			$riga .= '<td><a href="mostraMazzo.php?mazzo='.$row['deck_id'].'">'.$row['d'].'</a></td>';
             $riga .= '<td><img src="/images/icon/'.$row['image'].'.png"></td>';
 			$riga .= '<td>'.$row['likes'].'</td>';
             $riga .= '</tr>';
@@ -88,6 +86,28 @@ class User implements Page {
 
         return $riga;
 
+    }
+
+    public function guide(){
+
+        $query = 'SELECT guide_id, title, valutation, hero.type as image ';
+        $query .= 'FROM guide join hero on guide.hero_id = hero.hero_id ';
+        $query .= 'WHERE user_name ="'.$_SESSION["username"].'"';
+
+        $this->db->query($query);
+        $rs = $this->db->resultset();
+
+        $riga = '';
+
+        foreach($rs as $row) {
+            $riga .= '<tr>';
+			$riga .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
+            $riga .= '<td><img src="/images/icon/'.$row['image'].'.png"></td>';
+            $riga .= '<td>'.$row['valutation'].'</td>';
+            $riga .= '</tr>';
+        }
+
+        return $riga;
     }
 
     public function footer() {
