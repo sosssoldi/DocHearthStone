@@ -21,10 +21,17 @@
             if(isset($_SESSION["username"])) {
                 $head = str_replace(":login:",
                 '<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
+				$head = str_replace(":utente:",
+                '<div id="boxutente">
+                    <span>'.$_SESSION["username"].'</span>
+                    <a href="logout.php"><button>Logout</button></a>
+                </div>'
+            ,$head);
             }
             else {
                 $head = str_replace(":login:",
                 '<li lang="en"><a href="login.php">LOGIN</a></li>', $head);
+				$head = str_replace(":utente:",'',$head);
             }
 
             //here
@@ -75,13 +82,12 @@
         }
 
     	public function footer() {
-
+			echo file_get_contents("html/footer.html");
         }
 
         public function costoDeck($deck) {
-            $query='SELECT sum(R.r_craft) as costo';
-            $query.=' FROM rarity R join card C on (R.name=C.rarity) join card_deck CD on (C.card_id=CD.card_id) join deck D on (D.deck_id=CD.deck_id)
-                    WHERE D.deck_id='.$deck;
+            
+			$query='SELECT sum(R.r_craft) as costo FROM rarity R join card C on (R.name=C.rarity) join card_deck CD on (C.card_id=CD.card_id) join deck D on (D.deck_id=CD.deck_id) WHERE D.deck_id='.$deck;
 
             $this->db->query($query);
             $rs=$this->db->resultset($query);
@@ -90,27 +96,26 @@
         }
 
         public function mostraDeck() {
-            $query='SELECT D.deck_id as Id, D.name as NomeDeck, H.name as Nome, D.likes as Likes, D.creation_date as Data ';
-            $query.='FROM deck D join hero H on (D.hero_id=H.hero_id) ';
+            
+			$query='SELECT D.deck_id as Id, D.name as NomeDeck, H.type as Nome, D.likes as Likes, D.creation_date as Data FROM deck D join hero H on (D.hero_id=H.hero_id) ';
 
-            if(isset($_GET['nome']) && $_GET['nome']!="" && isset($_GET['classe']) && $_GET['classe'])
-                $query.="WHERE D.name LIKE '%".$_GET['nome']."%'  AND H.name LIKE '%".$_GET['classe']."%' ";
+            if(isset($_GET['nome']) && $_GET['nome']!="" && isset($_GET['classe']) && $_GET['classe'] != "")
+                $query.="WHERE D.name LIKE '%".$_GET['nome']."%'  AND H.type LIKE '".$_GET['classe']."' ";
             else
                 if(isset($_GET['nome']) && $_GET['nome']!="")
                     $query.="WHERE D.name LIKE '%".$_GET['nome']."%' ";
                 else
                     if(isset($_GET['classe']) && $_GET['classe']!="")
-                        $query.="WHERE H.name LIKE '%".$_GET['classe']."%' ";
+                        $query.="WHERE H.type LIKE '".$_GET['classe']."' ";
 
             $query.='LIMIT 40';
-            echo $query;
-
-            if(isset($_GET['costoMin']))
+			
+            if(isset($_GET['costoMin']) && $_GET['costoMin'] != "")
                 $costomin=$_GET['costoMin'];
             else
                 $costomin=100000;
 
-            if(isset($_GET['costoMax']))
+            if(isset($_GET['costoMax']) && $_GET['costoMax'] != "")
                 $costomax=$_GET['costoMax'];
             else
                 $costomax=0;
@@ -119,21 +124,31 @@
             $rs=$this->db->resultset($query);
 
             $final="";
-            foreach ($rs as $row) {
-               $costoDeck=$this->costoDeck($row['Id']);
-
-                /*if ($costoDeck<$costomin && $costoDeck>$costomax)*/
-
-                    $final.=
-                    '<tr>
-                        <td>'.$row['NomeDeck'].'</td>
-                        <td class=" '.$row['Nome'].'">'.$row['Nome'].'</td>
-                        <td>'.$costoDeck['costo'].'</td>
-                        <td>'.$row['Likes'].'</td>
-                        <td>'.$row['Data'].'</td>
-                    </tr>';
-
-            }
+            
+			foreach ($rs as $row) {
+               
+			   $costoDeck=$this->costoDeck($row['Id']);
+			  
+                if ($costoDeck[0]['costo'] < $costomin && $costoDeck[0]['costo'] > $costomax) {
+                    $final .= '<tr>';
+                    $final .= '<td>'.$row['NomeDeck'].'</td>';
+                    $final .= '<td class="'.$row['Nome'].'">'.$row['Nome'].'</td>';
+                    $final .= '<td>'.$costoDeck[0]['costo'].'</td>';
+                        
+					if($row['Likes'] > 0)
+						$final .= '<td class="positivo">+'.$row['Likes'].'</td>';
+					
+					if($row['Likes'] < 0)
+						$final .= '<td class="negativo">'.$row['Likes'].'</td>';
+                        
+					if($row['Likes'] == 0)
+						$final .= '<td>'.$row['Likes'].'</td>';
+					
+					$final .= '<td>'.$row['Data'].'</td>';
+                    $final .= '</tr>';
+				}
+			}
+			
             return $final;
         }
 

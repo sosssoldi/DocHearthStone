@@ -23,10 +23,17 @@ class Card implements Page {
         if(isset($_SESSION["username"])) {
             $head = str_replace(':login:',
 			'<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
+			$head = str_replace(":utente:",
+                '<div id="boxutente">
+                    <span>'.$_SESSION["username"].'</span>
+                    <a href="logout.php"><button>Logout</button></a>
+                </div>'
+            ,$head);
         }
         else {
             $head = str_replace(':login:',
 			'<li lang="en"><a href="login.php">LOGIN</a></li>', $head);
+			$head = str_replace(":utente:",'',$head);
         }
 		
 		//here
