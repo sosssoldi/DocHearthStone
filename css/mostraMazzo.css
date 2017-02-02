@@ -139,6 +139,18 @@ body {
 	cursor: pointer;
 }
 
+.Comune {
+	color: #2ecc71;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.Base {
+	color: #2ecc71;
+	font-weight: bold;
+	cursor: pointer;
+}
+
 #spiegazione {
 	float: left;
 	width: 45%;
@@ -169,7 +181,7 @@ body {
 
 #commenti table {
 	margin: 2em auto 0 auto;
-	border-spacing: 0;
+	border-collapse: collapse;
 	width:100%;
 }
 
