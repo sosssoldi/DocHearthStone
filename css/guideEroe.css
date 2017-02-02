@@ -77,3 +77,8 @@ body {
 footer {
 	border-bottom: 0.1em solid #fb9313;
 }
+
+article p {
+	width: 90%;
+	margin: 0 auto;
+}
