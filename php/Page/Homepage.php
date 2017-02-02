@@ -40,7 +40,7 @@ class Homepage implements Page {
 
         echo $head;
     }
-	
+
     public function content() {
         $content=file_get_contents("html/index.html");
 
@@ -53,29 +53,29 @@ class Homepage implements Page {
     public function footer() {
 		echo file_get_contents("html/footer.html");
 	}
-	
+
     public function top10Deck() {
-        $query  = 'SELECT deck_id, hero_power.image as img, deck.name, likes FROM deck, hero, hero_power ';
-        $query .= 'WHERE deck.hero_id = hero.hero_id AND hero.h_power = hero_power.hero_power_id ';
+        $query  = 'SELECT deck_id, hero.type as img, deck.name, likes FROM deck, hero ';
+        $query .= 'WHERE deck.hero_id = hero.hero_id ';
         $query .= 'ORDER BY likes desc LIMIT 10;';
         $rs = $this->executeQuery($query);
         $output = "";
         foreach ($rs as $row) {
-            $output .= "<tr><td><img class=\"classe\" src=\"images/icon/{$row['img']}\"></img></td>";
+            $output .= "<tr><td><img class=\"classe\" src=\"images/icon/{$row['img']}.png\"></img></td>";
             $output .= "<td><a href=\"mostraMazzo.php?mazzo={$row['deck_id']}\">{$row['name']}</a></td>";
-			
+
 			if($row['likes'] > 0)
 				$output .= "<td class=\"ratepos\">+{$row['likes']}</td></tr>";
-			
+
 			if($row['likes'] < 0)
 				$output .= "<td class=\"rateneneg\">{$row['likes']}</td></tr>";
-			
+
 			if($row['likes'] == 0)
 				$output .= "<td>{$row['likes']}</td></tr>";
         }
         return $output;
     }
-	
+
     public function top5Guides() {
         $query = 'SELECT guide_id, title FROM guide ORDER BY valutation desc LIMIT 5';
         $rs = $this->executeQuery($query);
@@ -85,14 +85,14 @@ class Homepage implements Page {
         }
         return $output;
     }
-	
+
     public function randomTip() {
         $tid = rand(1,11);
         $query = "SELECT content FROM tip WHERE tip_id = {$tid}";
         $rs = $this->executeQuery($query);
         return $rs[0]["content"];
     }
-	
+
     public function executeQuery($q) {
         $this->db->query($q);
         return $this->db->resultset();
