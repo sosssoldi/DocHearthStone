@@ -139,7 +139,7 @@ class User implements Page {
         foreach($rs as $row) {
             $riga .= '<tr>';
 			$riga .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
-            $riga .= '<td><img class="classe" src="favIcon48.png" alt=Generale"></td>';
+            $riga .= '<td><img class="classe" src="images/icon/favIcon/favIcon48.png" alt=Generale"></td>';
 			$riga .= '<td><a href="eliminaGuida.php?guida='.$row['guide_id'].'"><img class="delete" src="images/icon/remove.png" alt="Elimina"></a></td>';
             $riga .= '</tr>';
         }
