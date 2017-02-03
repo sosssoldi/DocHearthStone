@@ -124,7 +124,7 @@
 
         public function getCarte($mazzo)
         {
-            $query='SELECT C.mana as Mana, C.name as Nome, C.expansion_name as Tipo, C.rarity as R, count(*) as Q
+            $query='SELECT C.card_id as id, C.mana as Mana, C.name as Nome, C.expansion_name as Tipo, C.rarity as R, count(*) as Q
                     FROM card C join card_deck CD on (C.card_id=CD.card_id)
                     WHERE CD.deck_id='.$mazzo.' GROUP BY C.name, C.c_type, C.rarity ORDER by Mana';
 
@@ -166,7 +166,7 @@
 
                 $final.='<tr>';
                 $final.='<td>'.$row['Mana'].'</td>';
-                $final.='<td class="'.$row['R'].'">'.$row['Nome'].'</td>';
+                $final.='<td class="'.$row['R'].'" onmouseover="showImg(this, \''.$row["id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</td>';
                 $final.='<td>'.$row['Tipo'].'</td>';
                 $final.='<td>x'.$row['Q'].'</td>';
                 $final.='</tr>';

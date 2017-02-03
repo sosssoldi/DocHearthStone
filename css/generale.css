@@ -6,3 +6,7 @@
 html {
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
+
+button {
+	cursor: pointer;
+}
