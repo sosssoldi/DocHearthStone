@@ -44,6 +44,7 @@ class Homepage implements Page {
     public function content() {
         $content=file_get_contents("html/index.html");
 
+        $content = str_replace(":profilo:", $this->mostraProfilo(), $content);
         $content = str_replace(":tabelladeck:", $this->top10Deck(), $content);
         $content = str_replace(":tip:", $this->randomTip(), $content);
         $content = str_replace(":tabellaguide:", $this->top5Guides(), $content);
@@ -53,6 +54,19 @@ class Homepage implements Page {
     public function footer() {
 		echo file_get_contents("html/footer.html");
 	}
+
+    public function mostraProfilo() {
+        if(isset($_SESSION["username"])) {
+            $output = "<p>Ciao {$_SESSION['username']}</p>
+            <a href=\"user.php\"><button>Profilo</button></a>";
+        } else {
+            $output = "<p>Entra anche tu a far parte di Doc HearthStone!</p>
+    		<a href=\"registrazione.php\"><button>Registrati</button></a>
+    		<p>Sei gi&agrave; dei nostri?</p>
+    		<a href=\"login.php\"><button>Accedi</button></a>";
+        }
+        return $output;
+    }
 
     public function top10Deck() {
         $query  = 'SELECT deck_id, hero.type as img, deck.name, likes FROM deck, hero ';
@@ -77,7 +91,7 @@ class Homepage implements Page {
     }
 
     public function top5Guides() {
-        $query = 'SELECT guide_id, title FROM guide ORDER BY valutation desc LIMIT 5';
+        $query = 'SELECT guide_id, title FROM guide ORDER BY guide_id desc LIMIT 5';
         $rs = $this->executeQuery($query);
         $output = "";
         foreach ($rs as $row) {
