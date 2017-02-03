@@ -50,7 +50,7 @@
             $content=str_replace(':lArena:',$rs[1]['Nome'],$content);
             $content=str_replace(':nArena:',$rs[1]['N'],$content);
             $content=str_replace(':lRissa:',$rs[2]['Nome'],$content);
-            $content=str_replace(':nRissa:',$rs[2]['N'],$content);
+            */$content=str_replace(':nRissa:',$rs[2]['N'],$content);/*
             $content=str_replace(':lAvventure:',$rs[3]['Nome'],$content);
             $content=str_replace(':nAvventure:',$rs[3]['N'],$content);
             $content=str_replace(':lFormatoStd:',$rs[4]['Nome'],$content);
