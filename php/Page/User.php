@@ -104,6 +104,7 @@ class User implements Page {
 			if($row['likes'] == 0)
 				$riga .= '<td>'.$row['likes'].'</td>';
             
+			$riga .= '<td><a href="eliminaMazzo.php"><img class="delete" src="images/icon/remove.png" alt="Elimina"></a></td>';
 			$riga .= '</tr>';
         }
 
@@ -126,6 +127,7 @@ class User implements Page {
             $riga .= '<tr>';
 			$riga .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
             $riga .= '<td><img class="classe" src="images/icon/'.$row['image'].'.png"></td>';
+			$riga .= '<td><a href="eliminaGuida.php"><img class="delete" src="images/icon/remove.png" alt="Elimina"></a></td>';
             $riga .= '</tr>';
         }
 
