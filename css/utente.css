@@ -58,19 +58,32 @@ body {
 
 #info img{
 	width: 15%;
+	height: 9.5em;
   	float:left;
   	margin:1em 0 1em 5%;
+	border-radius: 0.4em;
 }
 
 #info h4{
   	margin-left: 30%;
   	font-weight: bold;
-  	font-size: 1.2em;
+  	font-size: 1.1em;
   	padding-top: 1em;
 }
 
 #info h4 span{
   	color:#fb9313;
+}
+
+#info form {
+	display: block;
+	margin-top: 2%;
+	margin-left: 30%;
+	padding-bottom: 2%;
+}
+
+#info input[type="submit"] {
+	padding: 0.1em;
 }
 
 #mydeckTitle{
@@ -164,4 +177,12 @@ body {
 
 .voto{
 	width: 20%;
+}
+
+.likespos {
+	color: green;
+}
+
+.likesneg {
+	color: red;
 }
