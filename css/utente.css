@@ -103,6 +103,7 @@ body {
 }
 
 #mydeck table td a {
+	color: blue;
 	text-decoration: none;
 }
 
@@ -142,6 +143,7 @@ body {
 }
 
 #myguide table td a {
+	color: blue;
 	text-decoration: none;
 }
 
