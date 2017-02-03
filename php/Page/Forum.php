@@ -44,41 +44,13 @@
         public function content() {
             $content=file_get_contents("html/forum.html");
             $rs=$this->lastTopic();
-
-            /*$content=str_replace(':lGenerale:',$rs[0]['Nome'],$content);
-            $content=str_replace(':nGenerale:',$rs[0]['N'],$content);
-            $content=str_replace(':lArena:',$rs[1]['Nome'],$content);
-            $content=str_replace(':nArena:',$rs[1]['N'],$content);
-            $content=str_replace(':lRissa:',$rs[2]['Nome'],$content);
-            */$content=str_replace(':nRissa:',$rs[2]['N'],$content);/*
-            $content=str_replace(':lAvventure:',$rs[3]['Nome'],$content);
-            $content=str_replace(':nAvventure:',$rs[3]['N'],$content);
-            $content=str_replace(':lFormatoStd:',$rs[4]['Nome'],$content);
-            $content=str_replace(':nFormatoStd:',$rs[4]['N'],$content);
-            $content=str_replace(':lFormatoWild:',$rs[5]['Nome'],$content);
-            $content=str_replace(':nFormatoWild:',$rs[5]['N'],$content);
-            $content=str_replace(':lCarte:',$rs[6]['Nome'],$content);
-            $content=str_replace(':nCarte:',$rs[6]['N'],$content);
-            $content=str_replace(':lMazzo:',$rs[7]['Nome'],$content);
-            $content=str_replace(':nMazzo:',$rs[7]['N'],$content);
-            $content=str_replace(':lCacciatore:',$rs[8]['Nome'],$content);
-            $content=str_replace(':nCacciatore:',$rs[8]['N'],$content);
-            $content=str_replace(':lDruido:',$rs[9]['Nome'],$content);
-            $content=str_replace(':nDruido:',$rs[9]['N'],$content);
-            $content=str_replace(':lGuerriero:',$rs[10]['Nome'],$content);
-            $content=str_replace(':nGuerriero:',$rs[10]['N'],$content);
-            $content=str_replace(':lLadro:',$rs[11]['Nome'],$content);
-            $content=str_replace(':nLadro:',$rs[11]['N'],$content);
-            $content=str_replace(':lMago:',$rs[12]['Nome'],$content);
-            $content=str_replace(':nMago:',$rs[12]['N'],$content);
-            $content=str_replace(':lPaladino:',$rs[13]['Nome'],$content);
-            $content=str_replace(':nPaladino:',$rs[13]['N'],$content);
-            $content=str_replace(':lPrete:',$rs[14]['Nome'],$content);
-            $content=str_replace(':nPrete:',$rs[14]['N'],$content);
-            $content=str_replace(':lSciamano:',$rs[15]['Nome'],$content);
-            $content=str_replace(':nSciamano:',$rs[15]['N'],$content);
-            $content=str_replace(':lStregone:',$rs[16]['Nome'],$content);
-            $content=str_replace(':nStregone:',$rs[16]['N'],$content);*/
+            $i=1;
+            foreach ($rs as $row)
+            {
+                $content=str_replace(':l'.$i.':',$this->creatoreTopic($row['Id']),$content);
+                $content=str_replace(':n'.$i.':',$row['N'],$content);
+                $i++;
+            }
 
             echo $content;
         }
@@ -87,14 +59,28 @@
             echo file_get_contents("html/footer.html");
         }
 
+        public function creatoreTopic($id) {
+            $query='SELECT T.user_name as nome
+                    FROM topic T
+                    WHERE T.section_id='.$id.'
+                    ORDER BY T.topic_id DESC LIMIT 1';
+
+            $this->db->query($query);
+            $rs = $this->db->resultset();
+
+            if($this->db->rowCount()>0)
+                return $rs[0]['nome'];
+            else
+                return null;
+        }
+
         public function lastTopic() {
-            $query='SELECT max(T.topic_id), T.title, T.user_name as Nome, S.section_id, S.num_thread as N
-                    FROM topic T join section S on (T.section_id=S.section_id)
-                    GROUP BY S.section_id
+            $query='SELECT S.section_id as Id, S.name as Nome, S.num_thread as N
+                    FROM section S
                     ORDER BY S.section_id';
 
             $this->db->query($query);
-            $rs=$this->db->resultset($query);
+            $rs=$this->db->resultset();
 
             return $rs;
         }
