@@ -1,0 +1,17 @@
+INSERT INTO section VALUES (1,'Discussione generale',0);
+INSERT INTO section VALUES (2,'Arena',0);
+INSERT INTO section VALUES (3,'Rissa',0);
+INSERT INTO section VALUES (4,'Avventure e Espansioni',0);
+INSERT INTO section VALUES (5,'Formato Standard',0);
+INSERT INTO section VALUES (6,'Formato Selvaggio',0);
+INSERT INTO section VALUES (7,'Discussione Carte',0);
+INSERT INTO section VALUES (8,'Creazione Mazzo',0);
+INSERT INTO section VALUES (9,'Cacciatore',0);
+INSERT INTO section VALUES (10,'Druido',0);
+INSERT INTO section VALUES (11,'Guerriero',0);
+INSERT INTO section VALUES (12,'Ladro',0);
+INSERT INTO section VALUES (13,'Mago',0);
+INSERT INTO section VALUES (14,'Paladino',0);
+INSERT INTO section VALUES (15,'Sacerdote',0);
+INSERT INTO section VALUES (16,'Sciamano',0);
+INSERT INTO section VALUES (17,'Stregone',0);
