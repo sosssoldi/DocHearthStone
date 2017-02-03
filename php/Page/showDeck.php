@@ -32,9 +32,6 @@
                 $head = str_replace(":utente:","", $head);
             }
 
-            //here
-            /*$head = str_replace('<li lang="en"><a href="index.php">HOMEPAGE</a></li>',
-            '<li lang="en" class="here">HOMEPAGE</li>', $head);*/
 
             echo $head;
         }
@@ -120,7 +117,7 @@
                     WHERE D.deck_id='.$mazzo;
 
             $this->db->query($query);
-            $rs=$this->db->resultset($query);
+            $rs=$this->db->resultset();
 
             return $rs;
         }
@@ -132,7 +129,7 @@
                     WHERE CD.deck_id='.$mazzo.' GROUP BY C.name, C.c_type, C.rarity ORDER by Mana';
 
             $this->db->query($query);
-            $rs=$this->db->resultset($query);
+            $rs=$this->db->resultset();
 
             $final="";
             foreach ($rs as $row) {
@@ -184,7 +181,7 @@
                     WHERE deck_like.deck_id='.$mazzo;
 
             $this->db->query($query);
-            $rs=$this->db->resultset($query);
+            $rs=$this->db->resultset();
 
             return $rs[0]['V'];
         }
@@ -195,7 +192,7 @@
                     WHERE S.deck_id='.$mazzo;
 
             $this->db->query($query);
-            $rs=$this->db->resultset($query);
+            $rs=$this->db->resultset();
 
             $final="";
             foreach ($rs as $row) {
@@ -220,7 +217,7 @@
                     WHERE DL.user_name="'.$_SESSION['username'].'" AND DL.deck_id='.$mazzo;
 
             $this->db->query($query);
-            $rs=$this->db->resultset($query);
+            $rs=$this->db->resultset();
 
             if ($this->db->rowCount()>0)
             {
