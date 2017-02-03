@@ -181,8 +181,7 @@ class Card implements Page {
 			$query .= ' AND type = "'.$_GET['classe'].'"';
 
 		$query .= ' GROUP BY card.name, c_type, mana, attack, health;';
-
-		echo $query;
+		
 		return $query;
 	}
 
