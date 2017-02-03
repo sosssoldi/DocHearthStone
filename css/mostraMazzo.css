@@ -107,8 +107,13 @@ body {
 #carte table thead {
 	font-weight: bold;
 	font-size: 1em;
-	border: 0.1em solid gray;
 	background-color: #fb9313;
+}
+
+#carte table th {
+	border: 0.1em solid gray;
+	padding: 0.25em 0.15em 0.25em 0.15em;
+	font-size: 0.9em;
 }
 
 #carte table td {
