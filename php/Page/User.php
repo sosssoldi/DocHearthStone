@@ -46,8 +46,11 @@ class User implements Page {
         
 		$content=file_get_contents("html/utente.html");
 		
-		if(isset($_POST['submit']) && isset($_FILES['fileToUpload']) && $_FILES['fileToUpload']['tmp_name'] != "")
-			$content = $this->caricaImmagine($content);
+		if(isset($_POST['submit']) && isset($_FILES['fileToUpload']))
+			if($_FILES['fileToUpload']['tmp_name'] != "")
+				$content = $this->caricaImmagine($content);
+			else
+				$content = str_replace(':erroreImmagine:','<p class="errore">Inserire un\'immagine</p>',$content);
 		else
 			$content = str_replace(':erroreImmagine:','',$content);
 		
@@ -169,16 +172,16 @@ class User implements Page {
 					$c = str_replace(':erroreImmagine:','', $c);
 				}
 				else
-					$c = str_replace(':erroreImmagine:', 'Errore nel caricare l\'immagine', $c);
+					$c = str_replace(':erroreImmagine:', '<p class="errore">Errore nel caricare l\'immagine</p>', $c);
 				break;
 			case 1:
-				$c = str_replace(':erroreImmagine:', 'Il file inserito non è un\'immagine', $c);
+				$c = str_replace(':erroreImmagine:', '<p class="errore">Il file inserito non è un\'immagine</p>', $c);
 				break;
 			case 2:
-				$c = str_replace(':erroreImmagine:', 'Il file inserito è troppo grande', $c);
+				$c = str_replace(':erroreImmagine:', '<p class="errore">Il file inserito è troppo grande</p>', $c);
 				break;
 			case 3:
-				$c = str_replace(':erroreImmagine:', 'Sono accettati solo file JPG, JPEG, PNG & GIF', $c);
+				$c = str_replace(':erroreImmagine:', '<p class="errore">Sono accettati solo file JPG, JPEG, PNG & GIF</p>', $c);
 				break;
 		}
 		
