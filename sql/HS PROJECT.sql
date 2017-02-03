@@ -237,3 +237,14 @@ BEGIN
 	END IF;
 END$$
 DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER aggiornaPost
+AFTER INSERT ON suggest
+FOR EACH ROW
+BEGIN
+	UPDATE user
+	SET count_post = count_post + 1
+    WHERE user.username = new.user_name;
+END$$
+DELIMITER ;
