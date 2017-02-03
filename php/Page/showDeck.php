@@ -171,7 +171,7 @@
                 $final.='<td>'.$row['Mana'].'</td>';
                 $final.='<td class="'.$row['R'].'">'.$row['Nome'].'</td>';
                 $final.='<td>'.$row['Tipo'].'</td>';
-                $final.='<td>'.$row['Q'].'</td>';
+                $final.='<td>x'.$row['Q'].'</td>';
                 $final.='</tr>';
             }
 
