@@ -1,0 +1,103 @@
+body {
+	background-color:rgb(25, 19, 17);;
+}
+
+#imgHeader {
+	display: block;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	width:45%;
+	height: auto;
+}
+
+#breadcrumb {
+	display: none;
+}
+
+#content {
+	width: 75%;
+	margin: 0 auto;
+	border-style: solid;
+	border-width: 0.3em 0.1em 0em 0.1em;
+	border-color: #fb9313;
+	background-color: white;
+	padding-top: 2%;
+	padding-bottom: 3%;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
+#content h2 {
+	font-size: 2em;
+	text-align: center;
+	margin-bottom: 3%;
+}
+
+#classe {
+	float: left;
+	width:15%;
+	margin-left: 20%;
+	margin-bottom: 5%;
+}
+
+#classe h3 {
+	font-size: 1.5em;
+}
+
+form {
+	width: 80%;
+	margin: 0 auto;
+	border-radius: 1em;
+	background-color: #fbd295;
+	border: 1em double #fff;
+	padding: 2% 0;
+}
+
+select {
+	width: 90%;
+	font-size: 1.2em;
+}
+
+#titolo {
+	width: 45%;
+	float: left;
+	margin-bottom: 5%;
+}
+
+#titolo h3 {
+	font-size: 1.5em;
+}
+
+#titolo input {
+	width: 100%;
+	font-size: 1.2em;
+}
+
+#testo {
+	margin-left:20%;
+	width: 60%;
+	clear: both;
+}
+
+#testo h3 {
+	font-size: 1.5em;
+}
+
+#testo textarea {
+	font-size: 1.5em;
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 20em;
+	max-height: 20em;
+}
+
+#butt {
+	margin-top: 3%;
+	margin-left: 42.5%;
+	padding: 0.7em;
+	border: 0.15em double orange;
+	border-radius: 0.5em;
+	width: 15%;
+	font-weight: bold;
+	font-size: 1.0em;
+}

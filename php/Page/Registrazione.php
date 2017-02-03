@@ -7,7 +7,7 @@ use \php\Database\Database;
 use \php\Database\MySQLConnection\MySQLConnection;
 
 class Registrazione implements Page {
-	
+
 	private $db = null;
 	private $status = 0;
 	/*
@@ -18,20 +18,20 @@ class Registrazione implements Page {
 	status = 4 -> errore: username già in uso
 	status = 5 -> errore: email già in uso
 	*/
-	
+
 	public function __construct() {
 		$this->db = new Database(new MySQLConnection());
 	}
-	
+
 	public function header() {
-		
+
 		//verifico se ho dati da elaborare
 		$this->controlloRegistrazione();
-		
+
 		//se tentativo di registrazione verifico se va a buon fine o meno
 		if($this->status == 3)
 			$this->provaRegistrazione();
-		
+
 		$head = file_get_contents("html/header.html");
 
 		//controllo utente loggato
@@ -45,16 +45,16 @@ class Registrazione implements Page {
 		}
 
 		$head = str_replace(':utente:', '', $head);
-		
+
 		echo $head;
 	}
-	
+
 	public function content() {
-		
+
 		$content = file_get_contents("html/registrazione.html");
-		
+
 		$content = $this->cambiaLabel($content);
-		
+
 		//Aggiorno label in caso ci sia stato un tentativo di richiesta e alcuni campi sono accettabili
 		switch($this->status) {
 			case 1:
@@ -70,14 +70,14 @@ class Registrazione implements Page {
 				$content = $this->aggiornaFormErrEmail($content);
 				break;
 		}
-		
+
 		echo $content;
 	}
-	
+
 	public function footer() {
 		echo file_get_contents("html/footer.html");
 	}
-	
+
 	private function controlloRegistrazione() {
 		if(isset($_POST['nome']) && isset($_POST['cognome']) && isset($_POST['user']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password2']))
 			if($_POST['nome'] != "" && $_POST['cognome'] != "" && $_POST['user'] != "" && $_POST['email'] != "" && $_POST['password'] != "" && $_POST['password2'] != "")
@@ -90,14 +90,14 @@ class Registrazione implements Page {
 	}
 
 	private function provaRegistrazione() {
-		
+
 		$pass = hash("sha256",$_POST["password"]);
 		$data = date ("Y-m-d G:i");
 		$query = 'INSERT INTO user VALUES("'.$_POST['email'].'","'.$_POST['nome'].'","'.$_POST['cognome'].'","'.$_POST['user'].'","'.$pass.'","'.$data.'",0,"images/utente.jpg")';
-		
+
 		$this->db->query($query);
 		$rs = $this->db->execute();
-		
+
 		//Registrazione avvenuta con successo
 		if($rs == 1) {
 			$_SESSION['username'] = $_POST['user'];
@@ -118,9 +118,9 @@ class Registrazione implements Page {
 				$this->status = 5;
 		}
 	}
-	
+
 	private function cambiaLabel($c) {
-		
+
 		switch($this->status) {
 			case 0:
 				$c = str_replace(':segnalaErrore:','',$c);
@@ -137,12 +137,11 @@ class Registrazione implements Page {
 			case 5:
 				$c = str_replace(':segnalaErrore:','<p>Email già in uso</p>',$c);
 				break;
-		
 		}
-		
+
 		return $c;
 	}
-	
+
 	private function aggiornaForm($c) {
 		$c = str_replace('<input type="text" required autocomplete="off" name="nome"/>','<input type="text" required autocomplete="off" name="nome" value="'.$_POST['nome'].'"/>',$c);
 		$c = str_replace('<input type="text" required autocomplete="off" name="cognome"/>','<input type="text" required autocomplete="off" name="cognome" value="'.$_POST['cognome'].'"/>',$c);
@@ -150,14 +149,14 @@ class Registrazione implements Page {
 		$c = str_replace('<input type="email" required autocomplete="off" name="email"/>','<input type="email" required autocomplete="off" name="email" value="'.$_POST['email'].'"/>',$c);
 		return $c;
 	}
-	
+
 	private function aggiornaFormErrUsername($c) {
 		$c = str_replace('<input type="text" required autocomplete="off" name="nome"/>','<input type="text" required autocomplete="off" name="nome" value="'.$_POST['nome'].'"/>',$c);
 		$c = str_replace('<input type="text" required autocomplete="off" name="cognome"/>','<input type="text" required autocomplete="off" name="cognome" value="'.$_POST['cognome'].'"/>',$c);
 		$c = str_replace('<input type="email" required autocomplete="off" name="email"/>','<input type="email" required autocomplete="off" name="email" value="'.$_POST['email'].'"/>',$c);
 		return $c;
 	}
-	
+
 	private function aggiornaFormErrEmail($c) {
 		$c = str_replace('<input type="text" required autocomplete="off" name="nome"/>','<input type="text" required autocomplete="off" name="nome" value="'.$_POST['nome'].'"/>',$c);
 		$c = str_replace('<input type="text" required autocomplete="off" name="cognome"/>','<input type="text" required autocomplete="off" name="cognome" value="'.$_POST['cognome'].'"/>',$c);

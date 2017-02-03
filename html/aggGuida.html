@@ -1,0 +1,33 @@
+<div id="breadcrumb">Ti trovi in: Aggiungi guida</div>
+<img id="imgHeader" src="images/guide.png" alt="sfondo"></img>
+<div id="content">
+    <h2>Inserisci la tua Guida</h2>
+    :segnalaErrore:
+    <form action="aggGuida.php" method="get">
+        <div id="classe">
+            <h3>Sezione</h3>
+            <select class="scelta" name="scelta">
+                <option>Generale</option>
+                <option>Mago</option>
+                <option>Cacciatore</option>
+                <option>Guerriero</option>
+                <option>Paladino</option>
+                <option>Ladro</option>
+                <option>Druido</option>
+                <option>Sciamano</option>
+                <option>Sacerdote</option>
+                <option>Stregone</option>
+            </select>
+        </div>
+        <div id="titolo">
+                <h3>Titolo della guida</h3>
+                <input type="text"  autocomplete="off" name="titolo"/>
+        </div>
+        <div id="testo">
+                <h3>Testo della guida</h3>
+                <textarea maxlength="5000"  autocomplete="off" name="testo"></textarea>
+        </div>
+        <input id="butt" type="submit" value="Aggiungi" />
+        </form>
+    </div>
+</div>
