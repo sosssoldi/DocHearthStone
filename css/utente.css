@@ -183,7 +183,15 @@ body {
 }
 
 .voto{
-	width: 20%;
+	width: 10%;
+}
+
+.elimina {
+	width: 10%;
+}
+
+.delete {
+	width: 30%;
 }
 
 .likespos {
