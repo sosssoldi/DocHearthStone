@@ -7,13 +7,13 @@ use \php\Database\Database;
 use \php\Database\MySQLConnection\MySQLConnection;
 
 class Guide implements Page {
-	
+
 	private $db;
-	
+
 	public function __construct() {
 		$this->db = new Database(new MySQLConnection());
 	}
-	
+
 	public function header() {
 		$head = file_get_contents("html/header.html");
 
@@ -40,7 +40,7 @@ class Guide implements Page {
 
 		echo $head;
 	}
-	
+
 	public function headerHero() {
 		$head = file_get_contents("html/header.html");
 
@@ -63,55 +63,54 @@ class Guide implements Page {
 
 		echo $head;
 	}
-	
+
 	public function content() {
 		echo file_get_contents("html/guide.html");
 	}
-	
+
 	public function footer() {
 		echo file_get_contents("html/footer.html");
 	}
-	
+
 	public function contentHero() {
 		$contenuto = file_get_contents("html/guideEroe.html");
-		
+
 		if($_GET['eroe'] != 'Generale')
 			$contenuto = str_replace(':nomeGuide:', 'Le guide di Doc Hearthstone per il '.$_GET['eroe'], $contenuto);
 		else
 			$contenuto = str_replace(':nomeGuide:', 'Le guide generali di Doc Hearthstone', $contenuto);
-		
+
 		//creo la tabella
 		if($_GET['eroe'] == 'Generale')
-			$query = 'SELECT guide_id, title, user_name, valutation FROM guide WHERE hero_id is null';
+			$query = 'SELECT guide_id, title, user_name FROM guide WHERE hero_id is null';
 		else
-			$query = 'SELECT guide_id, title, user_name, valutation FROM guide, hero WHERE guide.hero_id = hero.hero_id AND hero.type = "'.$_GET['eroe'].'"';
+			$query = 'SELECT guide_id, title, user_name FROM guide, hero WHERE guide.hero_id = hero.hero_id AND hero.type = "'.$_GET['eroe'].'"';
 
 		$this->db->query($query);
 		$rs = $this->db->resultset();
-		
+
 		$risultato = '';
-		
+
 		foreach($rs as $row) {
 			$risultato .= '<tr>';
 			$risultato .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
 			$risultato .= '<td class="username">'.$row['user_name'].'</td>';
-			$risultato .= '<td class="valutazione">'.$row['valutation'].'</td>';
 			$risultato .= '</tr>';
 		}
-		
+
 		$contenuto = str_replace(':bodyTabella:', $risultato, $contenuto);
-		
+
 		echo $contenuto;
 	}
-	
+
 	public function contentGuida() {
-		
+
 		$contenuto = file_get_contents("html/mostraGuida.html");
-		
+
 		$query = 'SELECT title, content FROM guide WHERE guide_id = '.$_GET['guida'];
 		$this->db->query($query);
 		$rs = $this->db->resultset();
-		
+
 		if($this->db->rowCount() > 0) {
 			$contenuto = str_replace(':titoloGuida:', $rs[0]['title'], $contenuto);
 			if($rs[0]['content'] != "NULL")
@@ -121,9 +120,9 @@ class Guide implements Page {
 		}
 		else
 			header("Location: guide.php");
-		
+
 		echo $contenuto;
-		
+
 	}
 }
 ?>
