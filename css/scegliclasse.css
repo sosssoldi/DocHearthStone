@@ -1,0 +1,80 @@
+body {
+	background-color:#0e0d0b;
+}
+
+#imgHeader {
+	display: block;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	width:45%;
+	height: auto;
+}
+
+#breadcrumb {
+	display: none;
+}
+
+#content {
+	width: 75%;
+	margin: 0 auto;
+	border-style: solid;
+	border-width: 0.3em 0.1em 0em 0.1em;
+	border-color: #fb9313;
+	background-color: white;
+	padding-top: 2%;
+	padding-bottom: 3%;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
+#content h2 {
+	text-align: center;
+	font-size: 2em;
+}
+
+#generale {
+	margin-left: 5%;
+	float: left;
+	width: 40%;
+	margin-top: 4%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+.destra {
+    display: block;
+	margin-left: 71%;
+	width: 28%;
+}
+
+.centro {
+    float: left;
+    width: 28%;
+    margin-left: 5.5%;
+}
+
+.sinistra {
+    margin-left: 5%;
+	float: left;
+	width: 28%;
+    clear: both;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.titolo {
+	text-align: center;
+	font-size: 1em;
+}
+
+.immagine {
+	width: 80%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+	border-radius: 0.5em;
+	border: 0.1em solid black;
+	height: 11em;
+}

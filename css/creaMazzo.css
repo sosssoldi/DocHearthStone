@@ -1,0 +1,222 @@
+body {
+	background-color: #0e0d0b;
+}
+
+#imgHeader {
+	display: block;
+	width: 40%;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+	height: auto;
+}
+
+#breadcrumb {
+	display: none;
+}
+
+#content {
+	width: 75%;
+	background-color: white;
+	margin: 0 auto;
+	padding-top: 2%;
+	border-style: solid;
+	border-color: #fb9313;
+	border-width: 0.3em 0.1em 0em 0.1em;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
+#content h2 {
+	text-align: center;
+	font-size: 2em;
+	margin-bottom: 2%;
+}
+
+#search {
+	width: 90%;
+	margin: 0 auto;
+	border-radius: 0.5em;
+	border: 0.5em double white;
+	background-color: #f0d3a7;
+}
+
+#search input[type="text"] {
+	width: 94%;
+	padding: 0.2em;
+	font-size: 1em;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
+#search select {
+	width: 95%;
+	padding: 0.2em;
+	font-size: 1em;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
+#search h3 {
+	margin-bottom: 2%;
+}
+
+#search input[type="submit"] {
+	width: 15%;
+	height: 3em;
+	margin-left: 5%;
+	margin-bottom: 3%;
+	font-weight: bold;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+}
+
+#nome {
+	width: 30%;
+	margin-top: 2%;
+	margin-left: 5%;
+	margin-bottom: 3%;
+	float: left;
+}
+
+#costo {
+	width: 30%;
+	margin-top: 2%;
+	margin-left: 1%;
+	margin-bottom: 3%;
+	float: left;
+}
+
+#espansione {
+	width: 30%;
+	margin-top: 2%;
+	margin-left: 67%;
+	margin-bottom: 3%
+}
+
+#rarita {
+	width: 30%;
+	margin-left: 5%;
+	margin-bottom: 4%;
+	clear: both;
+	float: left;
+}
+
+#tipo {
+	width: 30%;
+	margin-left: 1%;
+	margin-bottom: 4%;
+	float: left;
+}
+
+#classe {
+	width: 30%;
+	margin-left: 67%;
+	margin-bottom: 4%;
+}
+
+#tableCarte {
+	width: 90%;
+	margin: 3% auto 0% auto;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+#tableCarte th {
+	padding-top: 0.3em;
+	padding-left: 0.8em;
+	padding-right: 0.6em;
+	padding-bottom: 0.5em;
+	border: 0.1em solid black;
+	background-color: #f0d3a7;
+	color: black;
+	font-size: 1em;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#tableCarte td {
+	border: 0.1em solid black;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.nomeCarta {
+	width: 34%;
+	padding-left: 0.8em;
+	padding-right: 0.3em;
+}
+
+.tipoCarta {
+	width: 11%;
+	padding-left: 0.8em;
+	padding-right: 0.3em;
+}
+
+.classeCarta {
+	width: 31%;
+	padding-left: 0.8em;
+	padding-right: 0.3em;
+}
+
+.valoreCarta {
+	width: 8%;
+}
+
+.Base {
+	color: #2ecc71;
+	font-weight: bold;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 1%;
+}
+
+.Comune {
+	color: #2ecc71;
+	font-weight: bold;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 1%;
+}
+
+.Rara {
+	color: #0070dd;
+	font-weight: bold;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 1%;
+}
+
+.Epica {
+	color: #a335ee;
+	font-weight: bold;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 1%;
+}
+
+.Leggendaria {
+	color: #ff8000;
+	font-weight: bold;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 1%;
+}
+
+.mana {
+	color: blue;
+	font-weight: bold;
+	text-align: center;
+}
+
+.attacco {
+	color: #ff9900;
+	font-weight: bold;
+	text-align: center;
+}
+
+.vita {
+	color: red;
+	font-weight: bold;
+	text-align: center;
+}
+
+.descrizione {
+	font-size: 1em;
+}

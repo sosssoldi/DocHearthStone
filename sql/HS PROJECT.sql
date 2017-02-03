@@ -240,11 +240,27 @@ DELIMITER ;
 
 DELIMITER $$
 CREATE TRIGGER aggiornaPost
-AFTER INSERT ON suggest
+AFTER INSERT ON comment
 FOR EACH ROW
 BEGIN
 	UPDATE user
 	SET count_post = count_post + 1
     WHERE user.username = new.user_name;
+	UPDATE topic
+	SET num_comments= num_comments + 1
+    WHERE topic.topic_id = new.topic_id;
 END$$
 DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER aggiornaSection
+AFTER INSERT ON topic
+FOR EACH ROW
+BEGIN
+	UPDATE section
+	SET num_thread= num_thread + 1
+    WHERE section.section_id = new.section_id;
+END$$
+DELIMITER ;
+
+

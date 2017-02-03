@@ -105,7 +105,7 @@
             foreach ($rs as $row) {
                 $user=$this->getUser($row['Id']);
                 $final.='<tr>';
-                $final.='<td class="forum"><a href="discussione.html"><h3>'.$row['Titolo'].'</h3></a>
+                $final.='<td class="forum"><a href="discussione.php?id='.$row['Id'].'"><h3>'.$row['Titolo'].'</h3></a>
                             <span>di: '.$row['Creatore'].'</span></td>';
                 $final.='<td class="lastpost">'.$user.'</td>';
                 $final.='<td class="lastpost">'.$row['N'].'</td>';
