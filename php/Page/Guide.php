@@ -122,7 +122,12 @@ class Guide implements Page {
 			header("Location: guide.php");
 
 		echo $contenuto;
-
+	}
+	
+	public function eliminaGuida($id) {
+		$query = 'DELETE FROM guide WHERE guide_id = '.$id.' AND user_name = "'.$_SESSION['username'].'"';
+		$this->db->query($query);
+		$this->db->execute();		
 	}
 }
 ?>
