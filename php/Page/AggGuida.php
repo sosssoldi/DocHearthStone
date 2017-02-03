@@ -56,17 +56,7 @@
 
             $content = $this->cambiaLabel($content);
 
-            switch ($this->status) {
-                case 1:
-                    $content = $this->recuperaT($content,1);
-                    break;
-                case 2:
-                    $content = $this->recuperaT($content,2);
-                    break;
-                case 5:
-                    $content = $this->recuperaT($content,3);
-
-            }
+            $content = $this->recuperaT($content,$this->status);
 
             echo $content;
         }
@@ -107,14 +97,22 @@
         }
 
         //recupero il testo prima inserito in caso di dati mancanti
-        private function recuperaT($c,$s){
-            if($s == 1)
-                $c = str_replace('<textarea maxlength="5000" required autocomplete="off" name="testo"></textarea>','<textarea maxlength="5000" required autocomplete="off" name="testo">'.$_GET['testo'].'</textarea>',$c);
-            else if (s == 2)
-                $c = str_replace('<input type="text" required autocomplete="off" name="titolo"/>','<input type="text" required autocomplete="off" name="titolo" value="'.$_GET['titolo'].'"/>',$c);
-            else{
-                $c = str_replace('<textarea maxlength="5000" required autocomplete="off" name="testo"></textarea>','<textarea maxlength="5000" required autocomplete="off" name="testo">'.$_GET['testo'].'</textarea>',$c);
-                $c = str_replace('<input type="text" required autocomplete="off" name="titolo"/>','<input type="text" required autocomplete="off" name="titolo" value="'.$_GET['titolo'].'"/>',$c);
+        private function recuperaT($c){
+
+            if(isset($_GET['scelta']))
+                $c = str_replace('<option>'.$_GET['scelta'].'</option>', '<option selected>'.$_GET['scelta'].'</option>', $c);
+
+            switch ($this->status) {
+                case 1:
+                    $c = str_replace('<textarea maxlength="5000" required autocomplete="off" name="testo"></textarea>','<textarea maxlength="5000" required autocomplete="off" name="testo">'.$_GET['testo'].'</textarea>',$c);
+                    break;
+                case 2:
+                    $c = str_replace('<input type="text" required autocomplete="off" name="titolo"/>','<input type="text" required autocomplete="off" name="titolo" value="'.$_GET['titolo'].'"/>',$c);
+                    break;
+                case 5:
+                    $c = str_replace('<textarea maxlength="5000" required autocomplete="off" name="testo"></textarea>','<textarea maxlength="5000" required autocomplete="off" name="testo">'.$_GET['testo'].'</textarea>',$c);
+                    $c = str_replace('<input type="text" required autocomplete="off" name="titolo"/>','<input type="text" required autocomplete="off" name="titolo" value="'.$_GET['titolo'].'"/>',$c);
+                    break;
             }
 
             return $c;
@@ -122,11 +120,18 @@
 
         private function inserimento(){
 
+
             $hero = 'SELECT hero_id FROM hero WHERE type = "'.$_GET['scelta'].'"';
-            $this->db->query($query);
+            $this->db->query($hero);
             $rs = $this->db->resultset();
 
-            $query = 'INSERT into guide VALUES("","'.$_GET['titolo'].'","'.$_GET['testo'].'","","'$rs['hero_id']'","'$_SESSION['username']'"');
+            if($this->db->rowCount()==0)
+                $eroe = 'NULL';
+            else
+                $eroe = ".$rs[0]['hero_id'].";
+
+            $query = 'INSERT into guide VALUES ("","'.$_GET['titolo'].'","'.$_GET['testo'].'","",'.$eroe.',"'.$_SESSION['username'].'")';
+            print_r($query);
 
             $this->db->query($query);
             $r = $this->db->execute();

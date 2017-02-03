@@ -44,6 +44,13 @@ body {
 	font-size: 1.5em;
 }
 
+p {
+	text-align: center;
+	color: red;
+	font-size: 1.3em;
+	margin-bottom: 1%;
+}
+
 form {
 	width: 80%;
 	margin: 0 auto;
@@ -55,7 +62,8 @@ form {
 
 select {
 	width: 90%;
-	font-size: 1.2em;
+	font-size: 1em;
+	height: 2em;
 }
 
 #titolo {
@@ -71,6 +79,8 @@ select {
 #titolo input {
 	width: 100%;
 	font-size: 1.2em;
+	height: 1.6em;
+	padding-left: 0.2em;
 }
 
 #testo {
@@ -89,6 +99,7 @@ select {
 	max-width: 100%;
 	min-height: 20em;
 	max-height: 20em;
+	padding: 0.2em;
 }
 
 #butt {
