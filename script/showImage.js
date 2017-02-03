@@ -1,15 +1,9 @@
-function showImage(x) {
-	//AJAX per ottenere il link della carta
-	var carta = document.getElementsByTagName("span")[0].firstChild.nodeValue;
-	var indirizzo = "../images/" + carta + ".png";
-	var descrizione = document.getElementsByTagName("span")[1].firstChild.nodeValue;
-
-	x.innerHTML = "<span>" + carta + "</span><span class=\"descrizione\">" + descrizione + "</span><img src = \"" + indirizzo + "\">";
+function showImg(elem, id) {
+	var url = "\"http://media.services.zam.com/v1/media/byName/hs/cards/enus/"+id+".png\"";
+	var text = elem.textContent;
+	elem.innerHTML = text + "<img src="+url+" style=\"z-index: 1;position: absolute;\"></img>";
 }
 
-function hideImage(x) {
-	var carta = document.getElementsByTagName("span")[0].firstChild.nodeValue;
-	var descrizione = document.getElementsByTagName("span")[1].firstChild.nodeValue;
-	
-	x.innerHTML = "<span>" + carta + "</span><span class=\"descrizione\">" + descrizione + "</span>";
+function hideImg(elem, id) {
+	elem.innerHTML = elem.textContent;
 }
