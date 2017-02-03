@@ -3,14 +3,24 @@
 	<h2 id="infoTitle">Profilo di: :nom: :cog:</h2>
 	<div id="info">
 		<img id="fotoProfilo" src=":immagineProfilo:"></img>
-		<h4><span>Username:</span>:user:</h4>
-		<h4><span>Email:</span>:mail:</h4>
-		<h4><span>Data di iscrizione:</span>:data:</h4>
+		<div id="username">
+			<h3>Username:</h3>
+			<span class="valore">:user:</span>
+		</div>
+		<div id="email">
+			<h3>Email:</h3>
+			<span class="valore">:mail:</span>
+		</div>
+		<div id="iscrizione">
+			<h3>Data di iscrizione:</h3>
+			<span class="valore">:data:</span>
+		</div>
 		<form action="user.php" method="post" enctype="multipart/form-data">
+			<h3>Modifica immagine profilo:</h3>
 			<input type="file" name="fileToUpload" id="fileToUpload" />
-			<input type="submit" value="Modifica immagine" name="submit" />
-			:erroreImmagine:
+			<input type="submit" value="Modifica" name="submit" />
 		</form>
+		:erroreImmagine:
 	</div>
 	<h2 id="mydeckTitle">I miei Mazzi</h2>
   	<div id="mydeck">
