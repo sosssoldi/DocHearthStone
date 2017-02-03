@@ -6,7 +6,7 @@ include_once "Page.php";
 use \php\Database\Database;
 use \php\Database\MySQLConnection\MySQLConnection;
 
-class AddDeck implements Page {
+class createDeck implements Page {
 
 	private $db;
 
@@ -38,7 +38,7 @@ class AddDeck implements Page {
 	}
 
 	public function content() {
-		echo file_get_contents("html/scegliclasse.html");
+		echo file_get_contents("html/creaMazzo.html");
 	}
 
 	public function footer() {
