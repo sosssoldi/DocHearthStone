@@ -57,13 +57,38 @@ body {
   	font-weight: bolder;
 }
 
-#rating .like{
-  	display: block;
-  	margin: auto;
+#rating {
+	margin-top: 12%;
+}
+
+#posRating {
+	display: block;
+	width: 28%;
+	margin: 2% auto 0% auto;
   	padding: 1em 0em;
   	border: none;
+	background-image: url('../images/+.jpg');
+	background-size: 100% 100%;
 	background-color: white;
 }
+
+#valutazione {
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+#negRating {
+	display: block;
+	width: 28%;
+	margin: 2% auto 0% auto;
+	margin: auto;
+  	padding: 1em 0em;
+  	border: none;
+	background-image: url('../images/-.png');
+	background-size: 100% 100%;
+	background-color: white;
+}
+
 
 #descrizione {
 	width: 64%;
@@ -136,6 +161,14 @@ body {
 	color: #2ecc71;
 	font-weight: bold;
 	cursor: pointer;
+}
+
+.positivo {
+	color: green;
+}
+
+.negativo {
+	color: red;
 }
 
 #spiegazione {
