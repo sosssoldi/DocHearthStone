@@ -99,7 +99,6 @@ body {
 #mydeck table {
 	text-align: center;
   	width:100%;
-  	margin-bottom: 1em;
 }
 
 #mydeck table td {
@@ -160,6 +159,10 @@ body {
     padding: 0.2em 0 0.2em 0;
 }
 
+.bottoni{
+	margin-left: 40%;
+}
+
 .nome {
 	width: 60%;
 }
@@ -199,10 +202,8 @@ body {
 
 #pulsanteD {
 	width: 15%;
-	margin-left: 42.5%;
-	margin-top: 1em;
+	margin-top: 2em;
 	font-weight: bold;
-	font-size: 1.2 em;
 	height:4em;
 	border: none;
 	background-color: #273f83;
@@ -212,10 +213,8 @@ body {
 
 #pulsanteG {
 	width: 15%;
-	margin-left: 42.5%;
-	margin-top: 1em;
+	margin-top: 2em;
 	font-weight: bold;
-	font-size: 1.2 em;
 	height:4em;
 	border: none;
 	background-color: #3cc667;
