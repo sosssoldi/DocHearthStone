@@ -167,6 +167,7 @@ body {
 	margin: 2em auto 0 auto;
 	border-collapse: collapse;
 	width:100%;
+	margin-bottom: 10%;
 }
 
 #commenti th {
@@ -180,13 +181,12 @@ body {
 
 #commenti td {
 	word-wrap: break-word;
-	padding: 0.5em 0 0.5em 3em;
+	padding: 0.5em 1em;
 	border: 0.1em solid gray;
 }
 
 #commenti tr:nth-child(even) {
 	background-color: #f2f2f2;
-
 }
 
 #commenti #utente{
@@ -215,6 +215,7 @@ textarea {
 	display: block;
 	min-height:6em;
 	max-height: 6em;
+	padding: 0.3em;
 }
 
 form input[type="submit"] {
