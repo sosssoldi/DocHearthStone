@@ -98,7 +98,7 @@
 					{
 						$final.='<div class="carte1">
 									<span class="costo">'.$row['costo'].'</span>
-									<span class="nome '.$row['R'].'">'.$row['Nome'].'</span>
+									<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 	    							<fieldset>
 										<label for="quantita11'.$i.'">1</label>
 								        <input type="radio" id="quantita11'.$i.'" name="quantita1'.$i.'" value="1"/>
@@ -112,7 +112,7 @@
 						$final.='
 							<div class="carte2">
 								<span class="costo">'.$row['costo'].'</span>
-								<span class="nome '.$row['R'].'">'.$row['Nome'].'</span>
+								<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 									<fieldset>
 									<label for="quantita22'.$i.'">1</label>
 									<input type="radio" id="quantita22'.$i.'" name="quantita2'.$i.'" value="1"/>
@@ -128,7 +128,7 @@
 					{
 						$final.='<div class="carte1">
 									<span class="costo">'.$row['costo'].'</span>
-									<span class="nome '.$row['R'].'">'.$row['Nome'].'</span>
+									<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 		    						<fieldset>
 									<label for="quantita11'.$i.'">1</label>
 									<input type="radio" id="quantita11'.$i.'" name="quantita1'.$i.'" value="1"/>
@@ -142,7 +142,7 @@
 						$final.='
 							<div class="carte2">
 								<span class="costo">'.$row['costo'].'</span>
-								<span class="nome '.$row['R'].'">'.$row['Nome'].'</span>
+								<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 								<fieldset>
 									<label for="quantita22'.$i.'">1</label>
 									<input type="radio" id="quantita22'.$i.'" name="quantita2'.$i.'" value="1"/>
