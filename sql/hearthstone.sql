@@ -7179,7 +7179,7 @@ CREATE TABLE IF NOT EXISTS `guide` (
   `title` varchar(50) NOT NULL,
   `content` varchar(5000) NOT NULL,
   `valutation` int(3) DEFAULT '0',
-  `hero_id` varchar(15) NOT NULL,
+  `hero_id` varchar(15) NULL,
   `user_name` varchar(50) NOT NULL,
   PRIMARY KEY (`guide_id`),
   KEY `hero_id` (`hero_id`),
