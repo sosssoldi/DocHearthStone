@@ -107,6 +107,15 @@ class Card implements Page {
 			else
 				$riga .= '<td class="classeCarta">'.$this->stampaClassi($row['name']).'</td>';
 
+			$avventura = $row['expansion_name'];
+			
+			if($avventura == 'EXPERT1')
+				$avventura = 'Classico';
+			
+			if($avventura == 'CORE')
+				$avventura = "Set Base";
+			
+			$riga .= '<td class="espansioneCarta">'.$avventura.'</td>';
 			$riga .= '<td class="mana">'.$row['mana'].'</td>';
 			$riga .= '<td class="attacco">'.$row['attack'].'</td>';
 			$riga .= '<td class="vita">'.$row['health'].'</td>';
@@ -125,7 +134,7 @@ class Card implements Page {
 
 	private function generaQuery() {
 
-		$query = 'SELECT card.card_id as id, card.name, rarity, c_type, mana, attack, health, description, COUNT(card.name) as numClassi FROM hero, card, hero_card WHERE hero.hero_id = hero_card.hero_id AND card.card_id = hero_card.card_id';
+		$query = 'SELECT card.card_id as id, card.name, rarity, c_type, mana, attack, health, description, expansion_name, COUNT(card.name) as numClassi FROM hero, card, hero_card WHERE hero.hero_id = hero_card.hero_id AND card.card_id = hero_card.card_id';
 
 		//nome carta
 		if(isset($_GET['nome']) AND $_GET['nome'] != '')
@@ -142,6 +151,12 @@ class Card implements Page {
 		//avventura/espansione
 		if(isset($_GET['avventura']) AND $_GET['avventura'] != '') {
 			$avventura='';
+			if($_GET['avventura'] == "Set Base")
+				$avventura = 'CORE';
+			
+			if($_GET['avventura'] == "Classico")
+				$avventura = 'EXPERT1';
+			
 			if($_GET['avventura'] == "Karazhan")
 				$avventura='KARA';
 
@@ -165,8 +180,9 @@ class Card implements Page {
 
 			if($_GET['avventura'] == "Il Gran Torneo")
 				$avventura='TGT';
+						
 			if ($avventura!='')
-				$query .= ' AND (adventure_name = "'.$avventura.'" OR expansion_name = "'.$avventura.'")';
+				$query .= ' AND expansion_name = "'.$avventura.'"';
 		}
 
 		//rarita
