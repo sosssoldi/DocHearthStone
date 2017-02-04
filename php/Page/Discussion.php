@@ -40,6 +40,7 @@
         public function content() {
             $content=file_get_contents("html/discussione.html");
 
+            //se l'utente è loggato dà la possibilita di aggiungere un commento al topic
             if (isset($_SESSION['username']))
                 $content=str_replace(':commento:', '<form method="post" action="discussione.php?id=:idpagina:">
                 			<label for="area">Inserisci un commento</label>
@@ -69,6 +70,7 @@
             echo file_get_contents("html/footer.html");
         }
 
+        //ritorna il titolo del topic selezionato
         public function getDiscussione() {
             $query='SELECT T.title as Titolo
                     FROM topic T
@@ -83,6 +85,7 @@
                 return $rs[0]['Titolo'];
         }
 
+        //crea codice HTML per la descrizione del topic
         public function getTesto() {
 
             //query per testo post
@@ -104,7 +107,7 @@
                         <div class="user">
 					        <img class="fotoProfilo" src="'.$row['Foto'].'" alt="Immagine profilo utente">
                             <p>'.$row['Nome'].'</p>
-                            <p>Data di entrata: '.$row['Data'].'</p>
+                            <p>Data di entrata:</p><span>'.$row['Data'].'</span></p>
 					        <p>Interventi nel forum: '.$row['N'].'</p>
                         </div>
                         <div class="text">
@@ -117,6 +120,7 @@
             return $final;
         }
 
+        //crea codice HTML per tutti i commenti del topic
         public function getC() {
 
             //query per commenti
@@ -139,7 +143,7 @@
                         <div class="user">
 					        <img class="fotoProfilo" src="'.$row['Foto'].'" alt="Immagine profilo utente">
                             <p>'.$row['Nome'].'</p>
-                            <p>Data di entrata: '.$row['Data'].'</p>
+                            <p>Data di entrata:</p><span>'.$row['Data'].'</span></p>
 					        <p>Interventi nel forum: '.$row['N'].'</p>
                         </div>
                         <div class="text">
@@ -152,6 +156,7 @@
             return $final;
         }
 
+        //inserisce un nuovo commento nel Db
         public function inserisciC() {
             $data = date ("Y-m-d G:i");
             $query='INSERT INTO comment VALUES ("","'.$_POST['area'].'","'.$data.'","'.$_SESSION['username'].'",'.$_GET['id'].')';

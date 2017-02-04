@@ -75,6 +75,7 @@
             echo $content;
         }
 
+        //se l'utente è loggato mostra la possibilità di aggiungere un topic alla sezione
         private function commentoUserLoggato($content) {
 
             if (isset($_SESSION['username']))
@@ -100,6 +101,7 @@
             echo file_get_contents("html/footer.html");
         }
 
+        //ritorna l'username dell'utente che ha aggiunto un commento per ultimo in un topic
         public function getUser($id)
         {
             $query='SELECT C.user_name as User
@@ -117,6 +119,7 @@
 
         }
 
+        //crea codice HTML per mostrare tutti i topic di una sezione
         public function getTopic()
         {
             $query='SELECT T.topic_id as Id, T.title as Titolo, T.user_name as Creatore, T.num_comments as N
@@ -173,6 +176,7 @@
             return $final;
         }
 
+        //ritorna l'id della sezione in cui mi trovo
         public function getId(){
             $query='SELECT section_id as Id
                     FROM section
@@ -183,6 +187,7 @@
             return $rs[0]['Id'];
         }
 
+        //inserisce il nuovo topic nella tabella topic
         public function InserisciTopic()
         {
             $data = date ("Y-m-d G:i");
