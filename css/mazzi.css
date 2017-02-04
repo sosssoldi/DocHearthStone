@@ -37,7 +37,7 @@ body {
 	color: white;
 }
 
-form {
+#ricercaMazzi {
 	margin: 0 auto;
 	width: 90%;
 	background-color:#273f83;
@@ -113,7 +113,7 @@ form {
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 }
 
-form input[type="submit"] {
+buttRicerca {
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 	margin-left: 17%;
 	margin-bottom: 5%;

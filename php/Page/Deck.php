@@ -75,7 +75,7 @@
     			'<input type="text" name="nome" value="'.$nome.'"/>', $contenuto);
     		}
     		else {
-    			$contenuto = str_replace(':nlogoutButtonazzo:',
+    			$contenuto = str_replace(':nomeMazzo:',
     			'<input type="text" name="nome" />', $contenuto);
     		}
 
