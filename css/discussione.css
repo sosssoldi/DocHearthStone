@@ -127,6 +127,7 @@ textarea {
 	display: block;
 	min-height:6em;
 	max-height: 6em;
+	padding: 0.2em;
 }
 
 form input[type="submit"] {
