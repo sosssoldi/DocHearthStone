@@ -6,6 +6,8 @@
 		header('Location:forum.php');
 	echo file_get_contents("html/sezioneForum_head.html");
     $obj= new sectionForum();
+	if ($obj->getId()=="")
+		header('Location:forum.php');
     $obj->header();
     $obj->content();
     $obj->footer();

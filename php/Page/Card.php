@@ -132,6 +132,7 @@ class Card implements Page {
 			$query .= ' AND card.name LIKE "%'.$_GET['nome'].'%"';
 
 		//costo in mana della carta
+		$this->checkCosto();
 		if(isset($_GET['costo']) AND $_GET['costo'] != '')
 			if($_GET['costo'] == '7+')
 				$query .= ' AND mana >= 7';
@@ -140,7 +141,7 @@ class Card implements Page {
 
 		//avventura/espansione
 		if(isset($_GET['avventura']) AND $_GET['avventura'] != '') {
-
+			$avventura='';
 			if($_GET['avventura'] == "Karazhan")
 				$avventura='KARA';
 
@@ -164,24 +165,34 @@ class Card implements Page {
 
 			if($_GET['avventura'] == "Il Gran Torneo")
 				$avventura='TGT';
-
-			$query .= ' AND (adventure_name = "'.$avventura.'" OR expansion_name = "'.$avventura.'")';
+			if ($avventura!='')
+				$query .= ' AND (adventure_name = "'.$avventura.'" OR expansion_name = "'.$avventura.'")';
 		}
 
 		//rarita
 		if(isset($_GET['rarita']) AND $_GET['rarita'] != '')
-			$query .= ' AND rarity = "'.$_GET['rarita'].'"';
+		{
+			$rarita=$_GET['rarita'];
+			if ($rarita=="Comune" || $rarita=="Rara" || $rarita=="Epica" || $rarita=="Leggendaria")
+				$query .= ' AND rarity = "'.$rarita.'"';
+		}
 
 		//tipo
 		if(isset($_GET['tipo']) AND $_GET['tipo'] != '')
-			$query .= ' AND c_type = "'.$_GET['tipo'].'"';
+		{
+			$tipo=$_GET['tipo'];
+			if ($tipo=="Servitore"|| $tipo=="Arma" || $tipo=="Magia")
+				$query .= ' AND c_type = "'.$tipo.'"';
+		}
 
 		//classe
-		if(isset($_GET['classe']) AND $_GET['classe'] != '')
-			$query .= ' AND type = "'.$_GET['classe'].'"';
+		if(isset($_GET['classe']))
+			$this->getID();
+			if ($_GET['classe'] != '')
+				$query .= ' AND type = "'.$_GET['classe'].'"';
 
 		$query .= ' GROUP BY card.name, c_type, mana, attack, health;';
-		
+
 		return $query;
 	}
 
@@ -206,6 +217,25 @@ class Card implements Page {
 		}
 
 		return $elencoClassi;
+	}
+
+	//controlli per query string inventate
+	public function checkCosto() {
+		if (isset($_GET['costo']) && ($_GET['costo']<0 || $_GET['costo']>8))
+			$_GET['costo']="";
+	}
+
+	public function getID() {
+
+		$query='SELECT H.hero_id
+				FROM hero H
+				WHERE H.type="'.$_GET['classe'].'"';
+
+		$this->db->query($query);
+		$rs = $this->db->resultset();
+
+		if($this->db->rowCount()==0)
+			$_GET['classe']='';
 	}
 }
 ?>

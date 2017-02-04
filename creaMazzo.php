@@ -6,6 +6,8 @@
 		header('Location:scegliClasse.php');
 	echo file_get_contents("html/creaMazzo_head.html");
 	$obj= new createDeck();
+	if ($obj->gethId()=="")
+		header('Location:scegliClasse.php');
 	$obj->header();
 	$obj->content();
 	$obj->footer();

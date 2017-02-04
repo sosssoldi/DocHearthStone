@@ -15,6 +15,8 @@
 		}
 
 		public function header() {
+
+
 			$head = file_get_contents("html/header.html");
 
 			//controllo utente loggato
@@ -229,6 +231,7 @@
 				$n=$this->db->rowCount();
 
 				$deck=$this->getdId();
+
 				$query="";
 				for ($i = 1; $i <= $n; $i++)
 				{
