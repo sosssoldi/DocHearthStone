@@ -110,7 +110,7 @@ body {
 	text-align: center;
 }
 
-input[type="submit"] {
+#login input[type="submit"] {
 	background-color: #fff;
 	margin: 1em 0em;
 	padding: 0.7em;

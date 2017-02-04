@@ -195,7 +195,7 @@ body {
 	width: 70%;
 }
 
-form {
+#commenti form {
 	margin-top: 2em;
 }
 
@@ -206,7 +206,7 @@ form {
 	padding-bottom: 0.2em;
 }
 
-textarea {
+#commenti textarea {
 	margin: 0 auto;
 	min-width: 90%;
 	max-width: 90%;
@@ -216,7 +216,7 @@ textarea {
 	padding: 0.3em;
 }
 
-form input[type="submit"] {
+#commenti input[type="submit"] {
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 	margin-top: 2em;
 	margin-left: 40%;
