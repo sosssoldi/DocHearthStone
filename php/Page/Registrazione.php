@@ -17,6 +17,7 @@ class Registrazione implements Page {
 	status = 3 -> tentativo di registrazione
 	status = 4 -> errore: username già in uso
 	status = 5 -> errore: email già in uso
+	status = 6 -> errore: uno o più campi contengono caratteri errati
 	*/
 
 	public function __construct() {
@@ -69,6 +70,9 @@ class Registrazione implements Page {
 			case 5:
 				$content = $this->aggiornaFormErrEmail($content);
 				break;
+			case 6:
+				$content = $this->aggiornaForm($content);
+				break;
 		}
 
 		echo $content;
@@ -80,13 +84,23 @@ class Registrazione implements Page {
 
 	private function controlloRegistrazione() {
 		if(isset($_POST['nome']) && isset($_POST['cognome']) && isset($_POST['user']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password2']))
-			if($_POST['nome'] != "" && $_POST['cognome'] != "" && $_POST['user'] != "" && $_POST['email'] != "" && $_POST['password'] != "" && $_POST['password2'] != "")
+			if($_POST['nome'] != "" && $_POST['cognome'] != "" && $_POST['user'] != "" && $_POST['email'] != "" && $_POST['password'] != "" && $_POST['password2'] != "") {
 				if($_POST['password'] != $_POST['password2'])
 					$this->status = 2;
 				else
-					$this->status = 3;
-			else
+					if($this->parseInput($_POST["nome"]) || $this->parseInput($_POST["cognome"]) || $this->parseInput($_POST["user"]) || $this->parseInput($_POST["email"]) || $this->parseInput($_POST["password"]) || $this->parseInput($_POST["password2"]))
+						$this->status = 6;
+					else
+						$this->status = 3;
+			} else
 				$this->status = 1;
+			echo $this->status;
+	}
+
+	private function parseInput($var) {
+		if(strstr($var, ">")!="" || strstr($var, "<")!="" || strstr($var, "'")!="")
+			return true;
+		return false;
 	}
 
 	private function provaRegistrazione() {
@@ -137,6 +151,8 @@ class Registrazione implements Page {
 			case 5:
 				$c = str_replace(':segnalaErrore:','<p>Email già in uso</p>',$c);
 				break;
+			case 6:
+				$c = str_replace(':segnalaErrore:','<p>Nei campi non puoi inserire apostrofi e segni di minore e maggiore</p>',$c);
 		}
 
 		return $c;
