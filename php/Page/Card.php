@@ -187,9 +187,11 @@ class Card implements Page {
 
 		//classe
 		if(isset($_GET['classe']))
+		{
 			$this->getID();
 			if ($_GET['classe'] != '')
 				$query .= ' AND type = "'.$_GET['classe'].'"';
+		}
 
 		$query .= ' GROUP BY card.name, c_type, mana, attack, health;';
 

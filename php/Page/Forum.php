@@ -59,6 +59,7 @@
             echo file_get_contents("html/footer.html");
         }
 
+        //cerca per una determinata section l'utente che ha creato l'ultimo topic
         public function creatoreTopic($id) {
             $query='SELECT T.user_name as nome
                     FROM topic T
@@ -74,6 +75,7 @@
                 return null;
         }
 
+        //ritorna tutti i topic presenti ordinati per id della sezione
         public function lastTopic() {
             $query='SELECT S.section_id as Id, S.name as Nome, S.num_thread as N
                     FROM section S

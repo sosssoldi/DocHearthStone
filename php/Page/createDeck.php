@@ -49,6 +49,7 @@
 
 			$count=$this->contaCarte();
 
+			//controllo il numero di carte selezionate per la creazione del mazzo (devono essere 30)
 			if (!isset($_POST['submit']))
 				$content=str_replace(':errore:','',$content);
 			else
@@ -76,6 +77,7 @@
 			echo file_get_contents("html/footer.html");
 		}
 
+		//ritorna tutte le possibili carte da aggiungere al mazzo
 		public function queryCarte() {
 			$query='SELECT C.name as Nome, C.rarity as R, C.mana as costo, C.card_id as Id
 					FROM card C join hero_card HC on (C.card_id=HC.card_id) join hero H on (HC.hero_id=H.hero_id)
@@ -88,6 +90,7 @@
 			return $rs;
 		}
 
+		//crea il codice HTML in base alle carte disponibili
 		public function carteDisp()
 		{
 			$rs=$this->queryCarte();
@@ -159,6 +162,7 @@
 			return $final;
 		}
 
+		//ritorna il numero di carte selezionate per l'aggiunta al mazzo
 		public function contaCarte() {
 			$rs=$this->queryCarte();
 			$n=$this->db->rowCount();
@@ -194,6 +198,7 @@
 
 		}
 
+		//ritorna l'id dell'eroe corrispondente alla query string
 		public function gethId(){
 			$query='SELECT H.hero_id as Id
 					FROM hero H
@@ -205,6 +210,7 @@
 			return $rs[0]['Id'];
 		}
 
+		//ritorna l'id del mazzo appena creato per poi aggiungere le carte associate
 		public function getdId()
 		{
 			$query='SELECT D.deck_id as Id
@@ -217,6 +223,7 @@
 			return $rs[0]['Id'];
 		}
 
+		//inserisce il nuovo mazzo in deck e le carte in deck_card
 		public function insertDb()
 		{
 			$data = date ("Y-m-d G:i");
