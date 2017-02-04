@@ -38,6 +38,7 @@
 		}
 
 		public function content() {
+			
 			$content=file_get_contents("html/creaMazzo.html");
 
 			$content=str_replace(':eroePagina:',$_GET['eroe'],$content);
@@ -50,11 +51,15 @@
 				$content=str_replace(':errore:','',$content);
 			else
 			{
-				if ($count<30)
+				if ($count<30) {
 					$content=str_replace(':errore:','<p class="errore">Troppe poche carte selezionate</p>',$content);
+					$content = $this->aggiornaLabel($content);
+				}
 				else
-					if ($count>30)
+					if ($count>30) {
 						$content=str_replace(':errore:','<p class="errore">Troppe carte selezionate</p>',$content);
+						$content = $this->aggiornaLabel($content);
+					}
 					else
 					{
 						$content=str_replace(':errore:','',$content);
@@ -93,7 +98,7 @@
 					{
 						$final.='<div class="carte1">
 									<span class="costo">'.$row['costo'].'</span>
-									<span class="nome '.$row['R'].'">'.$row['Nome'].'</span>
+									<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 	    							<fieldset>
 										<label for="quantita11'.$i.'">1</label>
 								        <input type="radio" id="quantita11'.$i.'" name="quantita1'.$i.'" value="1"/>
@@ -107,7 +112,7 @@
 						$final.='
 							<div class="carte2">
 								<span class="costo">'.$row['costo'].'</span>
-								<span class="nome '.$row['R'].'">'.$row['Nome'].'</span>
+								<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 									<fieldset>
 									<label for="quantita22'.$i.'">1</label>
 									<input type="radio" id="quantita22'.$i.'" name="quantita2'.$i.'" value="1"/>
@@ -123,7 +128,7 @@
 					{
 						$final.='<div class="carte1">
 									<span class="costo">'.$row['costo'].'</span>
-									<span class="nome '.$row['R'].'">'.$row['Nome'].'</span>
+									<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 		    						<fieldset>
 									<label for="quantita11'.$i.'">1</label>
 									<input type="radio" id="quantita11'.$i.'" name="quantita1'.$i.'" value="1"/>
@@ -137,7 +142,7 @@
 						$final.='
 							<div class="carte2">
 								<span class="costo">'.$row['costo'].'</span>
-								<span class="nome '.$row['R'].'">'.$row['Nome'].'</span>
+								<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 								<fieldset>
 									<label for="quantita22'.$i.'">1</label>
 									<input type="radio" id="quantita22'.$i.'" name="quantita2'.$i.'" value="1"/>
@@ -258,9 +263,14 @@
 					}
 				}
 			}
-
-
+			header("Location: user.php");
+		}
+		
+		private function aggiornaLabel($c) {
+			
+			$c = str_replace('<input type="text" required autocomplete="off" name="nome" class="stringa"/>','<input type="text" required autocomplete="off" name="nome" class="stringa" value="'.$_POST['nome'].'"/>',$c);
+			$c = str_replace('<textarea id="area" name="Commento"></textarea>','<textarea id="area" name="Commento">'.$_POST['Commento'].'</textarea>',$c);
+			return $c;
 		}
 	}
-
 ?>
