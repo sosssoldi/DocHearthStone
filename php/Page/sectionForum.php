@@ -86,7 +86,7 @@
             		<label id="labelAdd">Aggiungi una Discussione</label>
             		<div class="lab">
             			<label id="labelTit" for="titolo">Titolo</label>
-            			<input type="text" id="titolo" name="Titolo">
+            			<input type="text" id="titolo" required autocomplete="off" name="Titolo">
             		</div>
             		<div class="lab">
             			<label id="labelText" for="area">Descrizione</label>
