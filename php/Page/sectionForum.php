@@ -61,8 +61,11 @@
 
             $content=file_get_contents("html/sezioneForum.html");
 
-            if (isset($_POST['Titolo']) && $_POST['Titolo']!="")
+            if (isset($_POST['Titolo']) && $_POST['Titolo']!="") {
+                $_POST["Titolo"]=htmlspecialchars($_POST["Titolo"]);
+                $_POST["Titolo"]=str_replace("'","\'",$_POST["Titolo"]);
                 $this->InserisciTopic();
+            }
 
             $content=str_replace(':nomesezione:',$_GET['nome'],$content);
 
@@ -146,6 +149,10 @@
         public function getRicerca() {
 
             $pezzi = explode(" ", $_GET['barra']);
+            foreach ($pezzi as &$p) {
+                $p = htmlspecialchars($p);
+                $p = str_replace("'","\'",$p);
+            }
             $resultArray = array();
 
             $query = 'SELECT T.topic_id as Id, T.title as Titolo, T.user_name as Creatore, T.num_comments as N
@@ -190,6 +197,10 @@
         //inserisce il nuovo topic nella tabella topic
         public function InserisciTopic()
         {
+            if(isset($_POST["Commento"])) {
+                $_POST["Commento"]=htmlspecialchars($_POST["Commento"]);
+                $_POST["Commento"]=str_replace("'","\'",$_POST["Commento"]);
+            }
             $data = date ("Y-m-d G:i");
             $id=$this->getId();
             $query='INSERT INTO topic VALUES ("","'.$_POST['Titolo'].'","'.$_POST['Commento'].'","'.$data.'","'.$_SESSION['username'].'",0,'.$id.')';

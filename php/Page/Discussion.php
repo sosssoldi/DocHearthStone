@@ -51,8 +51,11 @@
                 $content=str_replace(':commento:','',$content);
             }
 
-            if (isset($_POST['area']) && $_POST['area']!="")
+            if (isset($_POST['area']) && $_POST['area']!="") {
+                $_POST["area"]=htmlspecialchars($_POST["area"]);
+                $_POST["area"]=str_replace("'","\'",$_POST["area"]);
                 $this->inserisciC();
+            }
 
             $content=str_replace(':idpagina:',$_GET['id'],$content);
 

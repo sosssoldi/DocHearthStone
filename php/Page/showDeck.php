@@ -97,11 +97,11 @@
                 $content=str_replace(':formCommenti:','',$content);
 
             $content=str_replace(':idmazzo:',$_GET['mazzo'],$content);
-            $_POST["commento"]=htmlspecialchars($_POST["commento"]);
-            $_POST["commento"]=str_replace("'","\'",$_POST["commento"]);
 
             if (isset($_POST['commento']) && $_POST['commento']!="")
             {
+                $_POST["commento"]=htmlspecialchars($_POST["commento"]);
+                $_POST["commento"]=str_replace("'","\'",$_POST["commento"]);
                 $query='INSERT INTO suggest VALUES ("","'.$_POST['commento'].'","'.$_SESSION['username'].'",'.$_GET['mazzo'].')';
                 $this->db->query($query);
                 $this->db->execute($query);
