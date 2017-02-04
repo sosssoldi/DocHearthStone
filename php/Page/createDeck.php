@@ -142,7 +142,7 @@
 									</fieldset>
 								</div>';
 					}
-					elselogoutButton
+					else
 					{
 						$final.='
 							<div class="carte2">

@@ -154,8 +154,6 @@
                     if(isset($_GET['classe']) && $_GET['classe']!="")
                         $query.="WHERE H.type LIKE '".$_GET['classe']."' ";
 
-            $query.='LIMIT 40';
-
             if(isset($_GET['costoMin']) && $_GET['costoMin'] != "")
                 $costomin=$_GET['costoMin'];
             else
@@ -178,7 +176,7 @@
                 if ($costoDeck[0]['costo'] < $costomin && $costoDeck[0]['costo'] > $costomax) {
                     $final .= '<tr>';
                     $final .= '<td><a href="mostraMazzo.php?mazzo='.$row['Id'].'">'.$row['NomeDeck'].'</a></td>';
-                    $final .= '<td class="'.$row['Nome'].'">'.$row['Nome'].'</td>';
+                    $final .= '<td>'.$row['Nome'].'</td>';
                     $final .= '<td>'.$costoDeck[0]['costo'].'</td>';
 
 					if($row['Likes'] > 0)
