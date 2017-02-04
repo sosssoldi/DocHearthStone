@@ -42,12 +42,16 @@
 
             $content=file_get_contents("html/sezioneForum.html");
 
-            $content=str_replace(':nomesezione:',"",$content);
+            $content=str_replace(':nomesezione:',"Risultato della ricerca:",$content);
 
-            $content=str_replace(':contenuto:',$this->getRicerca(),$content);
-
-            $content=str_replace(':sezioneCommenti:','',$content);
-
+            $result = $this->getRicerca();
+            if($result !== false) {
+                $content=str_replace(':contenuto:',$result,$content);
+                $content=str_replace(':sezioneCommenti:','',$content);
+            } else {
+                $content=str_replace(':contenuto:','',$content);
+                $content=str_replace(':sezioneCommenti:','<h3 class="centrato">La ricerca non ha prodotto risultati.</h3>',$content);
+            }
             $content=str_replace(':nomesection:','',$content);
 
             echo $content;
@@ -143,10 +147,10 @@
 
             $query = 'SELECT T.topic_id as Id, T.title as Titolo, T.user_name as Creatore, T.num_comments as N
                     FROM topic T
-                    WHERE T.content LIKE "%'.$pezzi[0].'%"';
+                    WHERE T.content LIKE "%'.$pezzi[0].'%" OR T.title LIKE "%'.$pezzi[0].'%"';
 
             for($i=1;$i<count($pezzi);$i++)
-                $query .= ' or T.content LIKE "%'.$pezzi[$i].'%"';
+                $query .= ' or T.content LIKE "%'.$pezzi[$i].'%" OR T.title LIKE "%'.$pezzi[0].'%"';
 
             $this->db->query($query);
             $rs = $this->db->resultset();
@@ -154,15 +158,18 @@
             $resultArray = array_merge($resultArray, $rs);
 
             $final="";
-            foreach ($resultArray as $row) {
-                $user=$this->getUser($row['Id']);
-                $final.='<tr>';
-                $final.='<td class="forum"><a href="discussione.php?id='.$row['Id'].'"><h3>'.$row['Titolo'].'</h3></a>
-                            <span>di: '.$row['Creatore'].'</span></td>';
-                $final.='<td class="lastpost">'.$user.'</td>';
-                $final.='<td class="lastpost">'.$row['N'].'</td>';
-                $final.='</tr>';
-            }
+            if(count($rs) == 0)
+                $final = false;
+            else
+                foreach ($resultArray as $row) {
+                    $user=$this->getUser($row['Id']);
+                    $final.='<tr>';
+                    $final.='<td class="forum"><a href="discussione.php?id='.$row['Id'].'"><h3>'.$row['Titolo'].'</h3></a>
+                                <span>di: '.$row['Creatore'].'</span></td>';
+                    $final.='<td class="lastpost">'.$user.'</td>';
+                    $final.='<td class="lastpost">'.$row['N'].'</td>';
+                    $final.='</tr>';
+                }
             return $final;
         }
 
