@@ -57,6 +57,8 @@
 
             $content=str_replace(':nomediscussione:',$this->getDiscussione(),$content);
 
+            $content=str_replace(':op:',$this->getTesto(),$content);
+
             $content=str_replace(':posts:',$this->getC(),$content);
 
             echo $content;
@@ -78,8 +80,44 @@
             return $rs[0]['Titolo'];
         }
 
+        public function getTesto() {
+
+            //query per testo post
+            $query = 'SELECT U.username as Nome, U.entry_date as Data, U.count_post as N, U.photo_id as Foto, T.content as Testo, T.creation_date as Creaz
+                    FROM user U join topic T on (T.user_name=U.username) WHERE T.topic_id='.$_GET['id'];
+
+            $this->db->query($query);
+            $rs = $this->db->resultset();
+
+            $final="";
+
+            foreach ($rs as $row) {
+                $final.=
+                '<div id="postOP">
+                    <div class="dataora">
+                        <p>'.$row['Creaz'].'</p>
+                    </div>
+				    <div class="userptext">
+                        <div class="user">
+					        <img class="fotoProfilo" src="'.$row['Foto'].'" alt="Immagine profilo utente">
+                            <p>'.$row['Nome'].'</p>
+                            <p>Data di entrata: '.$row['Data'].'</p>
+					        <p>Interventi nel forum: '.$row['N'].'</p>
+                        </div>
+                        <div class="text">
+                            <p>'.$row['Testo'].'</p>
+   		                </div>
+				    </div>
+                </div>';
+            }
+
+            return $final;
+        }
+
         public function getC() {
-            $query='SELECT U.username as Nome, U.entry_date as Data, U.count_post as N, U.photo_id as Foto, C.content as Commento, C.creation_date as DataC
+
+            //query per commenti
+            $query = 'SELECT U.username as Nome, U.entry_date as Data, U.count_post as N, U.photo_id as Foto, C.content as Commento, C.creation_date as DataC
                     FROM user U join comment C on (C.user_name=U.username) join topic T on (T.topic_id=C.topic_id)
                     WHERE T.topic_id='.$_GET['id'];
 

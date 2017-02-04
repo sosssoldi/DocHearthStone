@@ -51,6 +51,17 @@ body {
 	border-radius: 0.5em;
 }
 
+#postOP {
+	width: 90%;
+	margin-bottom: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0.15em solid #292c3e;
+	background-color: rgba(255, 135, 0, 0.71);
+	overflow: hidden;
+	border-radius: 0.5em;
+}
+
 .dataora {
 	text-align: center;
 	padding:1%;
