@@ -22,10 +22,10 @@ class Guide implements Page {
 			$head = str_replace(":login:",
 			'<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
 			$head = str_replace(":utente:",
-				'<form id="logout" action="logout.php" method="get">
-					<span>'.$_SESSION["username"].'</span>
-					<input id="logoutButton" type="submit" value="Logout">
-				</form>'
+			'<div id="boxutente">
+				<span>'.$_SESSION["username"].'</span>
+				<a href="logout.php"><button>Logout</button></a>
+			</div>'
 			,$head);
 		}
 		else {
@@ -49,10 +49,10 @@ class Guide implements Page {
 			$head = str_replace(":login:",
 			'<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
 			$head = str_replace(":utente:",
-			'<form id="logout" action="logout.php" method="get">
+			'<div id="boxutente">
 				<span>'.$_SESSION["username"].'</span>
-				<input id="logoutButton" type="submit" value="Logout">
-			</form>'
+				<a href="logout.php"><button>Logout</button></a>
+			</div>'
 			,$head);
 		}
 		else {
@@ -77,7 +77,14 @@ class Guide implements Page {
 
 		$contenuto = str_replace(':nomeGuide:', 'La tua ricerca ha prodotto i seguenti risultati:', $contenuto);
 
+		if($_GET["barra"]=="")
+			header("Location: guide.php");
+
 		$pezzi = explode(" ", $_GET['barra']);
+		foreach ($pezzi as &$p) {
+			$p = htmlspecialchars($p);
+			$p = str_replace("'","\'",$p);
+		}
 		$resultArray = array();
 
 		$query = 'SELECT guide_id, title, user_name

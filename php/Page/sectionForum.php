@@ -22,10 +22,10 @@
                 $head = str_replace(":login:",
                 '<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
 				$head = str_replace(":utente:",
-                    '<form id="logout" action="logout.php" method="get">
-                        <span>'.$_SESSION["username"].'</span>
-                        <input id="logoutButton" type="submit" value="Logout">
-                    </form>'
+                '<div id="boxutente">
+                    <span>'.$_SESSION["username"].'</span>
+                    <a href="logout.php"><button>Logout</button></a>
+                </div>'
                 ,$head);
             }
             else
@@ -50,7 +50,7 @@
                 $content=str_replace(':sezioneCommenti:','',$content);
             } else {
                 $content=str_replace(':contenuto:','',$content);
-                $content=str_replace(':sezioneCommenti:','<h3 class="centrato">La ricerca non ha prodotto risultati.</h3>',$content);
+                $content=str_replace(':sezioneCommenti:','<p class="centrato">La ricerca non ha prodotto risultati.</p>',$content);
             }
             $content=str_replace(':nomesection:','',$content);
 
@@ -92,7 +92,7 @@
             			<label id="labelText" for="area">Descrizione</label>
             			<textarea id="area" name="Commento"></textarea>
             	  </div>
-            		<input id="addTopic" type="submit" value="AGGIUNGI" />
+            		<input type="submit" value="AGGIUNGI" />
             	</form>',$content);
             else {
                 $content=str_replace(':sezioneCommenti:','',$content);
@@ -147,6 +147,8 @@
         }
 
         public function getRicerca() {
+            if($_GET["barra"]=="")
+                header("Location: forum.php");
 
             $pezzi = explode(" ", $_GET['barra']);
             foreach ($pezzi as &$p) {
