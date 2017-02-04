@@ -128,10 +128,9 @@
             if($this->db->rowCount()==0)
                 $eroe = 'NULL';
             else
-                $eroe = ".$rs[0]['hero_id'].";
+                $eroe = "'".$rs[0]['hero_id']."'";
 
             $query = 'INSERT into guide VALUES ("","'.$_GET['titolo'].'","'.$_GET['testo'].'","",'.$eroe.',"'.$_SESSION['username'].'")';
-            print_r($query);
 
             $this->db->query($query);
             $r = $this->db->execute();
