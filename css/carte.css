@@ -226,3 +226,10 @@ body {
 .descrizione {
 	font-size: 1em;
 }
+
+.errore {
+	color: red;
+	text-align: center;
+	font-weight: bold;
+	padding: 1em;
+}
