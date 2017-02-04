@@ -37,27 +37,18 @@
         }
 
         private function bottoni($content) {
-            if (isset($_SESSION["username"]))
+            
+			if (isset($_SESSION["username"]))
             {
-                $content=str_replace(':bottone+:',
-                    '<a href="gestisciVoto.php?mazzo='.$_GET['mazzo'].'&like=1"><button type="submit" class="like">
-                        <img src="images/+.jpg" width="20%" align=”middle”>
-                    </button></a>',$content);
-                $content=str_replace(':bottone-:',
-                    '<a href="gestisciVoto.php?mazzo='.$_GET['mazzo'].'&like=0"><button type="submit" class="like">
-                        <img src="images/-.png" width="20%" align=”middle”>
-                    </button></a>',$content);
+                $content=str_replace(':valutazioneMazzo:','
+				<form method="get" action="gestisciVoto.php?">
+					<input type="hidden" name="mazzo" value="'.$_GET['mazzo'].'"/>
+					<input id="posRating" class="hide" type="submit" name="like" value="1"/>
+					:valutazioneMazzo:
+					<input id="negRating" class="hide" type="submit" name="like" value="0"/>
+				</form>', $content);
             }
-            else {
-                $content=str_replace(':bottone+:',
-                    '<button type="submit" class="like">
-                        <img src="images/+.jpg" width="20%" align=”middle”>
-                    </button>',$content);
-                $content=str_replace(':bottone-:',
-                    '<button type="submit" class="like">
-                        <img src="images/-.png" width="20%" align=”middle”>
-                    </button>',$content);
-            }
+
             return $content;
         }
 
@@ -68,11 +59,20 @@
 
             $rs=$this->trovaInfo($_GET['mazzo']);
 
-			if(count($rs) == 0 && !is_numeric($_GET["mazzo"]))
+			if(count($rs) == 0 || !is_numeric($_GET["mazzo"]))
 				header("Location: mazzi.php");
 
+			if($rs[0]['Likes'] > 0)
+				$valutazione = '<div id="valutazione" class="positivo">+'.$rs[0]['Likes'].'</div>';
+			
+			if($rs[0]['Likes'] < 0)
+				$valutazione = '<div id="valutazione" class="negativo">'.$rs[0]['Likes'].'</div>';
+			
+			if($rs[0]['Likes'] == 0)
+				$valutazione = '<div id="valutazione">'.$rs[0]['Likes'].'</div>';
+			
             $content=str_replace(':NomeEroe:',$rs[0]['Hero'],$content);
-            $content=str_replace(':valutazioneMazzo:',$rs[0]['Likes'],$content);
+            $content=str_replace(':valutazioneMazzo:',$valutazione,$content);
             $content=str_replace(':nomeMazzo:',$rs[0]['Nome'],$content);
             $content=str_replace(':creazioneMazzo:',$rs[0]['Data'],$content);
             $content=str_replace(':votiTotali:',$this->votiTot($_GET['mazzo']),$content);
