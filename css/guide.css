@@ -30,6 +30,23 @@ body {
 #content h2 {
 	text-align: center;
 	font-size: 2em;
+	margin-bottom: 3%;
+}
+
+form{
+	width: 70%;
+	margin: 0 auto;
+}
+
+#barra{
+	width: 80%;
+	height: 2.5em;
+	padding: 0.2em;
+}
+
+#cerca {
+	height: 3.1em;
+	width: 10%;
 }
 
 #generale {

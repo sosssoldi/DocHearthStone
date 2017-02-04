@@ -77,7 +77,10 @@
             $this->db->query($query);
             $rs = $this->db->resultset();
 
-            return $rs[0]['Titolo'];
+            if($this->db->rowCount()==0)
+                header("Location: forum.php");
+            else
+                return $rs[0]['Titolo'];
         }
 
         public function getTesto() {

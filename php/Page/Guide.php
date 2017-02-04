@@ -72,6 +72,40 @@ class Guide implements Page {
 		echo file_get_contents("html/footer.html");
 	}
 
+	public function contentRicerca() {
+		$contenuto = file_get_contents("html/guideEroe.html");
+
+		$contenuto = str_replace(':nomeGuide:', 'La tua ricerca ha prodotto i seguenti risultati:', $contenuto);
+
+		$pezzi = explode(" ", $_GET['barra']);
+		$resultArray = array();
+
+		$query = 'SELECT guide_id, title, user_name
+				FROM guide
+				WHERE content LIKE "%'.$pezzi[0].'%"';
+
+		for($i=1;$i<count($pezzi);$i++)
+			$query .= ' or T.content LIKE "%'.$pezzi[$i].'%"';
+
+		$this->db->query($query);
+		$rs = $this->db->resultset();
+
+		$resultArray = array_merge($resultArray, $rs);
+
+		$risultato = '';
+
+		foreach($resultArray as $row) {
+			$risultato .= '<tr>';
+			$risultato .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
+			$risultato .= '<td class="username">'.$row['user_name'].'</td>';
+			$risultato .= '</tr>';
+
+		}
+		$contenuto = str_replace(':bodyTabella:', $risultato, $contenuto);
+
+		echo $contenuto;
+	}
+
 	public function contentHero() {
 		$contenuto = file_get_contents("html/guideEroe.html");
 
@@ -123,11 +157,11 @@ class Guide implements Page {
 
 		echo $contenuto;
 	}
-	
+
 	public function eliminaGuida($id) {
 		$query = 'DELETE FROM guide WHERE guide_id = '.$id.' AND user_name = "'.$_SESSION['username'].'"';
 		$this->db->query($query);
-		$this->db->execute();		
+		$this->db->execute();
 	}
 }
 ?>
