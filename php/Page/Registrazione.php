@@ -94,7 +94,6 @@ class Registrazione implements Page {
 						$this->status = 3;
 			} else
 				$this->status = 1;
-			echo $this->status;
 	}
 
 	private function parseInput($var) {

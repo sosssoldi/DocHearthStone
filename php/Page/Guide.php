@@ -66,7 +66,7 @@ class Guide implements Page {
 
 	public function content() {
 		$content=file_get_contents("html/guide.html");
-		if (isset($_SESSION['username']) && $_SESSION['username']!="")
+		if (isset($_SESSION['username']))
 			$content = str_replace(':nuovaGuida:', '<form id="creaGuida" action="aggGuida.php" method="get">
 				<input id="crea" type="submit" value="Nuova Guida">
 			</form>', $content);

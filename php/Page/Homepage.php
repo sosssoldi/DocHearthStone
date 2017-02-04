@@ -61,7 +61,7 @@ class Homepage implements Page {
             <form method=\"post\" action=\"user.php\"><input type=\"submit\" value=\"Profilo\"></form>";
         } else {
             $output = "<p>Entra anche tu a far parte di Doc HearthStone!</p>
-    		<form method=\"post\" action=\"registrazione.php\"><input type=\"submit\" value=\"Resgistrati\"></form>
+    		<form method=\"post\" action=\"registrazione.php\"><input type=\"submit\" value=\"Registrati\"></form>
     		<p>Sei gi&agrave; dei nostri?</p>
     		<form method=\"post\" action=\"login.php\"><input type=\"submit\" value=\"Login\"></form>";
         }
