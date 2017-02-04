@@ -82,11 +82,11 @@ class Guide implements Page {
 
 		$query = 'SELECT guide_id, title, user_name
 				FROM guide
-				WHERE content LIKE "%'.$pezzi[0].'%"';
+				WHERE content LIKE "%'.$pezzi[0].'%" OR title LIKE "%'.$pezzi[0].'%"';
 
 		for($i=1;$i<count($pezzi);$i++)
-			$query .= ' or T.content LIKE "%'.$pezzi[$i].'%"';
-
+			$query .= ' OR T.content LIKE "%'.$pezzi[$i].'%" OR title LIKE "%'.$pezzi[$i].'%"';
+		
 		$this->db->query($query);
 		$rs = $this->db->resultset();
 
