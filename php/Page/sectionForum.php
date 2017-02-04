@@ -64,6 +64,8 @@
             if (isset($_POST['Titolo']) && $_POST['Titolo']!="") {
                 $_POST["Titolo"]=htmlspecialchars($_POST["Titolo"]);
                 $_POST["Titolo"]=str_replace("'","\'",$_POST["Titolo"]);
+                $_POST["Titolo"]=str_replace("<","&lt;",$_POST["Titolo"]);
+                $_POST["Titolo"]=str_replace(">","&gt;",$_POST["Titolo"]);
                 $this->InserisciTopic();
             }
 
@@ -73,9 +75,7 @@
 
             $content = $this->commentoUserLoggato($content);
 
-            $nome=str_replace(' ','%20',$_GET['nome']);
-            
-            $content=str_replace(':nomesection:',$nome,$content);
+            $content=str_replace(':nomesection:',$_GET['nome'],$content);
 
             echo $content;
         }
@@ -204,6 +204,8 @@
             if(isset($_POST["Commento"])) {
                 $_POST["Commento"]=htmlspecialchars($_POST["Commento"]);
                 $_POST["Commento"]=str_replace("'","\'",$_POST["Commento"]);
+                $_POST["Commento"]=str_replace("<","&lt;",$_POST["Commento"]);
+                $_POST["Commento"]=str_replace(">","&gt;",$_POST["Commento"]);
             }
             $data = date ("Y-m-d G:i");
             $id=$this->getId();
