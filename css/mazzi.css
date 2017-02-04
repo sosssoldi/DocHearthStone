@@ -152,6 +152,12 @@ form input[type="submit"] {
 	color:black;
 }
 
+.errore {
+	color: red;
+	text-align: center;
+	font-weight: bold;
+}
+
 .costo {
 	color: blue;
 	font-weight: bold;
