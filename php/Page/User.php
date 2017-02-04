@@ -15,7 +15,7 @@ class User implements Page {
     }
 
     public function header() {
-				
+
         $head = file_get_contents("html/header.html");
 
         //controllo utente loggato
@@ -43,9 +43,9 @@ class User implements Page {
     }
 
     public function content() {
-        
-		$content=file_get_contents("html/utente.html");
-		
+
+		$content=file_get_contents("html/utente.html");        
+
 		if(isset($_POST['submit']) && isset($_FILES['fileToUpload']))
 			if($_FILES['fileToUpload']['tmp_name'] != "")
 				$content = $this->caricaImmagine($content);
@@ -53,9 +53,9 @@ class User implements Page {
 				$content = str_replace(':erroreImmagine:','<p class="errore">Inserire un\'immagine</p>',$content);
 		else
 			$content = str_replace(':erroreImmagine:','',$content);
-		
+
 		$rs = $this->getDati();
-	
+
 		$content = str_replace(":immagineProfilo:", ' '.$rs[0]['photo_id'], $content);
         $content = str_replace(":user:", ' '.$rs[0]['username'], $content);
         $content = str_replace(":mail:", ' '.$rs[0]['email'], $content);
@@ -94,16 +94,16 @@ class User implements Page {
             $riga .= '<tr>';
 			$riga .= '<td><a href="mostraMazzo.php?mazzo='.$row['deck_id'].'">'.$row['d'].'</a></td>';
             $riga .= '<td><img class="classe" src="images/icon/'.$row['image'].'.png"></td>';
-			
+
 			if($row['likes'] > 0)
 				$riga .= '<td class="likespos">+'.$row['likes'].'</td>';
-			
+
 			if($row['likes'] < 0)
 				$riga .= '<td class="likesneg">'.$row['likes'].'</td>';
-			
+
 			if($row['likes'] == 0)
 				$riga .= '<td>'.$row['likes'].'</td>';
-            
+
 			$riga .= '<td><a href="eliminaMazzo.php?mazzo='.$row['deck_id'].'"><img class="delete" src="images/icon/remove.png" alt="Elimina"></a></td>';
 			$riga .= '</tr>';
         }
@@ -130,7 +130,7 @@ class User implements Page {
 			$riga .= '<td><a href="eliminaGuida.php?guida='.$row['guide_id'].'"><img class="delete" src="images/icon/remove.png" alt="Elimina"></a></td>';
             $riga .= '</tr>';
         }
-		
+
 		//Guide generali
 		$query = 'SELECT guide_id, title FROM guide WHERE hero_id is NULL AND user_name = "'.$_SESSION['username'].'"';
 		$this->db->query($query);
@@ -150,9 +150,9 @@ class User implements Page {
     public function footer() {
         echo file_get_contents("html/footer.html");
     }
-	
-	private function caricaImmagine($c) {		
-		
+
+	private function caricaImmagine($c) {
+
 		$status = 0;
 		/*
 		status = 0 -> immagine valida
@@ -160,23 +160,23 @@ class User implements Page {
 		status = 2 -> dimensione massima dell'immagine superata
 		status = 3 -> formato non supportato
 		*/
-		
+
 		$target_dir = 'images/user/';
 		$target_file = $target_dir.$_SESSION['username'].'.'.pathinfo($_FILES['fileToUpload']['name'],PATHINFO_EXTENSION);
 
 		// Controllo se un'immagine è fake
 		if(getimagesize($_FILES['fileToUpload']['tmp_name']) === false)
 			$status = 1;
-		
+
 		// Controllo la dimensione del file
 		if ($_FILES['fileToUpload']['size'] > 1000000)
 			$status = 2;
-		
+
 		// Formato dell'immagine
 		$imageType = pathinfo($_FILES['fileToUpload']['name'],PATHINFO_EXTENSION);
 		if($imageType != "jpg" && $imageType != "png" && $imageType != "jpeg" && $imageType != "gif" )
 			$status = 3;
-		
+
 		switch($status) {
 			case 0:
 				if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -199,7 +199,7 @@ class User implements Page {
 				$c = str_replace(':erroreImmagine:', '<p class="errore">Sono accettati solo file JPG, JPEG, PNG & GIF</p>', $c);
 				break;
 		}
-		
+
 		return $c;
 	}
 }
