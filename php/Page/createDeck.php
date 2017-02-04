@@ -38,7 +38,7 @@
 		}
 
 		public function content() {
-			
+
 			$content=file_get_contents("html/creaMazzo.html");
 
 			$content=str_replace(':eroePagina:',$_GET['eroe'],$content);
@@ -100,10 +100,10 @@
 									<span class="costo">'.$row['costo'].'</span>
 									<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 	    							<fieldset>
-										<label for="quantita11'.$i.'">1</label>
-								        <input type="radio" id="quantita11'.$i.'" name="quantita1'.$i.'" value="1"/>
-										<label for="quantita1'.$i.'">2</label>
-								        <input type="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="2" disabled="disabled"/>
+										<label for="quantita1'.$i.'">1</label>
+								        <input type="radio" class="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="1"/>
+										<label for="quantita2'.$i.'">2</label>
+								        <input type="radio" class="radio" id="quantita2'.$i.'" name="quantita1'.$i.'" value="2" disabled="disabled"/>
 								    </fieldset>
 								</div>';
 					}
@@ -114,10 +114,10 @@
 								<span class="costo">'.$row['costo'].'</span>
 								<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 									<fieldset>
-									<label for="quantita22'.$i.'">1</label>
-									<input type="radio" id="quantita22'.$i.'" name="quantita2'.$i.'" value="1"/>
+									<label for="quantita1'.$i.'">1</label>
+									<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1"/>
 									<label for="quantita2'.$i.'">2</label>
-									<input type="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" disabled="disabled"/>
+									<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" disabled="disabled"/>
 									</fieldset>
 							</div>';
 					}
@@ -130,10 +130,10 @@
 									<span class="costo">'.$row['costo'].'</span>
 									<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 		    						<fieldset>
-									<label for="quantita11'.$i.'">1</label>
-									<input type="radio" id="quantita11'.$i.'" name="quantita1'.$i.'" value="1"/>
-									<label for="quantita1'.$i.'">2</label>
-									<input type="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="2"/>
+									<label for="quantita1'.$i.'">1</label>
+									<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="1"/>
+									<label for="quantita2'.$i.'">2</label>
+									<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita1'.$i.'" value="2"/>
 									</fieldset>
 								</div>';
 					}
@@ -144,10 +144,10 @@
 								<span class="costo">'.$row['costo'].'</span>
 								<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 								<fieldset>
-									<label for="quantita22'.$i.'">1</label>
-									<input type="radio" id="quantita22'.$i.'" name="quantita2'.$i.'" value="1"/>
+									<label for="quantita1'.$i.'">1</label>
+									<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1"/>
 									<label for="quantita2'.$i.'">2</label>
-									<input type="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" />
+									<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" />
 								</fieldset>
 							</div>';
 					}
@@ -265,9 +265,9 @@
 			}
 			header("Location: user.php");
 		}
-		
+
 		private function aggiornaLabel($c) {
-			
+
 			$c = str_replace('<input type="text" required autocomplete="off" name="nome" class="stringa"/>','<input type="text" required autocomplete="off" name="nome" class="stringa" value="'.$_POST['nome'].'"/>',$c);
 			$c = str_replace('<textarea id="area" name="Commento"></textarea>','<textarea id="area" name="Commento">'.$_POST['Commento'].'</textarea>',$c);
 			return $c;
