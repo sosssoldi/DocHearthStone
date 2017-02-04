@@ -67,10 +67,10 @@
             $content=$this->bottoni($content);
 
             $rs=$this->trovaInfo($_GET['mazzo']);
-			
-			if(count($rs) == 0)
+
+			if(count($rs) == 0 && !is_numeric($_GET["mazzo"]))
 				header("Location: mazzi.php");
-			
+
             $content=str_replace(':NomeEroe:',$rs[0]['Hero'],$content);
             $content=str_replace(':valutazioneMazzo:',$rs[0]['Likes'],$content);
             $content=str_replace(':nomeMazzo:',$rs[0]['Nome'],$content);
@@ -97,6 +97,8 @@
                 $content=str_replace(':formCommenti:','',$content);
 
             $content=str_replace(':idmazzo:',$_GET['mazzo'],$content);
+            $_POST["commento"]=htmlspecialchars($_POST["commento"]);
+            $_POST["commento"]=str_replace("'","\'",$_POST["commento"]);
 
             if (isset($_POST['commento']) && $_POST['commento']!="")
             {
