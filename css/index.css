@@ -110,7 +110,7 @@ body {
 	text-align: center;
 }
 
-button {
+input[type="submit"] {
 	background-color: #fff;
 	margin: 1em 0em;
 	padding: 0.7em;
@@ -119,6 +119,7 @@ button {
 	width: 70%;
 	font-weight: bold;
 	font-size: 0.85em;
+	cursor: pointer;
 }
 
 #guide {

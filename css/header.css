@@ -67,7 +67,7 @@ nav li a:hover {
 	padding-right: 1.5em;
 }
 
-#boxutente {
+#logout {
 	position: fixed;
 	margin-left: 89%;
 	width: 9%;
@@ -78,13 +78,13 @@ nav li a:hover {
 	margin-top: 1%;
 }
 
-#boxutente span {
+#logout span {
 	display: block;
 	margin-top: 3%;
 	font-size: 0.7em;
 }
 
-#boxutente button {
+#logout input[type="submit"] {
 	background-color: #fff;
     margin: 1em 0em;
     padding: 0.7em;
@@ -93,4 +93,5 @@ nav li a:hover {
     width: 70%;
     font-weight: bold;
     font-size: 0.85em;
+	cursor: pointer;
 }

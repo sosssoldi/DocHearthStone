@@ -65,6 +65,7 @@ body {
 	margin-bottom: 3%;
 	font-weight: bold;
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+	cursor: pointer;
 }
 
 #nome {

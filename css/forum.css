@@ -96,3 +96,10 @@ td a{
 	 text-decoration: none;
 	 color: blue;
 }
+
+#cerca {
+	cursor: pointer;
+	color: #fff;
+	background-color: #292c3e;
+	border: 0.2em solid #fff;
+}

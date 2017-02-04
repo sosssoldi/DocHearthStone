@@ -245,4 +245,5 @@ form input[type="submit"] {
 	width: 20%;
 	height: 3em;
 	font-weight: bold;
+	cursor: pointer;
 }

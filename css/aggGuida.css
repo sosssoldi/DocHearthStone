@@ -111,4 +111,5 @@ select {
 	width: 15%;
 	font-weight: bold;
 	font-size: 1.0em;
+	cursor: pointer;
 }

@@ -22,10 +22,10 @@ class Guide implements Page {
 			$head = str_replace(":login:",
 			'<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
 			$head = str_replace(":utente:",
-			'<div id="boxutente">
-				<span>'.$_SESSION["username"].'</span>
-				<a href="logout.php"><button>Logout</button></a>
-			</div>'
+				'<form id="logout" action="logout.php" method="get">
+					<span>'.$_SESSION["username"].'</span>
+					<input id="logoutButton" type="submit" value="Logout">
+				</form>'
 			,$head);
 		}
 		else {
@@ -49,10 +49,10 @@ class Guide implements Page {
 			$head = str_replace(":login:",
 			'<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
 			$head = str_replace(":utente:",
-			'<div id="boxutente">
+			'<form id="logout" action="logout.php" method="get">
 				<span>'.$_SESSION["username"].'</span>
-				<a href="logout.php"><button>Logout</button></a>
-			</div>'
+				<input id="logoutButton" type="submit" value="Logout">
+			</form>'
 			,$head);
 		}
 		else {
@@ -86,7 +86,7 @@ class Guide implements Page {
 
 		for($i=1;$i<count($pezzi);$i++)
 			$query .= ' OR T.content LIKE "%'.$pezzi[$i].'%" OR title LIKE "%'.$pezzi[$i].'%"';
-		
+
 		$this->db->query($query);
 		$rs = $this->db->resultset();
 

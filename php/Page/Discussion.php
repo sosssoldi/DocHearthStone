@@ -22,10 +22,10 @@
                 $head = str_replace(":login:",
                 '<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
 				$head = str_replace(":utente:",
-                '<div id="boxutente">
-                    <span>'.$_SESSION["username"].'</span>
-                    <a href="logout.php"><button>Logout</button></a>
-                </div>'
+                    '<form id="logout" action="logout.php" method="get">
+                        <span>'.$_SESSION["username"].'</span>
+                        <input id="logoutButton" type="submit" value="Logout">
+                    </form>'
             ,$head);
             }
             else {
@@ -45,7 +45,7 @@
                 $content=str_replace(':commento:', '<form method="post" action="discussione.php?id=:idpagina:">
                 			<label for="area">Inserisci un commento</label>
                 			<textarea id="area" name="area"></textarea>
-                			<input type="submit" value="COMMENTA" />
+                			<input id="addCommento" type="submit" value="COMMENTA" />
                 		</form>',$content);
             else {
                 $content=str_replace(':commento:','',$content);

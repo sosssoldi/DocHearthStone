@@ -65,6 +65,7 @@ body {
 
 #info input[type="submit"] {
 	padding: 0.1em;
+	cursor: pointer;
 }
 
 #username {
@@ -200,24 +201,19 @@ body {
 	font-weight: bold;
 }
 
-#pulsanteD {
+.creazione {
 	width: 15%;
-	margin-top: 2em;
-	font-weight: bold;
-	height:4em;
-	border: none;
-	background-color: #273f83;
-	color: white;
-	border-radius: 0.5em;
+	margin: 0 auto;
 }
 
-#pulsanteG {
-	width: 15%;
-	margin-top: 2em;
+.creazione input[type="submit"] {
+	width: 100%;
+	margin-top: 4%;
 	font-weight: bold;
 	height:4em;
 	border: none;
-	background-color: #3cc667;
+	background-color: #322727;
 	color: white;
 	border-radius: 0.5em;
+	cursor: pointer;
 }

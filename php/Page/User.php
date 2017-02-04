@@ -23,10 +23,10 @@ class User implements Page {
             $head = str_replace(":login:",
             '<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
             $head = str_replace(":utente:",
-                '<div id="boxutente">
-                    <span>'.$_SESSION["username"].'</span>
-                    <a href="logout.php"><button>Logout</button></a>
-                </div>'
+            '<form id="logout" action="logout.php" method="get">
+                <span>'.$_SESSION["username"].'</span>
+                <input id="logoutButton" type="submit" value="Logout">
+            </form>'
             ,$head);
         }
         else {
@@ -44,7 +44,7 @@ class User implements Page {
 
     public function content() {
 
-		$content=file_get_contents("html/utente.html");        
+		$content=file_get_contents("html/utente.html");
 
 		if(isset($_POST['submit']) && isset($_FILES['fileToUpload']))
 			if($_FILES['fileToUpload']['tmp_name'] != "")

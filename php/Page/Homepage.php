@@ -22,10 +22,10 @@ class Homepage implements Page {
             $head = str_replace(":login:",
             '<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
             $head = str_replace(":utente:",
-                '<div id="boxutente">
+                '<form id="logout" action="logout.php" method="get">
                     <span>'.$_SESSION["username"].'</span>
-                    <a href="logout.php"><button>Logout</button></a>
-                </div>'
+                    <input id="logoutButton" type="submit" value="Logout">
+                </form>'
             ,$head);
         }
         else {
@@ -58,12 +58,12 @@ class Homepage implements Page {
     public function mostraProfilo() {
         if(isset($_SESSION["username"])) {
             $output = "<p>Ciao {$_SESSION['username']}</p>
-            <a href=\"user.php\"><button>Profilo</button></a>";
+            <form method=\"post\" action=\"user.php\"><input type=\"submit\" value=\"Profilo\"></form>";
         } else {
             $output = "<p>Entra anche tu a far parte di Doc HearthStone!</p>
-    		<a href=\"registrazione.php\"><button>Registrati</button></a>
+    		<form method=\"post\" action=\"registrazione.php\"><input type=\"submit\" value=\"Resgistrati\"></form>
     		<p>Sei gi&agrave; dei nostri?</p>
-    		<a href=\"login.php\"><button>Accedi</button></a>";
+    		<form method=\"post\" action=\"login.php\"><input type=\"submit\" value=\"Login\"></form>";
         }
         return $output;
     }
@@ -75,7 +75,7 @@ class Homepage implements Page {
         $rs = $this->executeQuery($query);
         $output = "";
         foreach ($rs as $row) {
-            $output .= "<tr><td><img class=\"classe\" src=\"images/icon/{$row['img']}.png\"></img></td>";
+            $output .= "<tr><td><img class=\"classe\" src=\"images/icon/{$row['img']}.png\" alt=\"Icona eroe: {$row['img']}\"></td>";
             $output .= "<td><a href=\"mostraMazzo.php?mazzo={$row['deck_id']}\">{$row['name']}</a></td>";
 
 			if($row['likes'] > 0)
