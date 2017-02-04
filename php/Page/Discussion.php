@@ -110,7 +110,7 @@
                         <div class="user">
 					        <img class="fotoProfilo" src="'.$row['Foto'].'" alt="Immagine profilo utente">
                             <p>'.$row['Nome'].'</p>
-                            <p>Data di entrata:</p><span>'.$row['Data'].'</span></p>
+                            <p>Data di entrata:</p><span>'.$row['Data'].'</span>
 					        <p>Interventi nel forum: '.$row['N'].'</p>
                         </div>
                         <div class="text">
@@ -146,7 +146,7 @@
                         <div class="user">
 					        <img class="fotoProfilo" src="'.$row['Foto'].'" alt="Immagine profilo utente">
                             <p>'.$row['Nome'].'</p>
-                            <p>Data di entrata:</p><span>'.$row['Data'].'</span></p>
+                            <p>Data di entrata:</p><span>'.$row['Data'].'</span>
 					        <p>Interventi nel forum: '.$row['N'].'</p>
                         </div>
                         <div class="text">
