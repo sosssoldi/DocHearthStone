@@ -73,7 +73,9 @@
 
             $content = $this->commentoUserLoggato($content);
 
-            $content=str_replace(':nomesection:',$_GET['nome'],$content);
+            $nome=str_replace(' ','%20',$_GET['nome']);
+            
+            $content=str_replace(':nomesection:',$nome,$content);
 
             echo $content;
         }
