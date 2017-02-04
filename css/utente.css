@@ -207,13 +207,13 @@ body {
 }
 
 .creazione input[type="submit"] {
+	margin-top: 2em;
 	width: 100%;
-	margin-top: 4%;
-	font-weight: bold;
-	height:4em;
-	border: none;
-	background-color: #322727;
-	color: white;
-	border-radius: 0.5em;
+	height: 3.5em;
 	cursor: pointer;
+	font-weight: bold;
+	color: black;
+	background-color: #f1c6c2;
+	border: 0.2em solid black;
+	border-radius: 0.5em;
 }

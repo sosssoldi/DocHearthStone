@@ -75,22 +75,35 @@ td a {
 	 color: blue;
 }
 
-form {
+#content form {
 	margin-top: 2em;
 }
 
-label {
+#content label {
 	font-size: 1.2em;
 	font-weight: bold;
 	padding-bottom: 0.2em;
 }
 
-textarea {
+#content textarea {
 	min-width: 90%;
 	max-width: 90%;
 	display: block;
 	min-height:6em;
 	max-height: 6em;
+}
+
+#content input[type="submit"] {
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+	margin-top: 2em;
+	margin-left: 40%;
+	width: 20%;
+	height: 3em;
+	cursor: pointer;
+	font-weight: bold;
+	color: #fff;
+	background-color: #292c3e;
+	border: 0.2em solid #fff;
 }
 
 #addTopic {
