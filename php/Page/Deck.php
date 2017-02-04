@@ -152,6 +152,35 @@
 
             return $final;
         }
-
+		
+		public function eliminaMazzo($id) {
+			
+			$query = 'SELECT user_name FROM deck WHERE user_name = "'.$_SESSION['username'].'" AND deck_id = '.$id;
+			$this->db->query($query);
+			$rs = $this->db->resultset();
+			
+			//Se la query ha una riga allora l'username ha anche creato la guida
+			if($this->db->rowCount() > 0) {
+				//cancello i like in deck_like
+				$query = 'DELETE FROM deck_like WHERE deck_id = '.$id;
+				$this->db->query($query);
+				$this->db->execute();
+				
+				//cancello i suggest legati al mazzo
+				$query = 'DELETE FROM suggest WHERE deck_id = '.$id;
+				$this->db->query($query);
+				$this->db->execute();
+				
+				//cancello le carte legate al deck da deck_card
+				$query = 'DELETE FROM card_deck WHERE deck_id = '.$id;
+				$this->db->query($query);
+				$this->db->execute();
+				
+				//cancello il deck
+				$query = 'DELETE FROM deck WHERE deck_id = '.$id;
+				$this->db->query($query);
+				$this->db->execute();
+			}
+		}
     }
 ?>

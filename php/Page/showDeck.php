@@ -67,8 +67,11 @@
             $content=$this->bottoni($content);
 
             $rs=$this->trovaInfo($_GET['mazzo']);
+			
+			if(count($rs) == 0)
+				header("Location: mazzi.php");
+			
             $content=str_replace(':NomeEroe:',$rs[0]['Hero'],$content);
-
             $content=str_replace(':valutazioneMazzo:',$rs[0]['Likes'],$content);
             $content=str_replace(':nomeMazzo:',$rs[0]['Nome'],$content);
             $content=str_replace(':creazioneMazzo:',$rs[0]['Data'],$content);
