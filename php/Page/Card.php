@@ -129,7 +129,7 @@ class Card implements Page {
 
 		//nome carta
 		if(isset($_GET['nome']) AND $_GET['nome'] != '')
-			$query .= ' AND name = "'.$_GET['nome'].'"';
+			$query .= ' AND card.name LIKE "%'.$_GET['nome'].'%"';
 
 		//costo in mana della carta
 		if(isset($_GET['costo']) AND $_GET['costo'] != '')
@@ -181,7 +181,7 @@ class Card implements Page {
 			$query .= ' AND type = "'.$_GET['classe'].'"';
 
 		$query .= ' GROUP BY card.name, c_type, mana, attack, health;';
-
+		
 		return $query;
 	}
 
