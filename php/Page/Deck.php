@@ -40,10 +40,10 @@
                 $head = str_replace(":login:",
                 '<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
 				$head = str_replace(":utente:",
-                '<div id="boxutente">
-                    <span>'.$_SESSION["username"].'</span>
-                    <a href="logout.php"><button>Logout</button></a>
-                </div>'
+                    '<form id="logout" action="logout.php" method="get">
+                        <span>'.$_SESSION["username"].'</span>
+                        <input id="logoutButton" type="submit" value="Logout">
+                    </form>'
             ,$head);
             }
             else {
@@ -63,15 +63,16 @@
             $contenuto=file_get_contents("html/mazzi.html");
             $err = 0;
             if(isset($_GET['nome'])) {
-                if(strstr($_GET['nome'], '>') || strstr($_GET['nome'], '<') || strstr($_GET['nome'], "'"))
+                if(strstr($_GET['nome'], '>') || strstr($_GET['nome'], '<'))
                     $err = 1;
 
+                $nome = $_GET["nome"];
                 $_GET['nome'] = str_replace("<", "&lt;", $_GET["nome"]);
                 $_GET['nome'] = str_replace(">", "&gt;", $_GET["nome"]);
                 $_GET['nome'] = str_replace("'", "\'", $_GET["nome"]);
 
     			$contenuto = str_replace(':nomeMazzo:',
-    			'<input type="text" name="nome" value="'.$_GET['nome'].'"/>', $contenuto);
+    			'<input type="text" name="nome" value="'.$nome.'"/>', $contenuto);
     		}
     		else {
     			$contenuto = str_replace(':nomeMazzo:',
@@ -153,8 +154,6 @@
                     if(isset($_GET['classe']) && $_GET['classe']!="")
                         $query.="WHERE H.type LIKE '".$_GET['classe']."' ";
 
-            $query.='LIMIT 40';
-
             if(isset($_GET['costoMin']) && $_GET['costoMin'] != "")
                 $costomin=$_GET['costoMin'];
             else
@@ -177,7 +176,7 @@
                 if ($costoDeck[0]['costo'] < $costomin && $costoDeck[0]['costo'] > $costomax) {
                     $final .= '<tr>';
                     $final .= '<td><a href="mostraMazzo.php?mazzo='.$row['Id'].'">'.$row['NomeDeck'].'</a></td>';
-                    $final .= '<td class="'.$row['Nome'].'">'.$row['Nome'].'</td>';
+                    $final .= '<td class="'.$row["Nome"].'">'.$row['Nome'].'</td>';
                     $final .= '<td>'.$costoDeck[0]['costo'].'</td>';
 
 					if($row['Likes'] > 0)

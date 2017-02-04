@@ -22,11 +22,11 @@
                 $head = str_replace(":login:",
                 '<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
 				$head = str_replace(":utente:",
-                '<div id="boxutente">
-                    <span>'.$_SESSION["username"].'</span>
-                    <a href="logout.php"><button>Logout</button></a>
-                </div>'
-                ,$head);
+					'<form id="logout" action="logout.php" method="get">
+	                    <span>'.$_SESSION["username"].'</span>
+	                    <input id="logoutButton" type="submit" value="Logout">
+	                </form>'
+				,$head);
             }
             else
             {
@@ -50,7 +50,7 @@
                 $content=str_replace(':sezioneCommenti:','',$content);
             } else {
                 $content=str_replace(':contenuto:','',$content);
-                $content=str_replace(':sezioneCommenti:','<h3 class="centrato">La ricerca non ha prodotto risultati.</h3>',$content);
+                $content=str_replace(':sezioneCommenti:','<p class="centrato">La ricerca non ha prodotto risultati.</p>',$content);
             }
             $content=str_replace(':nomesection:','',$content);
 
@@ -61,8 +61,11 @@
 
             $content=file_get_contents("html/sezioneForum.html");
 
-            if (isset($_POST['Titolo']) && $_POST['Titolo']!="")
+            if (isset($_POST['Titolo']) && $_POST['Titolo']!="") {
+                $_POST["Titolo"]=htmlspecialchars($_POST["Titolo"]);
+                $_POST["Titolo"]=str_replace("'","\'",$_POST["Titolo"]);
                 $this->InserisciTopic();
+            }
 
             $content=str_replace(':nomesezione:',$_GET['nome'],$content);
 
@@ -83,7 +86,7 @@
             		<label id="labelAdd">Aggiungi una Discussione</label>
             		<div class="lab">
             			<label id="labelTit" for="titolo">Titolo</label>
-            			<input type="text" id="titolo" name="Titolo">
+            			<input type="text" id="titolo" required autocomplete="off" name="Titolo">
             		</div>
             		<div class="lab">
             			<label id="labelText" for="area">Descrizione</label>
@@ -144,8 +147,14 @@
         }
 
         public function getRicerca() {
+            if($_GET["barra"]=="")
+                header("Location: forum.php");
 
             $pezzi = explode(" ", $_GET['barra']);
+            foreach ($pezzi as &$p) {
+                $p = htmlspecialchars($p);
+                $p = str_replace("'","\'",$p);
+            }
             $resultArray = array();
 
             $query = 'SELECT T.topic_id as Id, T.title as Titolo, T.user_name as Creatore, T.num_comments as N
@@ -190,6 +199,10 @@
         //inserisce il nuovo topic nella tabella topic
         public function InserisciTopic()
         {
+            if(isset($_POST["Commento"])) {
+                $_POST["Commento"]=htmlspecialchars($_POST["Commento"]);
+                $_POST["Commento"]=str_replace("'","\'",$_POST["Commento"]);
+            }
             $data = date ("Y-m-d G:i");
             $id=$this->getId();
             $query='INSERT INTO topic VALUES ("","'.$_POST['Titolo'].'","'.$_POST['Commento'].'","'.$data.'","'.$_SESSION['username'].'",0,'.$id.')';

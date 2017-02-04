@@ -1,8 +1,8 @@
 <div id="breadcrumb">Ti trovi in: Mazzi</div>
-<img id="imgHeader" src="images/mazzi.png" alt="sfondo"></img>
+<img id="imgHeader" src="images/mazzi.png" alt="sfondo">
 <div id="content">
 	<h2>Tutti i mazzi di Doc HearthStone</h2>
-	<form method="get" action="mazzi.php">
+	<form id="ricercaMazzi" method="get" action="mazzi.php">
 		<div id="nome">
 			<h3>NOME</h3>
 			:nomeMazzo:
@@ -33,16 +33,18 @@
 				:costoMin:
 			</div>
 		</div>
-		<input type="submit" value="FILTRA" />
-		:errore:
+		<input id="buttRicerca" type="submit" value="FILTRA" />
 	</form>
+	:errore:
 	<table>
 		<thead>
-			<th>Nome</th>
-			<th>Classe</th>
-			<th>Costo</th>
-			<th>Rating</th>
-			<th>Data creazione</th>
+			<tr>
+				<th class="nomeDeck">Nome</th>
+				<th class="classeDeck">Classe</th>
+				<th class="costoDeck">Costo</th>
+				<th class="ratingDeck">Rating</th>
+				<th class="dataDeck">Data creazione</th>
+			</tr>
 		</thead>
 		<tbody>
 			:tabellamazzi:

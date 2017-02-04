@@ -10,6 +10,10 @@ use \php\Database\MySQLConnection\MySQLConnection;
 class Card implements Page {
 
 	private $db = null;
+	private $errore = array(
+						"",
+						"Errore: I dati inseriti non sono corretti",
+	);
 
 	public function __construct() {
 		$this->db = new Database(new MySQLConnection());
@@ -24,11 +28,11 @@ class Card implements Page {
             $head = str_replace(':login:',
 			'<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
 			$head = str_replace(":utente:",
-                '<div id="boxutente">
-                    <span>'.$_SESSION["username"].'</span>
-                    <a href="logout.php"><button>Logout</button></a>
-                </div>'
-            ,$head);
+				'<form id="logout" action="logout.php" method="get">
+					<span>'.$_SESSION["username"].'</span>
+					<input id="logoutButton" type="submit" value="Logout">
+				</form>'
+			,$head);
         }
         else {
             $head = str_replace(':login:',
@@ -49,11 +53,18 @@ class Card implements Page {
 		$contenuto = file_get_contents("html/carte.html");
 
 		//controllo se qualche campo di $_GET è stato settato
-
+		$err = 0;
 		//nome
 		if(isset($_GET['nome'])) {
+			if(strstr($_GET['nome'], '>') || strstr($_GET['nome'], '<'))
+				$err = 1;
+
+			$nome = $_GET["nome"];
+			$_GET['nome'] = str_replace("<", "&lt;", $_GET["nome"]);
+			$_GET['nome'] = str_replace(">", "&gt;", $_GET["nome"]);
+			$_GET['nome'] = str_replace("'", "\'", $_GET["nome"]);
 			$contenuto = str_replace(':nomeCarta:',
-			'<input type="text" name="nome" value="'.$_GET['nome'].'"/>', $contenuto);
+			'<input type="text" name="nome" value="'.$nome.'"/>', $contenuto);
 		}
 		else {
 			$contenuto = str_replace(':nomeCarta:',
@@ -61,59 +72,141 @@ class Card implements Page {
 		}
 
 		//costo
+		$cost = array("","1","2","3","4","5","6","7+");
+		$found = 0;
 		if(isset($_GET['costo'])) {
+			foreach ($cost as $c)
+				if($c == $_GET["costo"])
+					$found = 1;
+			if($found == 0)
+				$err = 1;
 			$contenuto = str_replace('<option>'.$_GET['costo'].'</option>',
 			'<option selected>'.$_GET['costo'].'</option>', $contenuto);
 		}
 
 		//avventura ed espansione
+		$adventures = array(
+				"",
+				"Set Base",
+				"Classico",
+				"Naxxramas",
+				"Massiccio Roccianera",
+				"Lega degli Esploratori",
+				"Karazhan",
+				"Goblin vs Golem",
+				"Sussurro degli Dei Antichi",
+				"I bassifondi di Meccania",
+				"Il Gran Torneo"
+		);
+		$found = 0;
 		if(isset($_GET['avventura'])) {
+			foreach ($adventures as $adv)
+				if($adv == $_GET["avventura"])
+					$found = 1;
+			if($found == 0)
+				$err = 1;
 			$contenuto = str_replace('<option>'.$_GET['avventura'].'</option>',
 			'<option selected>'.$_GET['avventura'].'</option>', $contenuto);
 		}
 
 		//rarita
+		$rarity = array(
+				"",
+				"Comune",
+				"Rara",
+				"Epica",
+				"Leggendaria"
+		);
+		$found = 0;
 		if(isset($_GET['rarita'])) {
+			foreach ($rarity as $r)
+				if($r == $_GET["rarita"])
+					$found = 1;
+			if($found == 0)
+				$err = 1;
 			$contenuto = str_replace('<option>'.$_GET['rarita'].'</option>',
 			'<option selected>'.$_GET['rarita'].'</option>', $contenuto);
 		}
 
 		//tipo
+		$type = array(
+				"",
+				"Servitore",
+				"Magia",
+				"Arma"
+		);
+		$found = 0;
 		if(isset($_GET['tipo'])) {
+			foreach ($type as $t)
+				if($t == $_GET["tipo"])
+					$found = 1;
+			if($found == 0)
+				$err = 1;
 			$contenuto = str_replace('<option>'.$_GET['tipo'].'</option>',
 			'<option selected>'.$_GET['tipo'].'</option>', $contenuto);
 		}
 
 		//classe
+		$heroes = array("",
+				"Mago",
+				"Sacerdote",
+				"Druido",
+				"Cacciatore",
+				"Guerriero",
+				"Paladino",
+				"Stregone",
+				"Sciamano",
+				"Ladro"
+		);
+		$found = 0;
 		if(isset($_GET['classe'])) {
+			foreach ($heroes as $h)
+				if($h == $_GET["classe"])
+					$found = 1;
+			if($found == 0)
+				$err = 1;
 			$contenuto = str_replace('<option>'.$_GET['classe'].'</option>',
 			'<option selected>'.$_GET['classe'].'</option>', $contenuto);
 		}
 
-		//prendo tutte le carte
-		$query = $this->generaQuery();
-		$this->db->query($query);
-		$rs = $this->db->resultset();
+		$contenuto = str_replace(":errore:","<p class=\"errore\">".$this->errore[$err]."</p>",$contenuto);
+		if($err == 0) {
+			//prendo tutte le carte
+			$query = $this->generaQuery();
+			$this->db->query($query);
+			$rs = $this->db->resultset();
 
-		$riga = '';
+			$riga = '';
 
-		foreach($rs as $row) {
-			$riga .= '<tr>';
-			$riga .= '<td class="nomeCarta"><span class="'.$row['rarity'].'" onmouseover="showImg(this, \''.$row["id"].'\');" onmouseout="hideImg(this);">'.$row['name'].'</span><span class="descrizione">'.$row['description'].'</span></td>';
-			$riga .= '<td class="tipoCarta">'.$row['c_type'].'</td>';
+			foreach($rs as $row) {
+				$riga .= '<tr>';
+				$riga .= '<td class="nomeCarta"><span class="'.$row['rarity'].'" onmouseover="showImg(this, \''.$row["id"].'\');" onmouseout="hideImg(this);">'.$row['name'].'</span><span class="descrizione">'.$row['description'].'</span></td>';
+				$riga .= '<td class="tipoCarta">'.$row['c_type'].'</td>';
 
-			if($row['numClassi'] == 9)
-				$riga .= '<td class="classeCarta">Neutrale</td>';
-			else
-				$riga .= '<td class="classeCarta">'.$this->stampaClassi($row['name']).'</td>';
+				if($row['numClassi'] == 9)
+					$riga .= '<td class="classeCarta">Neutrale</td>';
+				else
+					$riga .= '<td class="classeCarta">'.$this->stampaClassi($row['name']).'</td>';
 
-			$riga .= '<td class="mana">'.$row['mana'].'</td>';
-			$riga .= '<td class="attacco">'.$row['attack'].'</td>';
-			$riga .= '<td class="vita">'.$row['health'].'</td>';
-			$riga .= '</tr>';
+				$avventura = $row['expansion_name'];
+
+				if($avventura == 'EXPERT1')
+					$avventura = 'Classico';
+
+				if($avventura == 'CORE')
+					$avventura = "Set Base";
+
+				$riga .= '<td class="espansioneCarta">'.$avventura.'</td>';
+				$riga .= '<td class="mana">'.$row['mana'].'</td>';
+				$riga .= '<td class="attacco">'.$row['attack'].'</td>';
+				$riga .= '<td class="vita">'.$row['health'].'</td>';
+				$riga .= '</tr>';
+			}
+			$contenuto = str_replace(':corpoTabella:', $riga, $contenuto);
 		}
-
-		$contenuto = str_replace(':corpoTabella:', $riga, $contenuto);
+		else {
+			$contenuto = str_replace(':corpoTabella:', "", $contenuto);
+		}
 
 		//content del documento
 		echo $contenuto;
@@ -125,7 +218,7 @@ class Card implements Page {
 
 	private function generaQuery() {
 
-		$query = 'SELECT card.card_id as id, card.name, rarity, c_type, mana, attack, health, description, COUNT(card.name) as numClassi FROM hero, card, hero_card WHERE hero.hero_id = hero_card.hero_id AND card.card_id = hero_card.card_id';
+		$query = 'SELECT card.card_id as id, card.name, rarity, c_type, mana, attack, health, description, expansion_name, COUNT(card.name) as numClassi FROM hero, card, hero_card WHERE hero.hero_id = hero_card.hero_id AND card.card_id = hero_card.card_id';
 
 		//nome carta
 		if(isset($_GET['nome']) AND $_GET['nome'] != '')
@@ -142,6 +235,12 @@ class Card implements Page {
 		//avventura/espansione
 		if(isset($_GET['avventura']) AND $_GET['avventura'] != '') {
 			$avventura='';
+			if($_GET['avventura'] == "Set Base")
+				$avventura = 'CORE';
+
+			if($_GET['avventura'] == "Classico")
+				$avventura = 'EXPERT1';
+
 			if($_GET['avventura'] == "Karazhan")
 				$avventura='KARA';
 
@@ -165,8 +264,9 @@ class Card implements Page {
 
 			if($_GET['avventura'] == "Il Gran Torneo")
 				$avventura='TGT';
+
 			if ($avventura!='')
-				$query .= ' AND (adventure_name = "'.$avventura.'" OR expansion_name = "'.$avventura.'")';
+				$query .= ' AND expansion_name = "'.$avventura.'"';
 		}
 
 		//rarita

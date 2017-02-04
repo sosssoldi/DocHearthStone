@@ -1,26 +1,29 @@
 <div id="breadcrumb"> Ti trovi in: Descrizione mazzo</div>
-<img id="imgHeader" src="images/mazzi.png"></img>
+<img id="imgHeader" src="images/mazzi.png" alt="sfondo">
 <div id="content">
 	<div id="mazzo">
-		<div id="sopra">
+		<div id="caratteristiche">
 			<div id="img">
 	  			<img id="imgClasse" src="images/icon/:NomeEroe:.png" alt="Immagine classe"></img>
 	  			<div id="rating">
-					:bottone+:
-	    			<div id="valutazione">:valutazioneMazzo:</div>
-					:bottone-:
+					:valutazioneMazzo:
 				</div>
 			</div>
 			<div id="descrizione">
 				<h3>:nomeMazzo:</h3>
-				<h4><span>Costo creazione:</span> :costoMazzo:</h4>
-				<h4><span>Data creazione:</span> :creazioneMazzo:</h4>
-				<h4><span>Voti totali:</span> :votiTotali:</h4>
+				<div id="costo">
+					<h4>Costo creazione:</h4>
+					<span> :costoMazzo:</span>
+				</div>
+				<div id="creazione">
+					<h4>Data creazione:</h4>
+					<span> :creazioneMazzo:</span>
+				</div>
+				<div id="voti">
+					<h4><span>Voti totali:</h4>
+					<span> :votiTotali:</span>
+				</div>
 			</div>
-		</div>
-		<div id="spiegazione">
-			<h3>Descrizione</h3>
-			<h4>:descrizioneMazzo:</h4>
 		</div>
 		<div id="carte">
 			<table>
@@ -34,6 +37,10 @@
 					:tabellacarte:
 				</tbody>
 			</table>
+		</div>
+		<div id="spiegazione">
+			<h3>Descrizione</h3>
+			<p>:descrizioneMazzo:</p>
 		</div>
 	</div>
 	<div id="commenti">

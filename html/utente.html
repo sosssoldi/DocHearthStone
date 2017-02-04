@@ -2,7 +2,7 @@
 <div id="content">
 	<h2 id="infoTitle">Profilo di: :nom: :cog:</h2>
 	<div id="info">
-		<img id="fotoProfilo" src=":immagineProfilo:"></img>
+		<img id="fotoProfilo" src=":immagineProfilo:" alt="Immagine del profilo">
 		<div id="username">
 			<h3>Username:</h3>
 			<span class="valore">:user:</span>
@@ -18,7 +18,7 @@
 		<form action="user.php" method="post" enctype="multipart/form-data">
 			<h3>Modifica immagine profilo:</h3>
 			<input type="file" name="fileToUpload" id="fileToUpload" />
-			<input type="submit" value="Modifica" name="submit" />
+			<input type="submit" value="Carica" name="submit" />
 		</form>
 		:erroreImmagine:
 	</div>
@@ -28,7 +28,7 @@
 				<thead>
 					<tr>
 						<th class="nome">Nome mazzo</th>
-						<th classs="classe">Classe</th>
+						<th class="classe">Classe</th>
           				<th class="voto">Likes</th>
 						<th class="elimina">Elimina</th>
 					</tr>
@@ -38,7 +38,9 @@
 			</tbody>
 		</table>
 	</div>
-	<a href="scegliClasse.php" class="bottoni"><button type="submit" id="pulsanteD" name="newDeck">Crea un nuovo mazzo</button></a>
+	<form class="creazione" method="post" action="creaMazzo.php">
+		<input type="submit" value="Crea mazzo"/>
+	</form>
 	<h2 id="myguideTitle">Le mie Guide</h2>
 	<div id="myguide">
 		<table>
@@ -54,5 +56,6 @@
 			</tbody>
 		</table>
 	</div>
-	<a href="aggGuida.php" class="bottoni"><button type="submit" id="pulsanteG" name="newGuida" >Crea una nuova guida</button></a>
-</div>
+	<form class="creazione" method="post" action="aggGuida.php">
+		<input type="submit" value="Crea guida"/>
+	</form></div>

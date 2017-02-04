@@ -23,10 +23,10 @@ class User implements Page {
             $head = str_replace(":login:",
             '<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
             $head = str_replace(":utente:",
-                '<div id="boxutente">
-                    <span>'.$_SESSION["username"].'</span>
-                    <a href="logout.php"><button>Logout</button></a>
-                </div>'
+            '<form id="logout" action="logout.php" method="get">
+                <span>'.$_SESSION["username"].'</span>
+                <input id="logoutButton" type="submit" value="Logout">
+            </form>'
             ,$head);
         }
         else {
@@ -44,7 +44,7 @@ class User implements Page {
 
     public function content() {
 
-		$content=file_get_contents("html/utente.html");        
+		$content=file_get_contents("html/utente.html");
 
 		if(isset($_POST['submit']) && isset($_FILES['fileToUpload']))
 			if($_FILES['fileToUpload']['tmp_name'] != "")
@@ -93,7 +93,7 @@ class User implements Page {
         foreach($rs as $row) {
             $riga .= '<tr>';
 			$riga .= '<td><a href="mostraMazzo.php?mazzo='.$row['deck_id'].'">'.$row['d'].'</a></td>';
-            $riga .= '<td><img class="classe" src="images/icon/'.$row['image'].'.png"></td>';
+            $riga .= '<td><img class="classe" src="images/icon/'.$row['image'].'.png" alt="'.$row['image'].'"></td>';
 
 			if($row['likes'] > 0)
 				$riga .= '<td class="likespos">+'.$row['likes'].'</td>';
@@ -139,7 +139,7 @@ class User implements Page {
         foreach($rs as $row) {
             $riga .= '<tr>';
 			$riga .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
-            $riga .= '<td><img class="classe" src="images/icon/favIcon/favIcon48.png" alt=Generale"></td>';
+            $riga .= '<td><img class="classe" src="images/icon/favIcon/favIcon48.png" alt="Generale"></td>';
 			$riga .= '<td><a href="eliminaGuida.php?guida='.$row['guide_id'].'"><img class="delete" src="images/icon/remove.png" alt="Elimina"></a></td>';
             $riga .= '</tr>';
         }

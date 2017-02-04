@@ -1,7 +1,7 @@
 <?php
 	session_start();
     include_once 'autoloader.php';
-    use \php\Page\aggGuida;
+    use \php\Page\AggGuida;
 
 	if(!isset($_SESSION["username"]))
 		header("Location: login.php");

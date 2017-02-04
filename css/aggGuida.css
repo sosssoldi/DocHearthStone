@@ -51,7 +51,7 @@ p {
 	margin-bottom: 1%;
 }
 
-form {
+#addGuida {
 	width: 80%;
 	margin: 0 auto;
 	border-radius: 1em;
@@ -103,12 +103,14 @@ select {
 }
 
 #butt {
-	margin-top: 3%;
-	margin-left: 42.5%;
-	padding: 0.7em;
-	border: 0.15em double orange;
-	border-radius: 0.5em;
-	width: 15%;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+	margin-top: 2em;
+	margin-left: 40%;
+	width: 20%;
+	height: 3em;
+	cursor: pointer;
 	font-weight: bold;
-	font-size: 1.0em;
+	color: #fff;
+	background-color: #494c5a;
+	border: 0.2em solid #fff;
 }

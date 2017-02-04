@@ -133,8 +133,7 @@ fieldset input[type="radio"] {
 }
 
 .labelTit {
-
-	font-size: 1.4em;
+	font-size: 1.1em;
 	display: block;
 	margin-left: 7%;
 	margin-right: 2%;
@@ -162,13 +161,15 @@ fieldset input[type="radio"] {
 }
 
 #crea {
-	color: #fff;
-	height: 2em;
-	width: 15%;
+	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
 	margin-top: 2em;
-	margin-left: 42%;
-	font-size: 1.5em;
-	background-color: #0e0d0b;
+	margin-left: 45%;
+	width: 15%;
+	height: 3em;
+	cursor: pointer;
+	font-weight: bold;
+	color: #fff;
+	background-color: #262629;
+	border: 0.2em solid #fff;
 	border-radius: 0.4em;
-	border: none;
 }

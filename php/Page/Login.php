@@ -68,7 +68,6 @@
             else if ((isset($_POST["user"]) && ($_POST["user"])=="")&&
                 (isset($_POST["password"]) && ($_POST["password"])==""))
                     $this->status = 3;
-
         }
 
         private function cambiaLabel($c) {
@@ -93,6 +92,9 @@
         }
 
         private function provoLogin(){
+            $_POST["user"] = str_replace("'","\'",$_POST["user"]);
+            $_POST["password"] = str_replace("'","\'",$_POST["password"]);
+
             $pw = hash("sha256",$_POST["password"]);
 
             $query = "SELECT username, name, surname, entry_date, photo_id FROM user
