@@ -155,7 +155,6 @@ body {
 #commenti {
 	margin: 4em auto 2em auto;
 	width: 90%;
-	padding-bottom: 5%;
 }
 
 #commenti h2 {
@@ -166,8 +165,7 @@ body {
 #commenti table {
 	margin: 2em auto 0 auto;
 	border-collapse: collapse;
-	width:100%;
-	margin-bottom: 10%;
+	width: 100%;
 }
 
 #commenti th {
@@ -225,5 +223,4 @@ form input[type="submit"] {
 	width: 20%;
 	height: 3em;
 	font-weight: bold;
-	cursor: pointer;
 }
