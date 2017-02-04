@@ -68,7 +68,7 @@
 
             $rs=$this->trovaInfo($_GET['mazzo']);
 
-			if(count($rs) == 0)
+			if(count($rs) == 0 && !is_numeric($_GET["mazzo"]))
 				header("Location: mazzi.php");
 
             $content=str_replace(':NomeEroe:',$rs[0]['Hero'],$content);
@@ -100,6 +100,8 @@
 
             if (isset($_POST['commento']) && $_POST['commento']!="")
             {
+                $_POST["commento"]=htmlspecialchars($_POST["commento"]);
+                $_POST["commento"]=str_replace("'","\'",$_POST["commento"]);
                 $query='INSERT INTO suggest VALUES ("","'.$_POST['commento'].'","'.$_SESSION['username'].'",'.$_GET['mazzo'].')';
                 $this->db->query($query);
                 $this->db->execute($query);
@@ -139,7 +141,7 @@
 
                 switch ($row['Tipo']) {
                     case 'EXPERT1':
-                        $row['Tipo']='Set Base';
+                        $row['Tipo']='Classico';
                         break;
                     case 'CORE':
                         $row['Tipo']='Set Base';

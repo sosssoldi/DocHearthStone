@@ -63,15 +63,16 @@
             $contenuto=file_get_contents("html/mazzi.html");
             $err = 0;
             if(isset($_GET['nome'])) {
-                if(strstr($_GET['nome'], '>') || strstr($_GET['nome'], '<') || strstr($_GET['nome'], "'"))
+                if(strstr($_GET['nome'], '>') || strstr($_GET['nome'], '<'))
                     $err = 1;
 
+                $nome = $_GET["nome"];
                 $_GET['nome'] = str_replace("<", "&lt;", $_GET["nome"]);
                 $_GET['nome'] = str_replace(">", "&gt;", $_GET["nome"]);
                 $_GET['nome'] = str_replace("'", "\'", $_GET["nome"]);
 
     			$contenuto = str_replace(':nomeMazzo:',
-    			'<input type="text" name="nome" value="'.$_GET['nome'].'"/>', $contenuto);
+    			'<input type="text" name="nome" value="'.$nome.'"/>', $contenuto);
     		}
     		else {
     			$contenuto = str_replace(':nlogoutButtonazzo:',

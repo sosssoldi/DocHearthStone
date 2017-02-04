@@ -139,21 +139,27 @@ body {
 }
 
 .nomeCarta {
-	width: 34%;
+	width: 35%;
 	padding-left: 0.8em;
 	padding-right: 0.3em;
 }
 
 .tipoCarta {
-	width: 11%;
-	padding-left: 0.8em;
-	padding-right: 0.3em;
+	width: 13%;
+	text-align: center;
+	padding: 0.3em;
+}
+
+.espansioneCarta {
+	width: 10%;
+	padding: 0.3em;
+	text-align: center
 }
 
 .classeCarta {
-	width: 31%;
-	padding-left: 0.8em;
-	padding-right: 0.3em;
+	width: 18%;
+	padding: 0.3em;
+	text-align: center;
 }
 
 .valoreCarta {
@@ -220,4 +226,11 @@ body {
 
 .descrizione {
 	font-size: 1em;
+}
+
+.errore {
+	color: red;
+	text-align: center;
+	font-weight: bold;
+	padding: 1em;
 }
