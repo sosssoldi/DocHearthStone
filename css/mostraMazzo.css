@@ -14,7 +14,6 @@ body {
 	width: 45%;
 }
 
-
 #content {
 	width: 75%;
 	margin: 0 auto;
@@ -32,22 +31,19 @@ body {
 	overflow: auto;
 }
 
-#sopra {
-  	background-color: #fff;
-	border-radius: 0.5em;
-	border: 0.2em solid #273f83;
-  	width: 47%;
-  	margin-left: 3%;
-  	overflow: auto;
-  	padding-bottom: 0.5em;
-  	padding-top: 0.5em;
+#caratteristiche {
+	width: 40%;
+	margin-left: 3%;
+	margin-bottom: 2%;
 	float: left;
+	border: 0.2em solid #273f83;
+	border-radius: 0.6em;
+	padding: 1em;
 }
 
 #img{
-  	margin: 2em 0 2em 3%;
-  	float: left;
-  	width: 20%;
+	width: 30%;
+	float: left;
 }
 
 #imgClasse {
@@ -70,60 +66,46 @@ body {
 }
 
 #descrizione {
-  	width: 70%;
-  	word-wrap: break-word;
-	text-align: center;
-	margin:2em 0 2em 25%;
+	width: 64%;
+	margin-left: 35%;
 }
 
 #descrizione h3 {
-  	font-weight: bold;
-	padding-top: 0.5em;
-	padding-bottom: 1em;
+	font-size: 1.35em;
 }
 
 #descrizione h4 {
-  	padding-top: 1em;
-  	font-weight: normal;
+	display: inline-block;
+	font-size: 1.15em;
 }
 
-#descrizione h4 span {
-  font-weight: bold;
-  color:#273f83;
+#descrizione div {
+	margin-top: 20%;
+	margin-bottom: 5%;
 }
 
 #carte {
-  margin-left: 52%;
-  width: 45%;
+	width: 48%;
+	margin-left: 50%;
 }
 
 #carte table {
-	margin: 0 auto;
-	text-align: center;
 	border-collapse: collapse;
-	width: 90%;
-}
-
-#carte table thead {
-	font-weight: bold;
-	font-size: 1em;
-	background-color: #fb9313;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
 }
 
 #carte table th {
-	border: 0.1em solid gray;
-	padding: 0.25em 0.15em 0.25em 0.15em;
-	font-size: 0.9em;
+	border: 0.1em solid black;
+	padding: 0.2em;
+	color: white;
+	background-color: #111f42;
 }
 
 #carte table td {
-	border: 0.1em solid gray;
-	padding: 0.4em;
-	font-size: 0.8em;
-}
-
-#carte table td a {
-	text-decoration: none;
+	padding: 0.2em;
+	border: 0.1em solid black;
 }
 
 .Leggendaria {
@@ -157,20 +139,17 @@ body {
 }
 
 #spiegazione {
-	float: left;
-	width: 45%;
-	margin-left: 5%;
-	word-wrap: break-word;
-	margin-top: 2em;
+	clear: both;
+	width: 90%;
+	margin: 5% auto 6% auto;
 }
 
 #spiegazione h3 {
-	text-align: left;
-	color:#273f83;
+	font-size: 1.2em;
 }
 
-#spiegazione h4 {
-	font-weight: normal;
+#spiegazione p {
+	margin-top: 1%;
 }
 
 #commenti {
