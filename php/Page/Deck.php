@@ -176,7 +176,7 @@
                 if ($costoDeck[0]['costo'] < $costomin && $costoDeck[0]['costo'] > $costomax) {
                     $final .= '<tr>';
                     $final .= '<td><a href="mostraMazzo.php?mazzo='.$row['Id'].'">'.$row['NomeDeck'].'</a></td>';
-                    $final .= '<td>'.$row['Nome'].'</td>';
+                    $final .= '<td class="'.$row["Nome"].'">'.$row['Nome'].'</td>';
                     $final .= '<td>'.$costoDeck[0]['costo'].'</td>';
 
 					if($row['Likes'] > 0)
