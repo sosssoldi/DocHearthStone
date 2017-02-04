@@ -1,48 +1,266 @@
 <?php
-namespace php\Page;
+	namespace php\Page;
 
-include_once "Page.php";
+	include_once "Page.php";
 
-use \php\Database\Database;
-use \php\Database\MySQLConnection\MySQLConnection;
+	use \php\Database\Database;
+	use \php\Database\MySQLConnection\MySQLConnection;
 
-class createDeck implements Page {
+	class createDeck implements Page {
 
-	private $db;
+		private $db;
 
-	public function __construct() {
-		$this->db = new Database(new MySQLConnection());
-	}
-
-	public function header() {
-		$head = file_get_contents("html/header.html");
-
-		//controllo utente loggato
-		if(isset($_SESSION["username"])) {
-			$head = str_replace(":login:",
-			'<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
-			$head = str_replace(":utente:",
-			'<div id="boxutente">
-				<span>'.$_SESSION["username"].'</span>
-				<a href="logout.php"><button>Logout</button></a>
-			</div>'
-			,$head);
-		}
-		else {
-			$head = str_replace(":login:",
-			'<li lang="en"><a href="login.php">LOGIN</a></li>', $head);
-			$head = str_replace(":utente:",'',$head);
+		public function __construct() {
+			$this->db = new Database(new MySQLConnection());
 		}
 
-		echo $head;
+		public function header() {
+			$head = file_get_contents("html/header.html");
+
+			//controllo utente loggato
+			if(isset($_SESSION["username"])) {
+				$head = str_replace(":login:",
+				'<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
+				$head = str_replace(":utente:",
+				'<div id="boxutente">
+					<span>'.$_SESSION["username"].'</span>
+					<a href="logout.php"><button>Logout</button></a>
+				</div>'
+				,$head);
+			}
+			else {
+				$head = str_replace(":login:",
+				'<li lang="en"><a href="login.php">LOGIN</a></li>', $head);
+				$head = str_replace(":utente:",'',$head);
+			}
+
+			echo $head;
+		}
+
+		public function content() {
+			$content=file_get_contents("html/creaMazzo.html");
+
+			$content=str_replace(':eroePagina:',$_GET['eroe'],$content);
+
+			$content=str_replace(':listaCarte:',$this->carteDisp(),$content);
+
+			$count=$this->contaCarte();
+
+			if (!isset($_POST['submit']))
+				$content=str_replace(':errore:','',$content);
+			else
+			{
+				if ($count<30)
+					$content=str_replace(':errore:','<p class="errore">Troppe poche carte selezionate</p>',$content);
+				else
+					if ($count>30)
+						$content=str_replace(':errore:','<p class="errore">Troppe carte selezionate</p>',$content);
+					else
+					{
+						$content=str_replace(':errore:','',$content);
+						$this->insertDb();
+					}
+			}
+
+			echo $content;
+		}
+
+		public function footer() {
+			echo file_get_contents("html/footer.html");
+		}
+
+		public function queryCarte() {
+			$query='SELECT C.name as Nome, C.rarity as R, C.mana as costo, C.card_id as Id
+					FROM card C join hero_card HC on (C.card_id=HC.card_id) join hero H on (HC.hero_id=H.hero_id)
+					WHERE H.type="'.$_GET['eroe'].'"
+					ORDER BY costo, Nome';
+
+			$this->db->query($query);
+			$rs = $this->db->resultset();
+
+			return $rs;
+		}
+
+		public function carteDisp()
+		{
+			$rs=$this->queryCarte();
+			$final="";
+			$i=1;
+			foreach ($rs as $row) {
+				if($row['R']=="Leggendaria")
+				{
+					if (($i%2)==1)
+					{
+						$final.='<div class="carte1">
+									<span class="costo">'.$row['costo'].'</span>
+									<span class="nome '.$row['R'].'">'.$row['Nome'].'</span>
+	    							<fieldset>
+										<label for="quantita11'.$i.'">1</label>
+								        <input type="radio" id="quantita11'.$i.'" name="quantita1'.$i.'" value="1"/>
+										<label for="quantita1'.$i.'">2</label>
+								        <input type="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="2" disabled="disabled"/>
+								    </fieldset>
+								</div>';
+					}
+					else
+					{
+						$final.='
+							<div class="carte2">
+								<span class="costo">'.$row['costo'].'</span>
+								<span class="nome '.$row['R'].'">'.$row['Nome'].'</span>
+									<fieldset>
+									<label for="quantita22'.$i.'">1</label>
+									<input type="radio" id="quantita22'.$i.'" name="quantita2'.$i.'" value="1"/>
+									<label for="quantita2'.$i.'">2</label>
+									<input type="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" disabled="disabled"/>
+									</fieldset>
+							</div>';
+					}
+				}
+				else
+				{
+					if (($i%2)==1)
+					{
+						$final.='<div class="carte1">
+									<span class="costo">'.$row['costo'].'</span>
+									<span class="nome '.$row['R'].'">'.$row['Nome'].'</span>
+		    						<fieldset>
+									<label for="quantita11'.$i.'">1</label>
+									<input type="radio" id="quantita11'.$i.'" name="quantita1'.$i.'" value="1"/>
+									<label for="quantita1'.$i.'">2</label>
+									<input type="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="2"/>
+									</fieldset>
+								</div>';
+					}
+					else
+					{
+						$final.='
+							<div class="carte2">
+								<span class="costo">'.$row['costo'].'</span>
+								<span class="nome '.$row['R'].'">'.$row['Nome'].'</span>
+								<fieldset>
+									<label for="quantita22'.$i.'">1</label>
+									<input type="radio" id="quantita22'.$i.'" name="quantita2'.$i.'" value="1"/>
+									<label for="quantita2'.$i.'">2</label>
+									<input type="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" />
+								</fieldset>
+							</div>';
+					}
+				}
+				$i++;
+			}
+			return $final;
+		}
+
+		public function contaCarte() {
+			$rs=$this->queryCarte();
+			$n=$this->db->rowCount();
+
+			$count=0;
+			for ($i = 1; $i <= $n; $i++)
+			{
+				if (($i%2)==1)
+				{
+					if (isset($_POST['quantita1'.$i]))
+					{
+						if($_POST['quantita1'.$i] == "1")
+							$count=$count+1;
+						else
+							if($_POST['quantita1'.$i] == "2")
+								$count=$count+2;
+					}
+				}
+				else
+				{
+					if (isset($_POST['quantita2'.$i]))
+					{
+						if($_POST['quantita2'.$i] == "1")
+							$count=$count+1;
+						else
+							if($_POST['quantita2'.$i] == "2")
+								$count=$count+2;
+					}
+				}
+			}
+
+			return $count;
+
+		}
+
+		public function gethId(){
+			$query='SELECT H.hero_id as Id
+					FROM hero H
+					WHERE H.type="'.$_GET['eroe'].'"';
+
+			$this->db->query($query);
+			$rs = $this->db->resultset();
+
+			return $rs[0]['Id'];
+		}
+
+		public function getdId()
+		{
+			$query='SELECT D.deck_id as Id
+					FROM deck D
+					WHERE D.name="'.$_POST['nome'].'"';
+
+			$this->db->query($query);
+			$rs = $this->db->resultset();
+
+			return $rs[0]['Id'];
+		}
+
+		public function insertDb()
+		{
+			$data = date ("Y-m-d G:i");
+			$id=$this->gethId();
+			if (isset($_POST['nome']) && $_POST['nome']!="")
+			{
+				$query='INSERT INTO deck VALUES ("","'.$_POST['nome'].'","'.$_POST['Commento'].'",0,"'.$data.'","'.$id.'","'.$_SESSION['username'].'")';
+				$this->db->query($query);
+				$this->db->execute($query);
+
+				$rs=$this->queryCarte();
+				$n=$this->db->rowCount();
+
+				$deck=$this->getdId();
+				$query="";
+				for ($i = 1; $i <= $n; $i++)
+				{
+					if (($i%2)==1)
+					{
+						if (isset($_POST['quantita1'.$i]))
+						{
+							$query='INSERT INTO card_deck VALUES ("","'.$deck.'","'.$rs[$i-1]['Id'].'")';
+							if($_POST['quantita1'.$i] == "2")
+							{
+								$this->db->query($query);
+								$this->db->execute($query);
+							}
+							$this->db->query($query);
+							$this->db->execute($query);
+						}
+					}
+					else
+					{
+						if (isset($_POST['quantita2'.$i]))
+						{
+							$query='INSERT INTO card_deck VALUES ("","'.$deck.'","'.$rs[$i-1]['Id'].'")';
+							if($_POST['quantita2'.$i] == "2")
+							{
+								$this->db->query($query);
+								$this->db->execute($query);
+							}
+							$this->db->query($query);
+							$this->db->execute($query);
+						}
+
+					}
+				}
+			}
+
+
+		}
 	}
 
-	public function content() {
-		echo file_get_contents("html/creaMazzo.html");
-	}
-
-	public function footer() {
-		echo file_get_contents("html/footer.html");
-	}
-}
 ?>

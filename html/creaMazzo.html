@@ -6,5 +6,27 @@
 
 <div id="content">
 	<h2>Crea il tuo mazzo</h2>
-	
+	:errore:
+	<form method="post" action="creaMazzo.php?eroe=:eroePagina:">
+		<div>
+			<label class="labelTit" for="nome">Nome del mazzo</label>
+			<input type="text" name="nome" class="stringa"/>
+		</div>
+		<div>
+			<label class="labelTit" for="Commento">Descrizione</label>
+			<textarea id="area" name="Commento"></textarea>
+		</div>
+		<div class="carte1">
+			<span class="costo">MANA</span>
+			<span class="nome">NOME</span>
+			<span class="quantita">QUANTITÁ</span>
+		</div>
+		<div class="carte2">
+			<span class="costo">MANA</span>
+			<span class="nome">NOME</span>
+			<span class="quantita">QUANTITÁ</span>
+		</div>
+		:listaCarte:
+		<input type="submit" value="CREA" name="submit" id="crea"/>
+	</form>
 </div>

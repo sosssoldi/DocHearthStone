@@ -19,144 +19,77 @@ body {
 	background-color: white;
 	margin: 0 auto;
 	padding-top: 2%;
+	padding-bottom: 3%;
 	border-style: solid;
 	border-color: #fb9313;
 	border-width: 0.3em 0.1em 0em 0.1em;
 	border-top-left-radius: 1em;
 	border-top-right-radius: 1em;
+	overflow: auto;
 }
 
 #content h2 {
 	text-align: center;
 	font-size: 2em;
-	margin-bottom: 2%;
+	margin-bottom: 1.5em;
 }
 
-#search {
-	width: 90%;
-	margin: 0 auto;
-	border-radius: 0.5em;
-	border: 0.5em double white;
-	background-color: #f0d3a7;
-}
-
-#search input[type="text"] {
-	width: 94%;
-	padding: 0.2em;
-	font-size: 1em;
-	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
-}
-
-#search select {
-	width: 95%;
-	padding: 0.2em;
-	font-size: 1em;
-	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
-}
-
-#search h3 {
-	margin-bottom: 2%;
-}
-
-#search input[type="submit"] {
-	width: 15%;
-	height: 3em;
-	margin-left: 5%;
-	margin-bottom: 3%;
+.errore{
+	color: red;
+	margin-left: 7%;
 	font-weight: bold;
-	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
+	font-size: 1.2em;
+	margin-top: 1em;
+	margin-bottom:1em;
 }
 
-#nome {
-	width: 30%;
-	margin-top: 2%;
+.carte1 {
+	width: 42%;
 	margin-left: 5%;
-	margin-bottom: 3%;
-	float: left;
-}
-
-#costo {
-	width: 30%;
-	margin-top: 2%;
-	margin-left: 1%;
-	margin-bottom: 3%;
-	float: left;
-}
-
-#espansione {
-	width: 30%;
-	margin-top: 2%;
-	margin-left: 67%;
-	margin-bottom: 3%
-}
-
-#rarita {
-	width: 30%;
-	margin-left: 5%;
-	margin-bottom: 4%;
-	clear: both;
-	float: left;
-}
-
-#tipo {
-	width: 30%;
-	margin-left: 1%;
-	margin-bottom: 4%;
-	float: left;
-}
-
-#classe {
-	width: 30%;
-	margin-left: 67%;
-	margin-bottom: 4%;
-}
-
-#tableCarte {
-	width: 90%;
-	margin: 3% auto 0% auto;
-	text-align: left;
-	border-collapse: collapse;
-}
-
-#tableCarte th {
-	padding-top: 0.3em;
-	padding-left: 0.8em;
-	padding-right: 0.6em;
-	padding-bottom: 0.5em;
-	border: 0.1em solid black;
-	background-color: #f0d3a7;
-	color: black;
-	font-size: 1em;
-	text-transform: uppercase;
 	text-align: center;
+	font-size: 0.9em;
+	float: left;
+
 }
 
-#tableCarte td {
-	border: 0.1em solid black;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
+.carte2 {
+	width: 42%;
+	margin-left: 52%;
+	text-align: center;
+	font-size: 0.9em;
 }
 
-.nomeCarta {
-	width: 34%;
-	padding-left: 0.8em;
-	padding-right: 0.3em;
+.costo {
+	display: block;
+	width: 16%;
+	font-weight: bold;
+	float: left;
+	margin-bottom: 1.2em;
 }
 
-.tipoCarta {
-	width: 11%;
-	padding-left: 0.8em;
-	padding-right: 0.3em;
+.nome {
+	display: block;
+	width: 60%;
+	float: left;
+	font-weight: bold;
 }
 
-.classeCarta {
-	width: 31%;
-	padding-left: 0.8em;
-	padding-right: 0.3em;
+.quantita {
+	width: 23%;
+	font-weight: bold;
 }
 
-.valoreCarta {
-	width: 8%;
+fieldset {
+	width: 23%;
+	border: none;
+}
+
+fieldset input[type="radio"] {
+	margin-right: 0.5em;
+}
+
+.carte2 fieldset {
+	margin-top: 1.2em;
 }
 
 .Base {
@@ -199,24 +132,43 @@ body {
 	margin-bottom: 1%;
 }
 
-.mana {
-	color: blue;
-	font-weight: bold;
-	text-align: center;
+.labelTit {
+
+	font-size: 1.4em;
+	display: block;
+	margin-left: 7%;
+	margin-right: 2%;
 }
 
-.attacco {
-	color: #ff9900;
-	font-weight: bold;
-	text-align: center;
+.stringa {
+	min-height: 2em;
+	width:30%;
+	margin-bottom: 3em;
+	margin-left: 7%;
+	margin-top: 0.2em;
+	padding-left: 0.2em;
 }
 
-.vita {
-	color: red;
-	font-weight: bold;
-	text-align: center;
+#area {
+	min-width: 70%;
+	max-width: 70%;
+	display: block;
+	min-height:6em;
+	max-height: 6em;
+	margin-top: 0.2em;
+	margin-left: 7%;
+	margin-bottom: 3em;
+	padding: 0.2em;
 }
 
-.descrizione {
-	font-size: 1em;
+#crea {
+	color: #fff;
+	height: 2em;
+	width: 15%;
+	margin-top: 2em;
+	margin-left: 42%;
+	font-size: 1.5em;
+	background-color: #0e0d0b;
+	border-radius: 0.4em;
+	border: none;
 }
