@@ -22,11 +22,11 @@ class Guide implements Page {
 			$head = str_replace(":login:",
 			'<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
 			$head = str_replace(":utente:",
-			'<form id="logout" action="logout.php" method="get">
-				<span>'.$_SESSION["username"].'</span>
-				<input id="logoutButton" type="submit" value="Logout">
-			</form>'
-			,$head);
+					'<form id="logout" action="logout.php" method="get">
+	                    <span>'.$_SESSION["username"].'</span>
+	                    <input id="logoutButton" type="submit" value="Logout">
+	                </form>'
+				,$head);
 		}
 		else {
 			$head = str_replace(":login:",
@@ -49,11 +49,11 @@ class Guide implements Page {
 			$head = str_replace(":login:",
 			'<li><a href="user.php">'.$_SESSION["username"].'</a></li>', $head);
 			$head = str_replace(":utente:",
-			'<div id="boxutente">
-				<span>'.$_SESSION["username"].'</span>
-				<a href="logout.php"><button>Logout</button></a>
-			</div>'
-			,$head);
+					'<form id="logout" action="logout.php" method="get">
+	                    <span>'.$_SESSION["username"].'</span>
+	                    <input id="logoutButton" type="submit" value="Logout">
+	                </form>'
+				,$head);
 		}
 		else {
 			$head = str_replace(":login:",
