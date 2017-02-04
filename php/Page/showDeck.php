@@ -153,7 +153,7 @@
                         $row['Tipo']='SdA';
                         break;
                     case 'TGT':
-                        $row['Tipo']='iGT';
+                        $row['Tipo']='TGT';
                         break;
                     case 'LOE':
                         $row['Tipo']='LdE';
