@@ -251,8 +251,8 @@
             $query = 'DELETE FROM topic WHERE topic_id='.$topic;
             $this->db->query($query);
             $this->db->execute($query);
+			
+			//il numero di topic di una sezione si aggiornano con il trigger del database
         }
-
-
     }
 ?>

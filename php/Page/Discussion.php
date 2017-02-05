@@ -133,7 +133,7 @@
         public function getC() {
 
             //query per commenti
-            $query = 'SELECT U.username as Nome, U.entry_date as Data, U.count_post as N, U.photo_id as Foto, C.content as Commento, C.creation_date as DataC
+            $query = 'SELECT comment_id, U.username as Nome, U.entry_date as Data, U.count_post as N, U.photo_id as Foto, C.content as Commento, C.creation_date as DataC
                     FROM user U join comment C on (C.user_name=U.username) join topic T on (T.topic_id=C.topic_id)
                     WHERE T.topic_id='.$_GET['id'];
 
@@ -158,8 +158,11 @@
                         <div class="text">
                             <p>'.$row['Commento'].'</p>
    		                </div>
-				    </div>
-                </div>';
+				    </div>';
+				if(isset($_SESSION['username']) && $_SESSION['username'] == 'admin')
+					$final .= '<a href="eliminaCommento.php?commento='.$row['comment_id'].'"><img src="images/icon/remove.png" alt="Elimina" class="rimuoviPost"></a>';
+				
+                $final .= '</div>';
             }
 
             return $final;
@@ -172,6 +175,15 @@
             $this->db->query($query);
             $this->db->execute($query);
         }
+		
+		//elimina un commento
+		public function eliminaCommento($id) {
+			$query = 'DELETE FROM comment WHERE comment_id = '.$id;
+			$this->db->query($query);
+			$this->db->execute();
+			
+			//il numero di commenti di un utente e del post si aggiornano con il trigger del database
+		}
 
     }
 ?>
