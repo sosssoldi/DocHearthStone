@@ -171,22 +171,9 @@ buttRicerca {
 	width: 40%;
 }
 
-.classeDeck {
-	width: 20%;
+.username {
+	width: 8%;
 }
-
-.costoDeck {
-	width: 10%;
-}
-
-.ratingDeck {
-	width: 10%;
-}
-
-.dataDeck {
-	width: 20%;
-}
-
 
 .errore {
 	color: red;
