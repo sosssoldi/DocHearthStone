@@ -34,12 +34,12 @@ body {
 	margin-bottom: 3%;
 }
 
-form{
+form {
 	width: 70%;
 	margin: 0 auto;
 }
 
-#barra{
+#barra {
 	width: 80%;
 	height: 2.5em;
 	padding: 0.2em;
@@ -64,23 +64,32 @@ form{
 	background-color: rgba(0, 0, 255, 0.11);
 }
 
+.tabella td {
+	border: 0.1em solid black;
+	padding: 0.2em;
+}
+
 #general {
 	margin-bottom: 5%;
 }
 
-.dark{
-	background-color: #292c3e;
-	color:white;
+#general td {
+	padding: 0.2em;
+	border: 0.1em solid black;
 }
 
 .forum {
 	padding:0.4em;
-	width:70%;
 	border-bottom: 0.10em solid #292c3e;
+	background-color: #292c3e;
+	color:white;
+}
+
+.nome {
+	width: 70%;
 }
 
 .lastpost {
-	width: 18%;
 	text-align: center;
 	border-bottom: 0.10em solid #292c3e;
 	border-right: 0.10em solid #292c3e;
@@ -93,7 +102,7 @@ form{
 	border-left: 0.10em solid #292c3e;
 }
 
-td a{
+td a {
 	 text-decoration: none;
 	 color: blue;
 }

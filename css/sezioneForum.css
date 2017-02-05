@@ -41,27 +41,30 @@ body {
 	background-color: rgba(0, 0, 255, 0.11);
 }
 
-#general {
-	margin-bottom: 5%;
-}
-
-.dark {
+.tabella th {
 	background-color: #292c3e;
 	color:white;
 }
 
+#general {
+	margin-bottom: 5%;
+}
+
 .forum {
-	padding:0.4em;
-	width:70%;
+	padding: 0.4em;
+	width: 60%;
 	border-bottom: 0.10em solid #292c3e;
 }
 
 .lastpost {
-	width: 18%;
 	text-align: center;
 	border-bottom: 0.10em solid #292c3e;
 	border-right: 0.10em solid #292c3e;
 	border-left: 0.10em solid #292c3e;
+}
+
+.numpost {
+	width: 8%;
 }
 
 .delete {
