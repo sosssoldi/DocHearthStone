@@ -12922,7 +12922,7 @@ INSERT INTO `user` (`email`, `name`, `surname`, `username`, `password`, `entry_d
 ('bertolini@gmail.com', 'Luca', 'Bertolini', 'sosssoldi', 'ee0988a165c07d419e8da297d38b0c37f9600ad1acf54a4705bed05c18fbb3c7', '2017-01-30 14:51:32', 4, 'images/utente.jpg'),
 ('ThijsNL@gmail.com', 'Fedor', 'Putic', 'ThijsNL', 'eab11fde26737d3c149b5d4f1329264e2a1e5c2c05dd242c47a05a65bfd38b59', '2017-02-01 16:06:40', 0, 'images/utente.jpg'),
 ('tintorri@gmail.com', 'Nicola', 'Tintorri', 'TiNtO', '8d95bc233f961f533a1ca81411be33ab4b9b581d696f15ce6178d1b4a40cfed0', '2017-01-30 14:48:23', 4, 'images/utente.jpg'),
-('Yulsic@gmail.com', 'Jim', 'Belscsv', 'Yulsic', 'b44e6a681912143321949d01a9403c15ba34d748d0a90b5c91138ca66f1215c9', '2017-02-01 16:18:42', 0, 'images/utente.jpg');
+('Yulsic@gmail.com', 'Jim', 'Belscsv', 'Yulsic', 'b44e6a681912143321949d01a9403c15ba34d748d0a90b5c91138ca66f1215c9', '2017-02-01 16:18:42', 0, 'images/utente.jpg'),
 ('user@gmail.com', 'User', 'User', 'user', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', '2017-02-02 15:38:52', 0, 'images/utente.jpg');
 
 
