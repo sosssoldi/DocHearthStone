@@ -61,6 +61,7 @@
             echo $content;
         }
 
+		//se c'erano dati, dopo una richiesta, allora vengono riproposti all'utente
         private function cambiaLabel($c) {
 
             switch($this->status) {
@@ -82,6 +83,7 @@
                 return $c;
         }
 
+		//imposta lo status
         private function controlloInserimento() {
             if(isset($_GET['titolo']) && isset($_GET['testo'])){
                 if($_GET['titolo'] == "")
@@ -120,7 +122,6 @@
 
         private function inserimento(){
 
-
             $hero = 'SELECT hero_id FROM hero WHERE type = "'.$_GET['scelta'].'"';
             $this->db->query($hero);
             $rs = $this->db->resultset();
@@ -135,6 +136,7 @@
             $this->db->query($query);
             $r = $this->db->execute();
 
+			//se r==0 allora ci sono stati problemi con l'inserimento nel database
             if($r == 1)
                 header("Location: user.php");
             else

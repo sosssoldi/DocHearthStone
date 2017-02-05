@@ -68,6 +68,7 @@ class User implements Page {
         echo $content;
     }
 
+	//ritorna le informazioni dell'utente loggato
     public function getDati() {
 
         $query = 'SELECT photo_id, username, name, surname, email, entry_date FROM user ';
@@ -79,6 +80,7 @@ class User implements Page {
         return $rs;
     }
 
+	//ritorna i mazzi dell'utente
     public function mazzi(){
 
         $query = 'SELECT deck_id, deck.name as d, likes, hero.type as image ';
@@ -109,9 +111,9 @@ class User implements Page {
         }
 
         return $riga;
-
     }
 
+	//ritorna le guide dell'utente
     public function guide(){
 
         $query = 'SELECT guide_id, title, hero.type as image ';
@@ -151,6 +153,7 @@ class User implements Page {
         echo file_get_contents("html/footer.html");
     }
 
+	//funzione che permette all'utente di caricare un'immagine
 	private function caricaImmagine($c) {
 
 		$status = 0;

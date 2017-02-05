@@ -62,7 +62,8 @@
     	public function content() {
             $contenuto=file_get_contents("html/mazzi.html");
             $err = 0;
-            if(isset($_GET['nome'])) {
+            //controllo che i dati nella query string siano contenuti nei valori prestabiliti
+			if(isset($_GET['nome'])) {
                 if(strstr($_GET['nome'], '>') || strstr($_GET['nome'], '<'))
                     $err = 1;
 
@@ -141,6 +142,7 @@
             return $rs;
         }
 
+		//stampa i mazzi in base ai valori ricevuti nella query string
         public function mostraDeck() {
 
 			$query='SELECT D.deck_id as Id, D.name as NomeDeck, H.type as Nome, D.likes as Likes, D.creation_date as Data FROM deck D join hero H on (D.hero_id=H.hero_id) ';

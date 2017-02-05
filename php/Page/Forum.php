@@ -41,6 +41,7 @@
 
             echo $head;
         }
+		
         public function content() {
             $content=file_get_contents("html/forum.html");
             $rs=$this->lastTopic();

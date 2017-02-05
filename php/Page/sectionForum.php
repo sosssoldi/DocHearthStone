@@ -38,6 +38,7 @@
             echo $head;
         }
 
+		//content per la ricerca
         public function content2() {
 
             $content=file_get_contents("html/sezioneForum.html");
@@ -149,6 +150,7 @@
             return $final;
         }
 
+		//ritorna una stringa contenente codice HTML per la tabella che contiene i topic della ricerca
         public function getRicerca() {
             if($_GET["barra"]=="")
                 header("Location: forum.php");

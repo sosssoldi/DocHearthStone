@@ -31,11 +31,7 @@
             echo $head;
         }
         public function content() {
-            $content=file_get_contents("html/avventure.html");
-
-            //$content=str_replace(":tabellamazzi",funzione per trovare mazzi,$content);
-
-            echo $content;
+            echo file_get_contents("html/avventure.html");
         }
         public function footer() {
 			echo file_get_contents("html/footer.html");

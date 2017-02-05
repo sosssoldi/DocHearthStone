@@ -36,6 +36,7 @@
             echo $head;
         }
 
+		//se l'utente è loggato, allora ha la possibilità di esprimere un voto sul deck attraverso dei bottoni
         private function bottoni($content) {
             
 			if (isset($_SESSION["username"]))
@@ -116,6 +117,7 @@
             echo file_get_contents("html/footer.html");
         }
 
+		//ritorna le informazioni del mazzo il cui id è nella query string
         public function trovaInfo($mazzo) {
             $query='SELECT D.name as Nome, D.likes as Likes, D.creation_date as Data, D.description as Descr, H.type as Hero
                     FROM deck D join hero H on (D.hero_id=H.hero_id)
@@ -127,6 +129,7 @@
             return $rs;
         }
 
+		//ritorna le carte del mazzo il cui id è nella query string
         public function getCarte($mazzo)
         {
             $query='SELECT C.card_id as id, C.mana as Mana, C.name as Nome, C.expansion_name as Tipo, C.rarity as R, count(*) as Q

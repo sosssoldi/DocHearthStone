@@ -79,6 +79,7 @@ class Guide implements Page {
 		echo file_get_contents("html/footer.html");
 	}
 
+	//stampa un content differente se c'è stata una ricerca
 	public function contentRicerca() {
 		$contenuto = file_get_contents("html/guideEroe.html");
 
@@ -94,6 +95,7 @@ class Guide implements Page {
 		}
 		$resultArray = array();
 
+		//la ricerca viene fatta sia su contenuto che su title
 		$query = 'SELECT guide_id, title, user_name
 				FROM guide
 				WHERE content LIKE "%'.$pezzi[0].'%" OR title LIKE "%'.$pezzi[0].'%"';
@@ -128,7 +130,7 @@ class Guide implements Page {
 		else
 			$contenuto = str_replace(':nomeGuide:', 'Le guide generali di Doc Hearthstone', $contenuto);
 
-		//creo la tabella
+		//cerco le guide in base all'eroe selezionato (se generale allora l'eroe non c'è e quindi NULL)
 		if($_GET['eroe'] == 'Generale')
 			$query = 'SELECT guide_id, title, user_name FROM guide WHERE hero_id is null';
 		else

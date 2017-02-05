@@ -82,6 +82,7 @@ class Registrazione implements Page {
 		echo file_get_contents("html/footer.html");
 	}
 
+	//determino lo status
 	private function controlloRegistrazione() {
 		if(isset($_POST['nome']) && isset($_POST['cognome']) && isset($_POST['user']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password2']))
 			if($_POST['nome'] != "" && $_POST['cognome'] != "" && $_POST['user'] != "" && $_POST['email'] != "" && $_POST['password'] != "" && $_POST['password2'] != "") {
@@ -132,6 +133,7 @@ class Registrazione implements Page {
 		}
 	}
 
+	//segnalo eventuali errori sull'input dell'utente
 	private function cambiaLabel($c) {
 
 		switch($this->status) {
@@ -157,6 +159,7 @@ class Registrazione implements Page {
 		return $c;
 	}
 
+	//se la richiesta dell'utente genera errori, vengono riproposti i dati inseriti precedentemente
 	private function aggiornaForm($c) {
 		$c = str_replace('<input type="text" required autocomplete="off" name="nome"/>','<input type="text" required autocomplete="off" name="nome" value="'.$_POST['nome'].'"/>',$c);
 		$c = str_replace('<input type="text" required autocomplete="off" name="cognome"/>','<input type="text" required autocomplete="off" name="cognome" value="'.$_POST['cognome'].'"/>',$c);
@@ -165,6 +168,7 @@ class Registrazione implements Page {
 		return $c;
 	}
 
+	//se la richiesta dell'utente genera errori, vengono riproposti i dati inseriti precedentemente
 	private function aggiornaFormErrUsername($c) {
 		$c = str_replace('<input type="text" required autocomplete="off" name="nome"/>','<input type="text" required autocomplete="off" name="nome" value="'.$_POST['nome'].'"/>',$c);
 		$c = str_replace('<input type="text" required autocomplete="off" name="cognome"/>','<input type="text" required autocomplete="off" name="cognome" value="'.$_POST['cognome'].'"/>',$c);
@@ -172,6 +176,7 @@ class Registrazione implements Page {
 		return $c;
 	}
 
+	//se la richiesta dell'utente genera errori, vengono riproposti i dati inseriti precedentemente
 	private function aggiornaFormErrEmail($c) {
 		$c = str_replace('<input type="text" required autocomplete="off" name="nome"/>','<input type="text" required autocomplete="off" name="nome" value="'.$_POST['nome'].'"/>',$c);
 		$c = str_replace('<input type="text" required autocomplete="off" name="cognome"/>','<input type="text" required autocomplete="off" name="cognome" value="'.$_POST['cognome'].'"/>',$c);

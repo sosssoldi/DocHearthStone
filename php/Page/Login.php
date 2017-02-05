@@ -45,6 +45,7 @@
 
             echo $head;
         }
+		
         public function content() {
             $content=file_get_contents("html/login.html");
             $content = $this->cambiaLabel($content);
@@ -55,6 +56,7 @@
 			echo file_get_contents("html/footer.html");
         }
 
+		//determina lo status
         private function controlloLogin() {
             if ((isset($_POST["user"]) && ($_POST["user"])!="")&&
                 (isset($_POST["password"]) && ($_POST["password"])!=""))
@@ -70,6 +72,7 @@
                     $this->status = 3;
         }
 
+		//segnala eventuali errori sull'input ricevuto
         private function cambiaLabel($c) {
             switch($this->status) {
                 case 0:

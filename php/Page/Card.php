@@ -52,7 +52,7 @@ class Card implements Page {
 
 		$contenuto = file_get_contents("html/carte.html");
 
-		//controllo se qualche campo di $_GET è stato settato
+		//controllo se qualche campo di $_GET è stato settato e verifico se i dati nella query string sono tra i valori prestabiliti
 		$err = 0;
 		//nome
 		if(isset($_GET['nome'])) {
@@ -227,10 +227,10 @@ class Card implements Page {
 		//costo in mana della carta
 		$this->checkCosto();
 		if(isset($_GET['costo']) && $_GET['costo'] != "Qualsiasi costo")
-				if($_GET['costo'] == '7+')
-					$query .= ' AND mana >= 7';
-				else
-					$query .= ' AND mana = '.$_GET['costo'];
+			if($_GET['costo'] == '7+')
+				$query .= ' AND mana >= 7';
+			else
+				$query .= ' AND mana = '.$_GET['costo'];
 				
 		//avventura/espansione
 		if(isset($_GET['avventura']) AND $_GET['avventura'] != 'Tutte le espansioni') {
@@ -297,6 +297,7 @@ class Card implements Page {
 		return $query;
 	}
 
+	//con le nuove espansioni esistono anche classi tri-classe
 	private function stampaClassi($nomeCarta) {
 
 		$elencoClassi = '';

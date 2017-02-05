@@ -55,12 +55,12 @@
 			else
 			{
 				if ($count<30) {
-					$content=str_replace(':errore:','<p class="errore">Troppe poche carte selezionate</p>',$content);
+					$content=str_replace(':errore:','<p class="errore">Troppe poche carte selezionate (bisogna selezionarne 30)</p>',$content);
 					$content = $this->aggiornaLabel($content);
 				}
 				else
 					if ($count>30) {
-						$content=str_replace(':errore:','<p class="errore">Troppe carte selezionate</p>',$content);
+						$content=str_replace(':errore:','<p class="errore">Troppe carte selezionate (bisogna selezionarne 30)</p>',$content);
 						$content = $this->aggiornaLabel($content);
 					}
 					else
@@ -276,6 +276,7 @@
 			header("Location: user.php");
 		}
 
+		//aggiorna la label in base ai dati che sono stati inseriti in precedenza
 		private function aggiornaLabel($c) {
 
 			$c = str_replace('<input type="text" required autocomplete="off" name="nome" class="stringa"/>','<input type="text" required autocomplete="off" name="nome" class="stringa" value="'.$_POST['nome'].'"/>',$c);
