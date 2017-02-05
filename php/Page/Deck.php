@@ -79,7 +79,7 @@
     			'<input type="text" name="nome" />', $contenuto);
     		}
 
-            $heroes = array("","Mago","Sacerdote","Druido","Cacciatore","Guerriero","Paladino","Stregone","Sciamano","Ladro");
+            $heroes = array("Tutte le classi","Mago","Sacerdote","Druido","Cacciatore","Guerriero","Paladino","Stregone","Sciamano","Ladro");
             $found = 0;
             if(isset($_GET['classe'])) {
                 foreach ($heroes as $h)
@@ -145,13 +145,13 @@
 
 			$query='SELECT D.deck_id as Id, D.name as NomeDeck, H.type as Nome, D.likes as Likes, D.creation_date as Data FROM deck D join hero H on (D.hero_id=H.hero_id) ';
 
-            if(isset($_GET['nome']) && $_GET['nome']!="" && isset($_GET['classe']) && $_GET['classe'] != "")
+            if(isset($_GET['nome']) && $_GET['nome']!="" && isset($_GET['classe']) && $_GET['classe'] != "Tutte le classi")
                 $query.="WHERE D.name LIKE '%".$_GET['nome']."%'  AND H.type LIKE '".$_GET['classe']."' ";
             else
                 if(isset($_GET['nome']) && $_GET['nome']!="")
                     $query.="WHERE D.name LIKE '%".$_GET['nome']."%' ";
                 else
-                    if(isset($_GET['classe']) && $_GET['classe']!="")
+                    if(isset($_GET['classe']) && $_GET['classe']!="Tutte le classi")
                         $query.="WHERE H.type LIKE '".$_GET['classe']."' ";
 
             if(isset($_GET['costoMin']) && $_GET['costoMin'] != "")
