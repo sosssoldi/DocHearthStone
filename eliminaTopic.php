@@ -9,7 +9,4 @@
     $obj = new sectionForum();
     $obj->eliminaTopic($_GET['topic']);
     header("Location: forum.php");
-
-
-
  ?>
