@@ -92,7 +92,7 @@
         public function getTesto() {
 
             //query per testo post
-            $query = 'SELECT U.username as Nome, U.entry_date as Data, U.count_post as N, U.photo_id as Foto, T.content as Testo, T.creation_date as Creaz
+            $query = 'SELECT U.username as Nome, U.entry_date as Data, U.count_post as N, U.photo_id as Foto, T.title as Titolo, T.content as Testo, T.creation_date as Creaz
                     FROM user U join topic T on (T.user_name=U.username) WHERE T.topic_id='.$_GET['id'];
 
             $this->db->query($query);
@@ -113,9 +113,15 @@
                             <p>Data di entrata:</p><span>'.$row['Data'].'</span>
 					        <p>Interventi nel forum: '.$row['N'].'</p>
                         </div>
-                        <div class="text">
-                            <p>'.$row['Testo'].'</p>
-   		                </div>
+                        <div class="text">';
+				
+				if($row['Testo'] != "")
+                            $final .='<p>'.$row['Testo'].'</p>';
+				else
+					 $final .='<p>'.$row['Titolo'].'</p>';
+   		        
+				$final .= 
+						'</div>
 				    </div>
                 </div>';
             }
