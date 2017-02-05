@@ -207,13 +207,13 @@
             return $final;
         }
 
-		public function eliminaMazzo($id,$status) {
-
-
+		public function eliminaMazzo($id, $status) {
 
 			$query = 'SELECT user_name FROM deck WHERE deck_id = '.$id;
-            if($status == 2)
+            
+			if($status == 2)
                 $query .= ' AND user_name = "'.$_SESSION['username'].'"';
+			
 			$this->db->query($query);
 			$rs = $this->db->resultset();
 
