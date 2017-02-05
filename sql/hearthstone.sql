@@ -6895,6 +6895,19 @@ CREATE TRIGGER `aggiornaPost` AFTER INSERT ON `comment`
 END
 //
 DELIMITER ;
+DROP TRIGGER IF EXISTS `rimuoviPost`;
+DELIMITER //
+CREATE TRIGGER `rimuoviPost` AFTER DELETE ON `comment`
+ FOR EACH ROW BEGIN
+	UPDATE user
+	SET count_post = count_post - 1
+    WHERE user.username = old.user_name;
+	UPDATE topic
+	SET num_comments= num_comments - 1
+    WHERE topic.topic_id = old.topic_id;
+END
+//
+DELIMITER ;
 
 -- --------------------------------------------------------
 
