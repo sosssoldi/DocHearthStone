@@ -41,26 +41,25 @@ body {
 }
 
 .post {
-	width: 80%;
+	width: 90%;
 	margin-bottom: 2em;
 	margin-left: auto;
 	margin-right: auto;
-	border-bottom: 0.15em solid #292c3e;
+	border: 0.15em solid #292c3e;
 	background-color: rgba(0, 0, 255, 0.11);
 	overflow: hidden;
-	border-radius: 0.2em;
+	border-radius: 0.5em;
 }
 
 #postOP {
-	width: 80%;
+	width: 90%;
 	margin-bottom: 2em;
 	margin-left: auto;
 	margin-right: auto;
-	border-bottom: 0.15em solid #292c3e;
+	border: 0.15em solid #292c3e;
 	background-color: rgba(255, 135, 0, 0.71);
 	overflow: hidden;
-	border-radius: 0.2em;
-
+	border-radius: 0.5em;
 }
 
 .dataora {
@@ -68,10 +67,7 @@ body {
 	padding:1%;
 	font-size: 1.3em;
 	font-weight: bold;
-	border-top: 0.1em solid #292c3e;
-	border-bottom: 0.1em solid #292c3e;
-	border-radius: 0.2em;
-	margin-bottom: 2%;
+	border-bottom: 0.05em solid #292c3e;
 }
 
 .userptext {
@@ -98,7 +94,6 @@ body {
 
 .text {
 	width: 74%;
-	float:left;
 	padding: 2%;
 	font-size: 1.1em;
 }
@@ -119,15 +114,15 @@ form {
 }
 
 label {
-	margin-left: 10%;
+	margin-left: 5%;
 	font-size: 1.2em;
 	font-weight: bold;
 }
 
 textarea {
 	margin: 0 auto;
-	min-width: 80%;
-	max-width: 80%;
+	min-width: 90%;
+	max-width: 90%;
 	display: block;
 	min-height:6em;
 	max-height: 6em;
