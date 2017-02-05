@@ -104,6 +104,10 @@ body {
 	float: left;
 }
 
+.delete {
+	width: 30%;
+}
+
 .minmax {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;

@@ -80,6 +80,12 @@
     			'<input type="text" name="nome" />', $contenuto);
     		}
 
+            if($this->admin())
+    			$contenuto=str_replace(':admin:','<th class="username">Elimina</th>',$contenuto);
+    		else
+    			$contenuto=str_replace(':admin:','',$contenuto);
+
+
             $heroes = array("Tutte le classi","Mago","Sacerdote","Druido","Cacciatore","Guerriero","Paladino","Stregone","Sciamano","Ladro");
             $found = 0;
             if(isset($_GET['classe'])) {
@@ -191,6 +197,9 @@
 						$final .= '<td>'.$row['Likes'].'</td>';
 
 					$final .= '<td>'.$row['Data'].'</td>';
+                    if($this->admin())
+        				$final .= '<td><a href="eliminaMazzo.php?mazzo='.$row['Id'].'">
+        				<img class="delete" src="images/icon/remove.png" alt="Elimina guida"></a></td>';
                     $final .= '</tr>';
 				}
 			}
@@ -198,9 +207,13 @@
             return $final;
         }
 
-		public function eliminaMazzo($id) {
+		public function eliminaMazzo($id,$status) {
 
-			$query = 'SELECT user_name FROM deck WHERE user_name = "'.$_SESSION['username'].'" AND deck_id = '.$id;
+
+
+			$query = 'SELECT user_name FROM deck WHERE deck_id = '.$id;
+            if($status == 2)
+                $query .= ' AND user_name = "'.$_SESSION['username'].'"';
 			$this->db->query($query);
 			$rs = $this->db->resultset();
 
@@ -227,5 +240,11 @@
 				$this->db->execute();
 			}
 		}
+
+        private function admin() {
+            if(isset($_SESSION["username"]) && $_SESSION["username"] == 'admin')
+                return true;
+            else return false;
+        }
     }
 ?>

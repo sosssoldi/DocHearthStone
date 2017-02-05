@@ -64,6 +64,10 @@ body {
 	border-left: 0.10em solid #292c3e;
 }
 
+.delete {
+	width: 30%;
+}
+
 .numpost {
 	text-align: center;
 	border-bottom: 0.10em solid #292c3e;

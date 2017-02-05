@@ -85,6 +85,11 @@ class Guide implements Page {
 
 		$contenuto = str_replace(':nomeGuide:', 'La tua ricerca ha prodotto i seguenti risultati:', $contenuto);
 
+		if($this->admin())
+			$contenuto=str_replace(':admin:','<th class="username">Elimina</th>',$contenuto);
+		else
+			$contenuto=str_replace(':admin:','',$contenuto);
+
 		if($_GET["barra"]=="")
 			header("Location: guide.php");
 
@@ -114,6 +119,9 @@ class Guide implements Page {
 			$risultato .= '<tr>';
 			$risultato .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
 			$risultato .= '<td class="username">'.$row['user_name'].'</td>';
+			if($this->admin())
+				$risultato .= '<td class="username"><a href="eliminaGuida.php?guida='.$row['guide_id'].'">
+				<img class="delete" src="images/icon/remove.png" alt="Elimina guida"></a></td>';
 			$risultato .= '</tr>';
 
 		}
@@ -122,8 +130,15 @@ class Guide implements Page {
 		echo $contenuto;
 	}
 
+	//stampa tutte le guide di un determinato hero
 	public function contentHero() {
 		$contenuto = file_get_contents("html/guideEroe.html");
+
+		if($this->admin())
+			$contenuto=str_replace(':admin:','<th class="username">Elimina</th>',$contenuto);
+		else
+			$contenuto=str_replace(':admin:','',$contenuto);
+
 
 		if($_GET['eroe'] != 'Generale')
 			$contenuto = str_replace(':nomeGuide:', 'Le guide di Doc Hearthstone per il '.$_GET['eroe'], $contenuto);
@@ -145,6 +160,9 @@ class Guide implements Page {
 			$risultato .= '<tr>';
 			$risultato .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
 			$risultato .= '<td class="username">'.$row['user_name'].'</td>';
+			if($this->admin())
+				$risultato .= '<td class="username"><a href="eliminaGuida.php?guida='.$row['guide_id'].'">
+				<img class="delete" src="images/icon/remove.png" alt="Elimina guida"></a></td>';
 			$risultato .= '</tr>';
 		}
 
@@ -174,10 +192,19 @@ class Guide implements Page {
 		echo $contenuto;
 	}
 
-	public function eliminaGuida($id) {
-		$query = 'DELETE FROM guide WHERE guide_id = '.$id.' AND user_name = "'.$_SESSION['username'].'"';
+	public function eliminaGuida($id,$status) {
+
+		$query = 'DELETE FROM guide WHERE guide_id = '.$id;
+		if($status == 2)
+			$query .= ' AND user_name = "'.$_SESSION['username'].'"';
 		$this->db->query($query);
 		$this->db->execute();
+	}
+
+	private function admin() {
+		if(isset($_SESSION["username"]) && $_SESSION["username"] == 'admin')
+			return true;
+		else return false;
 	}
 }
 ?>

@@ -27,6 +27,7 @@
 	                    <input id="logoutButton" type="submit" value="Logout">
 	                </form>'
 				,$head);
+
             }
             else
             {
@@ -45,6 +46,12 @@
 
             $content=str_replace(':nomesezione:',"Risultato della ricerca:",$content);
 
+            if($this->admin())
+                $content=str_replace(':admin:','<th class="numpost dark">Elimina</th>',$content);
+            else
+                $content=str_replace(':admin:','',$content);
+
+
             $result = $this->getRicerca();
             if($result !== false) {
                 $content=str_replace(':contenuto:',$result,$content);
@@ -61,6 +68,11 @@
         public function content() {
 
             $content=file_get_contents("html/sezioneForum.html");
+
+            if($this->admin())
+                $content=str_replace(':admin:','<th class="numpost dark">Elimina</th>',$content);
+            else
+                $content=str_replace(':admin:','',$content);
 
             if (isset($_POST['Titolo']) && $_POST['Titolo']!="") {
                 $_POST["Titolo"]=htmlspecialchars($_POST["Titolo"]);
@@ -145,6 +157,9 @@
                             <span>di: '.$row['Creatore'].'</span></td>';
                 $final.='<td class="lastpost">'.$user.'</td>';
                 $final.='<td class="lastpost">'.$row['N'].'</td>';
+                if($this->admin())
+                    $final .= '<td class="lastpost"><a href="eliminaTopic.php?topic='.$row['Id'].'">
+                    <img class="delete" src="images/icon/remove.png" alt="Elimina topic"></a></td>';
                 $final.='</tr>';
             }
             return $final;
@@ -185,6 +200,9 @@
                                 <span>di: '.$row['Creatore'].'</span></td>';
                     $final.='<td class="lastpost">'.$user.'</td>';
                     $final.='<td class="lastpost">'.$row['N'].'</td>';
+                    if($this->admin())
+                        $final .= '<td class="lastpost"><a href="eliminaTopic.php?topic='.$row['Id'].'">
+                        <img class="delete" src="images/icon/remove.png" alt="Elimina topic"></a></td>';
                     $final.='</tr>';
                 }
             return $final;
@@ -202,8 +220,7 @@
         }
 
         //inserisce il nuovo topic nella tabella topic
-        public function InserisciTopic()
-        {
+        public function InserisciTopic() {
             if(isset($_POST["Commento"])) {
                 $_POST["Commento"]=htmlspecialchars($_POST["Commento"]);
                 $_POST["Commento"]=str_replace("'","\'",$_POST["Commento"]);
@@ -216,6 +233,26 @@
             $this->db->query($query);
             $this->db->execute($query);
         }
+
+        //controlla se l'user loggato è un admin
+        private function admin() {
+            if(isset($_SESSION["username"]) && $_SESSION["username"] == 'admin')
+                return true;
+            else return false;
+        }
+
+        //elimina il topic dal database
+        public function eliminaTopic($topic) {
+
+            $query = 'DELETE FROM comment WHERE topic_id='.$topic;
+            $this->db->query($query);
+            $this->db->execute($query);
+
+            $query = 'DELETE FROM topic WHERE topic_id='.$topic;
+            $this->db->query($query);
+            $this->db->execute($query);
+        }
+
 
     }
 ?>

@@ -55,6 +55,10 @@ body {
 	padding: 0.6em;
 }
 
+.delete {
+	width: 16%;
+}
+
 #tabellaGuide a {
 	color: blue;
 	font-weight: bold;
