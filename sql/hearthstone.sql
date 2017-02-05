@@ -12853,17 +12853,17 @@ INSERT INTO `topic` (`topic_id`, `title`, `content`, `creation_date`, `user_name
 (4, 'Che avventura mi consigliate di comprare?', '', '2017-02-06 10:00:00', 'sosssoldi', 1, 4),
 (5, 'Cos''&egrave; il formato standard?', 'Non l''ho mai capito.', '2017-01-30 14:48:23', 'barco', 1, 5),
 (6, 'Cos''&egrave; il formato wild?', 'Non l''ho mai capito.', '2017-01-30 14:49:11', 'barco', 1, 6),
-(7, 'Qual''&egrave; la vostra carta preferita?', '', '2017-02-01 16:52:37', 'TiNtO', 1, 7),
+(7, 'Qual &egrave; la vostra carta preferita?', '', '2017-02-01 16:52:37', 'TiNtO', 1, 7),
 (8, 'Stilla OP', 'Mr. Steal &egrave; il mazzo pi&ugrave; forte che esista. :)', '2017-02-02 04:50:43', 'barco', 1, 8),
-(9, 'Qual''&egrave la vostra carta preferita del cacciatore?', '', '2017-02-04 11:30:00', 'mamolloche', 1, 9),
-(10, 'Qual''&egrave la vostra carta preferita del druido?', '', '2017-02-04 11:30:50', 'mamolloche', 1, 10),
-(11, 'Qual''&egrave la vostra carta preferita del guerriero?', '', '2017-02-04 11:31:27', 'mamolloche', 1, 11),
-(12, 'Qual''&egrave la vostra carta preferita del ladro?', '', '2017-02-04 11:32:03', 'mamolloche', 1, 12),
-(13, 'Qual''&egrave la vostra carta preferita del mago?', '', '2017-02-04 11:32:44', 'mamolloche', 1, 13),
-(14, 'Qual''&egrave la vostra carta preferita del paladino?', '', '2017-02-04 11:33:17', 'mamolloche', 1, 14),
-(15, 'Qual''&egrave la vostra carta preferita del sacerdote?', '', '2017-02-04 11:34:10', 'mamolloche', 1, 15),
-(16, 'Qual''&egrave la vostra carta preferita dello sciamano?', '', '2017-02-04 11:35:03', 'mamolloche', 1, 16),
-(17, 'Qual''&egrave la vostra carta preferita dello stregone?', '', '2017-02-04 11:35:57', 'mamolloche', 1, 17);
+(9, 'Qual &egrave; la vostra carta preferita del cacciatore?', '', '2017-02-04 11:30:00', 'mamolloche', 1, 9),
+(10, 'Qual &egrave; la vostra carta preferita del druido?', '', '2017-02-04 11:30:50', 'mamolloche', 1, 10),
+(11, 'Qual &egrave; la vostra carta preferita del guerriero?', '', '2017-02-04 11:31:27', 'mamolloche', 1, 11),
+(12, 'Qual &egrave; la vostra carta preferita del ladro?', '', '2017-02-04 11:32:03', 'mamolloche', 1, 12),
+(13, 'Qual &egrave; la vostra carta preferita del mago?', '', '2017-02-04 11:32:44', 'mamolloche', 1, 13),
+(14, 'Qual &egrave; la vostra carta preferita del paladino?', '', '2017-02-04 11:33:17', 'mamolloche', 1, 14),
+(15, 'Qual &egrave; la vostra carta preferita del sacerdote?', '', '2017-02-04 11:34:10', 'mamolloche', 1, 15),
+(16, 'Qual &egrave; la vostra carta preferita dello sciamano?', '', '2017-02-04 11:35:03', 'mamolloche', 1, 16),
+(17, 'Qual &egrave; la vostra carta preferita dello stregone?', '', '2017-02-04 11:35:57', 'mamolloche', 1, 17);
 
 --
 -- Trigger `topic`
