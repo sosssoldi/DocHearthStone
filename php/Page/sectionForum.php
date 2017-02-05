@@ -47,7 +47,7 @@
             $content=str_replace(':nomesezione:',"Risultato della ricerca:",$content);
 
             if($this->admin())
-                $content=str_replace(':admin:','<th class="numpost dark">Elimina</th>',$content);
+                $content=str_replace(':admin:','<th class="numpost">Elimina</th>',$content);
             else
                 $content=str_replace(':admin:','',$content);
 
@@ -70,7 +70,7 @@
             $content=file_get_contents("html/sezioneForum.html");
 
             if($this->admin())
-                $content=str_replace(':admin:','<th class="numpost dark">Elimina</th>',$content);
+                $content=str_replace(':admin:','<th class="numpost">Elimina</th>',$content);
             else
                 $content=str_replace(':admin:','',$content);
 
