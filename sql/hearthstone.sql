@@ -12878,6 +12878,16 @@ CREATE TRIGGER `aggiornaSection` AFTER INSERT ON `topic`
 END
 //
 DELIMITER ;
+DROP TRIGGER IF EXISTS `rimuoviSection`;
+DELIMITER //
+CREATE TRIGGER `rimuoviSection` AFTER DELETE ON `topic`
+ FOR EACH ROW BEGIN
+	UPDATE section
+	SET num_thread= num_thread - 1
+    WHERE section.section_id = old.section_id;
+END
+//
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -12923,7 +12933,8 @@ INSERT INTO `user` (`email`, `name`, `surname`, `username`, `password`, `entry_d
 ('ThijsNL@gmail.com', 'Fedor', 'Putic', 'ThijsNL', 'eab11fde26737d3c149b5d4f1329264e2a1e5c2c05dd242c47a05a65bfd38b59', '2017-02-01 16:06:40', 0, 'images/utente.jpg'),
 ('tintorri@gmail.com', 'Nicola', 'Tintorri', 'TiNtO', '8d95bc233f961f533a1ca81411be33ab4b9b581d696f15ce6178d1b4a40cfed0', '2017-01-30 14:48:23', 4, 'images/utente.jpg'),
 ('Yulsic@gmail.com', 'Jim', 'Belscsv', 'Yulsic', 'b44e6a681912143321949d01a9403c15ba34d748d0a90b5c91138ca66f1215c9', '2017-02-01 16:18:42', 0, 'images/utente.jpg'),
-('user@gmail.com', 'User', 'User', 'user', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', '2017-02-02 15:38:52', 0, 'images/utente.jpg');
+('user@gmail.com', 'User', 'User', 'user', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', '2017-02-02 15:38:52', 0, 'images/utente.jpg'),
+('admin@gmail.com', 'Admin', 'Admin', 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', '2017-02-02 15:38:52', 0, 'images/utente.jpg');
 
 
 -- --------------------------------------------------------
