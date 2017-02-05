@@ -72,7 +72,7 @@ class Card implements Page {
 		}
 
 		//costo
-		$cost = array("","1","2","3","4","5","6","7+");
+		$cost = array("Qualsiasi costo","1","2","3","4","5","6","7+");
 		$found = 0;
 		if(isset($_GET['costo'])) {
 			foreach ($cost as $c)
@@ -86,7 +86,7 @@ class Card implements Page {
 
 		//avventura ed espansione
 		$adventures = array(
-				"",
+				"Tutte le espansioni",
 				"Set Base",
 				"Classico",
 				"Naxxramas",
@@ -111,7 +111,7 @@ class Card implements Page {
 
 		//rarita
 		$rarity = array(
-				"",
+				"Tutte le rarità",
 				"Comune",
 				"Rara",
 				"Epica",
@@ -130,7 +130,7 @@ class Card implements Page {
 
 		//tipo
 		$type = array(
-				"",
+				"Tutti i tipi",
 				"Servitore",
 				"Magia",
 				"Arma"
@@ -147,7 +147,7 @@ class Card implements Page {
 		}
 
 		//classe
-		$heroes = array("",
+		$heroes = array("Tutte le classi",
 				"Mago",
 				"Sacerdote",
 				"Druido",
@@ -226,14 +226,14 @@ class Card implements Page {
 
 		//costo in mana della carta
 		$this->checkCosto();
-		if(isset($_GET['costo']) AND $_GET['costo'] != '')
-			if($_GET['costo'] == '7+')
-				$query .= ' AND mana >= 7';
-			else
-				$query .= ' AND mana = '.$_GET['costo'];
-
+		if(isset($_GET['costo']) && $_GET['costo'] != "Qualsiasi costo")
+				if($_GET['costo'] == '7+')
+					$query .= ' AND mana >= 7';
+				else
+					$query .= ' AND mana = '.$_GET['costo'];
+				
 		//avventura/espansione
-		if(isset($_GET['avventura']) AND $_GET['avventura'] != '') {
+		if(isset($_GET['avventura']) AND $_GET['avventura'] != 'Tutte le espansioni') {
 			$avventura='';
 			if($_GET['avventura'] == "Set Base")
 				$avventura = 'CORE';
@@ -270,7 +270,7 @@ class Card implements Page {
 		}
 
 		//rarita
-		if(isset($_GET['rarita']) AND $_GET['rarita'] != '')
+		if(isset($_GET['rarita']) AND $_GET['rarita'] != 'Tutte le rarità')
 		{
 			$rarita=$_GET['rarita'];
 			if ($rarita=="Comune" || $rarita=="Rara" || $rarita=="Epica" || $rarita=="Leggendaria")
@@ -278,7 +278,7 @@ class Card implements Page {
 		}
 
 		//tipo
-		if(isset($_GET['tipo']) AND $_GET['tipo'] != '')
+		if(isset($_GET['tipo']) AND $_GET['tipo'] != 'Tutti i tipi')
 		{
 			$tipo=$_GET['tipo'];
 			if ($tipo=="Servitore"|| $tipo=="Arma" || $tipo=="Magia")
@@ -286,11 +286,10 @@ class Card implements Page {
 		}
 
 		//classe
-		if(isset($_GET['classe']))
+		if(isset($_GET['classe']) && $_GET['classe'] != 'Tutte le classi')
 		{
 			$this->getID();
-			if ($_GET['classe'] != '')
-				$query .= ' AND type = "'.$_GET['classe'].'"';
+			$query .= ' AND type = "'.$_GET['classe'].'"';
 		}
 
 		$query .= ' GROUP BY card.name, c_type, mana, attack, health;';
