@@ -122,20 +122,10 @@ create table if not exists guide (
 	guide_id int auto_increment primary key,
 	title varchar(50) not null,
 	content varchar(5000) not null,
-	valutation int(3) default 0,
 	hero_id varchar(15) not null,
 	user_name varchar(50) not null,
 	foreign key (hero_id) references hero(hero_id),
 	foreign key (user_name) references user(username)
-)engine=innodb;
-
-create table if not exists guide_vote(
-	user_name varchar(50) not null,
-	vote int(3) not null,
-	guide_id int not null,
-	primary key(user_name,guide_id),
-	foreign key (user_name) references user(username),
-	foreign key (guide_id) references guide(guide_id)
 )engine=innodb;
 
 create table if not exists adventure (
@@ -262,5 +252,3 @@ BEGIN
     WHERE section.section_id = new.section_id;
 END$$
 DELIMITER ;
-
-
