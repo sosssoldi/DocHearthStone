@@ -122,7 +122,7 @@ create table if not exists guide (
 	guide_id int auto_increment primary key,
 	title varchar(50) not null,
 	content varchar(5000) not null,
-	hero_id varchar(15) not null,
+	hero_id varchar(15),
 	user_name varchar(50) not null,
 	foreign key (hero_id) references hero(hero_id),
 	foreign key (user_name) references user(username)
