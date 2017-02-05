@@ -1,0 +1,17 @@
+insert into comment values (1,"Sito top","2017-02-05 01:20:46","sosssoldi",1);
+insert into comment values (2,"Provare a cercare qualche guida. L&igrave; trovi qualcosa sicuramente.","2017-02-05 01:20:46","barco",2);
+insert into comment values (3,"&egrave; stra bella. Io ho gi&agrave; vinto la bustina.","2017-02-05 01:20:46","TiNtO",3);
+insert into comment values (4,"KARA","2017-02-05 01:20:46","barco",4);
+insert into comment values (5,"&egrave; il formato che comprende tutte le carte ancora valide","2017-02-05 01:20:46","maiunagioia",5);
+insert into comment values (6,"&egrave; il formato che comprende tutte le carte, anche quelle non pi&ugrave; valide","2017-02-05 01:20:46","maiunagioia",6);
+insert into comment values (7,"Leeeeeeroyyyyy Jenkinssssssssss","2017-02-05 01:20:46","TiNtO",7);
+insert into comment values (8,"Stilla &egrave; GG OP","2017-02-05 01:20:46","TiNtO",8);
+insert into comment values (9,"Maestro dei segugi","2017-02-05 01:20:46","maiunagioia",9);
+insert into comment values (10,"Innervazione","2017-02-05 01:20:46","maiunagioia",10);
+insert into comment values (11,"Rissa","2017-02-05 01:20:46","sosssoldi",11);
+insert into comment values (12,"Preparazione","2017-02-05 01:20:46","TiNtO",12);
+insert into comment values (13,"Antonio","2017-02-05 01:20:46","barco",13);
+insert into comment values (14,"Addestratore di cavalli","2017-02-05 01:20:46","maiunagioia",14);
+insert into comment values (15,"Profeta Valen","2017-02-05 01:20:46","barco",15);
+insert into comment values (16,"Totem di fuoco","2017-02-05 01:20:46","sosssoldi",16);
+insert into comment values (17,"Imp di Malchezar","2017-02-05 01:20:46","sosssoldi",17);

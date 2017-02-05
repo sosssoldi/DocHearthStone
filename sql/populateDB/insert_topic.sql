@@ -1,0 +1,17 @@
+insert into topic values (1,"Quanto bello &egrave; questo sito?","Secondo me &egrave; uno dei migliori siti che riguardano HearthStone. Anche pi&ugrave; di HearthPwn.","2017-02-06 09:11:23","mamolloche",0,1);
+insert into topic values (2,"Mazzo arena","Ragazzi datemi qualche consiglio/aiuto su come costruire il mazzo per l\'arena","2017-02-04 15:48:23","TiNtO",0,2);
+insert into topic values (3,"Avete visto la rissa di questa settimana?","","2017-02-05 01:20:46","maiunagioia",0,3);
+insert into topic values (4,"Che avventura mi consigliate di comprare?","","2017-02-06 10:00:00","sosssoldi",0,4);
+insert into topic values (5,"Cos\'&egrave; il formato standard?","Non l\'ho mai capito.","2017-01-30 14:48:23","barco",0,5);
+insert into topic values (6,"Cos\'&egrave; il formato wild?","Non l\'ho mai capito.","2017-01-30 14:49:11","barco",0,6);
+insert into topic values (7,"Qual\'&egrave; la vostra carta preferita?","","2017-02-01 16:52:37","TiNtO",0,7);
+insert into topic values (8,"Stilla OP","Mr. Steal &egrave; il mazzo pi&ugrave; forte che esista. :)","2017-02-02 04:50:43","barco",0,8);
+insert into topic values (9,"Qual\'&egrave la vostra carta preferita del cacciatore?","","2017-02-04 11:30:00","mamolloche",0,9);
+insert into topic values (10,"Qual\'&egrave la vostra carta preferita del druido?","","2017-02-04 11:30:50","mamolloche",0,10);
+insert into topic values (11,"Qual\'&egrave la vostra carta preferita del guerriero?","","2017-02-04 11:31:27","mamolloche",0,11);
+insert into topic values (12,"Qual\'&egrave la vostra carta preferita del ladro?","","2017-02-04 11:32:03","mamolloche",0,12);
+insert into topic values (13,"Qual\'&egrave la vostra carta preferita del mago?","","2017-02-04 11:32:44","mamolloche",0,13);
+insert into topic values (14,"Qual\'&egrave la vostra carta preferita del paladino?","","2017-02-04 11:33:17","mamolloche",0,14);
+insert into topic values (15,"Qual\'&egrave la vostra carta preferita del sacerdote?","","2017-02-04 11:34:10","mamolloche",0,15);
+insert into topic values (16,"Qual\'&egrave la vostra carta preferita dello sciamano?","","2017-02-04 11:35:03","mamolloche",0,16);
+insert into topic values (17,"Qual\'&egrave la vostra carta preferita dello stregone?","","2017-02-04 11:35:57","mamolloche",0,17);
