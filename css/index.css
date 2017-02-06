@@ -53,7 +53,7 @@ body {
 }
 
 #deckContent a {
-	color: black;
+	color: #033695;
 	text-decoration: none;
 }
 
@@ -130,7 +130,7 @@ body {
 
 #guide h2 {
 	text-align: center;
-	margin-bottom:1em;
+	margin-bottom: 1em;
 }
 
 .elenco {
@@ -146,7 +146,7 @@ body {
 
 .elenco li a {
 	text-decoration: none;
-	color: black;
+	color: #033695;;
 }
 
 .elenco li a:hover {

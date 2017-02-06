@@ -164,7 +164,11 @@ buttRicerca {
 
 #content table td a {
 	text-decoration: none;
-	color:black;
+	color: #033695;
+}
+
+#content table td a:hover {
+	font-weight: bold;
 }
 
 .nomeDeck {
