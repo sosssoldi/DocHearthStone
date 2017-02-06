@@ -59,6 +59,8 @@
 
             $content=str_replace(':idpagina:',$_GET['id'],$content);
 
+			$content=str_replace(':sezioneForum:',$this->getSezione(),$content);
+			
             $content=str_replace(':nomediscussione:',$this->getDiscussione(),$content);
 
             $content=str_replace(':op:',$this->getTesto(),$content);
@@ -72,6 +74,14 @@
         public function footer() {
             echo file_get_contents("html/footer.html");
         }
+		
+		//ritorna la sezione del topic
+		public function getSezione() {
+			$query = 'SELECT section.name AS sezione FROM section, topic WHERE section.section_id = topic.section_id AND topic.topic_id = '.$_GET['id'];
+			$this->db->query($query);
+			$rs = $this->db->resultset();
+			return $rs[0]['sezione'];
+		}
 
         //ritorna il titolo del topic selezionato
         public function getDiscussione() {
