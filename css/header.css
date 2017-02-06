@@ -73,13 +73,13 @@ nav li a:hover {
 
 #logout {
 	position: fixed;
-	margin-left: 89%;
 	width: 9%;
 	background-color: #fff;
 	border-radius: 2em 0em 2em 0em;
 	border: 0.2em solid orange;
 	text-align: center;
-	margin-top: 1%;
+	top: 1%;
+	right: 2%;
 }
 
 #logout span {
