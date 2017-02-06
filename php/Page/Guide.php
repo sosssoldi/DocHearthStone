@@ -77,7 +77,7 @@ class Guide implements Page {
 	public function contentRicerca() {
 		$contenuto = file_get_contents("html/guideEroe.html");
 
-		$contenuto = str_replace(':nomeGuide:', 'La tua ricerca ha prodotto i seguenti risultati:', $contenuto);
+		$contenuto = str_replace(':nomeGuide:', 'Risultato della ricerca:', $contenuto);
 
 		if($this->admin())
 			$contenuto=str_replace(':admin:','<th class="username">Elimina</th>',$contenuto);
