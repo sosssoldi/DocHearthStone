@@ -80,7 +80,7 @@ class Guide implements Page {
 		$contenuto = str_replace(':nomeGuide:', 'Risultato della ricerca:', $contenuto);
 
 		if($this->admin())
-			$contenuto=str_replace(':admin:','<th class="username">Elimina</th>',$contenuto);
+			$contenuto=str_replace(':admin:','<th class="username">ELIMINA</th>',$contenuto);
 		else
 			$contenuto=str_replace(':admin:','',$contenuto);
 
@@ -129,13 +129,13 @@ class Guide implements Page {
 		$contenuto = file_get_contents("html/guideEroe.html");
 
 		if($this->admin())
-			$contenuto=str_replace(':admin:','<th class="username">Elimina</th>',$contenuto);
+			$contenuto=str_replace(':admin:','<th class="username">ELIMINA</th>',$contenuto);
 		else
 			$contenuto=str_replace(':admin:','',$contenuto);
 
 
 		if($_GET['eroe'] != 'Generale')
-			$contenuto = str_replace(':nomeGuide:', 'Le guide di Doc Hearthstone per il '.$_GET['eroe'], $contenuto);
+			$contenuto = str_replace(':nomeGuide:', 'Le guide di Doc Hearthstone per '.$_GET['eroe'], $contenuto);
 		else
 			$contenuto = str_replace(':nomeGuide:', 'Le guide generali di Doc Hearthstone', $contenuto);
 
@@ -175,9 +175,9 @@ class Guide implements Page {
 
 		if($this->db->rowCount() > 0) {
 			$contenuto = str_replace(':titoloGuida:', $rs[0]['title'], $contenuto);
-			
+
 			if($rs[0]['hero_id'] != NULL) {
-				$contenuto = str_replace(':sezioneGuida:', 'Le guide di Doc Hearthstone per il :nomeEroe:', $contenuto);
+				$contenuto = str_replace(':sezioneGuida:', 'Le guide di Doc Hearthstone per :nomeEroe:', $contenuto);
 				$query = 'SELECT type FROM hero WHERE hero_id = "'.$rs[0]['hero_id'].'"';
 				$this->db->query($query);
 				$typeHero = $this->db->resultset();
@@ -187,7 +187,7 @@ class Guide implements Page {
 				$contenuto = str_replace(':sezioneGuida:', 'Le guide generali di Doc Hearthstone', $contenuto);
 				$contenuto = str_replace(':nomeEroe:', 'Generale', $contenuto);
 			}
-			
+
 			if($rs[0]['content'] != "NULL")
 				$contenuto = str_replace(':contenutoGuida:', $rs[0]['content'], $contenuto);
 			else
