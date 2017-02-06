@@ -10,10 +10,6 @@ body {
 	height: auto;
 }
 
-#breadcrumb {
-	display: none;
-}
-
 #content {
 	width: 75%;
 	background-color: white;
@@ -182,5 +178,5 @@ fieldset input[type="radio"] {
 	background-image: url('../images/icon/backTop.png');
 	background-size: 100% 100%;
 	width: 4%;
-	height: 3em;
+	height: 4em;
 }

@@ -24,10 +24,6 @@ body {
 	border-top-right-radius: 1em;
 }
 
-#breadcrumb {
-	display: none;
-}
-
 .titolo {
 	text-align:center;
 	margin-bottom: 2%;

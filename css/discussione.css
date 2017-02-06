@@ -2,12 +2,6 @@ body {
 	background-image: linear-gradient(to left,  #292c3e 50%, #2c2d36  50%)
 }
 
-.hide {
-	text-indent:100%;
-	white-space:nowrap;
-	overflow:hidden;
-}
-
 #imgHeader {
 	display: block;
 	background-position: center center;
@@ -15,11 +9,6 @@ body {
 	margin: 0 auto;
 	width:45%;
 	height: auto;
-}
-
-
-#breadcrumb {
-	display: none;
 }
 
 #content {
@@ -114,10 +103,6 @@ body {
 	border: 1px solid black;
 	margin: 0 auto;
 	overflow: hidden;
-}
-
-form {
-	margin-top: 2em;
 }
 
 label {

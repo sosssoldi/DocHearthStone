@@ -2,10 +2,6 @@ body {
 	background-color: #000;
 }
 
-#breadcrumb {
-	display: none;
-}
-
 #imgHeader {
 	display: block;
 	background-repeat: no-repeat;
