@@ -55,12 +55,12 @@
 			else
 			{
 				if ($count<30) {
-					$content=str_replace(':errore:','<p class="errore">Troppe poche carte selezionate (bisogna selezionarne 30)</p>',$content);
+					$content=str_replace(':errore:','<p class="errore">Troppe poche carte selezionate (le carte in un mazzo sono 30).</p>',$content);
 					$content = $this->aggiornaLabel($content);
 				}
 				else
 					if ($count>30) {
-						$content=str_replace(':errore:','<p class="errore">Troppe carte selezionate (bisogna selezionarne 30)</p>',$content);
+						$content=str_replace(':errore:','<p class="errore">Troppe carte selezionate (le carte in un mazzo sono 30).</p>',$content);
 						$content = $this->aggiornaLabel($content);
 					}
 					else
