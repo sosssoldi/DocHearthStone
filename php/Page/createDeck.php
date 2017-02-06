@@ -55,12 +55,12 @@
 			else
 			{
 				if ($count<30) {
-					$content=str_replace(':errore:','<p class="errore">Troppe poche carte selezionate (le carte in un mazzo sono 30).</p>',$content);
+					$content=str_replace(':errore:','<p class="errore">Hai selezionato '.$count.' carte (devono essere 30).</p>',$content);
 					$content = $this->aggiornaLabel($content);
 				}
 				else
 					if ($count>30) {
-						$content=str_replace(':errore:','<p class="errore">Troppe carte selezionate (le carte in un mazzo sono 30).</p>',$content);
+						$content=str_replace(':errore:','<p class="errore">Hai selezionato '.$count.' carte (devono essere 30).</p>',$content);
 						$content = $this->aggiornaLabel($content);
 					}
 					else
@@ -152,7 +152,7 @@
 									<label for="quantita1'.$i.'">1</label>
 									<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1"/>
 									<label for="quantita2'.$i.'">2</label>
-									<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" />
+									<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2"/>
 								</fieldset>
 							</div>';
 					}
@@ -279,8 +279,39 @@
 		//aggiorna la label in base ai dati che sono stati inseriti in precedenza
 		private function aggiornaLabel($c) {
 
-			$c = str_replace('<input type="text" required autocomplete="off" name="nome" class="stringa"/>','<input type="text" required autocomplete="off" name="nome" class="stringa" value="'.$_POST['nome'].'"/>',$c);
+			$c = str_replace('<input type="text" id="nome" required autocomplete="off" name="nome" class="stringa"/>','<input type="text" id="nome" required autocomplete="off" name="nome" class="stringa" value="'.$_POST['nome'].'"/>',$c);
 			$c = str_replace('<textarea id="area" name="Commento"></textarea>','<textarea id="area" name="Commento">'.$_POST['Commento'].'</textarea>',$c);
+			
+			$n = count($this->queryCarte());
+
+			$count=0;
+			
+			//aggiorno i radioButton
+			for ($i = 1; $i <= $n; $i++) {
+				if (($i%2)==1) {
+					if (isset($_POST['quantita1'.$i])) {
+						if($_POST['quantita1'.$i] == "1")
+							$c = str_replace('<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="1"/>',
+							'<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="1" checked="checked"/>',$c);
+						else
+							if($_POST['quantita1'.$i] == "2")
+								$c = str_replace('<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita1'.$i.'" value="2"/>',
+								'<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita1'.$i.'" value="2" checked="checked"/>',$c);
+					}
+				}
+				else {
+					if (isset($_POST['quantita2'.$i])) {
+						if($_POST['quantita2'.$i] == "1")
+							$c = str_replace('<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1"/>',
+							'<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1" checked="checked"/>',$c);
+						else
+							if($_POST['quantita2'.$i] == "2")
+								$c = str_replace('<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2"/>',
+								'<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" checked="checked"/>',$c);
+					}
+				}
+			}
+			
 			return $c;
 		}
 	}
