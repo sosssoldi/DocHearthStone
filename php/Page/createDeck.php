@@ -230,6 +230,14 @@
 			$id=$this->gethId();
 			if (isset($_POST['nome']) && $_POST['nome']!="")
 			{
+				$_GET["nome"]=htmlspecialchars($_GET["nome"]);
+	            $_GET["nome"]=str_replace("<","&lt;",$_GET["nome"]);
+	            $_GET["nome"]=str_replace(">","&gt;",$_GET["nome"]);
+	            $_GET["nome"]=str_replace("'","\'",$_GET["nome"]);
+	            $_GET["Commento"]=htmlspecialchars($_GET["Commento"]);
+	            $_GET["Commento"]=str_replace("<","&lt;",$_GET["Commento"]);
+	            $_GET["Commento"]=str_replace(">","&gt;",$_GET["Commento"]);
+	            $_GET["Commento"]=str_replace("'","\'",$_GET["Commento"]);
 				$query='INSERT INTO deck VALUES ("","'.$_POST['nome'].'","'.$_POST['Commento'].'",0,"'.$data.'","'.$id.'","'.$_SESSION['username'].'")';
 				$this->db->query($query);
 				$this->db->execute($query);
@@ -281,11 +289,11 @@
 
 			$c = str_replace('<input type="text" id="nome" required autocomplete="off" name="nome" class="stringa"/>','<input type="text" id="nome" required autocomplete="off" name="nome" class="stringa" value="'.$_POST['nome'].'"/>',$c);
 			$c = str_replace('<textarea id="area" name="Commento"></textarea>','<textarea id="area" name="Commento">'.$_POST['Commento'].'</textarea>',$c);
-			
+
 			$n = count($this->queryCarte());
 
 			$count=0;
-			
+
 			//aggiorno i radioButton
 			for ($i = 1; $i <= $n; $i++) {
 				if (($i%2)==1) {
@@ -311,7 +319,7 @@
 					}
 				}
 			}
-			
+
 			return $c;
 		}
 	}

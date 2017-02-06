@@ -131,6 +131,14 @@
             else
                 $eroe = "'".$rs[0]['hero_id']."'";
 
+            $_GET["titolo"]=htmlspecialchars($_GET["titolo"]);
+            $_GET["titolo"]=str_replace("<","&lt;",$_GET["titolo"]);
+            $_GET["titolo"]=str_replace(">","&gt;",$_GET["titolo"]);
+            $_GET["titolo"]=str_replace("'","\'",$_GET["titolo"]);
+            $_GET["testo"]=htmlspecialchars($_GET["testo"]);
+            $_GET["testo"]=str_replace("<","&lt;",$_GET["testo"]);
+            $_GET["testo"]=str_replace(">","&gt;",$_GET["testo"]);
+            $_GET["testo"]=str_replace("'","\'",$_GET["testo"]);
             $query = 'INSERT into guide VALUES ("","'.$_GET['titolo'].'","'.$_GET['testo'].'",'.$eroe.',"'.$_SESSION['username'].'")';
 
             $this->db->query($query);

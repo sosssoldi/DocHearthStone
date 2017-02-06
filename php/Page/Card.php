@@ -81,7 +81,7 @@ class Card implements Page {
 			if($found == 0)
 				$err = 1;
 			$contenuto = str_replace('<option>'.$_GET['costo'].'</option>',
-			'<option selected>'.$_GET['costo'].'</option>', $contenuto);
+			'<option selected="selected">'.$_GET['costo'].'</option>', $contenuto);
 		}
 
 		//avventura ed espansione
@@ -106,7 +106,7 @@ class Card implements Page {
 			if($found == 0)
 				$err = 1;
 			$contenuto = str_replace('<option>'.$_GET['avventura'].'</option>',
-			'<option selected>'.$_GET['avventura'].'</option>', $contenuto);
+			'<option selected="selected">'.$_GET['avventura'].'</option>', $contenuto);
 		}
 
 		//rarita
@@ -125,7 +125,7 @@ class Card implements Page {
 			if($found == 0)
 				$err = 1;
 			$contenuto = str_replace('<option>'.$_GET['rarita'].'</option>',
-			'<option selected>'.$_GET['rarita'].'</option>', $contenuto);
+			'<option selected="selected">'.$_GET['rarita'].'</option>', $contenuto);
 		}
 
 		//tipo
@@ -143,7 +143,7 @@ class Card implements Page {
 			if($found == 0)
 				$err = 1;
 			$contenuto = str_replace('<option>'.$_GET['tipo'].'</option>',
-			'<option selected>'.$_GET['tipo'].'</option>', $contenuto);
+			'<option selected="selected">'.$_GET['tipo'].'</option>', $contenuto);
 		}
 
 		//classe
@@ -166,7 +166,7 @@ class Card implements Page {
 			if($found == 0)
 				$err = 1;
 			$contenuto = str_replace('<option>'.$_GET['classe'].'</option>',
-			'<option selected>'.$_GET['classe'].'</option>', $contenuto);
+			'<option selected="selected">'.$_GET['classe'].'</option>', $contenuto);
 		}
 
 		$contenuto = str_replace(":errore:","<p class=\"errore\">".$this->errore[$err]."</p>",$contenuto);
@@ -231,7 +231,7 @@ class Card implements Page {
 				$query .= ' AND mana >= 7';
 			else
 				$query .= ' AND mana = '.$_GET['costo'];
-				
+
 		//avventura/espansione
 		if(isset($_GET['avventura']) AND $_GET['avventura'] != 'Tutte le espansioni') {
 			$avventura='';

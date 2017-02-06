@@ -95,7 +95,7 @@
                 if($found == 0)
                     $err += 2;
     			$contenuto = str_replace('<option>'.$_GET['classe'].'</option>',
-    			'<option selected>'.$_GET['classe'].'</option>', $contenuto);
+    			'<option selected="selected">'.$_GET['classe'].'</option>', $contenuto);
     		}
 
             if(isset($_GET['costoMax']) && $_GET['costoMax']!="") {
@@ -210,10 +210,10 @@
 		public function eliminaMazzo($id, $status) {
 
 			$query = 'SELECT user_name FROM deck WHERE deck_id = '.$id;
-            
+
 			if($status == 2)
                 $query .= ' AND user_name = "'.$_SESSION['username'].'"';
-			
+
 			$this->db->query($query);
 			$rs = $this->db->resultset();
 
