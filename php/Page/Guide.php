@@ -66,12 +66,6 @@ class Guide implements Page {
 
 	public function content() {
 		$content=file_get_contents("html/guide.html");
-		if (isset($_SESSION['username']))
-			$content = str_replace(':nuovaGuida:', '<form id="creaGuida" action="aggGuida.php" method="get">
-				<input id="crea" type="submit" value="Nuova Guida">
-			</form>', $content);
-		else
-		$content = str_replace(':nuovaGuida:', '', $content);
 		echo $content;
 	}
 
@@ -175,12 +169,25 @@ class Guide implements Page {
 
 		$contenuto = file_get_contents("html/mostraGuida.html");
 
-		$query = 'SELECT title, content FROM guide WHERE guide_id = '.$_GET['guida'];
+		$query = 'SELECT title, content, hero_id FROM guide WHERE guide_id = '.$_GET['guida'];
 		$this->db->query($query);
 		$rs = $this->db->resultset();
 
 		if($this->db->rowCount() > 0) {
 			$contenuto = str_replace(':titoloGuida:', $rs[0]['title'], $contenuto);
+			
+			if($rs[0]['hero_id'] != NULL) {
+				$contenuto = str_replace(':sezioneGuida:', 'Le guide di Doc Hearthstone per il :nomeEroe:', $contenuto);
+				$query = 'SELECT type FROM hero WHERE hero_id = "'.$rs[0]['hero_id'].'"';
+				$this->db->query($query);
+				$typeHero = $this->db->resultset();
+				$contenuto = str_replace(':nomeEroe:', $typeHero[0]['type'], $contenuto);
+			}
+			else {
+				$contenuto = str_replace(':sezioneGuida:', 'Le guide generali di Doc Hearthstone', $contenuto);
+				$contenuto = str_replace(':nomeEroe:', 'Generale', $contenuto);
+			}
+			
 			if($rs[0]['content'] != "NULL")
 				$contenuto = str_replace(':contenutoGuida:', $rs[0]['content'], $contenuto);
 			else

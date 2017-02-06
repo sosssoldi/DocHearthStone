@@ -59,7 +59,10 @@
 
             $content=str_replace(':idpagina:',$_GET['id'],$content);
 
-			$content=str_replace(':sezioneForum:',$this->getSezione(),$content);
+			$sezione = $this->getSezione();
+			$content= str_replace(':sezioneForum:',$sezione,$content);
+			$sezione = str_replace (' ','%20',$sezione);
+			$content = str_replace(':linkSezione:',$sezione,$content);
 			
             $content=str_replace(':nomediscussione:',$this->getDiscussione(),$content);
 
