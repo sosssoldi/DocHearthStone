@@ -170,7 +170,7 @@
    		                </div>
 				    </div>';
 				if(isset($_SESSION['username']) && $_SESSION['username'] == 'admin')
-					$final .= '<a href="eliminaCommento.php?commento='.$row['comment_id'].'"><img src="images/icon/remove.png" alt="Elimina" class="rimuoviPost"></a>';
+					$final .= '<a href="eliminaCommento.php?commento='.$row['comment_id'].'&discussione='.$_GET['id'].'"><img src="images/icon/remove.png" alt="Elimina" class="rimuoviPost"></a>';
 				
                 $final .= '</div>';
             }

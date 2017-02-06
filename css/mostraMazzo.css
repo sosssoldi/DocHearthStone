@@ -222,12 +222,8 @@ body {
 	background-color: #f2f2f2;
 }
 
-#commenti #utente{
+.utente{
 	width: 30%;
-}
-
-#commenti #commento {
-	width: 70%;
 }
 
 #commenti form {
@@ -258,4 +254,13 @@ body {
 	width: 20%;
 	height: 3em;
 	font-weight: bold;
+}
+
+.elimina {
+	width: 12%;
+	text-align: center;
+}
+
+.eliminaLink {
+	width: 20%;
 }

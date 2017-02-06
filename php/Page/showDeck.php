@@ -108,6 +108,11 @@
                 $this->db->execute($query);
             }
 
+			if(isset($_SESSION['username']) && $_SESSION['username'] == "admin")
+				$content = str_replace(':admin:','<th class="elimina">Elimina</th>',$content);
+			else
+				$content = str_replace(':admin:','',$content);
+			
             $content=str_replace(':tabellacommenti:',$this->Commenti($_GET['mazzo']),$content);
 
             echo $content;
@@ -195,18 +200,21 @@
         }
 
         public function Commenti($mazzo) {
-            $query='SELECT S.user_name as U, S.content as C
-                    FROM suggest S
-                    WHERE S.deck_id='.$mazzo;
-
+            
+			$query='SELECT suggest_id, user_name, content
+                    FROM suggest
+                    WHERE deck_id='.$mazzo;
+					
             $this->db->query($query);
             $rs=$this->db->resultset();
 
             $final="";
             foreach ($rs as $row) {
                 $final.='<tr>';
-                $final.='<td>'.$row['U'].'</td>';
-                $final.='<td>'.$row['C'].'</td>';
+                $final.='<td>'.$row['user_name'].'</td>';
+                $final.='<td>'.$row['content'].'</td>';
+				if(isset($_SESSION['username']) && $_SESSION['username'] == "admin")
+					$final .='<td class="elimina"><a href="eliminaSuggest.php?suggest='.$row['suggest_id'].'&id_mazzo='.$_GET['mazzo'].'"><img class="eliminaLink" src="images/icon/remove.png" alt="Elimina"></a></td>';
                 $final.='</tr>';
             }
 
@@ -245,6 +253,12 @@
                 $this->db->execute($query);
             }
         }
+		
+		public function eliminaSuggest($id) {
+			$query = 'DELETE FROM suggest WHERE suggest_id = '.$id;
+			$this->db->query($query);
+			$this->db->execute();
+		}
 
     }
 ?>
