@@ -131,7 +131,7 @@
             else
                 $eroe = "'".$rs[0]['hero_id']."'";
 
-            $query = 'INSERT into guide VALUES ("","'.$_GET['titolo'].'","'.$_GET['testo'].'","",'.$eroe.',"'.$_SESSION['username'].'")';
+            $query = 'INSERT into guide VALUES ("","'.$_GET['titolo'].'","'.$_GET['testo'].'",'.$eroe.',"'.$_SESSION['username'].'")';
 
             $this->db->query($query);
             $r = $this->db->execute();
