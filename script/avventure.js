@@ -5,7 +5,7 @@ function init() {
     displayText('NaxxText');
 }
 function displayText(id) {
-    var colors = {Kara:"#f5b1fa", Loe:"#2cad49", Brm:"#712105", Naxx:"#6f259a"};
+    var colors = {Kara:"#f5b1fa", Loe:"#2cad49", Brm:"#D45A30", Naxx:"#b562e6"};
     var colorsToRead = {Kara:"#f4ccfa", Loe:"#95dea5", Brm:"#f9c8b7", Naxx:"#ead3f7"};
     var p = document.getElementById(id);
     var divID = id.replace("Text","");
