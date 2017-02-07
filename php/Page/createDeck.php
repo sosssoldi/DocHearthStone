@@ -230,14 +230,14 @@
 			$id=$this->gethId();
 			if (isset($_POST['nome']) && $_POST['nome']!="")
 			{
-				$_GET["nome"]=htmlspecialchars($_GET["nome"]);
-	            $_GET["nome"]=str_replace("<","&lt;",$_GET["nome"]);
-	            $_GET["nome"]=str_replace(">","&gt;",$_GET["nome"]);
-	            $_GET["nome"]=str_replace("'","\'",$_GET["nome"]);
-	            $_GET["Commento"]=htmlspecialchars($_GET["Commento"]);
-	            $_GET["Commento"]=str_replace("<","&lt;",$_GET["Commento"]);
-	            $_GET["Commento"]=str_replace(">","&gt;",$_GET["Commento"]);
-	            $_GET["Commento"]=str_replace("'","\'",$_GET["Commento"]);
+				$_POST["nome"]=htmlspecialchars($_POST["nome"]);
+	            $_POST["nome"]=str_replace("<","&lt;",$_POST["nome"]);
+	            $_POST["nome"]=str_replace(">","&gt;",$_POST["nome"]);
+	            $_POST["nome"]=str_replace("'","\'",$_POST["nome"]);
+	            $_POST["Commento"]=htmlspecialchars($_POST["Commento"]);
+	            $_POST["Commento"]=str_replace("<","&lt;",$_POST["Commento"]);
+	            $_POST["Commento"]=str_replace(">","&gt;",$_POST["Commento"]);
+	            $_POST["Commento"]=str_replace("'","\'",$_POST["Commento"]);
 				$query='INSERT INTO deck VALUES ("","'.$_POST['nome'].'","'.$_POST['Commento'].'",0,"'.$data.'","'.$id.'","'.$_SESSION['username'].'")';
 				$this->db->query($query);
 				$this->db->execute($query);
