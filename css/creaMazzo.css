@@ -76,12 +76,15 @@ body {
 }
 
 fieldset {
-	width: 23%;
-	border: none;
+    border: none;
 }
 
-fieldset input[type="radio"] {
-	margin-right: 0.5em;
+.carte1 fieldset {
+	width: 23%;
+}
+
+.carte2 fieldset {
+    width: 23%;
 }
 
 .carte2 fieldset {
@@ -158,8 +161,7 @@ fieldset input[type="radio"] {
 
 #crea {
 	font-family: "Palatino Linotype", "Courier New", "Verdana", "Sans-Serif";
-	margin-top: 2em;
-	margin-left: 45%;
+	margin-left: 23%;
 	width: 15%;
 	height: 3em;
 	cursor: pointer;
