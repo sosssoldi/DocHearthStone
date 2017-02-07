@@ -1,15 +1,15 @@
 <div id="breadcrumb">
 	Ti trovi in: <span class="seiQui">Mazzi</span>
 </div>
-<img id="imgHeader" src="images/mazzi.png" alt="sfondo">
+<img id="imgHeader" src="images/mazzi.png" alt="sfondo" />
 <div id="content">
 	<h2>Tutti i mazzi di <span lang="en">Doc HearthStone</span></h2>
 	<form id="ricercaMazzi" method="get" action="mazzi.php">
-		<div id="nome">
+		<fieldset id="nome">
 			<h3>NOME</h3>
 			:nomeMazzo:
-		</div>
-		<div id="classe">
+		</fieldset>
+		<fieldset id="classe">
 			<h3>CLASSE</h3>
 			<select name="classe">
 				<option>Tutte le classi</option>
@@ -23,29 +23,29 @@
 				<option>Sciamano</option>
 				<option>Ladro</option>
 			</select>
-		</div>
+		</fieldset>
 		<h3 id="c">COSTO</h3>
-		<div id="costo">
-			<div class="minmax">
+		<fieldset id="costo">
+			<fieldset class="minmax">
 				<h4>MAGGIORE DI:</h4>
 				:costoMax:
-			</div>
-			<div class="minmax">
+			</fieldset>
+			<fieldset class="minmax">
 				<h4>MINORE DI:</h4>
 				:costoMin:
-			</div>
-		</div>
+			</fieldset>
+		</fieldset>
 		<input id="buttRicerca" type="submit" value="FILTRA" />
 	</form>
 	:errore:
 	<table>
 		<thead>
 			<tr>
-				<th class="nomeDeck">Nome</th>
-				<th>Classe</th>
-				<th>Costo</th>
-				<th lang="en">Rating</th>
-				<th>Data creazione</th>
+				<th id="no" class="nomeDeck">Nome</th>
+				<th id="cl" >Classe</th>
+				<th id="co" >Costo</th>
+				<th id="ra" lang="en">Rating</th>
+				<th id="dc" >Data creazione</th>
 				:admin:
 			</tr>
 		</thead>

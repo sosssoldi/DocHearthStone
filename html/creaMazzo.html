@@ -1,19 +1,20 @@
 <div id="breadcrumb">
-	Ti trovi in: <a href="user.php">Il tuo Profilo</a> > <a href="scegliClasse.php">Scegli classe</a> > <span class="seiQui">Crea mazzo</a>
+	Ti trovi in: <a href="user.php">Il tuo Profilo</a> &gt; <a href="scegliClasse.php">Scegli classe</a> &gt; <a class="seiQui">Crea mazzo</a>
 </div>
-<img id="imgHeader" src="images/carte.jpg" alt="sfondo">
+<img id="imgHeader" src="images/carte.jpg" alt="sfondo" />
 <div id="content">
 	<h2>Crea il tuo mazzo</h2>
 	:errore:
 	<form method="post" action="creaMazzo.php?eroe=:eroePagina:">
-		<div>
+		<fieldset>
 			<label class="labelTit" for="nome">Nome del mazzo</label>
-			<input type="text" id="nome" required autocomplete="off" name="nome" class="stringa"/>
-		</div>
-		<div>
+			<input type="text" id="nome" required="required" autocomplete="off" name="nome" class="stringa" />
+		    <input type="submit" value="CREA" name="submit" id="crea" />
+		</fieldset>
+		<fieldset>
 			<label class="labelTit" for="area">Descrizione</label>
 			<textarea id="area" name="Commento"></textarea>
-		</div>
+		</fieldset>
 		<div class="carte1">
 			<span class="costo">MANA</span>
 			<span class="nome">NOME</span>
@@ -25,7 +26,6 @@
 			<span class="quantita">QUANTITÁ</span>
 		</div>
 		:listaCarte:
-		<input type="submit" value="CREA" name="submit" id="crea"/>
 	</form>
 	<a id="backTop" class="hide" href="#imgHeader">Torna all'inizio dell'inserimento</a>
 </div>

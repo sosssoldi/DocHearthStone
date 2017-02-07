@@ -4,7 +4,7 @@
 <div id="content">
 	<h2 id="infoTitle">Profilo di: :nom: :cog:</h2>
 	<div id="info">
-		<img id="fotoProfilo" src=":immagineProfilo:" alt="Immagine del profilo">
+		<img id="fotoProfilo" src=":immagineProfilo:" alt="Immagine del profilo" />
 		<div id="username">
 			<h3>Username:</h3>
 			<span class="valore">:user:</span>
@@ -29,10 +29,10 @@
     	<table>
 				<thead>
 					<tr>
-						<th class="nome">Nome mazzo</th>
-						<th class="classe">Classe</th>
-          				<th class="voto" lang="en">Likes</th>
-						<th class="elimina">Elimina</th>
+						<th id="nm" class="nome">Nome mazzo</th>
+						<th id="cl" class="classe">Classe</th>
+          				<th id="li" class="voto" lang="en">Likes</th>
+						<th id="el" class="elimina">Elimina</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -41,16 +41,16 @@
 		</table>
 	</div>
 	<form class="creazione" method="post" action="creaMazzo.php">
-		<input type="submit" value="Crea mazzo"/>
+		<input type="submit" value="Crea mazzo" />
 	</form>
 	<h2 id="myguideTitle">Le mie Guide</h2>
 	<div id="myguide">
 		<table>
 			<thead>
 				<tr>
-					<th>Nome guida</th>
-					<th class="classe">Classe</th>
-					<th class="elimina">Elimina</th>
+					<th id="ng">Nome guida</th>
+					<th id="cla" class="classe">Classe</th>
+					<th id="eli" class="elimina">Elimina</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -59,5 +59,5 @@
 		</table>
 	</div>
 	<form class="creazione" method="post" action="aggGuida.php">
-		<input type="submit" value="Crea guida"/>
+		<input type="submit" value="Crea guida" />
 	</form></div>

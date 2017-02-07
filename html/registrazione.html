@@ -1,25 +1,25 @@
 <div id="breadcrumb">
 	Ti trovi in: <span class="seiQui">Registrati</span>
 </div>
-<img id="imgHeader" src="images/homepage.jpg" alt="sfondo">
+<img id="imgHeader" src="images/homepage.jpg" alt="sfondo" />
 <div id="content">
     <div>
     	<h1>Registrati</h1>
     	<div class="log">
       		<form name="reg" action="registrazione.php" method="post" onsubmit="return check()">
 				<label class="field">Nome<span class="req">*</span></label>
-          		<input type="text" required autocomplete="off" name="nome"/>
+          		<input type="text" required="required" autocomplete="off" name="nome" />
 				<label class="field">Cognome<span class="req">*</span></label>
-          		<input type="text" required autocomplete="off" name="cognome"/>
+          		<input type="text" required="required" autocomplete="off" name="cognome" />
           		<label class="field">Username<span class="req">*</span></label>
-          		<input type="text" required autocomplete="off" name="user"/>
+          		<input type="text" required="required" autocomplete="off" name="user" />
         		<label class="field">Email<span class="req">*</span></label>
-        		<input type="email" required autocomplete="off" name="email"/>
+        		<input type="email" required="required" autocomplete="off" name="email" />
 				<label class="field">Password<span class="req">*</span></label>
-        		<input type="password" required autocomplete="off" name="password"/>
+        		<input type="password" required="required" autocomplete="off" name="password" />
 				<label class="field">Ripeti la password<span class="req">*</span></label>
-				<input type="password" required autocomplete="off" name="password2"/>
-      			<input type="submit" value="Registrati"/>
+				<input type="password" required="required" autocomplete="off" name="password2" />
+      			<input type="submit" value="Registrati" />
       		</form>
 			:segnalaErrore:
     	</div>
