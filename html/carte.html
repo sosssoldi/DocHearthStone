@@ -7,13 +7,13 @@
 <div id="content">
 	<h2>Lista delle carte di <span lang="en">HearthStone</span></h2>
 	<form id="search" method="get" action="carte.php">
-		<div id="nome">
-			<h3>NOME</h3>
+		<fieldset id="nome">
+			<label for="insertNome">NOME</label>
 			:nomeCarta:
-		</div>
-		<div id="costo">
-			<h3>MANA</h3>
-			<select name="costo">
+		</fieldset>
+		<fieldset id="costo">
+			<label for="insertCosto">MANA</label>
+			<select id="insertCosto" name="costo">
 				<option>Qualsiasi costo</option>
 				<option>0</option>
 				<option>1</option>
@@ -24,10 +24,10 @@
 				<option>6</option>
 				<option>7+</option>
 			</select>
-		</div>
-		<div id="espansione">
-			<h3>ESPANSIONE</h3>
-			<select name="avventura">
+		</fieldset>
+		<fieldset id="espansione">
+			<label for="insertAvv">ESPANSIONE</label>
+			<select id="insertAvv" name="avventura">
 				<option>Tutte le espansioni</option>
 				<option>Set Base</option>
 				<option>Classico</option>
@@ -40,28 +40,28 @@
 				<option>I bassifondi di Meccania</option>
 				<option>Il Gran Torneo</option>
 			</select>
-		</div>
-		<div id="rarita">
-			<h3>RARITÀ</h3>
-			<select name="rarita">
+		</fieldset>
+		<fieldset id="rarita">
+			<label for="insertRarita">RARITÀ</label>
+			<select id="insertRarita" name="rarita">
 				<option>Tutte le rarità</option>
 				<option>Comune</option>
 				<option>Rara</option>
 				<option>Epica</option>
 				<option>Leggendaria</option>
 			</select>
-		</div>
-		<div id="tipo">
-			<h3>TIPO</h3>
-			<select name="tipo">
+		</fieldset>
+		<fieldset id="tipo">
+			<label for="insertTipo">TIPO</label>
+			<select id="insertTipo" name="tipo">
 				<option>Tutti i tipi</option>
 				<option>Servitore</option>
 				<option>Magia</option>
 				<option>Arma</option>
 			</select>
-		</div>
-		<div id="classe">
-			<h3>CLASSE</h3>
+		</fieldset>
+		<fieldset for="insertClasse" id="classe">
+			<label id="insertClasse">CLASSE</label>
 			<select name="classe">
 				<option>Tutte le classi</option>
 				<option>Mago</option>
@@ -74,7 +74,7 @@
 				<option>Sciamano</option>
 				<option>Ladro</option>
 			</select>
-		</div>
+		</fieldset>
 		<input type="submit" value="FILTRA" />
 	</form>
 	:errore:

@@ -6,12 +6,12 @@
 	<h2>Tutti i mazzi di <span lang="en">Doc HearthStone</span></h2>
 	<form id="ricercaMazzi" method="get" action="mazzi.php">
 		<fieldset id="nome">
-			<h3>NOME</h3>
+			<label for="insertNome">NOME</label>
 			:nomeMazzo:
 		</fieldset>
 		<fieldset id="classe">
-			<h3>CLASSE</h3>
-			<select name="classe">
+			<label for="insertClasse">CLASSE</label>
+			<select id="insertClasse" name="classe">
 				<option>Tutte le classi</option>
 				<option>Mago</option>
 				<option>Sacerdote</option>
@@ -24,14 +24,14 @@
 				<option>Ladro</option>
 			</select>
 		</fieldset>
-		<h3 id="c">COSTO</h3>
+		<label id="c">COSTO</label>
 		<fieldset id="costo">
 			<fieldset class="minmax">
-				<h4>MAGGIORE DI:</h4>
+				<label for="insertCostoMax">MAGGIORE DI:</label>
 				:costoMax:
 			</fieldset>
 			<fieldset class="minmax">
-				<h4>MINORE DI:</h4>
+				<label for="insertCostoMin">MINORE DI:</label>
 				:costoMin:
 			</fieldset>
 		</fieldset>

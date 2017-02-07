@@ -5,9 +5,9 @@
     <h2>Inserisci la tua Guida</h2>
     :segnalaErrore:
     <form  id="addGuida" action="aggGuida.php" method="get">
-        <div id="classe">
-            <h3>Sezione</h3>
-            <select class="scelta" name="scelta">
+        <fieldset id="classe">
+            <label for="selezioneEroe">Sezione</label>
+            <select id="selezioneEroe" class="scelta" name="scelta">
                 <option>Generale</option>
                 <option>Cacciatore</option>
                 <option>Druido</option>
@@ -19,15 +19,15 @@
                 <option>Sciamano</option>
                 <option>Stregone</option>
             </select>
-        </div>
-        <div id="titolo">
-                <h3>Titolo della guida</h3>
-                <input type="text" required="required" autocomplete="off" name="titolo" />
-        </div>
-        <div id="testo">
-                <h3>Testo della guida</h3>
-                <textarea maxlength="5000" required="required" autocomplete="off" name="testo"></textarea>
-        </div>
+        </fieldset>
+        <fieldset id="titolo">
+                <label for="titoloGuida">Titolo della guida</label>
+                <input id="titoloGuida" type="text" required="required" autocomplete="off" name="titolo" />
+        </fieldset>
+        <fieldset id="testo">
+                <label for="testoGuida">Testo della guida</h3>
+                <textarea id="testoGuida" maxlength="5000" required="required" autocomplete="off" name="testo"></textarea>
+        </fieldset>
         <input id="butt" type="submit" value="Aggiungi" />
     </form>
 </div>

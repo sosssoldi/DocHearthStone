@@ -7,10 +7,10 @@
 		<h1>Accedi</h1>
 		<div class="log">
 			<form name="reg" action="login.php" method="post" onsubmit="return check()">
-				<label class="field">Username</label>
-				<input type="text" required="required" autocomplete="off" name="user" />
-				<label class="field">Password</label>
-				<input type="password" required="required" autocomplete="off" name="password" />
+				<label for="inputUser" class="field">Username</label>
+				<input id="inputUser" type="text" required="required" autocomplete="off" name="user" />
+				<label for="inputPass" class="field">Password</label>
+				<input id="inputPass" type="password" required="required" autocomplete="off" name="password" />
 				<input type="submit" value="Accedi"/>
 			</form>
 			:status:

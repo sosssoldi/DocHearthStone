@@ -7,18 +7,18 @@
     	<h1>Registrati</h1>
     	<div class="log">
       		<form name="reg" action="registrazione.php" method="post" onsubmit="return check()">
-				<label class="field">Nome<span class="req">*</span></label>
-          		<input type="text" required="required" autocomplete="off" name="nome" />
-				<label class="field">Cognome<span class="req">*</span></label>
-          		<input type="text" required="required" autocomplete="off" name="cognome" />
-          		<label class="field">Username<span class="req">*</span></label>
-          		<input type="text" required="required" autocomplete="off" name="user" />
-        		<label class="field">Email<span class="req">*</span></label>
-        		<input type="email" required="required" autocomplete="off" name="email" />
-				<label class="field">Password<span class="req">*</span></label>
-        		<input type="password" required="required" autocomplete="off" name="password" />
-				<label class="field">Ripeti la password<span class="req">*</span></label>
-				<input type="password" required="required" autocomplete="off" name="password2" />
+				<label for="inputNome" class="field">Nome<span class="req">*</span></label>
+          		<input id="inputNome" type="text" required="required" autocomplete="off" name="nome" />
+				<label for="inputCognome" class="field">Cognome<span class="req">*</span></label>
+          		<input id="inputCognome" type="text" required="required" autocomplete="off" name="cognome" />
+          		<label for="inputUser" class="field">Username<span class="req">*</span></label>
+          		<input id="inputUser" type="text" required="required" autocomplete="off" name="user" />
+        		<label for="inputEmail" class="field">Email<span class="req">*</span></label>
+        		<input id="inputEmail" type="email" required="required" autocomplete="off" name="email" />
+				<label for="inputPassword1" class="field">Password<span class="req">*</span></label>
+        		<input id="inputPassword1" type="password" required="required" autocomplete="off" name="password" />
+				<label for="inputPassword2" class="field">Ripeti la password<span class="req">*</span></label>
+				<input id="inputPassword2" type="password" required="required" autocomplete="off" name="password2" />
       			<input type="submit" value="Registrati" />
       		</form>
 			:segnalaErrore:
