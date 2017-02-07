@@ -2,8 +2,6 @@
 	display: none;
 }
 
-@media screen and (max-device-width: 920px) and (min-device-width: 340px), screen and (max-width: 920px) {
-
 body {
 	width: 100%;
 	margin: 0 auto;
@@ -60,8 +58,6 @@ nav li a {
 
 nav li a:hover {
 	color: #fb9313;
-}
-
 }
 
 @media only screen and (min-device-width: 921px) {
