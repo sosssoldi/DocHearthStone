@@ -1,0 +1,57 @@
+body {
+	background-color: #F0D3A7;
+}
+
+#imgHeader {
+	width: 50%;
+	display: block;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	height: auto;
+}
+
+#content {
+	width: 75%;
+	margin: 0 auto;
+	border-style: solid;
+	border-width: 0.3em 0.1em 0em 0.1em;
+	border-color: #fb9313;
+	background-color: #fff;
+	padding-top: 2%;
+	padding-bottom: 5%;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
+#content h2 {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.elenco {
+	list-style-type: none;
+	border-top: 0.2em solid orange;
+	border-bottom: 0.2em solid orange;
+	text-align: center;
+}
+
+#content ul {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 5%;
+    text-align: left;
+}
+
+.elenco li {
+	margin: 1em 0;
+    list-style-image: url('../images/icon/favIcon/favIcon16.png');
+}
+
+.elenco li a {
+	text-decoration: none;
+	color: #033695;
+}
+
+.elenco li a:hover {
+	font-weight: bold;
+}
