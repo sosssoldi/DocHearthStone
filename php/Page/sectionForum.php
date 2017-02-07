@@ -100,15 +100,15 @@
             if (isset($_SESSION['username']))
                 $content=str_replace(':sezioneCommenti:', '<form method="post" action="sezioneForum.php?nome=:nomesection:">
             		<label id="labelAdd">Aggiungi una Discussione</label>
-            		<div class="lab">
+            		<fieldset class="lab">
             			<label id="labelTit" for="titolo">Titolo</label>
             			<input type="text" id="titolo" required="required" autocomplete="off" name="Titolo" />
-            		</div>
-            		<div class="lab">
+            		</fieldset>
+            		<fieldset class="lab">
             			<label id="labelText" for="area">Descrizione</label>
             			<textarea id="area" name="Commento"></textarea>
-            	  </div>
-            		<input type="submit" value="AGGIUNGI" />
+					</fieldset>
+					<input type="submit" value="AGGIUNGI" />
             	</form>',$content);
             else {
                 $content=str_replace(':sezioneCommenti:','',$content);

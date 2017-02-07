@@ -73,11 +73,11 @@
                 $_GET['nome'] = str_replace("'", "\'", $_GET["nome"]);
 
     			$contenuto = str_replace(':nomeMazzo:',
-    			'<input type="text" name="nome" value="'.$nome.'" />', $contenuto);
+    			'<input id="insertNome" type="text" name="nome" value="'.$nome.'" />', $contenuto);
     		}
     		else {
     			$contenuto = str_replace(':nomeMazzo:',
-    			'<input type="text" name="nome" />', $contenuto);
+    			'<input id="insertNome" type="text" name="nome" />', $contenuto);
     		}
 
             if($this->admin())
@@ -102,11 +102,11 @@
                 if(!is_numeric($_GET["costoMax"]) || $_GET["costoMax"] < 0)
                     $err += 4;
                 $contenuto= str_replace(':costoMax:',
-                '<input type="number" min="0" max="100000" name="costoMax" value="'.$_GET['costoMax'].'" />', $contenuto);
+                '<input id="insertCostoMax" type="number" min="0" max="100000" name="costoMax" value="'.$_GET['costoMax'].'" />', $contenuto);
             }
             else {
                 $contenuto= str_replace(':costoMax:',
-                '<input type="number" min="0" max="100000" name="costoMax" />', $contenuto);
+                '<input id="insertCostoMax" type="number" min="0" max="100000" name="costoMax" />', $contenuto);
             }
 
             if(isset($_GET['costoMin']) && $_GET['costoMin']!="") {
@@ -118,11 +118,11 @@
                         $err += 8;
                 }
                 $contenuto= str_replace(':costoMin:',
-                '<input type="number" min="0" max="100000" name="costoMin" value="'.$_GET['costoMin'].'" />', $contenuto);
+                '<input id="insertCostoMin" type="number" min="0" max="100000" name="costoMin" value="'.$_GET['costoMin'].'" />', $contenuto);
             }
             else {
                 $contenuto= str_replace(':costoMin:',
-                '<input type="number" min="0" max="100000" name="costoMin" />', $contenuto);
+                '<input id="insertCostoMin" type="number" min="0" max="100000" name="costoMin" />', $contenuto);
             }
 
             $contenuto = str_replace(":errore:","<p class=\"errore\">".$this->errore[$err]."</p>",$contenuto);

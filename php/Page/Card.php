@@ -64,11 +64,11 @@ class Card implements Page {
 			$_GET['nome'] = str_replace(">", "&gt;", $_GET["nome"]);
 			$_GET['nome'] = str_replace("'", "\'", $_GET["nome"]);
 			$contenuto = str_replace(':nomeCarta:',
-			'<input type="text" name="nome" value="'.$nome.'" />', $contenuto);
+			'<input id="insertNome" type="text" name="nome" value="'.$nome.'" />', $contenuto);
 		}
 		else {
 			$contenuto = str_replace(':nomeCarta:',
-			'<input type="text" name="nome" />', $contenuto);
+			'<input id="insertNome" type="text" name="nome" />', $contenuto);
 		}
 
 		//costo
