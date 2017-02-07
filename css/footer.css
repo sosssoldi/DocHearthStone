@@ -11,8 +11,14 @@ footer {
 }
 
 #power {
+	display: block;
 	margin-left: 5%;
 	font-size: 1em;
+}
+
+footer span a {
+    color: #033695;
+	margin-left: 5%;
 }
 
 #css {
