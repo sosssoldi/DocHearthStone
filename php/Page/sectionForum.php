@@ -24,7 +24,7 @@
 				$head = str_replace(":utente:",
 					'<form id="logout" action="logout.php" method="get">
 	                    <span>'.$_SESSION["username"].'</span>
-	                    <input id="logoutButton" type="submit" value="Logout">
+	                    <input id="logoutButton" type="submit" value="Logout" />
 	                </form>'
 				,$head);
 
@@ -102,7 +102,7 @@
             		<label id="labelAdd">Aggiungi una Discussione</label>
             		<div class="lab">
             			<label id="labelTit" for="titolo">Titolo</label>
-            			<input type="text" id="titolo" required autocomplete="off" name="Titolo">
+            			<input type="text" id="titolo" required="required" autocomplete="off" name="Titolo" />
             		</div>
             		<div class="lab">
             			<label id="labelText" for="area">Descrizione</label>
@@ -153,10 +153,10 @@
             foreach ($rs as $row) {
                 $user=$this->getUser($row['Id']);
                 $final.='<tr>';
-                $final.='<td class="forum"><a href="discussione.php?id='.$row['Id'].'"><h3>'.$row['Titolo'].'</h3></a>
+                $final.='<td headers="to" class="forum"><a href="discussione.php?id='.$row['Id'].'"><h3>'.$row['Titolo'].'</h3></a>
                             <span>di: '.$row['Creatore'].'</span></td>';
-                $final.='<td class="lastpost">'.$user.'</td>';
-                $final.='<td class="lastpost">'.$row['N'].'</td>';
+                $final.='<td headers="uc" class="lastpost">'.$user.'</td>';
+                $final.='<td headers="co" class="lastpost">'.$row['N'].'</td>';
                 if($this->admin())
                     $final .= '<td class="lastpost"><a href="eliminaTopic.php?topic='.$row['Id'].'">
                     <img class="delete" src="images/icon/remove.png" alt="Elimina topic"></a></td>';
@@ -196,13 +196,13 @@
                 foreach ($resultArray as $row) {
                     $user=$this->getUser($row['Id']);
                     $final.='<tr>';
-                    $final.='<td class="forum"><a href="discussione.php?id='.$row['Id'].'"><h3>'.$row['Titolo'].'</h3></a>
+                    $final.='<td headers="to" class="forum"><a href="discussione.php?id='.$row['Id'].'"><h3>'.$row['Titolo'].'</h3></a>
                                 <span>di: '.$row['Creatore'].'</span></td>';
-                    $final.='<td class="lastpost">'.$user.'</td>';
-                    $final.='<td class="lastpost">'.$row['N'].'</td>';
+                    $final.='<td headers="uc" class="lastpost">'.$user.'</td>';
+                    $final.='<td headers="co" class="lastpost">'.$row['N'].'</td>';
                     if($this->admin())
                         $final .= '<td class="lastpost"><a href="eliminaTopic.php?topic='.$row['Id'].'">
-                        <img class="delete" src="images/icon/remove.png" alt="Elimina topic"></a></td>';
+                        <img class="delete" src="images/icon/remove.png" alt="Elimina topic" /></a></td>';
                     $final.='</tr>';
                 }
             return $final;

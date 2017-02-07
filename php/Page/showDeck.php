@@ -24,7 +24,7 @@
                 $head = str_replace(":utente:",
                     '<form id="logout" action="logout.php" method="get">
                         <span>'.$_SESSION["username"].'</span>
-                        <input id="logoutButton" type="submit" value="Logout">
+                        <input id="logoutButton" type="submit" value="Logout" />
                     </form>', $head);
             }
             else {
@@ -43,10 +43,10 @@
             {
                 $content=str_replace(':valutazioneMazzo:','
 				<form method="get" action="gestisciVoto.php?">
-					<input type="hidden" name="mazzo" value="'.$_GET['mazzo'].'"/>
-					<input id="posRating" class="hide" type="submit" name="like" value="1"/>
+					<input type="hidden" name="mazzo" value="'.$_GET['mazzo'].'" />
+					<input id="posRating" class="hide" type="submit" name="like" value="1" />
 					:valutazioneMazzo:
-					<input id="negRating" class="hide" type="submit" name="like" value="0"/>
+					<input id="negRating" class="hide" type="submit" name="like" value="0" />
 				</form>', $content);
             }
 
@@ -75,7 +75,7 @@
             $content=str_replace(':NomeEroe:',$rs[0]['Hero'],$content);
             $content=str_replace(':valutazioneMazzo:',$valutazione,$content);
             $content=str_replace(':nomeMazzo:',$rs[0]['Nome'],$content);
-            $content=str_replace(':creazioneMazzo:',$rs[0]['Data'],$content);
+            $content=str_replace(':creazioneMazzo:','<time datetime="'.$rs[0]['Data'].'">'.$rs[0]['Data'].'</time>',$content);
             $content=str_replace(':votiTotali:',$this->votiTot($_GET['mazzo']),$content);
             $content=str_replace(':descrizioneMazzo:',$rs[0]['Descr'],$content);
 
@@ -178,10 +178,10 @@
                 }
 
                 $final.='<tr>';
-                $final.='<td>'.$row['Mana'].'</td>';
-                $final.='<td class="'.$row['R'].'" onmouseover="showImg(this, \''.$row["id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</td>';
-                $final.='<td>'.$row['Tipo'].'</td>';
-                $final.='<td>x'.$row['Q'].'</td>';
+                $final.='<td headers="ma" >'.$row['Mana'].'</td>';
+                $final.='<td headers="no" class="'.$row['R'].'" onmouseover="showImg(this, \''.$row["id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</td>';
+                $final.='<td headers="es" >'.$row['Tipo'].'</td>';
+                $final.='<td headers="qu" >x'.$row['Q'].'</td>';
                 $final.='</tr>';
             }
 
@@ -211,10 +211,10 @@
             $final="";
             foreach ($rs as $row) {
                 $final.='<tr>';
-                $final.='<td>'.$row['user_name'].'</td>';
-                $final.='<td>'.$row['content'].'</td>';
+                $final.='<td headers="ut" >'.$row['user_name'].'</td>';
+                $final.='<td headers="co" >'.$row['content'].'</td>';
 				if(isset($_SESSION['username']) && $_SESSION['username'] == "admin")
-					$final .='<td class="elimina"><a href="eliminaSuggest.php?suggest='.$row['suggest_id'].'&id_mazzo='.$_GET['mazzo'].'"><img class="eliminaLink" src="images/icon/remove.png" alt="Elimina"></a></td>';
+					$final .='<td class="elimina"><a href="eliminaSuggest.php?suggest='.$row['suggest_id'].'&id_mazzo='.$_GET['mazzo'].'"><img class="eliminaLink" src="images/icon/remove.png" alt="Elimina" /></a></td>';
                 $final.='</tr>';
             }
 

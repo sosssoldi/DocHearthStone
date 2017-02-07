@@ -24,7 +24,7 @@ class Guide implements Page {
 			$head = str_replace(":utente:",
 					'<form id="logout" action="logout.php" method="get">
 	                    <span>'.$_SESSION["username"].'</span>
-	                    <input id="logoutButton" type="submit" value="Logout">
+	                    <input id="logoutButton" type="submit" value="Logout" />
 	                </form>'
 				,$head);
 		}
@@ -51,7 +51,7 @@ class Guide implements Page {
 			$head = str_replace(":utente:",
 					'<form id="logout" action="logout.php" method="get">
 	                    <span>'.$_SESSION["username"].'</span>
-	                    <input id="logoutButton" type="submit" value="Logout">
+	                    <input id="logoutButton" type="submit" value="Logout" />
 	                </form>'
 				,$head);
 		}
@@ -111,11 +111,11 @@ class Guide implements Page {
 
 		foreach($resultArray as $row) {
 			$risultato .= '<tr>';
-			$risultato .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
-			$risultato .= '<td class="username">'.$row['user_name'].'</td>';
+			$risultato .= '<td headers="tg" ><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
+			$risultato .= '<td headers="un" class="username">'.$row['user_name'].'</td>';
 			if($this->admin())
 				$risultato .= '<td class="username"><a href="eliminaGuida.php?guida='.$row['guide_id'].'">
-				<img class="delete" src="images/icon/remove.png" alt="Elimina guida"></a></td>';
+				<img class="delete" src="images/icon/remove.png" alt="Elimina guida" /></a></td>';
 			$risultato .= '</tr>';
 
 		}
@@ -152,11 +152,11 @@ class Guide implements Page {
 
 		foreach($rs as $row) {
 			$risultato .= '<tr>';
-			$risultato .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
-			$risultato .= '<td class="username">'.$row['user_name'].'</td>';
+			$risultato .= '<td headers="tg" ><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
+			$risultato .= '<td headers="un" class="username">'.$row['user_name'].'</td>';
 			if($this->admin())
 				$risultato .= '<td class="username"><a href="eliminaGuida.php?guida='.$row['guide_id'].'">
-				<img class="delete" src="images/icon/remove.png" alt="Elimina guida"></a></td>';
+				<img class="delete" src="images/icon/remove.png" alt="Elimina guida" /></a></td>';
 			$risultato .= '</tr>';
 		}
 

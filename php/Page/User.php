@@ -25,7 +25,7 @@ class User implements Page {
             $head = str_replace(":utente:",
             '<form id="logout" action="logout.php" method="get">
                 <span>'.$_SESSION["username"].'</span>
-                <input id="logoutButton" type="submit" value="Logout">
+                <input id="logoutButton" type="submit" value="Logout" />
             </form>'
             ,$head);
         }
@@ -94,19 +94,19 @@ class User implements Page {
 
         foreach($rs as $row) {
             $riga .= '<tr>';
-			$riga .= '<td><a href="mostraMazzo.php?mazzo='.$row['deck_id'].'">'.$row['d'].'</a></td>';
-            $riga .= '<td><img class="classe" src="images/icon/'.$row['image'].'.png" alt="'.$row['image'].'"></td>';
+			$riga .= '<td headers="nm"><a href="mostraMazzo.php?mazzo='.$row['deck_id'].'">'.$row['d'].'</a></td>';
+            $riga .= '<td headers="cl" ><img class="classe" src="images/icon/'.$row['image'].'.png" alt="'.$row['image'].'" /></td>';
 
 			if($row['likes'] > 0)
-				$riga .= '<td class="likespos">+'.$row['likes'].'</td>';
+				$riga .= '<td headers="li" class="likespos">+'.$row['likes'].'</td>';
 
 			if($row['likes'] < 0)
-				$riga .= '<td class="likesneg">'.$row['likes'].'</td>';
+				$riga .= '<td headers="li" class="likesneg">'.$row['likes'].'</td>';
 
 			if($row['likes'] == 0)
-				$riga .= '<td>'.$row['likes'].'</td>';
+				$riga .= '<td headers="li" >'.$row['likes'].'</td>';
 
-			$riga .= '<td><a href="eliminaMazzo.php?mazzo='.$row['deck_id'].'"><img class="delete" src="images/icon/remove.png" alt="Elimina"></a></td>';
+			$riga .= '<td headers="el" ><a href="eliminaMazzo.php?mazzo='.$row['deck_id'].'"><img class="delete" src="images/icon/remove.png" alt="Elimina" /></a></td>';
 			$riga .= '</tr>';
         }
 
@@ -128,8 +128,8 @@ class User implements Page {
         foreach($rs as $row) {
             $riga .= '<tr>';
 			$riga .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
-            $riga .= '<td><img class="classe" src="images/icon/'.$row['image'].'.png" alt="'.$row['image'].'"></td>';
-			$riga .= '<td><a href="eliminaGuida.php?guida='.$row['guide_id'].'"><img class="delete" src="images/icon/remove.png" alt="Elimina"></a></td>';
+            $riga .= '<td><img class="classe" src="images/icon/'.$row['image'].'.png" alt="'.$row['image'].'" /></td>';
+			$riga .= '<td><a href="eliminaGuida.php?guida='.$row['guide_id'].'"><img class="delete" src="images/icon/remove.png" alt="Elimina" /></a></td>';
             $riga .= '</tr>';
         }
 
@@ -140,9 +140,9 @@ class User implements Page {
 
         foreach($rs as $row) {
             $riga .= '<tr>';
-			$riga .= '<td><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
-            $riga .= '<td><img class="classe" src="images/icon/favIcon/favIcon48.png" alt="Generale"></td>';
-			$riga .= '<td><a href="eliminaGuida.php?guida='.$row['guide_id'].'"><img class="delete" src="images/icon/remove.png" alt="Elimina"></a></td>';
+			$riga .= '<td headers="ng" ><a href="mostraGuida.php?guida='.$row['guide_id'].'">'.$row['title'].'</a></td>';
+            $riga .= '<td headers="cla" ><img class="classe" src="images/icon/favIcon/favIcon48.png" alt="Generale" /></td>';
+			$riga .= '<td headers="eli" ><a href="eliminaGuida.php?guida='.$row['guide_id'].'"><img class="delete" src="images/icon/remove.png" alt="Elimina" /></a></td>';
             $riga .= '</tr>';
         }
 

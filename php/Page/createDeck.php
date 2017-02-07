@@ -26,7 +26,7 @@
 				$head = str_replace(":utente:",
 					'<form id="logout" action="logout.php" method="get">
 	                    <span>'.$_SESSION["username"].'</span>
-	                    <input id="logoutButton" type="submit" value="Logout">
+	                    <input id="logoutButton" type="submit" value="Logout" />
 	                </form>'
 				,$head);
 			}
@@ -106,9 +106,9 @@
 									<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 	    							<fieldset>
 										<label for="quantita1'.$i.'">1</label>
-								        <input type="radio" class="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="1"/>
+								        <input type="radio" class="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="1" />
 										<label for="quantita2'.$i.'">2</label>
-								        <input type="radio" class="radio" id="quantita2'.$i.'" name="quantita1'.$i.'" value="2" disabled="disabled"/>
+								        <input type="radio" class="radio" id="quantita2'.$i.'" name="quantita1'.$i.'" value="2" disabled="disabled" />
 								    </fieldset>
 								</div>';
 					}
@@ -120,9 +120,9 @@
 								<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 									<fieldset>
 									<label for="quantita1'.$i.'">1</label>
-									<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1"/>
+									<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1" />
 									<label for="quantita2'.$i.'">2</label>
-									<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" disabled="disabled"/>
+									<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" disabled="disabled" />
 									</fieldset>
 							</div>';
 					}
@@ -136,9 +136,9 @@
 									<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 		    						<fieldset>
 									<label for="quantita1'.$i.'">1</label>
-									<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="1"/>
+									<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="1" />
 									<label for="quantita2'.$i.'">2</label>
-									<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita1'.$i.'" value="2"/>
+									<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita1'.$i.'" value="2" />
 									</fieldset>
 								</div>';
 					}
@@ -150,9 +150,9 @@
 								<span class="nome '.$row['R'].'" onmouseover="showImg(this, \''.$row["Id"].'\');" onmouseout="hideImg(this);">'.$row['Nome'].'</span>
 								<fieldset>
 									<label for="quantita1'.$i.'">1</label>
-									<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1"/>
+									<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1" />
 									<label for="quantita2'.$i.'">2</label>
-									<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2"/>
+									<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" />
 								</fieldset>
 							</div>';
 					}
@@ -287,7 +287,7 @@
 		//aggiorna la label in base ai dati che sono stati inseriti in precedenza
 		private function aggiornaLabel($c) {
 
-			$c = str_replace('<input type="text" id="nome" required autocomplete="off" name="nome" class="stringa"/>','<input type="text" id="nome" required autocomplete="off" name="nome" class="stringa" value="'.$_POST['nome'].'"/>',$c);
+			$c = str_replace('<input type="text" id="nome" required="required" autocomplete="off" name="nome" class="stringa" />','<input type="text" id="nome" required="required" autocomplete="off" name="nome" class="stringa" value="'.$_POST['nome'].'" />',$c);
 			$c = str_replace('<textarea id="area" name="Commento"></textarea>','<textarea id="area" name="Commento">'.$_POST['Commento'].'</textarea>',$c);
 
 			$n = count($this->queryCarte());
@@ -299,23 +299,23 @@
 				if (($i%2)==1) {
 					if (isset($_POST['quantita1'.$i])) {
 						if($_POST['quantita1'.$i] == "1")
-							$c = str_replace('<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="1"/>',
-							'<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="1" checked="checked"/>',$c);
+							$c = str_replace('<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="1" />',
+							'<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita1'.$i.'" value="1" checked="checked" />',$c);
 						else
 							if($_POST['quantita1'.$i] == "2")
-								$c = str_replace('<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita1'.$i.'" value="2"/>',
-								'<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita1'.$i.'" value="2" checked="checked"/>',$c);
+								$c = str_replace('<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita1'.$i.'" value="2" />',
+								'<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita1'.$i.'" value="2" checked="checked" />',$c);
 					}
 				}
 				else {
 					if (isset($_POST['quantita2'.$i])) {
 						if($_POST['quantita2'.$i] == "1")
-							$c = str_replace('<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1"/>',
-							'<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1" checked="checked"/>',$c);
+							$c = str_replace('<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1" />',
+							'<input type="radio" class="radio" id="quantita1'.$i.'" name="quantita2'.$i.'" value="1" checked="checked" />',$c);
 						else
 							if($_POST['quantita2'.$i] == "2")
-								$c = str_replace('<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2"/>',
-								'<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" checked="checked"/>',$c);
+								$c = str_replace('<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" />',
+								'<input type="radio" class="radio" id="quantita2'.$i.'" name="quantita2'.$i.'" value="2" checked="checked" />',$c);
 					}
 				}
 			}

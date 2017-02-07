@@ -42,7 +42,7 @@
 				$head = str_replace(":utente:",
                     '<form id="logout" action="logout.php" method="get">
                         <span>'.$_SESSION["username"].'</span>
-                        <input id="logoutButton" type="submit" value="Logout">
+                        <input id="logoutButton" type="submit" value="Logout" />
                     </form>'
             ,$head);
             }
@@ -73,7 +73,7 @@
                 $_GET['nome'] = str_replace("'", "\'", $_GET["nome"]);
 
     			$contenuto = str_replace(':nomeMazzo:',
-    			'<input type="text" name="nome" value="'.$nome.'"/>', $contenuto);
+    			'<input type="text" name="nome" value="'.$nome.'" />', $contenuto);
     		}
     		else {
     			$contenuto = str_replace(':nomeMazzo:',
@@ -102,7 +102,7 @@
                 if(!is_numeric($_GET["costoMax"]) || $_GET["costoMax"] < 0)
                     $err += 4;
                 $contenuto= str_replace(':costoMax:',
-                '<input type="number" min="0" max="100000" name="costoMax" value="'.$_GET['costoMax'].'"/>', $contenuto);
+                '<input type="number" min="0" max="100000" name="costoMax" value="'.$_GET['costoMax'].'" />', $contenuto);
             }
             else {
                 $contenuto= str_replace(':costoMax:',
@@ -118,7 +118,7 @@
                         $err += 8;
                 }
                 $contenuto= str_replace(':costoMin:',
-                '<input type="number" min="0" max="100000" name="costoMin" value="'.$_GET['costoMin'].'"/>', $contenuto);
+                '<input type="number" min="0" max="100000" name="costoMin" value="'.$_GET['costoMin'].'" />', $contenuto);
             }
             else {
                 $contenuto= str_replace(':costoMin:',
@@ -183,23 +183,23 @@
 
                 if ($costoDeck[0]['costo'] < $costomin && $costoDeck[0]['costo'] > $costomax) {
                     $final .= '<tr>';
-                    $final .= '<td><a href="mostraMazzo.php?mazzo='.$row['Id'].'">'.$row['NomeDeck'].'</a></td>';
-                    $final .= '<td class="'.$row["Nome"].'">'.$row['Nome'].'</td>';
-                    $final .= '<td>'.$costoDeck[0]['costo'].'</td>';
+                    $final .= '<td headers="no"><a href="mostraMazzo.php?mazzo='.$row['Id'].'">'.$row['NomeDeck'].'</a></td>';
+                    $final .= '<td headers="cl" class="'.$row["Nome"].'">'.$row['Nome'].'</td>';
+                    $final .= '<td headers="co" >'.$costoDeck[0]['costo'].'</td>';
 
 					if($row['Likes'] > 0)
-						$final .= '<td class="positivo">+'.$row['Likes'].'</td>';
+						$final .= '<td headers="ra" class="positivo">+'.$row['Likes'].'</td>';
 
 					if($row['Likes'] < 0)
-						$final .= '<td class="negativo">'.$row['Likes'].'</td>';
+						$final .= '<td headers="ra" class="negativo">'.$row['Likes'].'</td>';
 
 					if($row['Likes'] == 0)
-						$final .= '<td>'.$row['Likes'].'</td>';
+						$final .= '<td headers="ra" >'.$row['Likes'].'</td>';
 
-					$final .= '<td>'.$row['Data'].'</td>';
+					$final .= '<td headers="dc" ><time datetime="'.$row["Data"].'">'.$row['Data'].'</time></td>';
                     if($this->admin())
         				$final .= '<td><a href="eliminaMazzo.php?mazzo='.$row['Id'].'">
-        				<img class="delete" src="images/icon/remove.png" alt="Elimina guida"></a></td>';
+        				<img class="delete" src="images/icon/remove.png" alt="Elimina guida" /></a></td>';
                     $final .= '</tr>';
 				}
 			}

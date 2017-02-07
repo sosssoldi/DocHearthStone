@@ -161,26 +161,26 @@ class Registrazione implements Page {
 
 	//se la richiesta dell'utente genera errori, vengono riproposti i dati inseriti precedentemente
 	private function aggiornaForm($c) {
-		$c = str_replace('<input type="text" required autocomplete="off" name="nome"/>','<input type="text" required autocomplete="off" name="nome" value="'.$_POST['nome'].'"/>',$c);
-		$c = str_replace('<input type="text" required autocomplete="off" name="cognome"/>','<input type="text" required autocomplete="off" name="cognome" value="'.$_POST['cognome'].'"/>',$c);
-		$c = str_replace('<input type="text" required autocomplete="off" name="user"/>','<input type="text" required autocomplete="off" name="user" value="'.$_POST['user'].'"/>',$c);
-		$c = str_replace('<input type="email" required autocomplete="off" name="email"/>','<input type="email" required autocomplete="off" name="email" value="'.$_POST['email'].'"/>',$c);
+		$c = str_replace('<input type="text" required="required" autocomplete="off" name="nome" />','<input type="text" required="required" autocomplete="off" name="nome" value="'.$_POST['nome'].'" />',$c);
+		$c = str_replace('<input type="text" required="required" autocomplete="off" name="cognome" />','<input type="text" required="required" autocomplete="off" name="cognome" value="'.$_POST['cognome'].'" />',$c);
+		$c = str_replace('<input type="text" required="required" autocomplete="off" name="user" />','<input type="text" required="required" autocomplete="off" name="user" value="'.$_POST['user'].'" />',$c);
+		$c = str_replace('<input type="email" required="required" autocomplete="off" name="email" />','<input type="email" required="required" autocomplete="off" name="email" value="'.$_POST['email'].'" />',$c);
 		return $c;
 	}
 
 	//se la richiesta dell'utente genera errori, vengono riproposti i dati inseriti precedentemente
 	private function aggiornaFormErrUsername($c) {
-		$c = str_replace('<input type="text" required autocomplete="off" name="nome"/>','<input type="text" required autocomplete="off" name="nome" value="'.$_POST['nome'].'"/>',$c);
-		$c = str_replace('<input type="text" required autocomplete="off" name="cognome"/>','<input type="text" required autocomplete="off" name="cognome" value="'.$_POST['cognome'].'"/>',$c);
-		$c = str_replace('<input type="email" required autocomplete="off" name="email"/>','<input type="email" required autocomplete="off" name="email" value="'.$_POST['email'].'"/>',$c);
+		$c = str_replace('<input type="text" required="required" autocomplete="off" name="nome" />','<input type="text" required="required" autocomplete="off" name="nome" value="'.$_POST['nome'].'" />',$c);
+		$c = str_replace('<input type="text" required="required" autocomplete="off" name="cognome" />','<input type="text" required="required" autocomplete="off" name="cognome" value="'.$_POST['cognome'].'" />',$c);
+		$c = str_replace('<input type="email" required="required" autocomplete="off" name="email" />','<input type="email" required="required" autocomplete="off" name="email" value="'.$_POST['email'].'" />',$c);
 		return $c;
 	}
 
 	//se la richiesta dell'utente genera errori, vengono riproposti i dati inseriti precedentemente
 	private function aggiornaFormErrEmail($c) {
-		$c = str_replace('<input type="text" required autocomplete="off" name="nome"/>','<input type="text" required autocomplete="off" name="nome" value="'.$_POST['nome'].'"/>',$c);
-		$c = str_replace('<input type="text" required autocomplete="off" name="cognome"/>','<input type="text" required autocomplete="off" name="cognome" value="'.$_POST['cognome'].'"/>',$c);
-		$c = str_replace('<input type="text" required autocomplete="off" name="user"/>','<input type="text" required autocomplete="off" name="user" value="'.$_POST['user'].'"/>',$c);
+		$c = str_replace('<input type="text" required="required" autocomplete="off" name="nome" />','<input type="text" required="required" autocomplete="off" name="nome" value="'.$_POST['nome'].'" />',$c);
+		$c = str_replace('<input type="text" required="required" autocomplete="off" name="cognome" />','<input type="text" required="required" autocomplete="off" name="cognome" value="'.$_POST['cognome'].'" />',$c);
+		$c = str_replace('<input type="text" required="required" autocomplete="off" name="user" />','<input type="text" required="required" autocomplete="off" name="user" value="'.$_POST['user'].'" />',$c);
 		return $c;
 	}
 }

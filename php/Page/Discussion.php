@@ -24,7 +24,7 @@
 				$head = str_replace(":utente:",
                     '<form id="logout" action="logout.php" method="get">
                         <span>'.$_SESSION["username"].'</span>
-                        <input id="logoutButton" type="submit" value="Logout">
+                        <input id="logoutButton" type="submit" value="Logout" />
                     </form>'
             ,$head);
             }
@@ -117,13 +117,13 @@
                 $final.=
                 '<div id="postOP">
                     <div class="dataora">
-                        <p>'.$row['Creaz'].'</p>
+                        <p><time datetime="'.$row['Creaz'].'">'.$row['Creaz'].'</time></p>
                     </div>
 				    <div class="userptext">
                         <div class="user">
-					        <img class="fotoProfilo" src="'.$row['Foto'].'" alt="Immagine profilo utente">
+					        <img class="fotoProfilo" src="'.$row['Foto'].'" alt="Immagine profilo utente" />
                             <p>'.$row['Nome'].'</p>
-                            <p>Data di entrata:</p><span>'.$row['Data'].'</span>
+                            <p>Data di entrata:</p><span><time datetime="'.$row['Data'].'">'.$row['Data'].'</time></span>
 					        <p>Interventi nel forum: '.$row['N'].'</p>
                         </div>
                         <div class="text">';
@@ -159,13 +159,13 @@
                 $final.=
                 '<div class="post">
                     <div class="dataora">
-                        <p>'.$row['DataC'].'</p>
+                        <p><time datetime="'.$row['DataC'].'">'.$row['DataC'].'</time></p>
                     </div>
 				    <div class="userptext">
                         <div class="user">
-					        <img class="fotoProfilo" src="'.$row['Foto'].'" alt="Immagine profilo utente">
+					        <img class="fotoProfilo" src="'.$row['Foto'].'" alt="Immagine profilo utente" />
                             <p>'.$row['Nome'].'</p>
-                            <p>Data di entrata:</p><span>'.$row['Data'].'</span>
+                            <p>Data di entrata:</p><span><time datetime="'.$row['Data'].'">'.$row['Data'].'</time></span>
 					        <p>Interventi nel forum: '.$row['N'].'</p>
                         </div>
                         <div class="text">
@@ -173,7 +173,7 @@
    		                </div>
 				    </div>';
 				if(isset($_SESSION['username']) && $_SESSION['username'] == 'admin')
-					$final .= '<a href="eliminaCommento.php?commento='.$row['comment_id'].'&discussione='.$_GET['id'].'"><img src="images/icon/remove.png" alt="Elimina" class="rimuoviPost"></a>';
+					$final .= '<a href="eliminaCommento.php?commento='.$row['comment_id'].'&discussione='.$_GET['id'].'"><img src="images/icon/remove.png" alt="Elimina" class="rimuoviPost" /></a>';
 				
                 $final .= '</div>';
             }

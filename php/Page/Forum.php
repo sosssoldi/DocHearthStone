@@ -24,7 +24,7 @@
 				$head = str_replace(":utente:",
                     '<form id="logout" action="logout.php" method="get">
                         <span>'.$_SESSION["username"].'</span>
-                        <input id="logoutButton" type="submit" value="Logout">
+                        <input id="logoutButton" type="submit" value="Logout" />
                     </form>'
                 ,$head);
             }

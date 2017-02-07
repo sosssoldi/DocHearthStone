@@ -30,7 +30,7 @@ class Card implements Page {
 			$head = str_replace(":utente:",
 				'<form id="logout" action="logout.php" method="get">
 					<span>'.$_SESSION["username"].'</span>
-					<input id="logoutButton" type="submit" value="Logout">
+					<input id="logoutButton" type="submit" value="Logout" />
 				</form>'
 			,$head);
         }
@@ -64,11 +64,11 @@ class Card implements Page {
 			$_GET['nome'] = str_replace(">", "&gt;", $_GET["nome"]);
 			$_GET['nome'] = str_replace("'", "\'", $_GET["nome"]);
 			$contenuto = str_replace(':nomeCarta:',
-			'<input type="text" name="nome" value="'.$nome.'"/>', $contenuto);
+			'<input type="text" name="nome" value="'.$nome.'" />', $contenuto);
 		}
 		else {
 			$contenuto = str_replace(':nomeCarta:',
-			'<input type="text" name="nome"/>', $contenuto);
+			'<input type="text" name="nome" />', $contenuto);
 		}
 
 		//costo
@@ -180,13 +180,13 @@ class Card implements Page {
 
 			foreach($rs as $row) {
 				$riga .= '<tr>';
-				$riga .= '<td class="nomeCarta"><span class="'.$row['rarity'].'" onmouseover="showImg(this, \''.$row["id"].'\');" onmouseout="hideImg(this);">'.$row['name'].'</span><span class="descrizione">'.$row['description'].'</span></td>';
-				$riga .= '<td class="tipoCarta">'.$row['c_type'].'</td>';
+				$riga .= '<td headers="nc" class="nomeCarta"><span class="'.$row['rarity'].'" onmouseover="showImg(this, \''.$row["id"].'\');" onmouseout="hideImg(this);">'.$row['name'].'</span><span class="descrizione">'.$row['description'].'</span></td>';
+				$riga .= '<td headers="tc" class="tipoCarta">'.$row['c_type'].'</td>';
 
 				if($row['numClassi'] == 9)
-					$riga .= '<td class="classeCarta">Neutrale</td>';
+					$riga .= '<td headers="cc" class="classeCarta">Neutrale</td>';
 				else
-					$riga .= '<td class="classeCarta">'.$this->stampaClassi($row['name']).'</td>';
+					$riga .= '<td headers="cc" class="classeCarta">'.$this->stampaClassi($row['name']).'</td>';
 
 				$avventura = $row['expansion_name'];
 
@@ -196,10 +196,10 @@ class Card implements Page {
 				if($avventura == 'CORE')
 					$avventura = "Set Base";
 
-				$riga .= '<td class="espansioneCarta">'.$avventura.'</td>';
-				$riga .= '<td class="mana">'.$row['mana'].'</td>';
-				$riga .= '<td class="attacco">'.$row['attack'].'</td>';
-				$riga .= '<td class="vita">'.$row['health'].'</td>';
+				$riga .= '<td headers="ec" class="espansioneCarta">'.$avventura.'</td>';
+				$riga .= '<td headers="mc" class="mana">'.$row['mana'].'</td>';
+				$riga .= '<td headers="ac" class="attacco">'.$row['attack'].'</td>';
+				$riga .= '<td headers="vc" class="vita">'.$row['health'].'</td>';
 				$riga .= '</tr>';
 			}
 			$contenuto = str_replace(':corpoTabella:', $riga, $contenuto);

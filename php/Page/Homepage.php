@@ -24,7 +24,7 @@ class Homepage implements Page {
             $head = str_replace(":utente:",
                 '<form id="logout" action="logout.php" method="get">
                     <span>'.$_SESSION["username"].'</span>
-                    <input id="logoutButton" type="submit" value="Logout">
+                    <input id="logoutButton" type="submit" value="Logout" />
                 </form>'
             ,$head);
         }
@@ -61,9 +61,9 @@ class Homepage implements Page {
             <form method=\"post\" action=\"user.php\"><input type=\"submit\" value=\"Profilo\"></form>";
         } else {
             $output = "<p>Entra anche tu a far parte di Doc HearthStone!</p>
-    		<form method=\"post\" action=\"registrazione.php\"><input type=\"submit\" value=\"Registrati\"></form>
+    		<form method=\"post\" action=\"registrazione.php\"><input type=\"submit\" value=\"Registrati\" /></form>
     		<p>Sei gi&agrave; dei nostri?</p>
-    		<form method=\"post\" action=\"login.php\"><input type=\"submit\" value=\"Login\"></form>";
+    		<form method=\"post\" action=\"login.php\"><input type=\"submit\" value=\"Login\" /></form>";
         }
         return $output;
     }
@@ -75,17 +75,17 @@ class Homepage implements Page {
         $rs = $this->executeQuery($query);
         $output = "";
         foreach ($rs as $row) {
-            $output .= "<tr><td><img class=\"classe\" src=\"images/icon/{$row['img']}.png\" alt=\"Icona eroe: {$row['img']}\"></td>";
-            $output .= "<td><a href=\"mostraMazzo.php?mazzo={$row['deck_id']}\">{$row['name']}</a></td>";
+            $output .= "<tr><td headers=\"rots\" ><img class=\"classe\" src=\"images/icon/{$row['img']}.png\" alt=\"Icona eroe: {$row['img']}\" /></td>";
+            $output .= "<td headers=\"intc\" ><a href=\"mostraMazzo.php?mazzo={$row['deck_id']}\">{$row['name']}</a></td>";
 
 			if($row['likes'] > 0)
-				$output .= "<td class=\"ratepos\">+{$row['likes']}</td></tr>";
+				$output .= "<td headers=\"rotd\" class=\"ratepos\">+{$row['likes']}</td></tr>";
 
 			if($row['likes'] < 0)
-				$output .= "<td class=\"rateneneg\">{$row['likes']}</td></tr>";
+				$output .= "<td headers=\"rotd\" class=\"rateneneg\">{$row['likes']}</td></tr>";
 
 			if($row['likes'] == 0)
-				$output .= "<td>{$row['likes']}</td></tr>";
+				$output .= "<td headers=\"rotd\" >{$row['likes']}</td></tr>";
         }
         return $output;
     }
