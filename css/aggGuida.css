@@ -56,10 +56,14 @@ p {
 	padding: 2% 0;
 }
 
-select {
-	width: 90%;
-	font-size: 1em;
-	height: 2em;
+#addGuida fieldset {
+	border: none;
+}
+
+#addGuida select {
+	width: 95%;
+	font-size: 0.9em;
+	height: 2.3em;
 }
 
 #titolo {

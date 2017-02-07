@@ -29,9 +29,8 @@ body {
 	margin-bottom: 2%;
 }
 
-#content h3{
-	color: white;
-	margin-bottom: 1%;
+#content label{
+	font-weight: bold;
 }
 
 #ricercaMazzi {
@@ -62,6 +61,10 @@ body {
 	margin-bottom: 2%;
 }
 
+#nome label {
+	color: white;
+}
+
 #nome input[type="text"] {
 	height: 2em;
 	width: 100%;
@@ -75,6 +78,10 @@ body {
 	margin-top: 2%;
 }
 
+#classe label {
+	color: white;
+}
+
 #classe select {
 	height: 2.3em;
 	width: 95%;
@@ -86,8 +93,9 @@ body {
 }
 
 #c {
-	text-align: left;
+	display: block;
 	margin-left: 5%;
+	color: white;
 }
 
 #costo {
@@ -115,11 +123,12 @@ fieldset {
 	margin-right: 1em;
 }
 
-.minmax h4 {
+.minmax label {
 	float: left;
 	width:50%;
 	font-size: 1em;
 	font-weight: normal;
+	color: black;
 }
 
 .minmax input {

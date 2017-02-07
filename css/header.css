@@ -20,12 +20,12 @@ header {
 }
 
 header h1 {
-	width: 40%;
+	width: 26%;
 	background-image: url("../images/logo.png");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center; 
-	margin-left: 30%;
+	margin-left: 37%;
 	padding-top: 1em;
 	margin-bottom: 0.3em;
 }
@@ -48,7 +48,7 @@ nav li {
 	font-size: 0.8em;
 	font-weight: bold;
 	text-align: center;
-	margin-bottom: 0.6em;
+	margin-bottom: 0.9em;
 	font-family: "Palatino Linotype";
 }
 

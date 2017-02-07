@@ -46,7 +46,7 @@ input {
 .field {
 	display: inline-block;
 	width:30%;
-	font-size: 1.4em;
+	font-size: 1.1em;
 }
 
 .log input[type="submit"] {
