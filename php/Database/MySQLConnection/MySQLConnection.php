@@ -12,7 +12,7 @@ class MySQLConnection implements DBConnection {
 	private $pwd = "";
 	private $options = "";
 
-	public function __construct($host = "localhost", $dbname = "hearthstone", $user = "root", $pwd = "root") {
+	public function __construct($host = "localhost", $dbname = "hearthstone", $user = "root", $pwd = "Eesoech7oeth6Ata") {
 		$this->host = $host;
 		$this->dbname = $dbname;
 		$this->user = $user;
