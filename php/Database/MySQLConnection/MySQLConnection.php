@@ -11,8 +11,8 @@ class MySQLConnection implements DBConnection {
 	private $user = "";
 	private $pwd = "";
 	private $options = "";
-	
-	public function __construct($host = "localhost", $dbname = "hearthstone", $user = "root", $pwd = "") {
+
+	public function __construct($host = "localhost", $dbname = "hearthstone", $user = "root", $pwd = "root") {
 		$this->host = $host;
 		$this->dbname = $dbname;
 		$this->user = $user;
@@ -22,7 +22,7 @@ class MySQLConnection implements DBConnection {
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 		);
 	}
-	
+
 	public function connect() {
 			try {
 				return new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->user, $this->pwd, $this->options);
