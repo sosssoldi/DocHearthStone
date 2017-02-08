@@ -24,13 +24,13 @@ SET time_zone = "+00:00";
 -- **********************************************
 
 -- STATEMENT THAT DELETE THE 'EXISTING' DATABASE
-drop database if exists hearthstone;
+--drop database if exists hearthstone;
 
 -- CREATING THE DATABASE
-create database hearthstone;
+--create database hearthstone;
 
 -- USE CLAUSE
-use hearthstone;
+use mbonolo;
 
 
 -- --------------------------------------------------------
