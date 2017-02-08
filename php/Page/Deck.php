@@ -9,8 +9,6 @@
     class Deck implements Page {
 
         private $db;
-        private $page=0;
-        private $numberofpages=0;
         private $errore = array(
                             "",
                             "Errore: Sono stati inseriti dei caratteri non corretti nel nome",
@@ -128,34 +126,15 @@
             }
 
             $contenuto = str_replace(":errore:","<p class=\"errore\">".$this->errore[$err]."</p>",$contenuto);
-            if($err == 0) {
+            if($err == 0)
                 $contenuto=str_replace(':tabellamazzi:',$this->mostraDeck(),$contenuto);
-                if($this->numberofpages > 1)
-                    $contenuto=str_replace(':pages:',$this->displayPageButtons(),$contenuto);
-                else
-                    $contenuto=str_replace(':pages:','',$contenuto);
-            } else
+            else
                 $contenuto=str_replace(':tabellamazzi:',"",$contenuto);
             echo $contenuto;
         }
 
     	public function footer() {
 			echo file_get_contents("html/footer.html");
-        }
-
-        public function displayPageButtons() {
-            $output = '<span id="page">';
-            $prev = $this->page - 1;
-            $next = $this->page + 1;
-            if($prev >= 0) {
-                $output = '<a id="prev" class="hide" href="mazzi.php?page='.$prev.'&nome='.$_GET['nome'].'&classe='.$_GET['classe'].'&costoMin='.$_GET['costoMin'].'&costoMax='.$_GET['costoMax'].'">PRECEDENTE</a>';
-            }
-            //$output .= "<p class=\"here\">{$this->page}</p>";
-            if($next < $this->numberofpages) {
-                $output .= '<a id="next" class="hide" href="mazzi.php?page='.$next.'&nome='.$_GET['nome'].'&classe='.$_GET['classe'].'&costoMin='.$_GET['costoMin'].'&costoMax='.$_GET['costoMax'].'">PROSSIMA</a>';
-            }
-            $output .= "</span>";
-            return $output;
         }
 
         public function costoDeck($deck) {
@@ -195,28 +174,6 @@
 
             $this->db->query($query);
             $rs=$this->db->resultset($query);
-
-            $this->page = 0;
-            $this->numberofpages = ceil(count($rs) / 20);
-            if(isset($_GET["filtra"]) && $_GET["filtra"]=="FILTRA")
-                $this->page = 0;
-            else
-                if(isset($_GET["page"]) && is_numeric($_GET["page"]))
-                    if(floor($_GET["page"]) <= $this->numberofpages-1)
-                        if(floor($_GET["page"]) >= 0)
-                            $this->page = floor($_GET["page"]);
-                        else
-                            $this->page = 0;
-                    else
-                        $this->page = ceil(count($rs) / 20);
-                else
-                    $this->page = 0;
-            //echo $this->numberofpages;
-            //echo "-".$this->page;
-            $query = $query." LIMIT ".($this->page*20).",".(($this->page+1)*20);
-            //echo $query;
-            $this->db->query($query);
-            $rs = $this->db->resultSet($query);
 
             $final="";
 
