@@ -106,14 +106,14 @@
 
             switch ($this->status) {
                 case 1:
-                    $c = str_replace('<textarea maxlength="5000" required="required" autocomplete="off" name="testo"></textarea>','<textarea maxlength="5000" required="required" autocomplete="off" name="testo">'.$_GET['testo'].'</textarea>',$c);
+                    $c = str_replace('<textarea id="testoGuida" maxlength="5000" required="required" autocomplete="off" name="testo"></textarea>','<textarea id="testoGuida" maxlength="5000" required="required" autocomplete="off" name="testo">'.$_GET['testo'].'</textarea>',$c);
                     break;
                 case 2:
-                    $c = str_replace('<input type="text" required="required" autocomplete="off" name="titolo" />','<input type="text" required="required" autocomplete="off" name="titolo" value="'.$_GET['titolo'].'" />',$c);
+                    $c = str_replace('<input id="titoloGuida" type="text" required="required" autocomplete="off" name="titolo" />','<input id="titoloGuida" type="text" required="required" autocomplete="off" name="titolo" value="'.$_GET['titolo'].'" />',$c);
                     break;
                 case 5:
-                    $c = str_replace('<textarea maxlength="5000" required="required" autocomplete="off" name="testo"></textarea>','<textarea maxlength="5000" required="required" autocomplete="off" name="testo">'.$_GET['testo'].'</textarea>',$c);
-                    $c = str_replace('<input type="text" required="required" autocomplete="off" name="titolo"/>','<input type="text" required="required" autocomplete="off" name="titolo" value="'.$_GET['titolo'].'" />',$c);
+                    $c = str_replace('<textarea id="testoGuida" maxlength="5000" required="required" autocomplete="off" name="testo"></textarea>','<textarea id="testoGuida" maxlength="5000" required="required" autocomplete="off" name="testo">'.$_GET['testo'].'</textarea>',$c);
+                    $c = str_replace('<input id="titoloGuida" type="text" required="required" autocomplete="off" name="titolo" />','<input id="titoloGuida" type="text" required="required" autocomplete="off" name="titolo" value="'.$_GET['titolo'].'" />',$c);
                     break;
             }
 
